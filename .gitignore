@@ -7,4 +7,5 @@
 *.out
 *.pdf
 *.synctex.gz
+*.synctex.gz(busy)
 *.toc
