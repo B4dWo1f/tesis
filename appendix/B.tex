@@ -1,0 +1,54 @@
+\chapter{Units in the hyperfine coupling}
+The magnetic moment for a spin $1/2$ particle is
+\begin{equation}
+\vec{m} = g\mu\frac{1}{2}\vec{\sigma}
+\end{equation}
+as expected, $\vec{m}$ has units of $eV/T$ since $g$ is dimensionless, and $\mu$ is
+\begin{equation}
+  \mu = \frac{q\hbar}{2m} \longrightarrow
+  [\mu] = \frac{C\cdot eV\cdot s}{kg} = \frac{eV}{T}
+\end{equation}
+
+The hyperfine contact term:
+\begin{equation}
+  H_{hf} = -\mu_0\frac{2}{3} \vec{m}_e\vec{m}_p\delta(\vec{R})
+\end{equation}
+
+
+Each of the magnetic moments have units of $\left[m_i\right] = eV/T$ and the vacuum magnetic permeability has units of $\left[\mu_0\right]=N/A^2$, and the Dirac's delta has units $[\delta(\vec{R})]=1/R^3$
+
+So the units are correct\footnote{we do not care here about the factors}:
+% \begin{equation}
+%   \underbrace{\frac{N}{A^2}}_{\mu_0}
+%   \underbrace{\frac{eV}{T}}_{\vec{m}_e}
+%   \underbrace{\frac{eV}{T}}_{\vec{m}_p}
+%   \underbrace{\frac{1}{m^3}}_{\delta(\vec{R})}
+% \end{equation}
+\begin{equation}
+  \frac{N}{A^2}\frac{eV}{T}\frac{eV}{T}\frac{1}{m^3}
+\label{units}
+\end{equation}
+It is useful to keep in mind some relations among units:
+\begin{equation}
+  T \sim \frac{N}{A\cdot m}\sim\frac{V\cdot s}{m^2}\sim \frac{kg}{C\cdot s}
+   \quad;\quad
+  V\sim\frac{eV}{C} \quad;\quad A \sim\frac{C}{s}
+\end{equation}
+Now continuing the equation \eqref{units}
+\begin{equation}
+  \frac{N}{A^2}\frac{eV}{\frac{N}{Am}}\frac{eV}{T}\frac{1}{m^3} \sim
+  \frac{1}{A}\frac{eV^2}{T}\frac{1}{m^2} \sim \frac{s}{C}\frac{eV^2}{T}\frac{1}{m^2} \sim \frac{V\cdot s}{m^2}\frac{eV}{T}\sim eV
+\end{equation}
+So the hyperfine coupling has units of energy as expected. Now, this coupling is usually provided in $MHz$. For instance in Kane's paper:
+\begin{equation}
+  \frac{2\mathcal{A}}{h} = 58MHz = \frac{4\pi\mathcal{A}}{\hbar}
+\end{equation}
+
+Finally!! the discrepancy with the Cohen book that says:
+\begin{equation}
+  \frac{\mathcal{A}\hbar}{2\pi} = 1420MHz
+\end{equation}
+comes from the fact that their spin operators $\vec{I}$ and $\vec{S}$ have eigenvalues $\pm\hbar/2$, so the hyperfine coupling $\mathcal{A}$ should have units of $1/(eVs^2)$ so in the end:
+\begin{equation}
+  \mathcal{A}\vec{I}\vec{S} = \frac{1}{eV\cdot s^2} eV\cdot s eV\cdot s = eV
+\end{equation}

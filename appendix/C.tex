@@ -1,0 +1,34 @@
+\chapter{Effective Exchange Interaction}
+Given a general one-body operator
+\begin{equation}
+  \mathcal{O} = \sum_i\mathcal{O}_i
+\end{equation}
+where $\mathcal{O}_i$ is an operator acting only in the i-th particle, it can be written in second quantization as follows
+\begin{equation}
+  \mathcal{O} = \sum_{m,n}\bra{\psi_m}O_1\ket{\psi_n}\crea{a}{m}\des{a}{n}
+\end{equation}
+
+For the case of the spin operator $S^a$
+
+The field operator for a particle at position $\vec{r}$ can be written as
+\begin{equation}
+  \crea{\Psi}{\sigma}(\vec{r}) =
+  \sum_{k,n}\psi^*_{k,n}(\vec{r})\crea{c}{k,n,\sigma} +
+  \sum_{k,n'}\psi^*_{k,n'}(\vec{r})\crea{v}{k,n',\sigma} +
+  \phi^*_0(\vec{r})\crea{z}{\sigma}
+\end{equation}
+
+where $\sigma$ labels the spin degree of freedom, $k$ labels points in the BZ, $n$ is the band index, for the first term $n$ runs over the bands bellow the Fermi level, while for the second term it run over the conduction bands.
+The last term corresponds to the mid-gap state located around the vacancy/adatom.
+
+The density operator reads
+\begin{equation}
+  \rho(\vec{r})=\sum_\sigma\crea{\Psi}{\sigma}(\vec{r})\des{\Psi}{\sigma}(\vec{r})
+\end{equation}
+so it consists of 9 terms containing quadruples of creation/destruction operators like these
+\begin{equation*}
+  \rho(\vec{r}) \propto
+  \#\crea{c}{}\des{c}{} + \#\crea{c}{}\des{v}{} + \#\crea{c}{}\des{z}{} +
+  \#\crea{v}{}\des{c}{} + \#\crea{v}{}\des{v}{} + \#\crea{v}{}\des{z}{} +
+  \#\crea{z}{}\des{c}{} + \#\crea{z}{}\des{v}{} + \#\crea{z}{}\des{z}{}
+\end{equation*}

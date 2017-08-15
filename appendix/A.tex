@@ -1,0 +1,296 @@
+\chapter{Quantum operations}
+\label{operations}
+Quantum gates are usually represented as matrices. A gate which acts on k qubits is represented by a $2^k\times2^k$ unitary matrix.
+The number of qubits in the input and output of the gate have to be equal. The action of the gate on a specific quantum state is found by multiplying the vector which represents the state by the matrix representing the gate. In the following, the vector representation of a single qubit is:
+\begin{equation}
+  v_0\ket{0} + v_1\ket{1} \rightarrow \left[\begin{array}{c}
+  v_0 \\
+  v_1
+  \end{array}\right]
+\end{equation}
+
+and the vector representation of two qubits is
+\begin{equation}
+  v_{00}\ket{00} + v_{01}\ket{01} + v_{10}\ket{10} + v_{11}\ket{11} \rightarrow
+  \left[\begin{array}{c}
+  v_{00} \\
+  v_{01} \\
+  v_{10} \\
+  v_{11}
+  \end{array}\right]
+\end{equation}
+where $\ket{ab}$ is the basis vector representing a state where the first qubit is in the state $\ket{a}$ and the second qubit in the state $\ket{b}$, usually states as this are also expressed as direct product: $\ket{ab}=\ket{a}\otimes\ket{b}$.
+
+\section{Single Qubit Operations}
+
+\subsection{Hadamard gate}
+The Hadamard gate acts on a single qubit. It maps:
+\begin{equation}
+  \ket{\uaw} \longrightarrow \frac{\ket{\uaw}+\ket{\daw}}{\sqrt{2}} \quad\quad;\quad\quad
+  \ket{\daw} \longrightarrow \frac{\ket{\uaw}-\ket{\daw}}{\sqrt{2}}
+\end{equation}
+which means that a measurement will have equal probabilities to become 1 or 0.
+It represents a rotation of $\pi$ about the axis $(\hat{x}+\hat{z})/ 2$.
+Equivalently, it is the combination of two rotations, $\pi$ about the X-axis followed by $\pi /2$ about the Y-axis. It is represented by the Hadamard matrix:
+\begin{equation}
+  H=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
+  1 & 1 \\
+  1 & -1
+  \end{array}\right)
+\end{equation}
+$H$ is an unitary matrix since $HH^\dagger=\mathbb{I}$ where $\mathbb{I}$ is the identity matrix.
+
+\subsection{Pauli matrices gates}
+Unsurprisingly this family of operators are represented by the Pauli matrices:
+\begin{equation}
+  X = \left(\begin{array}{cc}
+  0 & 1 \\
+  1 & 0
+  \end{array}\right)\quad;\quad
+  Y = \left(\begin{array}{cc}
+  0 & -i \\
+  i & 0
+  \end{array}\right)\quad;\quad
+  Z = \left(\begin{array}{cc}
+  1 & 0 \\
+  0 & -1
+  \end{array}\right)
+\end{equation}
+Notice that these matrices are also unitary $XX^\dagger=YY^\dagger=ZZ^\dagger= \mathbb{I}$ where $\mathbb{I}$ is the identity matrix.
+
+The Pauli-X gate is the quantum equivalent of a NOT gate (with respect to the standard basis of eigenvectors of $S_z$: $\mathcal{B}=\left\{\ket{\uaw},\ket{\daw}\right\}$, and it equates to a rotation of the Bloch sphere around the X-axis by $\pi$ radians. Summarizing, it maps:
+\begin{equation}
+  \ket{\uaw} \longrightarrow \ket{\downarrow} \quad\quad;\quad\quad
+  \ket{\downarrow} \longrightarrow \ket{\uaw}
+\end{equation}
+Due to this nature, it is sometimes called bit-flip.
+
+The Pauli-Y gate corresponds to a rotation around the $Y$ axis of the Bloch sphere by $\pi$ radians. It maps the states:
+\begin{equation}
+  \ket{\uaw} \longrightarrow i\ket{\downarrow} \quad\quad;\quad\quad
+  \ket{\downarrow} \longrightarrow -i\ket{\uaw}
+\end{equation}
+
+Analogously the Pauli-Z gate describes a rotation around the Z-axis of the Bloch sphere by $\pi$ radians. Thus, it is a special case of a phase shift gate (explained later) with $\theta=\pi$. It leaves the basis state $\ket{\uaw}$ unchanged but modifies the basis state $\ket{\downarrow}$:
+\begin{equation}
+  \ket{\uaw} \longrightarrow \ket{\uaw} \quad\quad;\quad\quad
+  \ket{\downarrow} \longrightarrow -\ket{\downarrow}
+\end{equation}
+Because of this behavior, it is sometimes called phase-flip.
+
+\subsection{$\sqrt{\text{NOT}}$ gate}
+This gate is called like this because $\sqrt{\text{NOT}}\sqrt{\text{NOT}}=\text{NOT}=X$. It is represented by the following matrix:
+\begin{equation}
+  \sqrt{\text{NOT}} = \frac{1}{2}\left(\begin{array}{cc}
+  1+i & 1-i \\
+  1-i & 1+i
+  \end{array}\right)
+\end{equation}
+This gate is also unitary: $\sqrt{\text{NOT}}\sqrt{\text{NOT}}^{\dagger}=\mathbb{I}$
+
+\subsection{Phase-Shift gates}
+This is a family of single-qubit gates that leave the basis state $\ket{\uaw}$ unchanged but modifies the state $\ket{\downarrow}$:
+\begin{equation}
+  \ket{\uaw} \longrightarrow \ket{\uaw} \quad\quad;\quad\quad
+  \ket{\downarrow} \longrightarrow e^{i\phi}\ket{\downarrow}
+\end{equation}
+The probability of measuring a $\ket{\uaw}$ or $\ket{\downarrow}$ is unchanged after applying this gate, however it modifies the phase of the quantum state. This is equivalent to tracing a horizontal circle (a line of latitude) on the Bloch sphere by $\phi$ radians.
+\begin{equation}
+  R_{\phi} = \left(\begin{array}{cc}
+  1 & 0 \\
+  0 & e^{i\phi}
+  \end{array}\right)
+\end{equation}
+For the special case of $\phi = \pi$ this gate is the same as the Pauli-Z gate.
+
+\section{Two Qubits operations}
+We will use simple arrows ($\uaw$, $\downarrow$) to designate the first spin and double arrows ($\Uaw$, $\Daw$) to designate the second one.
+For describing the state of both qubits we will use the basis \eqref{basis}
+
+
+\subsection{Swap gate}
+The swap gate, as expected, swaps the states two qubits. It is represented by the matrix:
+\begin{equation}
+  \text{SWAP} = \left(\begin{array}{cccc}
+  1 & 0 & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 1
+  \end{array}\right)
+\end{equation}
+Basically it maps the basis states as follows:
+\begin{equation}
+  \begin{split}
+    \ket{\uaw\Uaw} \longrightarrow \ket{\uaw\Uaw}\\
+    \ket{\uaw\Daw} \longrightarrow \ket{\downarrow\Uaw}\\
+    \ket{\downarrow\Uaw} \longrightarrow \ket{\uaw\Daw}\\
+    \ket{\downarrow\Daw} \longrightarrow \ket{\downarrow\Daw}
+  \end{split}
+\end{equation}
+
+
+
+\subsection{$\sqrt{\text{SWAP}}$ gate}
+This is an important gate since it is universal in the sense that any quantum many-qubit gate can be constructed from only $\sqrt{\text{SWAP}}$ and single-qubit gates. As expected $\sqrt{\text{SWAP}}\sqrt{\text{SWAP}}=\text{SWAP}$. Hence, the matrix representing this gate is:
+\begin{equation}
+  \sqrt{\text{SWAP}} = \left(\begin{array}{cccc}
+  1 & 0 & 0 & 0 \\
+  0 & \frac{1}{2}(1+i) & \frac{1}{2}(1-i) & 0 \\
+  0 & \frac{1}{2}(1-i) & \frac{1}{2}(1+i) & 0 \\
+  0 & 0 & 0 & 1
+  \end{array}\right)
+\end{equation}
+
+\section{Controlled gates}
+Controlled gates act on 2 or more qubits, where one or more qubits act as a control for some operation.
+\subsection{CNOT gate}
+The controlled NOT gate (or CNOT) acts on 2 qubits, and performs the NOT operation on the second qubit only when the first qubit is $\ket{\downarrow}$, and otherwise it leaves it unchanged. It is represented by the matrix
+\begin{equation}
+  \text{CNOT} = \left(\begin{array}{cccc}
+  1 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 1 \\
+  0 & 0 & 1 & 0
+  \end{array}\right)
+\end{equation}
+
+\subsection{General controlled gate}
+More generally if $U$ is a gate that operates on single qubits with matrix representation
+\begin{equation}
+  U = \left(\begin{array}{cc}
+  u_{00} & u_{01} \\
+  u_{10} & u_{11}
+  \end{array}\right)
+\end{equation}
+We define the controlled-U gate as a gate that operates on the second qubit only when the state of the first qubit is $\ket{\downarrow}$. This allows the use of one of the qubis as control. It maps the basis states as follows.
+\begin{equation}
+  \begin{split}
+    &\ket{00}\rightarrow\ket{00}\\
+    &\ket{01}\rightarrow\ket{01}\\
+    &\ket{10}\rightarrow\ket{1}\otimes U\ket{0}=\ket{1}\otimes \left(u_{00}\ket{0}+u_{10}\ket{1}\right)\\
+    &\ket{11}\rightarrow\ket{1}\otimes U\ket{1}=\ket{1}\otimes \left(u_{01}\ket{0}+u_{11}\ket{1}\right)
+  \end{split}
+\end{equation}
+The matrix representing the controlled U is
+\begin{equation}
+  \text{C-U} = \left(\begin{array}{cccc}
+  1 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & u_{00} & u_{01} \\
+  0 & 0 & u_{10} & u_{11}
+  \end{array}\right)
+\end{equation}
+
+For the specific case where $U=X$ we would recover the CNOT gate.
+
+
+\section{Other relevant gates}
+For the proposes of quantum computation, the 3-qubit gates are also important, for the sake of completeness  we review the two main gates of this kind. When dealing with 3-qubit states we will expand our basis as follows:
+\begin{equation}
+  \mathcal{B}'=\left\{\ket{\uaw\Uaw\tilde{\Uaw}},
+                     \ket{\uaw\Uaw\tilde{\Daw}},
+                     \ket{\uaw\Daw\tilde{\Uaw}},
+                     \ket{\uaw\Daw\tilde{\Daw}},
+                     \ket{\downarrow\Uaw\tilde{\Uaw}},
+                     \ket{\downarrow\Uaw\tilde{\Daw}},
+                     \ket{\downarrow\Daw\tilde{\Uaw}},
+                     \ket{\downarrow\Daw\tilde{\Daw}}
+              \right\}
+\end{equation}
+For the sake of simplicity we will use $0$ ($1$) to denote the up (down) state, and its position in the ket to specify the qubit, with this notation the basis would be:
+\begin{equation}
+  \mathcal{B}=\left\{\ket{000},\ket{001},\ket{010},\ket{011},
+                     \ket{100},\ket{101},\ket{110},\ket{111}\right\}
+\end{equation}
+
+\subsection{Toffoli gate}
+The Toffoli gate is a 3-qubit controlled gate that could be defined as a CCNOT gate. This gate is also an universal gate for classical computation.
+
+If the first two bits are in the state $\ket{\downarrow}$, it applies a Pauli-X on the third bit, else it does nothing. Since it is the quantum analog of a classical gate, it is completely specified by its truth table.
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{rrr|rrr}
+% \hline
+\multicolumn{ 3}{c|}{Input} & \multicolumn{ 3}{c}{Output} \\ \hline
+0 & 0 & 0 & 0 & 0 & 0 \\ %\hline
+0 & 0 & 1 & 0 & 0 & 1 \\ %\hline
+0 & 1 & 0 & 0 & 1 & 0 \\ %\hline
+0 & 1 & 1 & 0 & 1 & 1 \\ %\hline
+1 & 0 & 0 & 1 & 0 & 0 \\ %\hline
+1 & 0 & 1 & 1 & 0 & 1 \\ %\hline
+1 & 1 & 0 & 1 & 1 & 1 \\ %\hline
+1 & 1 & 1 & 1 & 1 & 0 \\ %\hline
+\end{tabular}
+\end{center}
+\vspace{-15pt}\caption{Truth table for the Toffoli gate}
+\end{table}
+Its matrix representation is as follows
+\begin{equation}
+  \text{Toffoli} = \left(\begin{array}{cccccccc}
+  1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+  \end{array}\right)
+\end{equation}
+
+It can be also described as the gate which maps:
+\begin{equation}
+  \ket{a,b,c}\longrightarrow\ket{a,b,c\otimes ab}
+\end{equation}
+Here the $\otimes$ symbol denotes the NOT operator, hence it means that the $c$ bit is NOTed only if $a$ and $b$ are in the state 1
+
+ \subsection{Fredkin gate}
+ The Fredkin gate is also known as the CSWAP gate, this is, a controlled swap gate. It is also universal for classical computation. As with the Toffoli gate it has the useful property that the numbers of 0s and 1s are conserved throughout.
+ \begin{table}[h!]
+ \begin{center}
+ \begin{tabular}{rrr|rrr}
+ % \hline
+ \multicolumn{ 3}{c|}{Input} & \multicolumn{ 3}{c}{Output} \\ \hline
+ $C$ & $I_1$ & $I_2$ & $C$ & $O_1$ & $O_2$ \\ \hline
+ 0 & 0 & 0 & 0 & 0 & 0 \\ %\hline
+ 0 & 0 & 1 & 0 & 0 & 1 \\ %\hline
+ 0 & 1 & 0 & 0 & 1 & 0 \\ %\hline
+ 0 & 1 & 1 & 0 & 1 & 1 \\ %\hline
+ 1 & 0 & 0 & 1 & 0 & 0 \\ %\hline
+ 1 & 0 & 1 & 1 & 1 & 0 \\ %\hline
+ 1 & 1 & 0 & 1 & 0 & 1 \\ %\hline
+ 1 & 1 & 1 & 1 & 1 & 1 \\ %\hline
+ \end{tabular}
+ \end{center}
+ \vspace{-15pt}\caption{Truth table for the Fredkin gate}
+ \end{table}
+ Its matrix representation is as follows
+ \begin{equation}
+   \text{Fredkin} = \left(\begin{array}{cccccccc}
+   1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+   0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+   0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+   0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+   0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+   0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+   0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+   0 & 0 & 0 & 0 & 0 & 0 & 0 & 1
+   \end{array}\right)
+ \end{equation}
+
+\section{Universal quantum gates}
+% Informally, a set of universal quantum gates is any set of gates to which any operation possible on a quantum computer can be reduced, that is, any other unitary operation can be expressed as a finite sequence of gates from the set. Technically, this is impossible since the number of possible quantum gates is uncountable, whereas the number of finite sequences from a finite set is countable. To solve this problem, we only require that any quantum operation can be approximated by a sequence of gates from this finite set. Moreover, for unitaries on a constant number of qubits, the Solovay-Kitaev theorem guarantees that this can be done efficiently.
+%
+One simple set of two-qubit universal quantum gates is the Hadamard gate ($H$), the$\pi/8$ gate $R(\pi/4)$, and the controlled NOT gate. This means that we can perform any possible operation on a quantum computer by performing a finite sequence of these gates.
+
+This is not strictly true, but close enough (Solovay-Kitaev theorem) \red{UNDERSTAND}
+%
+% A single-gate set of universal quantum gates can also be formulated using the three-qubit Deutsch gate $D(\theta)$, which performs the transformation
+% \begin{equation}
+%   \ket{a,b,c}\rightarrow\left\{\begin{array}{ll}
+%   icos(\theta)\ket{a,b,c}+sin(\theta)\ket{a,b,1-c} & \quad\text{for} a=b=1\\
+%   \ket{a,b,c}  & \quad\text{otherwhise}
+%   \end{array}\right.
+% \end{equation}
+%
+% The universal classical logic gate, the Toffoli gate, is reducible to the Deutsch gate, $D(\frac{\pi}{2})$, thus showing that all classical logic operations can be performed on a universal quantum computer.

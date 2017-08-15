@@ -1,0 +1,162 @@
+\documentclass[openright,fontsize=11pt,a4paper,footinclude=true,
+               numbers=noenddot,headinclude=true]{scrreprt}
+
+%~~~~ Encoding for this file
+\usepackage[utf8]{inputenc}
+
+%~~~~ classicthesis package
+\usepackage[linedheaders,parts,dottedtoc,pdfspacing,
+            eulerchapternumbers]{classicthesis}
+
+%~~~~ Page numbering
+% \deftripstyle{pgnumbottomcenter}{}{}{}{}{\pagemark{}}{}
+% \pagestyle{pgnumbottomcenter}
+% \renewcommand{\chapterpagestyle}{pgnumbottomcenter}
+
+
+%~~~~ Normal math font
+\usepackage{lmodern}
+
+
+%~~~~ Math stuff
+\usepackage{xcolor}
+\usepackage{amsmath}
+\numberwithin{equation}{chapter}
+\usepackage{amssymb,amsthm}
+
+
+%~~~~ HyperLinks
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue}
+
+
+%~~~~ Figures and Captions
+\usepackage{subfig}
+\usepackage{graphicx}  %[pdftex]
+\setkeys{Gin}{width=0.7\textwidth}
+\usepackage{caption}
+\captionsetup{font=small,width=0.8\textwidth,justification=justified,format=plain}
+
+
+%~~~~ Manage FloatBarriers and stuff
+\usepackage{placeins}
+
+
+%~~~~ Index depth
+\setcounter{tocdepth}{3}  % For debugging. Later ---> \setcounter{tocdepth}{2}
+
+
+%~~~~~~~~ Acronyms ~~~~~~~~
+\usepackage[printonlyused]{acronym}
+\usepackage{etoolbox}
+%~~~~ Repeat at the beginning of each chapter
+\preto\chapter\acresetall
+
+%~~~~ Remove color of hyperlink for acronym
+\makeatletter
+\AtBeginDocument{\renewcommand*{\AC@hyperlink}[2]{%
+    \begingroup
+      \hypersetup{hidelinks}%
+      \hyperlink{#1}{#2}%
+    \endgroup
+  }}
+\makeatother
+
+
+%~~~~ Units
+\usepackage{siunitx}
+
+
+%~~~~~~~~~~~~~~~ COMANDOS PROPIOS ~~~~~~~~~~~~~~%
+\newcommand{\mean}[1]{\langle#1\rangle}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newcommand{\braket}[2]{\langle#1|#2\rangle}
+\newcommand{\crea}[2]{#1^{\dagger}_{#2}}
+\newcommand{\des}[2]{#1_{#2}}
+\newcommand{\grad}[1]{\vec{\nabla}#1}
+\newcommand{\diver}[1]{\vec{\nabla}\vec{#1}}
+\newcommand{\rotac}[1]{\vec{\nabla}\times#1}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\Tr}[1]{Tr\left(#1\right)}
+%~~~~~~~ Shortcuts ~~~~~~~
+\def\uaw{\uparrow}
+\def\daw{\downarrow}
+\def\Uaw{\Uparrow}
+\def\Daw{\Downarrow}
+%~~~~~~~ Renew Commands ~~~~~~~
+\renewcommand{\figurename}{\footnotesize{\textsc{Figure}}}
+\renewcommand{\Im}[1]{\operatorname{\mathbb{I}m}\left[#1\right]}
+\renewcommand{\Re}[1]{\operatorname{\mathbb{R}e}\left[#1\right]}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{document}
+%~~~~~~~~ Cover ~~~~~~~~
+% Missing
+
+% %~~~~~~~~ Agradecimientos ~~~~~~~~
+% \input{agradecimientos.tex}
+
+%~~~~~~~~ Index ~~~~~~~~
+\thispagestyle{empty}
+\pagenumbering{gobble}
+\tableofcontents
+\clearpage
+
+%~~~~~~~~ Acronyms ~~~~~~~~
+\thispagestyle{empty}
+\chapter*{Acronyms}
+\pagenumbering{gobble}
+\input{acro_list}
+\clearpage
+
+%~~~~~~~~ Start page counting
+\pagenumbering{arabic}
+
+
+%~~~~~~~~ Chapter ~~~~~~~~
+% Introduction
+\input{chapter01/chapter1.tex}
+
+%~~~~~~~~ Chapter ~~~~~~~~
+% Quantum computing
+\input{chapter02/chapter2.tex}
+
+%~~~~~~~~ Chapter ~~~~~~~~
+% Current experimental status
+\input{chapter03/chapter3.tex}
+
+%~~~~~~~~ Chapter ~~~~~~~~
+% Graphene
+\input{chapter04/chapter4.tex}
+
+%~~~~~~~~ Chapter ~~~~~~~~
+% Hydrogenated Graphene
+\input{chapter05/chapter5.tex}
+
+%~~~~~~~~ Chapter ~~~~~~~~
+% A Graphene based Quantum Computer
+\input{chapter06/chapter6.tex}
+
+%~~~~~~~~ Chapter ~~~~~~~~
+% Conclusions
+\input{chapter07/chapter7.tex}
+
+%~~~~~~~~ Appendices ~~~~~~~~
+\appendix
+% Quantum Gates
+\input{appendix/A.tex}
+% Units of the Hyperfine coupling
+\input{appendix/B.tex}
+% Effective exchange interaction
+\input{appendix/C.tex}
+
+%~~~~~~~~ Bibliography ~~~~~~~~
+\bibliographystyle{ieeetr}
+\bibliography{all_bib}
+
+\end{document}

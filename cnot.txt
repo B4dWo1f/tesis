@@ -1,0 +1,128 @@
+
+% \subsection{On the CNOT gate}
+% \red{REVIEW NOTATION}
+%
+% The basis \eqref{basis} can be expressed in matricial form as follows
+% \begin{equation}
+%   \ket{\uaw\Uaw}=\left[\begin{array}{c}
+%   1\\
+%   0\\
+%   0\\
+%   0
+%   \end{array}\right]\quad;\quad
+% \ket{\uaw\Daw}=\left[\begin{array}{c}
+%   0\\
+%   1\\
+%   0\\
+%   0
+%   \end{array}\right]\quad;\quad
+% \ket{\downarrow\Uaw}=\left[\begin{array}{c}
+%   0\\
+%   0\\
+%   1\\
+%   0
+%   \end{array}\right]\quad;\quad
+% \ket{\downarrow\Daw}=\left[\begin{array}{c}
+%   0\\
+%   0\\
+%   0\\
+%   1
+%   \end{array}\right]
+% \end{equation}
+%
+% Now, we can realize that the CNOT gate acts as follows:
+% \begin{equation}
+%   \text{CNOT}\ket{\uaw\Uaw} = \ket{\uaw\Uaw} \quad\quad;\quad\quad
+%   \text{CNOT}\ket{\uaw\Daw} = \ket{\uaw\Daw}
+% \label{explicit1}
+% \end{equation}
+% \begin{equation}
+%   \text{CNOT}\ket{\downarrow\Uaw} = \ket{\downarrow\Daw} \quad\quad;\quad\quad
+%   \text{CNOT}\ket{\downarrow\Daw} = \ket{\downarrow\Uaw}
+% \label{explicit2}
+% \end{equation}
+% For the sake of notation, it is useful to remember that $\ket{\uaw\Uaw}=\ket{\uaw}\otimes\ket{\Uaw}$. In general any of the states of the basis \eqref{basis} can be expressed as the direct product of the states of each of the qubits: $\ket{\phi_i}=\ket{x}\otimes\ket{y}$.
+%
+% Notice that the CNOT acts on the second qubit as a classical XOR (symbol $\oplus$) controlled by the first qubit.
+% This is usually expressed as follows:
+% \begin{equation}
+%   \begin{array}{lcl}
+%     \ket{x} & \longrightarrow & \ket{x} \\
+%     \ket{y} & \longrightarrow & \ket{x\oplus y}
+%   \end{array}
+% \label{NOTxor}
+% \end{equation}
+% where $\ket{x}$ refers to the state of the first qubit and $\ket{y}$ refers to the state of the second qubit.
+% Let's make explicit one operation as example
+% \begin{equation}
+%    \text{CNOT}\ket{\daw\Daw} =
+%    \left(\begin{array}{cccc}
+%    1 & 0 & 0 & 0 \\
+%    0 & 1 & 0 & 0 \\
+%    0 & 0 & 0 & 1 \\
+%    0 & 0 & 1 & 0
+%    \end{array}\right)
+%   \left[\begin{array}{c}
+%     0\\
+%     0\\
+%     0\\
+%     1
+%     \end{array}\right] =
+%   \left[\begin{array}{c}
+%     0\\
+%     0\\
+%     1\\
+%     0
+%    \end{array}\right] = \ket{\daw\Uaw}
+%  \end{equation}
+% In terms of the classical digital XOR gate:
+%  \begin{equation}
+%   \ket{\daw\Daw} =\left[\begin{array}{c}
+%     0\\
+%     0\\
+%     0\\
+%     1
+%     \end{array}\right]\Rightarrow
+%   \left\{\begin{array}{c}
+%     \ket{x} = \downarrow =1\\
+%     \\
+%     \ket{y} = \Daw =1
+%   \end{array}\right.
+%    \quad\quad;\quad\quad
+%   \left.\begin{array}{l}
+%     \ket{x} = 1 = \daw \\
+%     \ket{x\oplus y} = 1\oplus1 = 0 = \Uaw
+%   \end{array}\right\}=\left[\begin{array}{c}
+%     0\\
+%     0\\
+%     1\\
+%     0
+%   \end{array}\right]=\ket{\daw\Uaw}
+% \end{equation}
+% where we have used the expression \eqref{NOTxor} to calculate the final state.
+% Notice that  the CNOT gate acts as an entangler/detangler, what is a very useful property. Let's make this property apparent using an example.  We start by applying the Hadamard operator to the first qubit of a 2-qubit state:
+% \begin{equation}
+%   H_1 \left(\ket{\daw}\otimes\ket{\Daw}\right) =
+%   \left(\frac{\ket{\uaw}-\ket{\daw}}{\sqrt{2}}\right)\otimes
+%   \ket{\Daw} =
+%   \frac{\ket{\uaw\Daw}-\ket{\daw\Daw}}{\sqrt{2}} = \ket{\psi}
+% \end{equation}
+%
+%  This state $\ket{\psi}$ is \textbf{not} in an entangled state. The first qubit is in a well defined state, $-\sigma_x$), while the second qubit is in the $+\sigma_z$ state\footnote{by this we mean that the first qubit is in a state such that $\sigma_x\ket{\phi}=-\ket{\phi}$, being $\sigma_i$ the corresponding Pauli matrices, and analogously for the $+\sigma_z$ state.}.
+%  We could measure the first qubit in the $X$ direction and it would not affect the second qubit, and we could measure the second qubit in the $Z$ direction without affecting the frist one.
+%
+%  Let's now run the state $\ket{\psi}$ through a CNOT gate, we will need to use equations \eqref{explicit1} and \eqref{explicit2}
+%  \begin{equation}
+%   \text{CNOT}\ket{\psi}=\frac{\ket{\uaw\Daw}-\ket{\daw\Uaw}}{\sqrt{2}} = \ket{\psi'}
+%  \end{equation}
+% This is an entangled singlet, what means that we cannot measure one qubit without affecting the other.
+%
+% If we run this state again through the CNOT gate we recover the original detangled state
+% \begin{equation}
+%   \text{CNOT}\ket{\psi'} = \text{CNOT}^2\ket{\psi} = \frac{\ket{\uaw\Daw}-\ket{\daw\Daw}}{\sqrt{2}} =
+%   \ket{\psi}
+% \end{equation}
+%
+% So we can see the CNOT gate as a entangler/detangler.
+
+
