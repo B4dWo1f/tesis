@@ -1,2 +1,29 @@
-\chapter{Conclusions}
-Stuff
+\chapter{A Graphene Based Quantum Computer}
+Spin lifetime and other stuff
+
+\section{Spin Lifetime}
+We are interested in evaluating the lifetime...
+
+We consider a small sub-system, $\mathcal{A}$, interacting with a reservoir $\mathcal{R}$. The Hamiltonian of the complete system is
+\begin{equation}
+  H = H_{\mathcal{A}} + H_{\mathcal{R}} + V
+\end{equation}
+where $H_{\mathcal{A}}$ and $H_{\mathcal{R}}$ are the sub-system and reservoir hamiltonian respectively , and $V$ is the interaction between them.
+
+The density operator, $\rho$, for the complete system ($\mathcal{A} + \mathcal{R}$) satisfies the evolution
+\begin{equation}
+  \partial_t \rho(t) = \frac{1}{i\hbar}\left[H,\rho(t)\right]
+\end{equation}
+or, in the interaction representation:
+\begin{equation}
+  \partial_t \tilde{\rho}(t) =
+  \frac{1}{i\hbar}\left[\tilde{V}(t),\tilde{\rho}(t)\right]
+\end{equation}
+with
+\begin{equation}
+  \tilde{\rho}(t) = e^{i(H_A+H_R)t/\hbar} \rho(t) e^{-i(H_A+H_R)t/\hbar}
+\end{equation}
+
+
+
+\section{Read-Out/Other processes}

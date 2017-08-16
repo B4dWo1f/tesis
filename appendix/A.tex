@@ -21,6 +21,20 @@ and the vector representation of two qubits is
 \end{equation}
 where $\ket{ab}$ is the basis vector representing a state where the first qubit is in the state $\ket{a}$ and the second qubit in the state $\ket{b}$, usually states as this are also expressed as direct product: $\ket{ab}=\ket{a}\otimes\ket{b}$.
 
+When dealing with 1 Qubit operations the used basis will be:
+\begin{equation}
+  \mathcal{B} = \left\{\ket{\uaw},\ket{\daw}\right\}
+\label{basis1}
+\end{equation}
+
+For 2 qubit operations the basis will be:
+\begin{equation}  %XXX Check order
+  \mathcal{B} = \left\{\ket{\uaw,\Uaw},\ket{\uaw,\Daw},
+                       \ket{\daw,\Uaw},\ket{\daw,\Daw}\right\}
+\label{basis2}
+\end{equation}
+
+
 \section{Single Qubit Operations}
 
 \subsection{Hadamard gate}
@@ -105,7 +119,7 @@ For the special case of $\phi = \pi$ this gate is the same as the Pauli-Z gate.
 
 \section{Two Qubits operations}
 We will use simple arrows ($\uaw$, $\downarrow$) to designate the first spin and double arrows ($\Uaw$, $\Daw$) to designate the second one.
-For describing the state of both qubits we will use the basis \eqref{basis}
+For describing the state of both qubits we will use the basis \eqref{basis2}
 
 
 \subsection{Swap gate}
