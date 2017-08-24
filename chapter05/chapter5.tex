@@ -1,11 +1,11 @@
 \chapter{Hydrogenated Graphene}
-When a Hydrogen adatom is deposited on graphene its $s$ orbital and the $p_z$ orbital from the Carbon below hybridize forming a \ac{bab} pair of states. The effective hopping\footnote{combination of $V_{sp\sigma}\sim -7eV$ (main contribution) and $V_{ss\sigma}\sim 8eV$.} between the $H$ and the $C$ is around $t\simeq12eV$, so in the simplest possible model of a \ac{bab} pair we could expect that the resulting levels are far away from the low energy region as shown in figure \ref{bab}. If we look at the band structure of graphene (figure \ref{Gbands}) we can see that close to the \ac{bab} energies some sigma states appear.
+When a Hydrogen adatom is deposited on graphene its $s$ orbital and the $p_z$ orbital from the Carbon below hybridize forming a \ac{bab} pair of states. The effective hopping\footnote{combination of $V_{sp\sigma}\sim\SI{-7}{\eV}$ (main contribution) and $V_{ss\sigma}\sim\SI{8}{\eV}$.} between the $H$ and the $C$ is around $t\simeq\SI{12}{\eV}$, so in the simplest possible model of a \ac{bab} pair we could expect that the resulting levels are far away from the low energy region as shown in figure \ref{bab}. If we look at the band structure of graphene (figure \ref{Gbands}) we can see that close to the \ac{bab} energies some sigma states appear.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
 \includegraphics{chapter05/figures/bonding_antibonding.png}
 % \vspace{-5pt}
-\caption{Bonding-antibonding pair of states for a $s$ and a $p_z$ orbital with a hopping of $t\sim 12eV$. Notice that the resulting states lie far above (and bellow) from the Fermi energy, $E_f=0$.}
+\caption{Bonding-antibonding pair of states for a $s$ and a $p_z$ orbital with a hopping of $t\sim\SI{12}{\eV}$. Notice that the resulting states lie far above (and bellow) from the Fermi energy, $E_f=0$.}
 \label{bab}
 \end{figure}
 \FloatBarrier
@@ -48,7 +48,7 @@ We will use hexagonal armchair islands since their spectrum is always gapped and
 \centering
 \includegraphics{chapter05/figures/espectro.png}
 \vspace{-5pt}
-\caption{$a)$ energy spectrum for a pristine island and an island with a vacancy, the width of the lines is proportional to the degeneracy of each state. $b)$ Local Density of States (lDOS) of an armchair graphene island with a vacancy depicted by the white dot at $E=0$.}
+\caption{$a)$ energy spectrum for a pristine island and an island with a vacancy, the width of the lines is proportional to the degeneracy of each state. $b)$ \ac{lDOS} of an armchair graphene island with a vacancy depicted by the white dot at $E=0$.}
 \label{spectrum1}
 \end{figure}
 \FloatBarrier
@@ -248,7 +248,7 @@ periodic array.
 
 
 \section{Single vacancy limit}
-As we have seen, the limit of a single vacancy is quite complicated since graphene presents zero density of states at the Fermi energy (like an insulator) yet it has a finite density of states at infinitesimally close energies (like a metal). In any case, either if we consider a 0-D system, or a periodic defected unit cell, the system will always present a gap\footnote{for some specific geometries this is not exactly true, but any interaction will open a gap, so the zero energy states present in these cases are not robust at all.}, and will not in fact be the proper model for one single adatom in graphene.\\
+As we have seen, the limit of a single vacancy is quite complicated since graphene presents zero \ac{dos} at the Fermi energy (like an insulator) yet it has a finite \ac{dos} at infinitesimally close energies (like a metal). In any case, either if we consider a 0-D system, or a periodic defected unit cell, the system will always present a gap\footnote{for some specific geometries this is not exactly true, but any interaction will open a gap, so the zero energy states present in these cases are not robust at all.}, and will not in fact be the proper model for one single adatom in graphene.\\
 If we want to address the problem of \textbf{a single defect in infinite pristine graphene} we need a different set of tools.
 
 \subsection{Embedding technique}
@@ -322,7 +322,7 @@ For the sake of notation we will drop the tilde and specify, when needed if the 
 
 Equipped with this tool we proceed now to study the physical properties of a single defect on a pristine environment. We will describe graphene as a honeycomb lattice with only one orbital per site as justified in section~\ref{ch:graphene}. A hydrogen adatom in this framework appears as the effective removal of one of the sites in the lattice.
 
-Using equations \eqref{self-energy} and \eqref{green} we calculate the \ac{dos} of an infinite sheet of graphene with a single vacancy. The local density of states can be calculated as
+Using equations \eqref{self-energy} and \eqref{green} we calculate the \ac{dos} of an infinite sheet of graphene with a single vacancy. The \ac{ldos} can be calculated as
 \begin{equation}
 \rho_{i}(E) = -\frac{1}{\pi}\Im{G_{i,i}(E)} \quad\quad;\quad\quad
 \rho(E) = -\frac{1}{\pi}\Im{Tr\left(G(E)\right)}
@@ -335,7 +335,7 @@ where $i$ labels any given atom. For the total \ac{dos} we just need to sum the 
 \centering
 \includegraphics{chapter05/figures/DOSlDOS.pdf}
 \vspace{-5pt}
-\caption{$a)$ Total density of states of a single vacancy in an infinite graphene sheet. A divergence in the density of states appears at $E=0$ when the vacancy is introduced. $b)$ Local Density of States for the zero energy state related to a vacancy in graphene. Side by side we can compare the calculations for two unit cells with different size. The vacancy is depicted as a white circle. As expected the (real) spatial distribution of this state is located in the 3-6 closest atoms to the vacancy (of one sublattice).}
+\caption{$a)$ Total \ac{dos} of a single vacancy in an infinite graphene sheet. A divergence in the \ac{dos} appears at $E=0$ when the vacancy is introduced. $b)$ \ac{ldos} for the zero energy state related to a vacancy in graphene. Side by side we can compare the calculations for two unit cells with different size. The vacancy is depicted as a white circle. As expected the (real) spatial distribution of this state is located in the 3-6 closest atoms to the vacancy (of one sublattice).}
 \label{DOS}
 \vspace{-5pt}
 \end{figure}
@@ -358,7 +358,7 @@ To study the magnetic properties the system we proceed to apply an external in-p
 \end{equation}
 The effect of such a term is expected to rigidly shift to higher energies the spin up channel while lowering the energies of the spin down channel (see Fig.~\ref{magnetization}~(a)).
 
-To calculate the magnetization we just need to compute the difference in the density of states of the spin up and down. The \ac{dos} is calculated using \eqref{eq:DOS}, then integrating the Green's function up to the Fermi Energy and taking the imaginary part.
+To calculate the magnetization we just need to compute the difference in the \ac{dos} of the spin up and down. The \ac{dos} is calculated using \eqref{eq:DOS}, then integrating the Green's function up to the Fermi Energy and taking the imaginary part.
 \begin{equation}
   m = \frac{-1}{\pi}
       \Im{\int^{0}_{-\infty} (G^{\uaw}(E)-G^{\daw}(E))dE}
@@ -508,7 +508,7 @@ As it is well known a MF calculation needs an initial symmetry breaking in order
 % \centering
 % \includegraphics{MF_DOS.png}
 % \vspace{-5pt}
-% \caption{Total DOS after the self-consistent Hubbard calculation. A splitting in the density of states appear as expected. \red{Make prettier plot}}
+% \caption{Total DOS after the self-consistent Hubbard calculation. A splitting in the \ac{dos} appear as expected. \red{Make prettier plot}}
 % \label{MFDOS}
 % \end{figure}
 % \FloatBarrier

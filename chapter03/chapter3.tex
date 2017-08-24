@@ -93,8 +93,9 @@ Since we would have a nuclear spin \textbf{and} an electronic spin, we would hav
 For each of these terms (considered independently) the associated splitting would be of the following order:
 \begin{equation}
   \begin{split}
-    \Delta_e = g_e\mu_e\frac{1}{2} &\simeq 58 \mu eV/T \\
-    \Delta_p = g_p\mu_p\frac{1}{2} &\simeq 8.8\cdot10^{-2}\mu eV/T
+    \Delta_e = g_e\mu_e\frac{1}{2} &\simeq \SI{58}{\micro\eV\per\tesla} \\  %58 \mu eV/T \\
+    \Delta_p = g_p\mu_p\frac{1}{2} &\simeq \SI{8.8e-2}{\micro\eV\per\tesla}
+    % 8.8\cdot10^{-2}\mu eV/T
   \end{split}
 \end{equation}
 Since $g_p\simeq g_e/2000$ the nuclear splitting is expected to be around 3 orders of magnitude smaller than the electronic splitting.
@@ -172,13 +173,12 @@ Finally, we can write the complete Hamiltonian for our nuclear qubit as a combin
 \end{equation}
 First of all, we can make a quick estimation of the order of magnitude of each of these terms:
 \begin{itemize}
-  \item Zeeman for the electron: $g_e\mu_e\simeq -115.9\mu$ $eV/T$
+  \item Zeeman for the electron: $g_e\mu_e\simeq\SI{-115.9}{\micro\eV\per\tesla}$
   % -2\cdot5.79\cdot10^{-5}\simeq-1.16\cdot10^{-4}eV/T$
-  \item Zeeman for the proton: $g_p\mu_p\simeq  0.176\mu$ $eV/T$
+  \item Zeeman for the proton: $g_p\mu_p\simeq\SI{0.176}{\micro\eV\per\tesla}$
   % 5.6\cdot3.15\cdot10^{-8}\simeq1.7\cdot10^{-7}eV/T$
   \item Hyperfine: Assuming
-  $\mathcal{A}=58MHz\Rightarrow\mathcal{A}\simeq
-0.003\mu$ $eV$
+  $\mathcal{A}=58MHz\Rightarrow\mathcal{A}\simeq\SI{0.003}{\micro\eV\per\tesla}$
 % 6.6\cdot10^{-08}eV$
 \end{itemize}
 We are stretching a bit the notation in the Hamiltonian \eqref{1qubit} since each of the terms is expressed in a different basis. Namely, each of the Zeeman terms act only in the electron \textbf{or} proton spin subspace but the hyperfine coupling has to be expressed in a 2-particle basis that have not defined yet.
@@ -307,7 +307,7 @@ To clarify the meaning of this spectrum we make a schematic representation of th
 The states $\ket{\daw\Uaw}$ and $\ket{\uaw\Daw}$ do not in fact appear with weight 1, instead there is a small mixing (less than $0.001\%$).
 
 \red{I think the order of my states is not exactly the same as Morello's. Check}
-Notice that $\delta_1$ and $\delta_2$ will be quite similar ($50eV/T$) and $\delta_3$, $\delta_4$ will also be very similar ($0.05eV/T$). These frequencies correspond to the energy necessary for flipping respectively the electron spin and the nuclear spin.
+Notice that $\delta_1$ and $\delta_2$ will be quite similar ($\SI{50}{\eV\per\tesla}$) and $\delta_3$, $\delta_4$ will also be very similar ($\SI{0.05}{\eV\per\tesla}$). These frequencies correspond to the energy necessary for flipping respectively the electron spin and the nuclear spin.
 
 \red{Nuclear magnetic resonance and stuff}
 
