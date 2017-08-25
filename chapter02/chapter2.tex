@@ -85,13 +85,9 @@ There is no way around it. No matter how we address this problem, classically, w
 
 But quantum computation offers the resources to figure out the nature of the function $f(x)$ with only one evaluation. To understand how this works we just need to define two quantum gates.
 
-
-\subsection{Two quantum gates}
-To show how the Deutsch's problem can be tackled quantum-computationally we will need to understand a 1-qubit gate called the Hadamard gate, and a 2-qubit gate that acts like the (classical) controlled NOT gate.
-
 The description of the gates (and the problem) will be done for a generic qubit with two states $\ket{\uaw}$ and $\ket{\daw}$.
 
-\subsubsection{The Hadamard Gate}
+\subsection{The Hadamard Gate}
 The Hadamard gate acts on a single qubit by mapping the states as follows:
 \begin{equation}
   \ket{\uaw} \longrightarrow \frac{\ket{\uaw}+\ket{\daw}}{\sqrt{2}}
@@ -118,7 +114,7 @@ In this physical representation the Hadamard gate would correspond to switching 
 In other physical implementation this gate would require a different physical process, but its action needs to be the mapping described in \eqref{Hmap}.
 
 
-\subsubsection{The CNOT Gate}
+\subsection{The CNOT Gate}
 The other gate that we need is the CNOT gate. This is a 2-qubit function that flips the second qubit state only if the first qubit is in the state $1$. For describing the state of the two qubits we need an slightly more complex basis:
 \begin{equation}
   \mathcal{B}=
