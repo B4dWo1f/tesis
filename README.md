@@ -40,6 +40,8 @@ In this project I'll develop my PhD thesis (& learn git XD)
 - [ ] Softer intro to single vac limit
 - [ ] KPM Appendix?
 ### Chapter 6
+- [ ] Justify neglecting 2nd neig hopping (2CC dist is 2.42angs, interlayer is 3 angs)
+- [x] Bands-DOS for Graphene Bilayer. Add panel with zoom to K point
 - [ ] Bands-DOS for Graphene Bilayer with correct interlayer, full DOS, pz wg
 - [ ] Effect of electric field for 0-D and infinite
 - [ ] Finish Kondo calculation

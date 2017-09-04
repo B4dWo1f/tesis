@@ -4,17 +4,20 @@ Kane's proposal~\cite{Kane1988}, and all the experimental realizations of it~\ci
 Since graphene is a purely \ac{2dm} its electronic properties are highly tunable by proximity, electric gating or other techniques. First we make a quick review of the properties of graphene bilayer and the effect of an external electric field and then we explore the possibility of the realization of 1 and 2-Qubit operations.
 
 \section{Graphene Bilayer}
-The minimal unit cell for describing a graphene bilayer contains four atoms, disposed as in Fig.~\ref{bilayer}. Since the interlayer distance, around $d = \SI{3.0}{\angstrom}$, is  around three times bigger than the C-C distance\footnote{around $d_{C-C} = \SI{1.4}{\angstrom}$}, it is expected that the interlayer hopping will be smaller, in fact from literature~\cite{KatsnelsonBook} we get that the interlayer hopping $t'\simeq 0.15t_{\pi-\pi}\simeq\SI{0.4}{\eV}$. The effect of the interlayer interaction is to parabolize the linear bands around the $K$ points and double the $p_z$ manifold bands.
+The minimal unit cell for describing a graphene bilayer contains four atoms, disposed as seen in the inset in Fig.~\ref{bilayer}. The lattice vectors describing the Bravais lattice are the same as in the case of monolayer graphene. Since the interlayer distance, around $d \sim \SI{3.0}{\angstrom}$, is  around three times bigger than the C-C distance\footnote{around $d_{C-C} = \SI{1.4}{\angstrom}$}, it is expected that the interlayer hopping will be smaller, in fact from literature~\cite{KatsnelsonBook} we get that the interlayer hopping $t'\simeq 0.15t_{\pi-\pi}\simeq\SI{0.4}{\eV}$. The effect of the interlayer interaction is to ``parabolize'' the linear bands around the $K$ points and double the $p_z$ manifold bands.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
 \includegraphics{chapter06/figures/bilayer_bandDOS.pdf}
 \vspace{-5pt}
-\caption{Band structure and \ac{dos} of graphene bilayer}
+\caption{Band structure and \ac{dos} of bilayer graphene. The red shadowed region shows the contribution of the $p_z$ manifold.}
 \label{bilayer}
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+The $p_z$ bands at the $K$ point are split by an amount proportional to the interlayer hopping
+
+
 The color in the bands in Fig.~\ref{bilayer} show the $p_z$ component of each of the eigenvalues. Notice that in the bilayer the $p_z$ manifold is no longer decoupled from the rest of the orbitals (for instance there is a finite hopping between $p_z$ orbitals from one layer and $s$ orbitals of the other), nevertheless close to the Fermi energy the approximation of considering only $p_z$ orbitals is still justified.
 The general aspect of the \ac{dos} is similar to that of the graphene but it is important to notice that at $E=0$ the \ac{dos} is now finite.
 
@@ -24,9 +27,9 @@ The general aspect of the \ac{dos} is similar to that of the graphene but it is 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
   \centering
-  \includegraphics{chapter06/figures/bilayer_dos_E.png}
-  \vspace{-5pt}
-  \caption{\ac{dos} of a bilayer graphene system in the absence (blue line) and presence (green line) of an electric field $E=0.5$} %XXX UNITS
+  \includegraphics[width=\textwidth]{chapter06/figures/bilayer_elec.pdf}
+  \vspace{-10pt}
+  \caption{\ac{dos} of a bilayer graphene system in the absence (left panel) and presence (right panel) of an electric field $E=\SI{0.5}{\eV}$.} %XXX UNITS
   \label{bi_Efield}
 \end{figure}
 \FloatBarrier
