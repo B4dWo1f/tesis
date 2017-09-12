@@ -1,10 +1,10 @@
 \chapter{Hydrogenated Graphene Bilayer} %A Graphene based Quantum Computer}
 Kane's proposal~\cite{Kane1988}, and all the experimental realizations of it~\cite{Morello2010}, based the control of the Qubits in the manipulation of the electronic states with an electric gate that would modify the electronic cloud around the $^{31}P$ nucleus.
 
-Since graphene is a purely \ac{2dm} its electronic properties are highly tunable by proximity, electric gating or other techniques. First we make a quick review of the properties of graphene bilayer and the effect of an external electric field and then we explore the possibility of the realization of 1 and 2-Qubit operations.
+Since graphene is a purely \ac{2dm} its electronic properties are highly tunable by proximity, electric gating or other techniques. First we make a quick review of the properties of \ac{gb} and the effect of an external electric field and then we explore the possibility of the realization of 1 and 2-Qubit operations.
 
 \section{Graphene Bilayer}
-The minimal unit cell for describing a graphene bilayer contains four atoms, disposed as seen in the inset in Fig.~\ref{bilayer}. The lattice vectors describing the Bravais lattice are the same as in the case of monolayer graphene. Since the interlayer distance, around $d \sim \SI{3.0}{\angstrom}$, is  around three times bigger than the C-C distance\footnote{around $d_{C-C} = \SI{1.4}{\angstrom}$}, it is expected that the interlayer hopping will be smaller, in fact from literature~\cite{KatsnelsonBook} we get that the interlayer hopping $t'\simeq 0.15t_{\pi-\pi}\simeq\SI{0.4}{\eV}$. The effect of the interlayer interaction is to ``parabolize'' the linear bands around the $K$ points and double the $p_z$ manifold bands.
+The minimal unit cell for describing a \ac{gb} contains four atoms, disposed as seen in the inset in Fig.~\ref{bilayer}. The lattice vectors describing the Bravais lattice are the same as in the case of monolayer graphene. Since the interlayer distance, around $d \sim \SI{3.0}{\angstrom}$, is  around three times bigger than the C-C distance\footnote{around $d_{C-C} = \SI{1.4}{\angstrom}$}, it is expected that the interlayer hopping will be smaller, in fact from literature~\cite{KatsnelsonBook} we get that the interlayer hopping $t'\simeq 0.15t_{\pi-\pi}\simeq\SI{0.4}{\eV}$. The effect of the interlayer interaction is to ``parabolize'' the linear bands around the $K$ points and double the $p_z$ manifold bands.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
@@ -17,12 +17,17 @@ The minimal unit cell for describing a graphene bilayer contains four atoms, dis
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 The $p_z$ bands at the $K$ point are split by an amount proportional to the interlayer hopping
 
-
-The color in the bands in Fig.~\ref{bilayer} show the $p_z$ component of each of the eigenvalues. Notice that in the bilayer the $p_z$ manifold is no longer decoupled from the rest of the orbitals (for instance there is a finite hopping between $p_z$ orbitals from one layer and $s$ orbitals of the other), nevertheless close to the Fermi energy the approximation of considering only $p_z$ orbitals is still justified.
+Notice that in the bilayer the $p_z$ manifold is no longer decoupled from the rest of the orbitals (for instance there is a finite hopping between $p_z$ orbitals from one layer and $s$ orbitals of the other), nevertheless close to the Fermi energy the approximation of considering only $p_z$ orbitals is still justified.
 The general aspect of the \ac{dos} is similar to that of the graphene but it is important to notice that at $E=0$ the \ac{dos} is now finite.
 
  \section{Effect of the electric field}
- When an electric field is applied to graphene bilayer it will affect the Hamiltonian as a diagonal term with $\pm E$ value for each layer. Such a term opens a gap in the \ac{dos} as it is shown in figure~\ref{bi_Efield}
+The main effect of an external electric field applied to bilayer graphene is to shift the (on-site) energy of the electrons, we can write such a Hamiltonian term like
+
+\begin{equation}
+  H_{\vec{E}} = \lambda_{\vec{E}}\sum_i \varepsilon_l \crea{c}{i}\des{c}{i}
+\end{equation}
+where $\varepsilon_l=\pm1$ depending on the layer, $l$,  of the atom $i$.
+The effect of such a term in \ac{gb} is just to open a gap close to the Fermi energy as shown in fig~\ref{bi_Efield}.
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
@@ -35,60 +40,61 @@ The general aspect of the \ac{dos} is similar to that of the graphene but it is 
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-Analogously to the discussed scenario of a vacancy in (monolayer) graphene, the introduction of a vacancy also results in the appearance of a ``zero energy state''. In the presence of an external electric field the impurity state will not appear at $E=0$ but shifted in energy as shown in fig.~\ref{dos_bi_dfct}
+% Analogously to the discussed scenario of a vacancy in (monolayer) graphene, the introduction of a vacancy also results in the appearance of a ``zero energy state''. In the presence of an external electric field the impurity state will not appear at $E=0$ but shifted in energy as shown in fig.~\ref{dos_bi_dfct}
 
-%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-\begin{figure}[h!]
-\centering
-\includegraphics{chapter06/figures/bilayer_dos_dfct.png}
-\vspace{-5pt}
-\caption{\ac{dos} of bilayer graphene with (green line) and without (blue line) a vacancy in the presence of an external electric field. The left and right panels have been calculated for electric fields of opposite sign, notice that }
-\label{dos_bi_dfct}
-\end{figure}
-\FloatBarrier
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-
-
-%
-%
-%
-% The position where the adatom is introduced now is important since one of the sublattices of each layer is fully connected to the other layer. All the possibilities for the H chemisorption are depicted in figure\red{FIG}. We will consider only the structure (b).
-%
 % %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 % \begin{figure}[h!]
 % \centering
-% \includegraphics{chapter06/figures/bilayer_H.pdf}
+% \includegraphics{chapter06/figures/bilayer_dos_dfct.png}
 % \vspace{-5pt}
-% \caption{All opssible atomic strucutre for chemisorbed H}
-% \end{figure}
-% %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-%
-%
-%
-% \subsection{Electric control of the hyperfine interaction}
-% Electric control of the hyperfine with the bias in the bilayer.
-% %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-% \begin{figure}[h!]
-% \centering
-% \includegraphics{chapter06/figures/hyperfine.png}
-% \vspace{-5pt}
-% \caption{Hyperfine dependence with the bias voltage.}
+% \caption{\ac{dos} of bilayer graphene with (green line) and without (blue line) a vacancy in the presence of an external electric field. The left and right panels have been calculated for electric fields of opposite sign, notice that }
+% \label{dos_bi_dfct}
 % \end{figure}
 % \FloatBarrier
 % %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-%
-% A similar behavior can be seen from the gap.
-% %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-% \begin{figure}[h!]
-% \centering
-% \includegraphics{chapter06/figures/gap.png}
-% \vspace{-5pt}
-% \caption{Dependence of the gap and the energy of the resonance with the bias voltage.}
-% \end{figure}
-% \FloatBarrier
-% %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-%
-%
+
+\subsection{About the charge neutrality}
+when a bias is applied to \ac{gb} there is the chance that some charge is transferred form one layer to the other\cite{Wang2016a}. To be sure of how relevant this effect is we calculate where the Fermi Energy lies as well as the charge in each layer.
+
+
+
+% % The position where the adatom is introduced now is important since one of the sublattices of each layer is fully connected to the other layer. All the possibilities for the H chemisorption are depicted in figure\red{FIG}. We will consider only the structure (b).
+% %
+% % %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+% % \begin{figure}[h!]
+% % \centering
+% % \includegraphics{chapter06/figures/bilayer_H.pdf}
+% % \vspace{-5pt}
+% % \caption{All opssible atomic strucutre for chemisorbed H}
+% % \end{figure}
+% % %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+% %
+% %
+% %
+% % \subsection{Electric control of the hyperfine interaction}
+% % Electric control of the hyperfine with the bias in the bilayer.
+% % %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+% % \begin{figure}[h!]
+% % \centering
+% % \includegraphics{chapter06/figures/hyperfine.png}
+% % \vspace{-5pt}
+% % \caption{Hyperfine dependence with the bias voltage.}
+% % \end{figure}
+% % \FloatBarrier
+% % %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+% %
+% % A similar behavior can be seen from the gap.
+% % %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+% % \begin{figure}[h!]
+% % \centering
+% % \includegraphics{chapter06/figures/gap.png}
+% % \vspace{-5pt}
+% % \caption{Dependence of the gap and the energy of the resonance with the bias voltage.}
+% % \end{figure}
+% % \FloatBarrier
+% % %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+% %
+% %
 \section{1 Hydrogen adatom}
 \subsection{General considerations} %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 Everything here is done in an armchair island of bilayer graphene, as such, the system is $0$-D, so there is no translational symmetry and no $\vec{k}$ vector can be defined.
@@ -98,7 +104,7 @@ To study these systems we will consider a basis of localized states that could b
   \mathcal{B} = \left\{\phi_1,\phi_2,\dots,\phi_\beta,\dots,\phi_{N_C}\right\}
 \end{equation}
 
-Written in such a basis, the general Hamiltonian and its eigen-vectors, then, will look like
+Written in such a basis, the general Hamiltonian and its eigenvectors, then, will look like
 \begin{equation}
   H = H_t + H_{\lambda_E} \quad\quad;\quad\quad
   H\ket{\psi_\alpha} = E_\alpha\ket{\psi_\alpha} \quad\quad;\quad\quad
