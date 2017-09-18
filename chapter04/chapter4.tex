@@ -11,24 +11,44 @@ Graphene is one of the most studied materials ever. It consists of a two-dimensi
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-Carbon atoms have 6 \acp{el}, in five orvitals. The first two \acp{el} are in the $1s$ level, two more in the $2s$ level and finally another two \acp{el} in the $2p$ levels (Fig.~\ref{graphene_structure}~(e)).
+Unless otherwise stated we will consider that the atomic distance between carbon atoms is $d_{C-C}=a=\SI{1.4}{\angstrom}$ in accordance with literature\cite{KatsnelsonBook}. % TODO more biblio
+As stated previously the honeycomb lattice is not a Bravais lattice. To describe graphene we will use a unit cell of two atoms in positions
+\begin{equation}
+\vec{r}_0 = \tfrac{a}{2}(-1,0,0) \qquad;
+\vec{r}_1 = \tfrac{a}{2}(1,0,0),
+\label{at_pos}
+\end{equation}
+like that of Fig.~\ref{graphene_structure}~(a) which is arranged forming a triangular (Bravais) lattice defined by the vectors:
+\begin{equation}
+\vec{a}_1 = \tfrac{a}{2}\left(3,\sqrt{3},0\right) \qquad;
+\vec{a}_2 = \tfrac{a}{2}\left(3,-\sqrt{3},0\right)
+\label{latt_vec}
+\end{equation}
 
-Since the orbitals $n=1$ are full and far down in energy there is no need to consider them. The $2s$ level is also full, but not so far from the Fermi energy, so we will take a look at its importance.
+Carbon atoms have 6 \acp{el} allocated in five orbitals. The first two \acp{el} are in the $1s$ level, two more in the $2s$ level and finally another two \acp{el} in the $2p$ levels (Fig.~\ref{graphene_structure}~(e)).
 
-For pristine graphene we expect the $p_z$ orbitals to be decoupled from all the other orbitals due to mirror symmetry with respect to the plane of the atoms.
+Since the orbitals $n=1$ are doubly occupied and far down in energy there is no need to consider them. The $2s$ level is also full, but not so far from the Fermi energy, so we will take a look at its importance.
 
-Since we are considering 4 orbitals we will need to specify 10 different hopping parameters\footnote{Hoppings like $t_{s-p_x}$ and $t_{p_x-s}$ are considered to be equal}. The \ac{sk} approximation provides some relations among different hoppings allowing us to reduce the number of hoppings needed.
+The models used are always in the \ac{tb} approximation with a basis of localized hydrogenoid orbitals, nevertheless the number of orbitals involved in the calculation may vary depending of the specifics of each problem.
+
+For the rest of this chapter we will review the characteristics of Graphene considering a 4 orbitals model in a \ac{tb} framework.
+To describe such a system we would normally need to specify 10 different hopping parameters\footnote{Hoppings like $t_{s-p_x}$ and $t_{p_x-s}$ are considered to be equal}, but in the next section we will delve into a well known model able to reduce the number of parameters necessary.
+
+% The \ac{sk} approximation provides some relations among different hoppings allowing us to reduce the number of hoppings needed.
+%
+% For pristine graphene we expect the $p_z$ orbitals to be decoupled from all the other orbitals due to mirror symmetry with respect to the plane of the atoms.
+
 
 
 
 \section{Slater-Koster tight-binding model}
 \label{sec:SK}
-Generally the hopping parameters are an input in any \ac{tb} model, and usually they are calculated by fitting eigenvalues (and eigenfunctions) obtained from \ac{dft} calculations (the eigenfunctions are usually projected to a basis of localized atomic orbitals) or by fitting experimental data.
+Generally the hopping parameters are an input in any \ac{tb} model, and usually they are calculated by fitting eigenvalues (and possibly eigenfunctions) obtained from \ac{dft} calculations (the eigenfunctions are often projected to a basis of localized atomic orbitals) or by fitting experimental data to reproduce gaps, orbital components or other relevant physical properties.
 
 As a system grows complex, more and more parameters are needed to describe it, nevertheless since the number of different orbitals is finite, one could expect that not all the parameters are completely independent from the others.
 
 
-The \ac{sk} approximation takes into account the symmetry of the orbitals to reduce the number of parameters needed. Due to the symmetry of the atomic orbitals it is to be expected that different hoppings could be related. It is easier to see this point with an example.
+The \ac{sk} approximation takes into account the symmetry of the atomic orbitals to reduce the number of parameters needed since some of them should be related by rotations or other operations.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
@@ -39,14 +59,18 @@ The \ac{sk} approximation takes into account the symmetry of the orbitals to red
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-In figure~\ref{complex} we can see that the hoppings $t_{p_{z},p_{x}}$ and $t_{p_{z},p_{y}}$ are in fact related by a rotation of the system, and we could expect that they would be functionally equal.
+This idea is depicted in Fig.~\ref{complex} where we can see that the hoppings $t_{p_{z},p_{x}}$ and $t_{p_{z},p_{y}}$ are in fact equal only rotated one with respect to the other, but we could expect that they are functionally the same.
 If we define the unitary vector $\hat{r} = \vec{r}/|\vec{r}|$ and call its components $l$, $m$, $n$, ($\hat{r}=(l,m,n)$) we can see that
 \begin{equation}
   t_{p_{z},p_{x}} (l,m,n) = t_{p_{z},p_{y}}(m,l,n)
 \end{equation}
 notice that the change in the arguments is equivalent to perform a rotation of the vector $\vec{r}$ of $-\pi/2$ around the $Z$ axis, as shown in Fig.~\ref{complex}.
 
-By doing this kind of transformations we can see that all the ($p-p$) hoppings can be decomposed in just two kinds of bonds depending on the relative orientation of the orbitals. This is illustrated in figure~\ref{bonds}.
+
+Even though  this transformations can be done by ``brute force'', there is a more general approach that allows the decomposition of any arbitrary hopping in a finite set of bond types.
+
+The easiest way to visualize this decomposition is to consider an arbitrary hopping between two given $p$ orbitals, namely two $p_z$ orbitals separated by a random vector $\vec{r}$ as depicted in the right panel of Fig.~\ref{bonds}.
+Such a hopping can be decomposed in two contributions depending on the relative orientation of the orbitals, namely $\pi$-bonds and $\sigma$-bonds.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
@@ -57,19 +81,18 @@ By doing this kind of transformations we can see that all the ($p-p$) hoppings c
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-We can notice that in the case of pristine graphene all the in-plane $p_z$-$p_z$ hoppings will be purely $\pi$ bonds, while the other $s$-$p$ hoppings will be $\sigma$ bonds.\\
-% , where close to the Fermi energy the only involved orbitals are $p_{z}$ and, since all the hoppings are in-plane ($n=0$), all the bonds will be purely $\pi$ bonds, just because of the symmetry of the orbitals.\\
+% TODO somewhere else? % We can notice in Fig.~\ref{bonds} that in the case of pristine graphene all the in-plane $p_z$-$p_z$ hoppings will be purely $\pi$ bonds, while the other $s$-$p$ hoppings will be $\sigma$ bonds.\\
 
 
-In the \ac{sk} approximation the atomic distances are encoded in the magnitude of the bonds, $V_{ss\sigma}$, $V_{sp\sigma}$, $V_{pp\sigma}$, $V_{pp\pi}$ (we will call them simply \ac{sk} parameters for short). The coefficients ($l$, $m$, $n$) in the analytic formulas are the responsible for capturing the symmetries arising both form the orbitals and the atomic structure.\\
+In the \ac{sk} approximation the atomic distances are encoded in the magnitude of the bonds, $V_{ss\sigma}$, $V_{sp\sigma}$, $V_{pp\sigma}$, $V_{pp\pi}$ (we will call them simply \ac{sk} parameters for short). The coefficients ($l$, $m$, $n$) in the analytic formulas (see appendix~\ref{SKhoppings}) are the responsible for capturing the symmetries arising both form the orbitals and the atomic structure.\\
 %XXX Add SK formulas?
 
-This decoupling of magnitude and direction in the hoppings provides a simple model able to capture the effects of geometric deformations and any symmetry (breaking) in the atomic structure. For instance the effect of buckling in graphene is easily captured by this model.\blue{bands, bands with buckling,...}
+This decoupling of magnitude and direction in the hoppings provides a simple model able to capture the effects of geometric deformations, strain and any symmetry (breaking) in the atomic structure. For instance the effect of buckling in graphene is easily captured by this model.\blue{bands, bands with buckling,...}
 
 \red{explain better}
 The effect due to a reduction/increase of the hopping would be included by modifying the \ac{sk} parameters, yet the dependence of this parameters with the interatomic distance is not always easy to calculate.\\
 
-At the end of the day the \ac{sk} approximation results in a reduction of the parameters needed to describe the hoppings in the system. For example, in a system with $s$, $p_x$, $p_y$, $p_z$, $d_{xy}$, $d_{yz}$, $d_{zx}$, $d_{x^{2}-y^{2}}$ and $d_{3z^{2}-r^{2}}$ we would expect 36 parameters to describe all the different hoppings, but within the \ac{sk} approximation we would only need 10 parameters.\\
+At the end of the day the \ac{sk} approximation results in a reduction of the parameters needed to describe the hoppings in the system. For example, in a system with all the $s$, $p$ and $d$ orbitals (9 types of orbitals) we would expect 36 parameters to describe all the different hoppings, but within the \ac{sk} approximation we would only need 10 parameters.\\
 
 
 The main drawback for the \ac{sk} model is to actually obtain the \ac{sk} parameters. In fact it is not guaranteed (at all) that for any given system a set of \ac{sk} parameters should exist.
