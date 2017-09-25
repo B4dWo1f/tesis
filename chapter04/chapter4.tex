@@ -29,7 +29,22 @@ Carbon atoms have 6 \acp{el} allocated in five orbitals. The first two \acp{el} 
 
 Since the orbitals $n=1$ are doubly occupied and far down in energy there is no need to consider them. The $2s$ level is also full, but not so far from the Fermi energy, so we will take a look at its importance.
 
-The models used are always in the \ac{tb} approximation with a basis of localized hydrogenoid orbitals, nevertheless the number of orbitals involved in the calculation may vary depending of the specifics of each problem.
+The models used are always in the \ac{tb} approximation with a basis of localized hydrogenoid orbitals, nevertheless the number of orbitals involved in the calculation may vary depending of the specifics of each problem. The basis for each of the cases are:
+
+\begin{equation}
+  \mathcal{B}_1 = \left\{\ket{\phi^1_{p_z}}, \ket{\phi^2_{p_z}},\dots, \ket{\phi^n_{p_z}}\right\}
+\label{basis1}
+\end{equation}
+
+\begin{equation}
+  \mathcal{B}_4 = \left\{
+  \ket{\phi^1_{s}},\ket{\phi^1_{p_x}},\ket{\phi^1_{p_y}},\ket{\phi^1_{p_z}},
+  \dots,
+  \ket{\phi^n_{s}},\ket{\phi^n_{p_x}},\ket{\phi^n_{p_y}},\ket{\phi^n_{p_z}}
+  \right\}
+\label{basis4}
+\end{equation}
+Where the superscript points out the atom and the subscript shows the corresponding orbital.
 
 For the rest of this chapter we will review the characteristics of Graphene considering a 4 orbitals model in a \ac{tb} framework.
 To describe such a system we would normally need to specify 10 different hopping parameters\footnote{Hoppings like $t_{s-p_x}$ and $t_{p_x-s}$ are considered to be equal}, but in the next section we will delve into a well known model able to reduce the number of parameters necessary.
@@ -115,7 +130,25 @@ Here some bands with \ac{sk}, maybe include bismuth, \ac{bn}, Zeeman, SOC...
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+Figure~\ref{Gbands} show the graphene band structure along the $\Gamma,K,K',\Gamma$ path when 4 orbitals per Carbon atom are used, hence the our basis is \eqref{basis4}. In the \ac{tb} approximation any eigenstate of the Hamiltonian will be expressed as a combination of the states of the basis, the color in the band structure is proportional to the expectation value of the $p_z$ projector operator,$\mathcal{O}_{p_z}$,
+\begin{equation*}
+  \text{color} = \bra{\psi}\mathcal{O}_{p_z}\ket{\psi}
+\end{equation*}
+where
+ \begin{equation*}
+   \ket{\psi} = \sum_i c_i\ket{\phi_i} \qquad
+   \text{for} \quad\ket{\phi_i}\in\mathcal{B}_4
+ \end{equation*}
+
+
+
 \subsection{Low energy regime}
+Notice that the bands close to the Fermi Energy ($E=0$) only have $p_z$ component, this is due to the mirror symmetry of the $p_z$ orbital and the atomic structure of graphene (planar). In fact this decoupling from the rest of the orbitals allows the
+Even in the presence of some interactions that, indeed, mix the $p_z$ manifold with other orbitals, the $p_z$ is still the main component of the the low energy spectra.
+
+An example of such a situation is the graphene bilayer, which be studied in detail in chapter~\ref{ch:bilayer}. In this system the $p_z$ and $s$ orbitals of different layers have a finite hopping, nevertheless when we plot the bands %TODO figure of Gbilayer
+we see that most of the contribution is still $p_z$ ($>98\%$ for realistic values of the hoppings).
+
 
 
 \section{Quantum Spin Hall}

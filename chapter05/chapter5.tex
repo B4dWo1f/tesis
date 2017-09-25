@@ -1,5 +1,6 @@
 \chapter{Hydrogenated Graphene}
-When a Hydrogen adatom is deposited on graphene its $s$ orbital and the $p_z$ orbital from the Carbon below hybridize forming a \ac{bab} pair of states. The effective hopping\footnote{combination of $V_{sp\sigma}\sim\SI{-7}{\eV}$ (main contribution) and $V_{ss\sigma}\sim\SI{8}{\eV}$.} between the $H$ and the $C$ is around $t\simeq\SI{12}{\eV}$, so in the simplest possible model of a \ac{bab} pair we could expect that the resulting levels are far away from the low energy regime as shown in figure \ref{bab}. If we look at the band structure of graphene (figure~\ref{Gbands}) we can see that close to the \ac{bab} energies some sigma states appear.
+\label{ch:H_graphene}
+When a Hydrogen adatom is deposited on graphene its $s$ orbital and the $p_z$ orbital from the Carbon below hybridize forming a \ac{bab} pair of states. The effective hopping\footnote{combination of $V_{sp\sigma}\sim\SI{-7}{\eV}$ (main contribution) and $V_{ss\sigma}\sim\SI{8}{\eV}$.} between the $H$ and the $C$ is around $t\simeq\SI{12}{\eV}$, so in the simplest possible model of a \ac{bab} pair we could expect that the resulting levels are far away from the low energy regime as shown in figure \ref{bab}. If we look at the band structure of graphene (see Fig.~\ref{Gbands})  we can see that close to the \ac{bab} energies there are only $\sigma$-states.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
@@ -10,25 +11,23 @@ When a Hydrogen adatom is deposited on graphene its $s$ orbital and the $p_z$ or
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-Of course there are there are other processes that would complicate this naive (and rather simplistic) picture, but in essence we can expect that the hybridization of the $s$ orbital and the $p_z$ should results in the effective removal of one $p_z$ orbitals in the low energy regime.\\
+As explained in chapter~\ref{ch:graphene}, if we restrict ourselves to the low energy limit (1 orbital per atom), graphene is a bipartite lattice and it is naturally at half filling. According to the Lieb's theorem~\cite{Lieb1989}, then, if there is an imbalance of $N$ atoms in one of the sublattices ($N=N_A-N_B$), $N$ zero-energy states should appear.\\
 
-As explained in chapter~\ref{ch:graphene} if we restrict ourselves to the low energy limit graphene is a bipartite lattice and since it is naturally at half filling, according to the Lieb's theorem~\cite{Lieb1989}, if there is an imbalance the number of atoms in one of the sublattices a zero energy state is expected to appear.\\
+Of course there are there are other processes that would complicate this naive (and rather simplistic) picture, but in essence we can expect that the hybridization of the $s$ orbital and the $p_z$ should results in the effective removal of one $p_z$ orbitals in the low energy regime, and due to the imbalance in the sublattices a state at $E=0$ is expected.\\
 
-This one-orbital model will not be enough to describe the effective hyperfine interaction since it lacks the $H$ $s$ orbital in its description, for this reason we will keep a complementary description using a more complete basis for the system.
-
-When using the whole $n=2$ set of orbitals, namely $s$, $p_x$, $p_y$, $p_z$, the general description does not change heavily, the zero energy state is no longer required to be exactly at $E=0$, but still an in-gap state appears by introducing a H adatom.
+This one-orbital model will not be enough to describe the effective hyperfine interaction since it lacks the $H$ $s$ orbital in its description, for this reason we will keep a complementary description using the 4-orbital basis \eqref{basis4} for the system. In this basis, the general description does not change heavily, the zero energy state is no longer required to be exactly at $E=0$, but still an in-gap state appears by introducing a H adatom as shown in Fig.~\ref{spectrum_1orb_4orb}.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
 \includegraphics{chapter05/figures/spectrum1orb.png}
 \includegraphics{chapter05/figures/spectrum4orb.png}
 \vspace{-5pt}
-\caption{Comparison of the 1 orbital model and the 4 orbital model. Spectrum of a 42 $C$ atoms island with (left) and without (right) H adatom.}
-\label{Label}
+\caption{The upper panel show the spectrum of an armchair island Comparison of the 1 orbital model and the 4 orbital model. Spectrum of a 42 $C$ atoms island with (left) and without (right) H adatom.}
+\label{spectrum_1orb_4orb}
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-Since we are interested for now in the electronic properties at low energy we will only need the $p_z$ orbitals.
+
 
 
 \section{Finite systems}
@@ -86,11 +85,11 @@ As described in sec \ref{sec:hyperfine}, to calculate the effective hyperfine co
 
 
 
-\section{DFT}
+\subsection{DFT}
 The same calculations were made using B3lyp and the results are \red{DFT stuff}\\
 
 
-\section{Results}
+\subsection{Results}
 For smaller islands, where the \ac{dft} calculations are manageable, the results from \ac{tb} and \ac{dft} are comparable as it's shown in figure \red{figure DFT-TB}.
 
 .\\
