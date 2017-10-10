@@ -12,42 +12,51 @@ Classical bits can only take two values, namely 0 or 1, $+$ or $-$, $\uaw$ or $\
 There are many different types of bits. In early computers a bit would be a hole in a cardboard and its states would be the presence or absence of a hole. Later on it would be electrically controlled like an electrical switch, or a flip-flop circuit, or any other system with two different states that can be easily manipulated.
 
 Recent computers use the magnetization of small cells as bits. This means that the physical representation of a bit of classical information nowadays is just a bunch of spins pointing in one direction or the other.
-
 Even when spins are intrinsically quantum objects in current computers no intrinsically quantum property is exploited.
+In the last 30 or 40 years there has been a continuous effort to reduce the size of the bits in order to get a higher density of information in our devices. This trend lead people to consider what would happen when the bits become small enough for the quantum effects to be relevant. And here is where the idea of Quantum bits appeared.
+The qubit.
 
+% Of course, the consequences of considering \acp{qb} go far beyond the miniaturization of memories and devices.
 
-And here is where the Quantum bits appear. The qubit.
-
-
-If we narrow down the physical representation of the information to the state of a quantum system with two states, what is commonly known as a \ac{2ls}, we could have the qubit in the $\ket{0}$ or $\ket{1}$ states as well as in any combination of them. Formally the state of a qubit could be expressed as
+The simplest possible representation of a \ac{qb} is a \ac{2ls}. A system with two well defined (and physically distinguishable) states. The Hilbert state of such a system will consist of a basis of two independent states, namely $\mathcal{B}=\{\ket{\uaw},\ket{\daw}\}$. We will use this notation independently of the physical realization of the \ac{qb}, whether they are spin $\tfrac{1}{2}$ systems, polarization of photons, or discrete level in a confined system.
+As opposed to classical bits, a \ac{qb} in general will be in a combination of the states of the basis:
 \begin{equation}
-  \ket{\psi} = \cos\frac{\theta}{2}\ket{0} +e^{i\phi}\sin\frac{\theta}{2}\ket{1}
+  \ket{\psi} = \alpha\ket{\uaw} + \beta\ket{\daw} \qquad\text{with}\qquad
+  |\alpha|^2+|\beta|^2 =1
+               % \cos\frac{\theta}{2}\ket{\uaw} + e^{i\phi}\sin\frac{\theta}{2}\ket{\daw} =
 \label{genstate}
 \end{equation}
-If the chosen physical representation for the qubit would be a spin $S=1/2$ in the presence of a magnetic field, the geometrical interpretation of such an state shown in figure~\ref{Bsph}. Nevertheless many physical implementations of qubits exist nowadays, so the interpretation of the general state is not universal.
-
-
-Notice that as opposed to classical bits, a qubit can have a continuum\footnote{not really, precision, Heisenberg...} of states of states.
-
+% If the chosen physical representation for the \ac{qb} would be a spin $S=1/2$ in the presence of a magnetic field, the geometrical interpretation of such an state shown in figure~\ref{Bsph}. Nevertheless many physical implementations of qubits exist nowadays, so the interpretation of the general state is not universal.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[!h]
 \centering
 % \includegraphics[width=0.5\textwidth]{chapter02/figures/bloch_sphere.png}
 \includegraphics{chapter02/figures/bloch_sphere.pdf}
 \vspace{-5pt}
-\caption{Bloch sphere that represents all the possible states of a $S=1/2$ spin.}
+\caption{Bloch sphere that represents all the possible states of a qubit.}
 \label{Bsph}
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+Notice that as opposed to classical bits, a \ac{qb} can exist in a continuum of states. All the possible states of a \ac{qb} are usually mapped to the surface of a sphere such as that shown in Fig.~\ref{Bsph}.
 
-Nevertheless the idea of having qubits goes far beyond the possibility of storing more states per qubit\footnote{In fact probably quantum memories will not be such a great idea since they could be quite volatile}.
-
-The great advantage that the quantum computation brings is that we can actually perform operations in combinations of these states. \red{finish}
-
-
+Nevertheless the idea of having qubits goes far beyond the possibility of storing more states per qubit (in fact probably quantum memories will not be such a great idea since they could be quite volatile).
+The great advantage that the \ac{qc} brings is that we can actually perform operations not only in each of the basis states but in combinations of these states\cite{DiVincenzo2000}. \red{finish}
 
 
+
+\section{Requirements for Quantum computation}
+
+DiVincenzo's criteria for quantum computer\cite{DiVincenzo2000}:
+\begin{enumerate}
+  \item A scalable physical system with well characterized qubits.
+  \item The ability to initialize the state of the qubits to a simple fiducial state, such as $\bra{000\dots}$.
+  \item Long relevant decoherence times, much longer than the gate operation time.
+  \item A ``universal'' set of quantum gates.
+  \item A qubit-specific measurement capability.
+  \item The ability to interconvert stationary and flying qubits.
+  \item The ability to faithfully transmit plying qubits between specified locations.
+\end{enumerate}
 
 
 
