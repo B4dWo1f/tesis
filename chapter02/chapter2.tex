@@ -38,11 +38,22 @@ As opposed to classical bits, a \ac{qb} in general will be in a combination of t
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-Notice that as opposed to classical bits, a \ac{qb} can exist in a continuum of states. All the possible states of a \ac{qb} are usually mapped to the surface of a sphere such as that shown in Fig.~\ref{Bsph}.
+Notice that as opposed to classical bits, a single \ac{qb} can exist in a continuum of states which can be mapped to any 2D space, usually that space is chosen to be the surface of a sphere such as that shown in Fig.~\ref{Bsph}, commonly known as Bloch sphere.
 
 Nevertheless the idea of having qubits goes far beyond the possibility of storing more states per qubit (in fact probably quantum memories will not be such a great idea since they could be quite volatile).
-The great advantage that the \ac{qc} brings is that we can actually perform operations not only in each of the basis states but in combinations of these states\cite{DiVincenzo2000}. \red{finish}
+The great advantage that the \ac{qc} brings is that we can actually perform operations not only in each of the basis states but in combinations of these states\cite{DiVincenzo2000}. In the case of a single qubit, the space in which any state can be expanded is ``only'' 2D, but if we consider three \ac{qb} the general state would be
+\begin{equation}
+  \ket{\psi} = \alpha\ket{\uaw\Uaw} + \beta\ket{\uaw\Daw} +
+               \gamma\ket{\daw\Uaw} + \delta\ket{\daw\Daw}
+\end{equation}
+which lives in a 4D space (2n).
+If a ``complete'' quantum computer were build, the space of state that it could access would be a $2^n$ space, with $n$ the number of qubits in the system. Being able to perform operations on such a complex states would allow an effective massive parallelization on a scale far beyond any technological expectation.
+In fact it is not just a matter of scale. The possibility of accessing such complexity opens a whole new realm of problems that we can approach.
 
+The basic cryptographic principles used nowadays to protect on-line communications relay on our current impossibility of finding the prime factors of big numbers\cite{Shor1994}.
+The parameter space that describes the folding of proteins is so huge that it is impossible to explore (computationally) to design custom molecules.\cite{Lanyon2009}
+database searching\cite{Grover1997}
+traveling salesman\cite{Goswami2004, Moylett2017}
 
 
 \section{Requirements for Quantum computation}
