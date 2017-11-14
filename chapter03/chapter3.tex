@@ -293,14 +293,14 @@ The level crossing that appears in figure~\ref{proton} represents nothing more t
 \end{equation}
 
 
-To clarify the meaning of this spectrum we make a schematic representation of the eigenfunctions, shown in figure~\ref{levels}. The left column in the table represents the wave functions neglecting the proton's Zeeman contribution. The two columns in the right do not neglect the proton's coupling, and show the cases of high magnetic field (or low hyperfine coupling) and low magnetic field (or high hyperfine coupling). It is clear that depending on the relative magnitude of the proton's Zeeman effect and the Hyperfine coupling the order of the wave functions may differ.
+To clarify the meaning of this spectrum we make a schematic representation of the eigenfunctions, shown in figure~\ref{levels1Qbit}. The left column in the table represents the wave functions neglecting the proton's Zeeman contribution. The two columns in the right do not neglect the proton's coupling, and show the cases of high magnetic field (or low hyperfine coupling) and low magnetic field (or high hyperfine coupling). It is clear that depending on the relative magnitude of the proton's Zeeman effect and the Hyperfine coupling the order of the wave functions may differ.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
 \includegraphics{chapter03/figures/levels.png}
 \vspace{-5pt}
 \caption{Schematic representation of the energy levels and its respective wave functions. The states $\ket{\daw\Uaw}$ and $\ket{\uaw\Daw}$ and in fact mixed, but it is negligible (this means that $\ket{\uaw\Daw}\simeq0.9999999\ket{\uaw\Daw}+0.0002672\ket{\daw\Uaw}$). All the possible transitions are specified by $\delta_i$.}
-\label{levels}
+\label{levels1Qbit}
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
@@ -313,13 +313,13 @@ Notice that $\delta_1$ and $\delta_2$ will be quite similar ($\SI{50}{\eV/\tesla
 
 
 \section{The 2-Qubit Hamiltonian}
- Hamiltonian for two qubits:
+The general expression for the Hamiltonian for two qubits is:
 \begin{equation}
   H = H_B +A_1\vec{\sigma}^e_1\cdot\vec{\sigma}^p_1
       +A_2\vec{\sigma}^e_2\cdot\vec{\sigma}^p_2
       +J\vec{\sigma}^e_1\cdot\vec{\sigma}^e_2
+\label{ham2Q}
 \end{equation}
-
 where $H_B$ contains the Zeeman interactions of each of the electronic and nuclear spins.
 \begin{equation}
   H_B = -g_e\mu_e\frac{1}{2}\vec{B}\vec{\sigma}^e_1
@@ -327,7 +327,30 @@ where $H_B$ contains the Zeeman interactions of each of the electronic and nucle
       -g_e\mu_e\frac{1}{2}\vec{B}\vec{\sigma}^e_2
       -g_p\mu_p\frac{1}{2}\vec{B}\vec{\sigma}^p_2
 \end{equation}
+To describe two qubits we need again to expand our basis. In particular we will use the notation $\ket{S^1_zI^1_z;S^2_zI^2_z}$, the basis, then would have 16 elements
+\begin{equation}
+\begin{split}
+ \mathcal{B} =  &\left\{\ket{\uaw\Uaw;\uaw\Uaw},\ket{\uaw\Uaw;\uaw\Daw},\ket{\uaw\Uaw;\daw\Uaw},\ket{\uaw\Uaw;\daw\Daw},\right.\\
+  &\ket{\uaw\Daw;\uaw\Uaw},\ket{\uaw\Daw;\uaw\Daw},\ket{\uaw\Daw;\daw\Uaw},\ket{\uaw\Daw;\daw\Daw},\\
+  &\ket{\daw\Uaw;\uaw\Uaw},\ket{\daw\Uaw;\uaw\Daw},\ket{\daw\Uaw;\daw\Uaw},\ket{\daw\Uaw;\daw\Daw},\\
+  &\left. \ket{\daw\Daw;\uaw\Uaw},\ket{\daw\Daw;\uaw\Daw},\ket{\daw\Daw;\daw\Uaw},\ket{\daw\Daw;\daw\Daw} \right\}
+\end{split}
+\end{equation}
+Notices that we are no considering here doubly occupied states such as $\ket{\udaw\Uaw;\quad\Uaw}$ since for now we consider that the two qubits are sufficiently isolated from each other to allow this kind of transition, in addition to the extra energy that would cost the double occupancy (Hubbard repulsion).
 
+In this basis all the operators in eq \eqref{ham2Q} are $16\times16$ matrices \red{shown in an appendix}.
+
+When we diagonalize such a Hamiltonian we get an spectrum similar to that sketched in fig.~\ref{levels2Qbits}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{figure}[h!]
+\centering
+  \includegraphics{chapter03/figures/levels2Qbits.pdf}
+\vspace{-5pt}
+\caption{Sketch of the evolution of the spectrum of 2 qubits}
+\label{levels2Qbits}
+\end{figure}
+\FloatBarrier
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
 
 \section{The Graphene analogue}
