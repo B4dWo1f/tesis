@@ -1,36 +1,52 @@
-\chapter{Units in the hyperfine coupling}
-The magnetic moment for a spin $1/2$ particle is
+\chapter{About the units}
+\section{Magnetic moment}
+The magnetic moment of any particle is defined as follows:
 \begin{equation}
-\vec{m} = g\mu\frac{1}{2}\vec{\sigma}
+  \vec{m} = g\frac{q}{2m}\vec{S} \quad\text{with}\quad
+  \vec{S}=\frac{\hbar}{2}\vec{\sigma}\qquad\Rightarrow\qquad
+  \vec{m} = \frac{1}{2}g\mu\vec{\sigma}
+\label{mag_mom}
 \end{equation}
-as expected, $\vec{m}$ has units of $\si{\eV/\tesla}$ since $g$ is dimensionless, and $\mu$ is
+where $q$ and $m$ are the carge and mass of particle respectively, $g$ is the so-called g-factor\footnote{The g-factor for the electron and proton are: $g_e=-2.0023\dots$ and $g_p=5.5857\dots$}, a dimensionless constant and $\vec{\sigma}$ are the Pauli matrices.
 \begin{equation}
-  \mu = \frac{q\hbar}{2m} \longrightarrow
-  [\mu] = \si{\coulomb\eV\s\per\kilogram} = \si{\eV\per\tesla}
-  % [\mu] = \frac{C\cdot eV\cdot s}{kg} = \frac{eV}{T}
+  \sigma_x=\left(\begin{array}{cc}
+    0 & 1 \\
+    1 & 0
+    \end{array}\right)\quad;\quad
+  \sigma_y=\left(\begin{array}{cc}
+    0 & -i \\
+    i & 0
+    \end{array}\right)\quad;\quad
+  \sigma_x=\left(\begin{array}{cc}
+    1 & 0 \\
+    0 & -1
+    \end{array}\right)
+\label{pauli}
 \end{equation}
-
-The hyperfine contact term:
+Note that in eq~\eqref{mag_mom} we have grouped the charge/mass ratio in the magneton $\mu$.
 \begin{equation}
-  H_{hf} = -\mu_0\frac{2}{3} \vec{m}_e\vec{m}_p\delta(\vec{R})
+  \mu = \frac{q\hbar}{2m}
 \end{equation}
+In the case of the the magnetic moment of the electron $\mu$ is the Bohr magneton.
+
+Magnetic moments have units of $[\vec{m}]=\si{\eV/\tesla}$. This can be seen starting from the right most equation of~\eqref{mag_mom}
+\begin{equation*}
+  [\vec{m}] = [\mu] = \si{\coulomb\eV\s\per\kilogram} = \si{\eV\per\tesla}
+\end{equation*}
 
 
-Each of the magnetic moments have units of $\left[m_i\right] = \si{\eV\per\tesla}$ and the vacuum magnetic permeability has units of $\left[\mu_0\right]=\si{\newton/\ampere\squared}$, and the Dirac's delta has units $[\delta(\vec{R})]=1/R^3$
-
-So the units are correct\footnote{we do not care here about the factors}:
+\section{Hyperfine coupling}
+In our notation the hyperfine term is introduced as:
+\begin{equation}
+  H_{hf} = -\mu_0\frac{2}{3} \vec{m}_e\vec{m}_p\delta(\vec{R}) = \mathcal{A}\vec{\sigma_e}\vec{\sigma_p}
+\end{equation}
+Note that, using this notation, the hyperfine coupling has units of energy $[\mathcal{A}]=\si{\eV}$. This can be easily shown by taking into account these relations
 % \begin{equation}
-%   \underbrace{\frac{N}{A^2}}_{\mu_0}
-%   \underbrace{\frac{eV}{T}}_{\vec{m}_e}
-%   \underbrace{\frac{eV}{T}}_{\vec{m}_p}
-%   \underbrace{\frac{1}{m^3}}_{\delta(\vec{R})}
+%   [\mathcal{A}]=\left[\mu_0\mu_e\mu_p\delta\right] =
+%   \si{\newton\per\ampere\squared}\si{\eV\per\tesla}\si{\eV\per\tesla}\si{\per\m\cubed}
+%   % \frac{N}{A^2}\frac{eV}{T}\frac{eV}{T}\frac{1}{m^3}
 % \end{equation}
-\begin{equation}
-  \si{\newton\per\ampere\squared}\si{\eV\per\tesla}\si{\eV\per\tesla}\si{\per\m\cubed}
-  % \frac{N}{A^2}\frac{eV}{T}\frac{eV}{T}\frac{1}{m^3}
-\label{units}
-\end{equation}
-It is useful to keep in mind some relations among units:
+% and taking into account that
 \begin{equation}
   \si{\tesla} \sim
   \si{\newton\per\ampere\per\m}\sim\si{\volt\s\per\m\squared} \sim
@@ -38,24 +54,27 @@ It is useful to keep in mind some relations among units:
   \si{\V}\sim\si{\eV\per\coulomb}  \quad;\quad
   \si{\ampere}\sim\si{\coulomb\per\s}
 \end{equation}
-Now continuing the equation \eqref{units}
+The units, then, for the hyperfine coupling $\mathcal{A}$ are:
 \begin{equation}
-  \si{\newton\per\ampere\squared}\frac{\si{\eV}}{\si{\newton\per\ampere\per\m}}\si{\eV\per\tesla}\si{\per\m\cubed} \sim
+  [\mathcal{A}] = \left[\mu_0\mu_e\mu_p\delta\right] =
+  \si{\newton\per\ampere\squared}\frac{\si{\eV}}{\si{\newton\per\ampere\per\m}}
+  \si{\eV\per\tesla}\si{\per\m\cubed} \sim
   \si{\per\ampere}\si{\eV\squared\per\tesla}\si{\per\m\squared} \sim
   \si{\s\per\coulomb}\si{\eV\squared\per\tesla}\si{\per\m\squared} \sim
   \si{\V\s\per\m\squared}\si{\eV\per\tesla}\sim \si{\eV}
 \end{equation}
 
-So the hyperfine coupling has units of energy as expected. Now, this coupling is usually provided in $MHz$. For instance in Kane's paper:
+
+It is common practice to express the hyperfine coupling in $\si{\MHz}$. To convert frequencies to energies we will use the well known value of the $21\si{\cm^{-1}}$ of Hydrogen~\cite{Hellwig1970} and the Planck-Einstein relation $E=h\nu$:
 \begin{equation}
-  \frac{2\mathcal{A}}{h} = \SI{58}{\MHz} = \frac{4\pi\mathcal{A}}{\hbar}
+  % \frac{\mathcal{A}}{\hbar2\pi}
+  \nu_H = 1420\si{\MHz} \Rightarrow \mathcal{A} = 1420\si{\MHz}\hbar2\pi\simeq
+  5.8 \si{\micro\eV}
 \end{equation}
 
-Finally!! the discrepancy with the Cohen book that says:
+
+\section{Exchange coupling}
+the exchange term
 \begin{equation}
-  \frac{\mathcal{A}\hbar}{2\pi} = \SI{1420}{\MHz}
-\end{equation}
-comes from the fact that their spin operators $\vec{I}$ and $\vec{S}$ have eigenvalues $\pm\hbar/2$, so the hyperfine coupling $\mathcal{A}$ should have units of $\si{\per\eV\per\s\squared}$ so in the end:
-\begin{equation}
-  \mathcal{A}\vec{I}\vec{S} = \si{\per\eV\per\s\squared}\cdot\si{\eV\s}\cdot \si{\eV\s} = \si{\eV}
+  H_{ex} = J\vec{S}_1\vec{S}_2
 \end{equation}
