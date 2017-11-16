@@ -35,6 +35,25 @@ Magnetic moments have units of $[\vec{m}]=\si{\eV/\tesla}$. This can be seen sta
 \end{equation*}
 
 
+\section{Exchange coupling}
+The Heisenberg Hamiltonian reads:
+\begin{equation}
+  H_{ex} = J_H\vec{S}_1\vec{S}_2\qquad\text{where the units of $J_H$ are}\qquad
+  [J_H]=\si{\per\eV\per\s\squared}
+\label{heis_raw}
+\end{equation}
+% Notice that the coupling $J_H$ does not have units of $\si{\eV}$ but rather $[J_H]=\si{\per\eV\per\s\squared}$
+To use the Heisenberg coupling in $\si{\eV}$ as it is often calculated from \ac{dft} or from effective Hamiltonians, it is necessary to process the hamiltonian~\eqref{heis_raw}
+\begin{equation}
+  H_{ex} = J_H\vec{S}_1\vec{S}_2 = J_H\frac{\hslash}{2}\frac{\hbar}{2}\vec{\sigma}_1\vec{\sigma}_2 =
+  J\vec{\sigma}_1\vec{\sigma}_2
+\end{equation}
+where we have used
+\begin{equation}
+ J=J_H\frac{\hbar}{2}\frac{\hbar}{2}\qquad\qquad\text{where}\qquad [J]=\si{\eV}
+\end{equation}
+
+
 \section{Hyperfine coupling}
 In our notation the hyperfine term is introduced as:
 \begin{equation}
@@ -70,11 +89,4 @@ It is common practice to express the hyperfine coupling in $\si{\MHz}$. To conve
   % \frac{\mathcal{A}}{\hbar2\pi}
   \nu_H = 1420\si{\MHz} \Rightarrow \mathcal{A} = 1420\si{\MHz}\hbar2\pi\simeq
   5.8 \si{\micro\eV}
-\end{equation}
-
-
-\section{Exchange coupling}
-the exchange term
-\begin{equation}
-  H_{ex} = J\vec{S}_1\vec{S}_2
 \end{equation}
