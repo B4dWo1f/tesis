@@ -178,7 +178,7 @@ First of all, we can make a quick estimation of the order of magnitude of each o
   \item Zeeman for the proton: $g_p\mu_p\simeq\SI{0.176}{\micro\eV\per\tesla}$
   % 5.6\cdot3.15\cdot10^{-8}\simeq1.7\cdot10^{-7}eV/T$
   \item Hyperfine: Assuming
-  $\mathcal{A}=58MHz\Rightarrow\mathcal{A}\simeq\SI{0.003}{\micro\eV\per\tesla}$
+  $\mathcal{A}=58MHz\Rightarrow\mathcal{A}\simeq\SI{0.003}{\micro\eV}$
 % 6.6\cdot10^{-08}eV$
 \end{itemize}
 We are stretching a bit the notation in the Hamiltonian \eqref{1qubit} since each of the terms is expressed in a different basis. Namely, each of the Zeeman terms act only in the electron \textbf{or} proton spin subspace but the hyperfine coupling has to be expressed in a 2-particle basis that have not defined yet.
@@ -299,7 +299,8 @@ To clarify the meaning of this spectrum we make a schematic representation of th
 \centering
 \includegraphics{chapter03/figures/levels1Qbit.pdf} %levels.png}
 \vspace{-5pt}
-\caption{Schematic representation of the energy levels and its respective wave functions. The states $\ket{\daw\Uaw}$ and $\ket{\uaw\Daw}$ and in fact mixed, but it is negligible (this means that $\ket{\uaw\Daw}\simeq0.9999999\ket{\uaw\Daw}+0.0002672\ket{\daw\Uaw}$). All the possible transitions are specified by $\delta_i$.}
+\caption{Sketch of the energy levels for the 1 Qubit hamiltonian~\eqref{1qubit}. The splitting among the different states is mainly due to the electronic Zeeman terms. The lowest energy state is determined by the competition between the nuclear Zeeman splitting and the hyperfine interaction.}
+% \caption{Schematic representation of the energy levels and its respective wave functions. The states $\ket{\daw\Uaw}$ and $\ket{\uaw\Daw}$ and in fact mixed, but it is negligible (this means that $\ket{\uaw\Daw}\simeq0.9999999\ket{\uaw\Daw}+0.0002672\ket{\daw\Uaw}$). All the possible transitions are specified by $\delta_i$.}
 \label{levels1Qbit}
 \end{figure}
 \FloatBarrier
@@ -313,7 +314,7 @@ Notice that $\delta_1$ and $\delta_2$ will be quite similar ($\SI{50}{\eV/\tesla
 
 
 \section{The 2-Qubit Hamiltonian}
-The general expression for the Hamiltonian for two qubits is:
+The general expression for the Hamiltonian for two qubits requires the consideration of Zeeman interactions for each of the electronic and nuclear spins, hyperfine coupling for each of the qubits, and an exchange term. Of course contributions such as  $\mathcal{A}_{1,2}\vec{\sigma}^e_1\vec{\sigma}^e_2$ should also exist, but its contribution would be negligible since the electronic wavefunction decays exponentially. The total Hamiltonian for two qubits, then, reads:
 \begin{equation}
   H = H_B +A_1\vec{\sigma}^e_1\cdot\vec{\sigma}^p_1
       +A_2\vec{\sigma}^e_2\cdot\vec{\sigma}^p_2
@@ -322,35 +323,37 @@ The general expression for the Hamiltonian for two qubits is:
 \end{equation}
 where $H_B$ contains the Zeeman interactions of each of the electronic and nuclear spins.
 \begin{equation}
-  H_B = -g_e\mu_e\frac{1}{2}\vec{B}\vec{\sigma}^e_1
-      -g_p\mu_p\frac{1}{2}\vec{B}\vec{\sigma}^p_1
-      -g_e\mu_e\frac{1}{2}\vec{B}\vec{\sigma}^e_2
-      -g_p\mu_p\frac{1}{2}\vec{B}\vec{\sigma}^p_2
+  H_B = -g_e\mu_e\frac{1}{2}\vec{B}_1\vec{\sigma}^e_1
+      -g_p\mu_p\frac{1}{2}\vec{B}_1\vec{\sigma}^p_1
+      -g_e\mu_e\frac{1}{2}\vec{B}_2\vec{\sigma}^e_2
+      -g_p\mu_p\frac{1}{2}\vec{B}_2\vec{\sigma}^p_2
+\label{ham2Q_zeeman}
 \end{equation}
-To describe two qubits we need again to expand our basis. In particular we will use the notation $\ket{S^1_zI^1_z;S^2_zI^2_z}$, the basis, then would have 16 elements
+To describe two qubits we need again to expand our basis. In particular we will use the notation $\ket{S^z_1I^z_1;S^z_2I^z_2}$. The basis, then, would have 16 elements
 \begin{equation}
 \begin{split}
- \mathcal{B} =  &\left\{\ket{\uaw\Uaw;\uaw\Uaw},\ket{\uaw\Uaw;\uaw\Daw},\ket{\uaw\Uaw;\daw\Uaw},\ket{\uaw\Uaw;\daw\Daw},\right.\\
-  &\ket{\uaw\Daw;\uaw\Uaw},\ket{\uaw\Daw;\uaw\Daw},\ket{\uaw\Daw;\daw\Uaw},\ket{\uaw\Daw;\daw\Daw},\\
-  &\ket{\daw\Uaw;\uaw\Uaw},\ket{\daw\Uaw;\uaw\Daw},\ket{\daw\Uaw;\daw\Uaw},\ket{\daw\Uaw;\daw\Daw},\\
-  &\left. \ket{\daw\Daw;\uaw\Uaw},\ket{\daw\Daw;\uaw\Daw},\ket{\daw\Daw;\daw\Uaw},\ket{\daw\Daw;\daw\Daw} \right\}
+ \mathcal{B}_{2Q} =  \left\{\ket{\uaw\Uaw;\uaw\Uaw},\ket{\uaw\Uaw;\uaw\Daw},\ket{\uaw\Uaw;\daw\Uaw},\ket{\uaw\Uaw;\daw\Daw},\right.\\
+        \ket{\uaw\Daw;\uaw\Uaw},\ket{\uaw\Daw;\uaw\Daw},\ket{\uaw\Daw;\daw\Uaw},\ket{\uaw\Daw;\daw\Daw},\\
+        \ket{\daw\Uaw;\uaw\Uaw},\ket{\daw\Uaw;\uaw\Daw},\ket{\daw\Uaw;\daw\Uaw},\ket{\daw\Uaw;\daw\Daw},\\
+ \left.\ket{\daw\Daw;\uaw\Uaw},\ket{\daw\Daw;\uaw\Daw},\ket{\daw\Daw;\daw\Uaw},\ket{\daw\Daw;\daw\Daw} \right\}
 \end{split}
 \end{equation}
-Notices that we are no considering here doubly occupied states such as $\ket{\udaw\Uaw;\quad\Uaw}$ since for now we consider that the two qubits are sufficiently isolated from each other to allow this kind of transition, in addition to the extra energy that would cost the double occupancy (Hubbard repulsion).
+Notice that we are not considering here doubly occupied states such as $\ket{\udaw\Uaw;\quad\Uaw}$ since for now we consider that the two qubits are sufficiently isolated from each other to allow this kind of transitions, in addition to the extra energy that would cost the double occupancy (Hubbard repulsion).
 
-In this basis all the operators in eq \eqref{ham2Q} are $16\times16$ matrices \red{shown in an appendix}.
-
-When we diagonalize such a Hamiltonian we get an spectrum similar to that sketched in fig.~\ref{levels2Qbits}
+All the operators in eq.~\eqref{ham2Q} have the same dimension as the basis ($16\times16$) and, when diagonalized, they show a spectrum similar to that sketched in fig.~\ref{levels2Qbits}
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
   \includegraphics{chapter03/figures/levels2Qbits.pdf}
 \vspace{-5pt}
-\caption{Sketch of the evolution of the spectrum of 2 qubits}
+\caption{Sketch of the energy levels of 2 qubits. The spectrum is divided in three sets of levels determined mainly by the electronic Zeeman splitting. The degeneracies and ordering of the states in each of these groups is determined by competition between the nuclear Zeeman and hyperfine couplings as well as the exchange interaction.}
 \label{levels2Qbits}
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+As we  can see the  levels are split in three sets. The energy of each of these sets is mainly defined by the electronic spin of the two qubits, eq.~\eqref{ham2Q_zeeman} since that is the strongest interaction.
+When the electrons of each of the Qubits are parallel (both up or down) the total energy of the system is roughly $E=pm g_e\mu_e B$.
+The competition between the Zeeman effect in the nuclear spin and the hyperfine coupling determines which state is the lowest in energy, either $\ket{\Uaw;\Uaw}$ or $\ket{\Daw;\Daw}$. Notice that the solutions in which both electronic spins are parallel and the nuclear spin in each Qubit are different are degenerate in energy.
 
 
 \section{The Graphene analogue}
