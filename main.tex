@@ -62,7 +62,8 @@
 \sisetup{
   per-mode=fraction,
   fraction-function=\dfrac,
-  inter-unit-product={}\cdot{}
+  inter-unit-product={}\cdot{},
+  exponent-product={}\mspace{-2mu}\cdot\mspace{-2mu}{}
 }
 
 %~~~~~~~~~~~~~~~ COMANDOS PROPIOS ~~~~~~~~~~~~~~%
@@ -82,6 +83,8 @@
 \newcommand{\duaw}{\downarrow\mathrel{\mspace{-3mu}}\uparrow}
 \newcommand{\UDaw}{\Uparrow\mathrel{\mspace{-3mu}}\Downarrow}
 \newcommand{\DUaw}{\Downarrow\mathrel{\mspace{-3mu}}\Uparrow}
+\newcommand{\e}[1]{\mspace{-2mu}\cdot\mspace{-2mu}10^{#1}}
+\newcommand{\ex}[1]{\mspace{-2mu}\times\mspace{-2mu}10^{#1}}
 %~~~~~~~ Shortcuts ~~~~~~~
 \def\uaw{\uparrow}
 \def\daw{\downarrow}
@@ -91,6 +94,7 @@
 \renewcommand{\figurename}{\footnotesize{\textsc{Figure}}}
 \renewcommand{\Im}[1]{\operatorname{\mathbb{I}m}\left[#1\right]}
 \renewcommand{\Re}[1]{\operatorname{\mathbb{R}e}\left[#1\right]}
+\AtBeginDocument{\renewcommand{\hbar}{\hslash}}
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
 

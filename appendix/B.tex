@@ -45,7 +45,7 @@ The Heisenberg Hamiltonian reads:
 % Notice that the coupling $J_H$ does not have units of $\si{\eV}$ but rather $[J_H]=\si{\per\eV\per\s\squared}$
 To use the Heisenberg coupling in $\si{\eV}$ as it is often calculated from \ac{dft} or from effective Hamiltonians, it is necessary to process the hamiltonian~\eqref{heis_raw}
 \begin{equation}
-  H_{ex} = J_H\vec{S}_1\vec{S}_2 = J_H\frac{\hslash}{2}\frac{\hbar}{2}\vec{\sigma}_1\vec{\sigma}_2 =
+  H_{ex} = J_H\vec{S}_1\vec{S}_2 = J_H\frac{\hbar}{2}\frac{\hbar}{2}\vec{\sigma}_1\vec{\sigma}_2 =
   J\vec{\sigma}_1\vec{\sigma}_2
 \end{equation}
 where we have used
@@ -87,13 +87,17 @@ The units, then, for the hyperfine coupling $\mathcal{A}$ are:
 It is common practice to express the hyperfine coupling in $\si{\MHz}$. To convert frequencies to energies we will use the well known value of the $21\si{\cm^{-1}}$ of Hydrogen~\cite{Hellwig1970} and the Planck-Einstein relation $E=h\nu$:
 \begin{equation}
   % \frac{\mathcal{A}}{\hbar2\pi}
-  \nu_H = 1420\si{\MHz} \Rightarrow \mathcal{A} = 1420\si{\MHz}\hbar2\pi\simeq
-  5.8 \si{\micro\eV}
+  \nu_H = \SI{1420}{\MHz} \Rightarrow \mathcal{A} = \SI{1420}{\MHz}\hbar2\pi\simeq
+  \SI{5.8}{\micro\eV}
 \end{equation}
 
+
 \section{Electric Field Hamiltonian}
+The energy of an electron in a constant electric field can be written as~\cite{Castro2010a}
 \begin{equation}
-  H_e = q_e \varepsilon \vec{d} \vec{E}
+  H_e = q_e \vec{d} \vec{E} \qquad;\qquad E = \frac{Q}{4\pi\varepsilon} \qquad;\qquad
+  \varepsilon = \varepsilon_r\varepsilon_0
 \end{equation}
+where $q_e$ is the charge of the electron, $\vec{d}$ is the position in the electric field and $\vec{E}$ is the electric field. The constant $\varepsilon_0 = \SI{8.85e-4}{\coulomb\per\volt\per\metre}$ is the vacuum permittivity and $\varepsilon_r$ is a dimensionless constant related to the electronic screening of the material as discussed elsewhere in the standard literature\cite{Castro2010a,Yamashiro2012}
 
 % \varepsilon = 180meV/(q interdisntace 4V/nm)
