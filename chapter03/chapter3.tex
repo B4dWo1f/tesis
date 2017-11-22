@@ -1,6 +1,4 @@
 \chapter{Current experimental status}
-\red{Physical realizations nowadays} %XXX
-
 Nowadays there are many implementations for qubits. SQUID, majorana?, even a simple spin $S=1/2$ in vacuum represents a single qubit. In general any \ac{2ls} is a qubit.
 
 In Solid State Physics there are already some implementation of qubits using Phosphorus donors in Silicon, dopands/vacancies in diamond or even Isotopes of Silicon.
@@ -36,7 +34,7 @@ For the Kane's proposal the description of one qubit is that of a nuclear and an
 \subsection{The Zeeman Effect}
 The Hamiltonian for a particle with magnetic moment $\vec{m}$ in an external magnetic field $\vec{B}$ is the following:
 \begin{equation}
-  H_{zee} = -\vec{m}\vec{B}
+  H_{\text{Zee}} = -\vec{m}\vec{B}
 \end{equation}
 The magnetic moment for a particle with mass $m$ and charge $q$ is defined as:
 \begin{equation*}
@@ -65,7 +63,7 @@ where $g$ is the so-called g-factor\footnote{The g-factor for the electron and p
 \end{equation}
 The Zeeman term, then, can be rewritten as:
 \begin{equation}
-  H_{zee} = -\vec{m}\vec{B} = -g\mu\frac{1}{2}\vec{B}\vec{\sigma}
+  H_{\text{Zee}} = -\vec{m}\vec{B} = -g\mu\frac{1}{2}\vec{B}\vec{\sigma}
 \end{equation}
 With an off-plane magnetic field, $\vec{B}=(0,0,B/2)$, this system presents two eigenstates, that we can denote:
 \begin{equation}
@@ -90,7 +88,7 @@ Since we would have a nuclear spin \textbf{and} an electronic spin, we would hav
   H_{zee} = -g_e\mu_e\frac{1}{2}\vec{B}\vec{\sigma}^e - g_p\mu_p\frac{1}{2}\vec{B}\vec{\sigma}^p
 \end{equation}
 
-For each of these terms (considered independently) the associated splitting would be of the following order:
+Since $\mu_p\sim\mu_e/2000$ the nuclear splitting is expected to be around 3 orders of magnitude smaller than the electronic splitting. In fact, when we calculate the associated splitting (considered independently) we find the following scales:
 \begin{equation}
   \begin{split}
     \Delta_e = g_e\mu_e\frac{1}{2} &\simeq \SI{58}{\micro\eV\per\tesla} \\  %58 \mu eV/T \\
@@ -98,7 +96,6 @@ For each of these terms (considered independently) the associated splitting woul
     % 8.8\cdot10^{-2}\mu eV/T
   \end{split}
 \end{equation}
-Since $g_p\simeq g_e/2000$ the nuclear splitting is expected to be around 3 orders of magnitude smaller than the electronic splitting.
 
 
 
@@ -108,7 +105,7 @@ Apart from the interaction of the electron and the proton with the external magn
 
 The hyperfine (HF) interaction arises when we consider the effect of the nuclear spin on the electron.
 
-By introducing the potential vector $\vec{A}_{I}$ (corresponding to the magnetic field created by the proton, $\rotac{\vec{A}_{I}}$) in the Hamiltonian and expanding to first order in this potential vector, we get the complete hyperfine Hamiltonian
+By introducing the potential vector $\vec{A}_{I}$ (corresponding to the magnetic field created by the proton, $\rotac{\vec{A}_{I}}$) in the Hamiltonian and expanding to first order in this potential vector, we get the complete hyperfine Hamiltonian~\cite{Cohen1977book}
 \begin{equation}
 H_{hf} = \frac{-\mu_{0}}{4\pi}\left[
 \frac{q_{p}}{m_{e}R^{3}}\vec{L}\cdot\vec{M}_{I} +
@@ -119,9 +116,9 @@ H_{hf} = \frac{-\mu_{0}}{4\pi}\left[
 \right]
 \label{full_HF}
 \end{equation}
-where $\vec{L}$ is the orbital momentum of the electron, $\vec{m}_{e}$ is the spin magnetic moment of the electron, and $\hat{n}$ is the unit vector of the straight line joining the proton to the electron.\\
+where $\vec{L}$ is the orbital momentum of the electron, $\vec{m}_{e}$ is the magnetic moment of the electron, and $\hat{n}$ is the unit vector of the straight line joining the proton to the electron.\\
 
-The first term in equation \eqref{full_HF} represents the interaction of the nuclear magnetic moment with the magnetic field created at the proton by the rotation of the electronic charge. If we are considering $s$ orbitals this term will vanish since all the terms would include a factor like $\bra{n,0,0}L\ket{n,0,0} = 0$, so we will drop this term from the discussion.
+The first term in equation~\eqref{full_HF} represents the interaction of the nuclear magnetic moment with the magnetic field created at the proton by the rotation of the electronic charge. If we are considering $s$ orbitals this term will vanish since all the terms would include a factor like $\bra{n,0,0}L\ket{n,0,0} = 0$, so we will drop this term from the discussion.
 
 The second term represents the dipole-dipole interaction between the nuclear and electronic magnetic moments. Again for a \textit{pure} $s$ orbital this term would vanish as a consequence of the spherical symmetry of the orbital. Nevertheless, because of perturbations (from the crystal or external fields) a contribution from this term may become relevant. \red{review}
 
