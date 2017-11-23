@@ -5,13 +5,14 @@ Kane's proposal~\cite{Kane1988}, and all the experimental realizations of it~\ci
 Since graphene is a purely \ac{2dm} its electronic properties are highly tunable by proximity, electric gating or other techniques. First we make a quick review of the properties of \ac{gb} and the effect of an external electric field and then we explore the possibility of the realization of 1 and 2-Qubit operations.
 
 \section{Graphene Bilayer}
-The minimal unit cell for describing a \ac{gb} contains four atoms, disposed as seen in the inset in Fig.~\ref{bilayer}. The lattice vectors describing the Bravais lattice are the same as in the case of monolayer graphene. Since the interlayer distance, around $d \sim \SI{3.0}{\angstrom}$, is  around three times bigger than the C-C distance\footnote{around $d_{C-C} = \SI{1.4}{\angstrom}$}, it is expected that the interlayer hopping will be smaller, in fact from literature~\cite{KatsnelsonBook} we get that the interlayer hopping $t'\simeq 0.15\cdot t_{\pi-\pi}\simeq\SI{0.4}{\eV}$. The effect of the interlayer interaction is to ``parabolize'' the linear bands around the $K$ points and double the $p_z$ manifold bands.
+The minimal unit cell for describing \ac{gb} contains four atoms, disposed as seen in the inset in Fig.~\ref{bilayer}. The lattice vectors describing the Bravais lattice are the same as in the case of monolayer graphene (see Sec.~\ref{ch:graphene}). Since the interlayer distance, is  around three times bigger than the C-C distance, $d_\text{inter} \sim \SI{3.3}{\angstrom}$ (from literature~\cite{Charlier1994a,Lam2008,Brihuega2012}), it is expected that the interlayer hopping will be smaller, in fact from literature~\cite{KatsnelsonBook} we get that the interlayer hopping $t'\simeq 0.15\cdot t_{\pi-\pi}\simeq\SI{0.4}{\eV}$
+The effect of the interlayer interaction is to ``parabolize'' the linear bands around the $K$ points and double the $p_z$ manifold bands.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
 \includegraphics{chapter06/figures/bilayer_bandDOS.pdf}
 \vspace{-5pt}
-\caption{Band structure and \ac{dos} of bilayer graphene. The red shadowed region shows the contribution of the $p_z$ manifold.}
+\caption{Band structure and \ac{dos} of bilayer graphene along the $\Gamma-K-K'-\Gamma$ path and density of states. The red shadowed region shows the contribution of the $p_z$ manifold, \emph{almost} decoupled from the other orbitals.}
 \label{bilayer}
 \end{figure}
 \FloatBarrier
@@ -23,12 +24,16 @@ The general aspect of the \ac{dos} is similar to that of the graphene but it is 
 
  \section{Effect of the electric field}
 The main effect of an external electric field applied to bilayer graphene is to shift the (on-site) energy of the electrons, we can write such a Hamiltonian term like
+% external potential energy
 
 \begin{equation}
-  H_{\vec{E}} = \lambda_{\vec{E}}\sum_i \varepsilon_l \crea{c}{i}\des{c}{i}
+  H_{\vec{E}} = \lambda_e q_e \vec{d} \widehat{E} %\sum_i \varepsilon_l \crea{c}{i}\des{c}{i}
 \end{equation}
-where $\varepsilon_l=\pm1$ depending on the layer, $l$,  of the atom $i$.
-The effect of such a term in \ac{gb} is just to open a gap~\cite{Yamashiro2012} close to the Fermi energy as shown in fig~\ref{bi_Efield}.
+where $\lambda_e$ is the magnitude of the external electric field, $\vec{d}$ is the interlayer distance, and $\widehat{E}$ is the electric field along the interlayer direction.
+% where $E$ is an external electric field along the direction and d is the interlayer separation of bilayer graphene.
+% where $\varepsilon_l=\pm1$ depending on the layer, $l$,  of the atom $i$.
+
+The effect of such a term in \ac{gb} is just to open a gap~\cite{Yamashiro2012,Brihuega2012,Lam2008,Min2007} close to the Fermi energy as shown in fig~\ref{bi_Efield}.
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
@@ -54,8 +59,8 @@ The effect of such a term in \ac{gb} is just to open a gap~\cite{Yamashiro2012} 
 % \FloatBarrier
 % %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-\subsection{About the charge neutrality}
-when a bias is applied to \ac{gb} there is the chance that some charge is transferred form one layer to the other\cite{Wang2016a,Zhang2009}. To be sure of how relevant this effect is we calculate where the Fermi Energy lies as well as the charge in each layer.
+% \subsection{About the charge neutrality}
+% when a bias is applied to \ac{gb} there is the chance that some charge is transferred form one layer to the other\cite{Wang2016a,Zhang2009}. To be sure of how relevant this effect is we calculate where the Fermi Energy lies as well as the charge in each layer.
 
 
 
@@ -98,7 +103,7 @@ when a bias is applied to \ac{gb} there is the chance that some charge is transf
 % %
 \section{1 Hydrogen adatom}
 \subsection{General considerations} %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-Everything here is done in an armchair island of bilayer graphene, as such, the system is $0$-D so there is no translational symmetry and no $\vec{k}$ vector can be defined.
+To study hydrogrnation of graphene bilayer we will consider a hexagonal armchair island big enough for the splitting among energy levels to be negligible compared with the splitting opened due to the external electric field.
 
 To study these systems we will consider a basis of localized states that could be considered to be the $p_z$ hydrogenoid orbitals.
 \begin{equation}
@@ -151,7 +156,7 @@ Note that as long as the border effects are negligible, and due to the $C_3$ sym
 
 
 \subsection{Single vacancy} %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-Since we are studying an island with a single vacancy, the energy levels are a discrete set of energies. In figure~\ref{1vac_spec} (c) the difference in the spectrum due to the introduction of a vacancy at $\lambda_E=0$ is shown. When a vacancy is introduced, an in-gap state appears at $E=0$ and some \emph{(quasi-)}degeneracies are broken.
+Since we are studying an island with a single vacancy, the energy levels are a discrete set of energies. In figure~\ref{1vac_spec}~c) the difference in the spectrum due to the introduction of a vacancy at $\lambda_E=0$ is shown. When a vacancy is introduced, an in-gap state appears at $E=0$ and some \emph{(quasi-)}degeneracies are broken.
 
 The effect of the electric field in the spectrum is shown in figure~\ref{1vac_spec} $a)$ and $b)$. Its main effect is to open a gap, linearly dependent with the electric field.
 

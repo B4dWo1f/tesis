@@ -47,3 +47,5 @@ In this project I'll develop my PhD thesis (& learn git XD)
 - [ ] Finish Kondo calculation
 ### Chapter 7
 - [ ] Fucking Spin-lifetimes
+### Calculations
+- [ ] Many-Body representation of the 2 fermions 2 sites system (6x6)
