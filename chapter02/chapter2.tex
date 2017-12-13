@@ -38,12 +38,12 @@ The qubit.
 
 % Of course, the consequences of considering \acp{qb} go far beyond the miniaturization of memories and devices.
 
-The simplest possible representation of a \ac{qb} is a \ac{2ls}. A system with two well defined (and physically distinguishable) states. The Hilbert state of such a system will consist of a basis of two independent states, namely $\mathcal{B}=\{\ket{\uaw},\ket{\daw}\}$. We will use this notation independently of the physical realization of the \ac{qb}, whether they are spin $\tfrac{1}{2}$ systems, polarization of photons, or discrete level in a confined system.
+The simplest possible representation of a \ac{qb} is a \ac{2ls}. A system with two well defined (and physically distinguishable) states. The Hilbert state of such a system will consist of a basis of two independent states, namely $\mathcal{B}=\{\ket{\up},\ket{\down}\}$. We will use this notation independently of the physical realization of the \ac{qb}, whether they are spin $\tfrac{1}{2}$ systems, polarization of photons, or discrete level in a confined system.
 As opposed to classical bits, a \ac{qb} in general will be in a combination of the states of the basis:
 \begin{equation}
-  \ket{\psi} = \alpha\ket{\uaw} + \beta\ket{\daw} \qquad\text{with}\qquad
+  \ket{\psi} = \alpha\ket{\up} + \beta\ket{\down} \qquad\text{with}\qquad
   |\alpha|^2+|\beta|^2 =1
-               % \cos\frac{\theta}{2}\ket{\uaw} + e^{i\phi}\sin\frac{\theta}{2}\ket{\daw} =
+               % \cos\frac{\theta}{2}\ket{\up} + e^{i\phi}\sin\frac{\theta}{2}\ket{\down} =
 \label{genstate}
 \end{equation}
 % If the chosen physical representation for the \ac{qb} would be a spin $S=1/2$ in the presence of a magnetic field, the geometrical interpretation of such an state shown in figure~\ref{Bsph}. Nevertheless many physical implementations of qubits exist nowadays, so the interpretation of the general state is not universal.
@@ -63,8 +63,8 @@ Notice that as opposed to classical bits, a single \ac{qb} can exist in a contin
 Nevertheless the idea of having qubits goes far beyond the possibility of storing more states per qubit (in fact probably quantum memories will not be such a great idea since they could be quite volatile).
 The great advantage that the \ac{qc} brings is that we can actually perform operations not only in each of the basis states but in combinations of these states\cite{DiVincenzo2000}. In the case of a single qubit, the space in which any state can be expanded is ``only'' 2D, but if we consider three \ac{qb} the general state would be
 \begin{equation}
-  \ket{\psi} = \alpha\ket{\uaw\Uaw} + \beta\ket{\uaw\Daw} +
-               \gamma\ket{\daw\Uaw} + \delta\ket{\daw\Daw}
+  \ket{\psi} = \alpha\ket{\up;\up} + \beta\ket{\up;\down} +
+               \gamma\ket{\down;\up} + \delta\ket{\down;\down}
 \end{equation}
 which lives in a 4D space (2n).
 If a ``complete'' quantum computer were build, the space of state that it could access would be a $2^n$ space, with $n$ the number of qubits in the system. Being able to perform operations on such a complex states would allow an effective massive parallelization on a scale far beyond any technological expectation.
@@ -81,7 +81,7 @@ traveling salesman\cite{Goswami2004, Moylett2017}
 DiVincenzo's criteria for quantum computer\cite{DiVincenzo2000}:
 \begin{enumerate}
   \item A scalable physical system with well characterized qubits.
-  \item The ability to initialize the state of the qubits to a simple fiducial state, such as $\bra{000\dots}$.
+  \item The ability to initialize the state of the qubits to a simple fiducial state, such as $\ket{000\dots}$.
   \item Long relevant decoherence times, much longer than the gate operation time.
   \item A ``universal'' set of quantum gates.
   \item A qubit-specific measurement capability.
@@ -105,8 +105,8 @@ Notice that there are only 4 possible functions (see table~\ref{binfunc}) that t
 \begin{tabular}{c|c|c|c|c}
 % \hline
 \multicolumn{1}{l|}{Input} & \multicolumn{1}{l|}{$A$} & \multicolumn{1}{l|}{$B$} & \multicolumn{1}{l|}{$C$} & \multicolumn{1}{l}{$D$} \\ \hline
-$\uaw$ & $\uaw$ & $\uaw$ & $\daw$ & $\daw$ \\ %\hline
-$\daw$ & $\uaw$ & $\daw$ & $\uaw$ & $\daw$ \\ %\hline
+$\up$ & $\up$ & $\up$ & $\down$ & $\down$ \\ %\hline
+$\down$ & $\up$ & $\down$ & $\up$ & $\down$ \\ %\hline
 % 0 & 0 & 0 & 1 & 1 \\ %\hline
 % 1 & 0 & 1 & 0 & 1 \\ %\hline
 \end{tabular}
@@ -120,12 +120,12 @@ On the other hand, $B$ and $C$ flips or not one of the states. In fact, using cl
 
 Classically to solve the Deutsch's problem (find if the black-box $f(x)$ is balanced or constant) we need to evaluate the function for both inputs.
 
-If we meassure the input $\uaw$, and get $\uaw$: $f(\uaw)=\uaw$ the function could be either $A$ (constant) or $B$ (balanced), so we need to know the behavior of $f(\daw)$ to distinguish between these two possibilities.
+If we measure the input $\up$, and get $\up$: $f(\up)=\up$ the function could be either $A$ (constant) or $B$ (balanced), so we need to know the behavior of $f(\down)$ to distinguish between these two possibilities.
 There is no way around it. No matter how we address this problem, classically, we will always need to evaluate the function twice.
 
 But quantum computation offers the resources to figure out the nature of the function $f(x)$ with only one evaluation. To understand how this works we just need to define two quantum gates.
 
-The description of the gates (and the problem) will be done for a generic qubit with two states $\ket{\uaw}$ and $\ket{\daw}$.
+The description of the gates (and the problem) will be done for a generic qubit with two states $\ket{\up}$ and $\ket{\down}$.
 
 \subsection{Notation}
 Depending on the physical implementations of the Qubits, the physical interpretation may change. Either $0/1$, $+/-$, $\uaw/\daw$ are valid We may use indistinctly the following notation
@@ -149,14 +149,14 @@ Depending on the physical implementations of the Qubits, the physical interpreta
 \subsection{The Hadamard Gate}
 The Hadamard gate acts on a single qubit by mapping the states as follows:
 \begin{equation}
-  \ket{\uaw} \longrightarrow \frac{\ket{\uaw}+\ket{\daw}}{\sqrt{2}}
-  \quad\quad;\quad\quad
-  \ket{\daw} \longrightarrow \frac{\ket{\uaw}-\ket{\daw}}{\sqrt{2}}
+  \ket{\up} \longrightarrow \frac{\ket{\up}+\ket{\down}}{\sqrt{2}}
+  \qquad;\qquad
+  \ket{\down} \longrightarrow \frac{\ket{\up}-\ket{\down}}{\sqrt{2}}
   % \ket{0} \longrightarrow \frac{\ket{0}+\ket{1}}{\sqrt{2}} \quad\quad;\quad\quad
   % \ket{1} \longrightarrow \frac{\ket{0}-\ket{1}}{\sqrt{2}}
 \label{Hmap}
 \end{equation}
-The matrix representation (in the basis $\mathcal{B}=\left\{\ket{\uaw},\ket{\daw}\right\}$) is:
+The matrix representation (in the basis $\mathcal{B}=\left\{\ket{\up},\ket{\down}\right\}$) is:
 % The matrix representation (in the basis $\mathcal{B}=\left\{\ket{0},\ket{1}\right\}$) is:
 \begin{equation}
   H=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
@@ -176,9 +176,9 @@ In other physical implementation this gate would require a different physical pr
 \subsection{The CNOT Gate}
 The other gate that we need is the CNOT gate. This is a 2-qubit function that flips the second qubit state only if the first qubit is in the state $1$. For describing the state of the two qubits we need an slightly more complex basis:
 \begin{equation}
-  \mathcal{B}=
-  \left\{\ket{\uaw;\uaw},\ket{\uaw;\daw},\ket{\daw;\uaw},\ket{\daw;\daw}\right\}
-  % \mathcal{B}=\left\{\ket{0_10_2},\ket{0_11_2},\ket{1_10_2},\ket{1_11_2}\right\}
+  \mathcal{B}=\left\{
+  \ket{\up;\up},\ket{\up;\down},\ket{\down;\up},\ket{\down;\down}
+  \right\}
 \end{equation}
 \red{Modify notation} In this notation the subindex $1,2$ refers to the qubit, and the value $0,1$ refers to the state of the corresponding qubit that are chosen to be the eigenvectors of the $S_z$ operator.
 In this basis the CNOT gate would be expressed:
@@ -194,15 +194,15 @@ Notice that this gates %XXX (as all the gates)
 is also unitary, meaning that $\text{CNOT}\cdot\text{CNOT}^{\dagger}=\mathbb{I}$
 
 
-If we think again in the spin $1/2$ particle in a magnetic field as the physical representation this function would be the process of measuring the first qubit state and applying a magnetic field in the $X$ only if the state of the first qubit is $+1$
+If we think again in the spin $1/2$ particle in a magnetic field as the physical representation this function would be the process of measuring the first qubit state and applying a magnetic field in the $X$ only if the state of the first qubit is in the state $\ket{\down}$ % +1
 
 The mapping that this function performs in our basis vectors is the following:
 \begin{equation}
   \begin{split}
-    &\ket{\uaw;\uaw}\rightarrow\ket{\uaw;\uaw} \quad\quad;\quad\quad
-    \ket{\uaw;\daw}\rightarrow\ket{\uaw;\daw}\\
-    &\ket{\daw;\uaw}\rightarrow\ket{\daw;\daw} \quad\quad;\quad\quad
-    \ket{\daw;\daw}\rightarrow\ket{\daw;\uaw}
+    &\ket{\up;\up}\rightarrow\ket{\up;\up} \qquad;\qquad
+    \ket{\up;\down}\rightarrow\ket{\up;\down}\\
+    &\ket{\down;\up}\rightarrow\ket{\down;\down} \qquad;\qquad
+    \ket{\down;\down}\rightarrow\ket{\down;\up}
     % &\ket{0_10_2}\rightarrow\ket{0_10_2} \quad\quad;\quad\quad
     % \ket{0_11_2}\rightarrow\ket{0_11_2}\\
     % &\ket{1_10_2}\rightarrow\ket{1_11_2} \quad\quad;\quad\quad
@@ -219,9 +219,9 @@ Using this notation, the mapping for the CNOT function can be written as follows
     \ket{y} & \longrightarrow & \ket{x\oplus y}
   \end{array}
 \end{equation}
-this means that the CNOT gate is equivalent to apply a \ac{xOr}\footnote{The XOR gate (2 bits for the input) is a controlled NOT gate (1 bit input) that reverses the second qubit only if the control bit takes value $\daw$.} controlled by the first qubit. It is useful to remember that XORding any input with 0 ($\uaw$) returns the same input while XORding any input with 1 ($\daw$) returns the opposite input, denoted by a tilde.
+this means that the CNOT gate is equivalent to apply a \ac{xOr}\footnote{The XOR gate (2 bits for the input) is a controlled NOT gate (1 bit input) that reverses the second qubit only if the control bit takes value $\down$.} controlled by the first qubit. It is useful to remember that XORding any input with 0 ($\up$) returns the same input while XORding any input with 1 ($\down$) returns the opposite input, denoted by a tilde.
 \begin{equation}
-  \uaw\oplus y = y \quad\quad;\quad\quad \daw\oplus y = \tilde{y}
+  \up\oplus y = y \qquad;\qquad \down\oplus y = \tilde{y}
 \end{equation}
 
 With these two gates we are ready to address the Deutsch's problem using quantum computation.
@@ -233,11 +233,11 @@ We are given a black box quantum computer known as an oracle that implements som
 
 This means that there would be a quantum speed-up if we could distinguish whether
 \begin{equation}
-  f(\uaw) = f(\daw) \quad\quad \text{or}\quad\quad f(\uaw) = \tilde{f}(\daw)
+  f(\up) = f(\down) \qquad \text{or}\qquad f(\up) = \tilde{f(\down)}
   % f(0) = f(1) \quad\quad \text{or}\quad\quad f(0) = \tilde{f}(1)
   \label{problem}
 \end{equation}
-evaluating the funcion $f(x)$ only once.\\
+evaluating the function $f(x)$ only once.\\
 
 This is in fact possible by using two qubits $x$, $y$, and some quantum gates. The complete scheme can be seen in figure~\ref{fcnot}.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
@@ -263,17 +263,17 @@ Notice that this modified CNOT gate (fCNOT) only evaluates the function on one o
 
 In the initial state (stage $a$) we will have both qubits in the same state. We will use the following notation:
 \begin{equation}
-  \ket{\psi_{a}} = \ket{\uaw;\uaw} \quad\quad\text{or equivalently}\quad\quad
-  \ket{x}=\uaw\text{, }\ket{y}=\uaw
+  \ket{\psi_{a}} = \ket{\up;\up} \qquad\text{or equivalently}\qquad
+  \ket{x}=\up\text{, }\ket{y}=\up
   % \ket{\psi_{a}} = \ket{1_11_2} \quad\quad;\quad\quad (\ket{x}=1, \ket{y}=1)
 \end{equation}
 We run each qubit through a Hadamard gate, eq \eqref{hadamard}, so the state at the stage $b$ would be:
 \begin{equation}
   \ket{\psi_{b}} =
-  \left(\frac{\ket{\uaw}-\ket{\daw}}{\sqrt{2}}\right)\otimes
-  \left(\frac{\ket{\uaw}-\ket{\daw}}{\sqrt{2}}\right) =
-  \frac{1}{2}\left(\ket{\uaw;\uaw}-\ket{\uaw;\daw}-
-  \ket{\daw;\uaw}+\ket{\daw;\daw}\right)
+  \left(\frac{\ket{\up}-\ket{\down}}{\sqrt{2}}\right)\otimes
+  \left(\frac{\ket{\up}-\ket{\down}}{\sqrt{2}}\right) =
+  \frac{1}{2}\left(\ket{\up;\up}-\ket{\up;\down}-
+  \ket{\down;\up}+\ket{\down;\down}\right)
   % \ket{\psi_{b}} =
   %  \left(\frac{\ket{0_1}-\ket{1_1}}{\sqrt{2}}\right)\otimes
   %  \left(\frac{\ket{0_2}-\ket{1_2}}{\sqrt{2}}\right) =
@@ -287,8 +287,8 @@ This is where the great advantage of the quantum computation becomes apparent si
 When we feed the state $\ket{\psi_b}$ to the f-CNOT gate we would get the following state at the stage $c$
 \begin{equation}
   \ket{\psi_{c}} = \frac{1}{2}
-  \left(\ket{\uaw;f(\uaw)} - \ket{\daw;f(\daw)} - \ket{\uaw;\tilde{f}(\uaw)}+
-  \ket{\daw;\tilde{f}(\daw)} \right)
+  \left(\ket{\up;f(\up)} - \ket{\down;f(\down)} - \ket{\up;\tilde{f}(\up)}+
+  \ket{\down;\tilde{f}(\down)} \right)
   % \ket{\psi_{c}} = \frac{1}{2}
   % \left(\ket{0_1f(0_1)_2} - \ket{1_1f(1_1)_2} - \ket{0_1\tilde{f}(0_1)_2}+
   % \ket{1_1\tilde{f}(1_1)_2} \right)
@@ -297,18 +297,18 @@ In case this is not clear, let's do the explicit calculation. Using the shortcut
 For the first two terms:
 \begin{equation}
   \begin{split}
-    \text{f-CNOT}\ket{\uaw;\uaw} &=
-    \ket{\uaw}\otimes\ket{f(\uaw)\oplus\uaw} =\ket{\uaw;f(\uaw)}\\
-    \text{f-CNOT}\ket{\daw;\uaw} &=
-    \ket{\daw}\otimes\ket{f(\daw)\oplus \uaw} = \ket{\daw;f(\daw)}
+    \text{f-CNOT}\ket{\up;\up} &=
+    \ket{\up}\otimes\ket{f(\up)\oplus\up} =\ket{\up;f(\up)}\\
+    \text{f-CNOT}\ket{\down;\up} &=
+    \ket{\down}\otimes\ket{f(\down)\oplus \up} = \ket{\down;f(\down)}
     % \text{f-CNOT}\ket{0_10_2} &=
     %  \ket{0_1}\otimes\ket{f(0_1)\oplus 0_2} =  \ket{0_1 f(0_1)_2}\\
     % \text{f-CNOT}\ket{1_10_2} &=
     %  \ket{1_1}\otimes\ket{f(1_1)\oplus 0_2} = \ket{1_1 f(1_1)_2}
   \end{split}
 \end{equation}
-Notice that the evaluation of $f(x)$ is now XORded with 0 ($\uaw$), coming from the first qubit, so the second qubit should not be modified.
-In case the notation gets messy let's point out that $\ket{\daw;f(\daw)}$ will be either $\ket{\daw;\uaw}$ or $\ket{\daw;\daw}$, depending on the behavior of $f(x)$.
+Notice that the evaluation of $f(x)$ is now XORded with 0 ($\up$), coming from the first qubit, so the second qubit should not be modified.
+In case the notation gets messy let's point out that $\ket{\down;f(\down)}$ will be either $\ket{\down;\up}$ or $\ket{\down;\down}$, depending on the behavior of $f(x)$.
 
 The calculation for the last two terms yields:
 \begin{equation}
@@ -323,19 +323,19 @@ The calculation for the last two terms yields:
     %  \ket{1_1}\otimes\ket{f(1_1)\oplus 1_2} = \ket{1_1\tilde{f}(1_1)_2}
   \end{split}
 \end{equation}
-Notice that the evaluation of $f(x)$ is now XORded with 1 ($\daw$), hence it will be flipped.\\
+Notice that the evaluation of $f(x)$ is now XORded with 1 ($\down$), hence it will be flipped.\\
 
 Now, depending on the unknown nature of $f(x)$, eq \eqref{problem}, we could rewrite $\ket{\psi_c}$ in two different ways.
 \begin{equation}
   \begin{split}
-    &\text{if f is constant:   }f(\uaw)=f(\daw)\quad\Rightarrow\quad
+    &\text{if f is constant:   }f(\up)=f(\down)\quad\Rightarrow\quad
     \ket{\psi_c}=
-    \frac{1}{2}(\ket{\uaw}-\ket{\daw})\otimes
-    (\ket{f(\uaw)}-\ket{\tilde{f}(\uaw)})\\
-    &\text{if f is balanced:   } f(\uaw)=\tilde{f}(\daw)\quad\Rightarrow\quad
+    \frac{1}{2}(\ket{\up}-\ket{\down})\otimes
+    (\ket{f(\up)}-\ket{\tilde{f}(\up)})\\
+    &\text{if f is balanced:   } f(\up)=\tilde{f}(\down)\quad\Rightarrow\quad
     \ket{\psi_c}=
-    \frac{1}{2}(\ket{\uaw}+\ket{\daw})\otimes
-    (\ket{f(\uaw)}-\ket{\tilde{f}(\uaw)}) \\
+    \frac{1}{2}(\ket{\up}+\ket{\down})\otimes
+    (\ket{f(\up)}-\ket{\tilde{f}(\up)}) \\
     % &\text{if f is constant:   }f(0)=f(1)\quad\Rightarrow\quad
     % \ket{\psi_c}=
     % \frac{1}{2}(\ket{0_1}-\ket{1_1})\otimes
@@ -348,13 +348,13 @@ Now, depending on the unknown nature of $f(x)$, eq \eqref{problem}, we could rew
 \end{equation}
 
 
-Notice that the state of the first qubit ($\uaw$ or $\daw$) depends on whether the function $f(x)$ is constant or balanced, so just by running the state of the first qubit through a Hadamard gate we can know the nature of the function $f$:
+Notice that the state of the first qubit ($\up$ or $\down$) depends on whether the function $f(x)$ is constant or balanced, so just by running the state of the first qubit through a Hadamard gate we can know the nature of the function $f$:
 \begin{equation}
   \begin{split}
-    &\text{if f is constant:   }f(\uaw)=f(\daw)\quad\Rightarrow\quad
-    \ket{\psi_d}= \ket{\daw}\otimes(\ket{f(\uaw)}-\ket{\tilde{f}(\uaw)})\\
-    &\text{if f is balanced:   } f(\uaw)=\tilde{f}(\daw)\quad\Rightarrow\quad
-    \ket{\psi_d}= \ket{\uaw}\otimes(\ket{f(\uaw)}-\ket{\tilde{f}(\uaw)})
+    &\text{if f is constant:   }f(\up)=f(\down)\quad\Rightarrow\quad
+    \ket{\psi_d}= \ket{\down}\otimes(\ket{f(\up)}-\ket{\tilde{f}(\up)})\\
+    &\text{if f is balanced:   } f(\up)=\tilde{f}(\down)\quad\Rightarrow\quad
+    \ket{\psi_d}= \ket{\up}\otimes(\ket{f(\up)}-\ket{\tilde{f}(\up)})
     % &\text{if f is constant:   }f(0)=f(1)\quad\Rightarrow\quad
     % \ket{\psi_d}= \ket{1_1}\otimes(\ket{f(0_1)_2}-\ket{\tilde{f}(0_1)_2})\\
     % &\text{if f is balanced:   } f(0)=\tilde{f}(1)\quad\Rightarrow\quad
@@ -362,7 +362,7 @@ Notice that the state of the first qubit ($\uaw$ or $\daw$) depends on whether t
   \end{split}
 \end{equation}
 
-If the final state of the first qubit after the whole process is $\ket{\daw}$, then we know that $f(x)$ is a constant function whereas if the final state is $\ket{\uaw}$ we know that $f(x)$ is balanced.\\
+If the final state of the first qubit after the whole process is $\ket{\down}$, then we know that $f(x)$ is a constant function whereas if the final state is $\ket{\up}$ we know that $f(x)$ is balanced.\\
 
 The main point in this example is that the function $f(x)$ \textbf{was executed only once, but it was executed on a superposition state containing all the possible inputs}.\\
 

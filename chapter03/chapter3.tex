@@ -68,19 +68,19 @@ The Zeeman term, then, can be rewritten as:
 With an off-plane magnetic field, $\vec{B}=(0,0,B/2)$, this system presents two eigenstates, that we can denote:
 \begin{equation}
   \begin{split}
-    E_0 &= g\mu\frac{1}{4}B \quad\quad;\quad\quad
+    E_0 &= g\mu\frac{1}{4}B \qquad;\qquad
     v_0 = \left[\begin{array}{c}
     1\\
     0
-    \end{array}\right] = \ket{\uaw}\\
-    E_1 &= -g\mu\frac{1}{4}B \quad\quad;\quad\quad
+    \end{array}\right] = \ket{\up} =\ket{\uaw}\\
+    E_1 &= -g\mu\frac{1}{4}B \qquad;\qquad
     v_1 = \left[\begin{array}{c}
     0\\
     1
-  \end{array}\right] = \ket{\daw}
+  \end{array}\right] = \ket{\down} = \ket{\daw}
   \end{split}
 \end{equation}
-Notice that if we start in any of the eigenstates we can modify the wave function to achieve any generic state $\ket{\psi} = \alpha\ket{\uaw}+\beta\ket{\daw}$ with $\alpha^2+\beta^2 = 1$ simply by applying the appropriate in-plane magnetic field during the appropriate time.\\
+Notice that if we start in any of the eigenstates we can modify the wave function to achieve any generic state $\ket{\psi} = \alpha\ket{\up}+\beta\ket{\down}$ with $\alpha^2+\beta^2 = 1$ simply by applying the appropriate in-plane magnetic field during the appropriate time.\\
 
 
 Since we would have a nuclear spin \textbf{and} an electronic spin, we would have the corresponding term for each one of them.
@@ -181,8 +181,8 @@ First of all, we can make a quick estimation of the order of magnitude of each o
 We are stretching a bit the notation in the Hamiltonian \eqref{1qubit} since each of the terms is expressed in a different basis. Namely, each of the Zeeman terms act only in the electron \textbf{or} proton spin subspace but the hyperfine coupling has to be expressed in a 2-particle basis that have not defined yet.
 To fix the notation we define the following 2-particle basis:
 \begin{equation}
-  \mathcal{B}=\left\{\ket{\uaw\Uaw},\ket{\uaw\Daw},
-                     \ket{\daw\Uaw},\ket{\daw\Daw}\right\}
+  \mathcal{B}=\left\{\ket{\up\up},\ket{\up\down},
+                     \ket{\down\up},\ket{\down\down}\right\}
 \label{basis}
 \end{equation}
 where the simple arrows $\uaw\daw$ represent the $S_z$ eigenvectors of the electronic spin, and the double arrows $\Uaw\Daw$ represent the $S_z$ eigenvectors of the nuclear spin.
