@@ -8,7 +8,7 @@ Similarly the invention of machines that allowed faster and more complex calcula
 
 
 It would be very difficult that a person back in the XVIII century would have guessed how the invention of the engine would affect the world, not in all its ramifications.
-Similarly when automatic machines, able to perform simple repetitive tasks, were developed a new revolutionary path opened. A new race started then, both for hardware and software advance.
+Similarly when automatic machines able to perform simple repetitive tasks were developed, a new revolutionary path opened. A new race started then, both for hardware and software advance.
 
 
 
@@ -21,11 +21,35 @@ It is not easy to point out only some milestones, from the first numeric calcula
 The first ideas about quantum computing reach as far back as the 80's\cite{Benioff1980,Feynman1982}. Which may not seem as much, but it is worth noting that the first ``home computers''
 In the following sections we make a quick introduction to quantum computation to continue in the next chapters to the proposal of a physical realization of a quantum computer.
 
+\newpage
+
+this is a sentence $2\e{-3}$ or $2\cdot10^{-3}$ or $2\ex{-3}$ or $2\times10^{-3}$ with different formats and this is my state up: $\ket{\up}$\\
+
+$$2\e{-3}$$
+$$2\cdot10^{-3}$$
+$$2\ex{-3}$$
+$$2\times10^{-3}$$
+
+
+DiVincenzo's criteria for quantum computer\cite{DiVincenzo2000}:
+\begin{enumerate}
+  \item A scalable physical system with well characterized qubits.
+  \item The ability to initialize the state of the qubits to a simple fiducial state, such as $\bra{000\dots}$.
+  \item Long relevant decoherence times, much longer than the gate operation time.
+  \item A ``universal'' set of quantum gates.
+  \item A qubit-specific measurement capability.
+  \item The ability to interconvert stationary and flying qubits.
+  \item The ability to faithfully transmit plying qubits between specified locations.
+\end{enumerate}
+
+
+
+
 \section{What is a Qubit?}
 In classical computing the basic element of information is a known as a bit. All the information that we can think of in our computers is encoded in a set of bits.
-For instance one of the most famous ways of encoding text is the so-called \ac{ascii} encoding, in this case we use 7 bits to encode all the letters and numbers and some symbols, for instance $a=1100001$, $A=10000011$, $b=1100010$, and so on.
+For instance one of the most famous ways of encoding text is the so-called \ac{ascii} encoding, in this case we use 7 bits to encode all the letters and numbers and some symbols, for instance $a=\texttt{1100001}$, $A=\texttt{10000011}$, $b=\texttt{1100010}$, and so on.
 
-Classical bits can only take two values, namely 0 or 1, $+$ or $-$, $\uaw$ or $\daw$, and all the operations that we do in our everyday lives is restricted to flip or not the states of some bits, from photograph editing, to music players, to web browsing, to the hardest scientific calculations, everything that requires a computer at the end of the day is just flipping the correct bits.
+Classical bits can only take two values, namely \texttt{0} or \texttt{1}, $+$ or $-$, $\uaw$ or $\daw$, and all the operations that we do in our everyday lives is restricted to flip or not the states of some bits, from photograph editing, to music players, to web browsing, to the hardest scientific calculations, everything that requires a computer at the end of the day is just flipping the correct bits.
 
 % Current processors operate on 64bits each time, taking into account that an standard computer operates at $\approx 2\cdot10^9 MHz$ it means that this can operate about $100\cdot10^9$ bits per second
 
