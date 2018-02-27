@@ -1,50 +1,62 @@
 %~~~~~~~~ Chapter ~~~~~~~~
 \chapter{Quantum computing}
+% this is a sentence $2\e{-3}$ or $2\cdot10^{-3}$ or $2\ex{-3}$ or $2\times10^{-3}$ with different formats and this is my state up: $\ket{\up}$\\
+%
+% $$2\e{-3}$$
+% $$2\cdot10^{-3}$$
+% $$2\ex{-3}$$
+% $$2\times10^{-3}$$
+%
+%
+% DiVincenzo's criteria for quantum computer\cite{DiVincenzo2000}:
+% \begin{enumerate}
+%   \item A scalable physical system with well characterized qubits.
+%   \item The ability to initialize the state of the qubits to a simple fiducial state, such as $\bra{000\dots}$.
+%   \item Long relevant decoherence times, much longer than the gate operation time.
+%   \item A ``universal'' set of quantum gates.
+%   \item A qubit-specific measurement capability.
+%   \item The ability to interconvert stationary and flying qubits.
+%   \item The ability to faithfully transmit plying qubits between specified locations.
+% \end{enumerate}
 
-There are moments that define history beyond our life.
+There are moments that define history beyond our life. The Industrial revolution marked the starting point of a race that we are running even today. The automation processes that the (steam) engine started changed not only the working conditions of the world population but also the socio-economic structure of societies and even the relation of humanity with the natural world. % XXX cite global warming
+The leap in the possibilities that the engine brought was bigger that anyone at the time could have predicted.
 
-The Industrial revolution marked the starting point of a race that we are running even today. The automation processes that the (steam) engine started changed not only the working conditions of half of the world population but also the socio-economic structure societies and even the relation of humanity with the natural world.
-Similarly the invention of machines that allowed faster and more complex calculations changed
+When the first computers were develop, they were able to just perform basic algebraic operations and make hard copies of the results. %XXX cite Charles Babbage and Ada Lovelace
+The original purpose of computers was just to facilitate calculations, maybe fast and accurate enough to land a man in the moon, but not even the craziest dreams of the first computer engineers and programmers could grasp the impact that computers have had in the world (so far), from the creation of a worldwide repository of knowledge\cite{Stallman2000} to the hatch of revolutions through social networks\cite{Alhindi2012}. Ever since their spread in the common households computers have changed the way we interact with other people, travel, buy, even the way we vote and fight wars.
+Computers have shaped societies and human relations alike and most likely they will continue doing so in the near future.
 
-
-It would be very difficult that a person back in the XVIII century would have guessed how the invention of the engine would affect the world, not in all its ramifications.
-Similarly when automatic machines able to perform simple repetitive tasks were developed, a new revolutionary path opened. A new race started then, both for hardware and software advance.
-
-
-
-The introduction of computers in the society changed the world.
-It is not easy to point out only some milestones, from the first numeric calculations necessary to send people to the moon (and back!) to the creation of a world-wide shared repository of knowledge, to the possibility of instantaneous communication across the world, (classical) computers have helped to shape the evolution of societies and technology.
-
+We find ourselves in a moment in which the revolution of the \acl{qc} is brewing and, quite probably, we lack the capability to capture its full potential. Nevertheless, from our limited perspective we can already see many fields were the impact of \acl{qc} will be huge.
+When efficient and reliable \acp{qc} are available, a new realm of possibilities in Chemistry and Biochemistry will open, allowing the custom discovery design of complex molecules and drugs and when we master the biochemistry of living organisms there is no tell in the limit of the possibilities.
+Cryptography will be forever changed once scalable, efficient \acl{qc} is commonly available. While cryptography may not be a popular discipline, it plays a major role in today's world, the secure communication over the internet. Transmission of content, personal/secret information, governmental or military information, financial transactions, all of them depend upon algorithms which will not hold under \acl{qc} calculations\cite{Shor1994}.
+At the same time that \ac{qc} will tear apart our current cryptographic systems it may also hold the key for ``truly'' secure communications as quantum cryptography ensures the integrity of the information to the privacy of the same.
+Even classical computers may benefit from quantum computers as algorithms for faster search and optimization have been already proposed. As the corpus of available data increases exponentially the need for an efficient algorithm to search through it\cite{Grover1997} becomes apparent. Solving optimization problems\cite{Durr2006,Montanaro2016,Brandao2017} is also an important advance that will affect many different areas, particularly \emph{Machine Learning} is one of the broad applications where these algorithms can make a difference.\footnote{Even though so far only algorithms with polynomial speed-up have been proposed for this kind of problems, it is enough to make feasible complex models for image or sound recognition, natural language processing or many other applications}\\
 
 
+%XXX  nexo
+The first ideas about \acl{qc} reach as far back as the 80's\cite{Benioff1980,Feynman1982}, when classical computers started their race towards miniaturization.
 
-The first ideas about quantum computing reach as far back as the 80's\cite{Benioff1980,Feynman1982}. Which may not seem as much, but it is worth noting that the first ``home computers''
-In the following sections we make a quick introduction to quantum computation to continue in the next chapters to the proposal of a physical realization of a quantum computer.
+The ever shrinking size of the transistors\cite{Moore1965} started to point towards a possible problem as they would reach sizes in which the quantum effects could not be neglected in a few years.
+Instead of focusing on the ``problem'' that the quantum effects could arise, some researchers\cite{Benioff1980,Feynman1982} considered them as an opportunity since some of these quantum effects could be exploited in our favor.
 
-\newpage
+Even without any experimental (physical) playground the ideas of quantum computation started to tickle the curiosity of many scientists over the years and it became a line of research on its own. % citations!
 
-this is a sentence $2\e{-3}$ or $2\cdot10^{-3}$ or $2\ex{-3}$ or $2\times10^{-3}$ with different formats and this is my state up: $\ket{\up}$\\
-
-$$2\e{-3}$$
-$$2\cdot10^{-3}$$
-$$2\ex{-3}$$
-$$2\times10^{-3}$$
-
-
-DiVincenzo's criteria for quantum computer\cite{DiVincenzo2000}:
+In 2000 DiVincenzo gave a summary list of criteria for having a Quantum Computer\cite{DiVincenzo2000}, namely:
 \begin{enumerate}
-  \item A scalable physical system with well characterized qubits.
-  \item The ability to initialize the state of the qubits to a simple fiducial state, such as $\bra{000\dots}$.
-  \item Long relevant decoherence times, much longer than the gate operation time.
-  \item A ``universal'' set of quantum gates.
-  \item A qubit-specific measurement capability.
-  \item The ability to interconvert stationary and flying qubits.
-  \item The ability to faithfully transmit plying qubits between specified locations.
+  \item A scalable physical system with well characterized \textbf{Qubits}.
+  \item The ability to reliably \textbf{initialize} the state of the qubits to a simple state, such as $\bra{000\dots}$.
+  \item \textbf{Long} relevant \textbf{decoherence times}, much longer than the gate operation time.
+  \item A ``universal'' set of \textbf{quantum gates}.
+  \item A qubit-specific \textbf{measurement} capability.
+\end{enumerate}
+optionally, for other tasks, mainly communication related (such as secret key distribution or multiparty function evaluation)\cite{DiVincenzo1999}, two more features would be desirable:
+\begin{enumerate}
+  \setcounter{enumi}{6}
+  \item The ability to interconvert stationary and flying qubits\cite{Turchette1995,Imamoglu1999}.
+  \item The ability to faithfully transmit flying qubits between specified locations.
 \end{enumerate}
 
-
-
-
+fin
 \section{What is a Qubit?}
 In classical computing the basic element of information is a known as a bit. All the information that we can think of in our computers is encoded in a set of bits.
 For instance one of the most famous ways of encoding text is the so-called \ac{ascii} encoding, in this case we use 7 bits to encode all the letters and numbers and some symbols, for instance $a=\texttt{1100001}$, $A=\texttt{10000011}$, $b=\texttt{1100010}$, and so on.
@@ -74,8 +86,8 @@ As opposed to classical bits, a \ac{qb} in general will be in a combination of t
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[!h]
 \centering
-% \includegraphics[width=0.5\textwidth]{chapter02/figures/bloch_sphere.png}
-\includegraphics{chapter02/figures/bloch_sphere.pdf}
+% \includegraphics[width=0.5\textwidth]{chapter01/figures/bloch_sphere.png}
+\includegraphics{chapter01/figures/bloch_sphere.pdf}
 \vspace{-5pt}
 \caption{Bloch sphere that represents all the possible states of a qubit.}
 \label{Bsph}
@@ -267,7 +279,7 @@ This is in fact possible by using two qubits $x$, $y$, and some quantum gates. T
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[!h]
   \centering
-  \includegraphics{chapter02/figures/fcnot.pdf}
+  \includegraphics{chapter01/figures/fcnot.pdf}
   \vspace{-5pt}
   \caption{Scheme of the system used for solving the Deutsch's problem. The H boxes represent Hadamard gates, and the I box is am identity gate. The different stages of the algorithm are marked by letters a,b,c,d.}
   \label{fcnot}
@@ -397,7 +409,7 @@ Naturally this is the simplest example possible, and it only provides a $\times2
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[!h]
   \centering
-  \includegraphics{chapter02/figures/quantum_scaling.png}
+  \includegraphics{chapter01/figures/quantum_scaling.png}
   \vspace{-5pt}
   \caption{Time order of the Shor and Grover's algorithm. Here we plot the scaling of the analogue classical algorithms (the best scaling we know so far) and the order of the quantum algorithm. Quantum computers allow a drastic change in the scaling of these algorithms.}
 \end{figure}
