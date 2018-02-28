@@ -47,8 +47,11 @@ In 2000 DiVincenzo gave a summary list of criteria for having a Quantum Computer
   \item A scalable physical system with well characterized \textbf{Qubits}. A broader discussion about what constitutes a qubit is done later so for now it suffices to say that a qubit is a quantum two-level system. For instance the two spin states of a $\tfrac{1}{2}$ particle in a Zeeman magnetic field, or the vertical/horizontal polarization of a single photon.
   \item The ability to reliably \textbf{initialize} the state of the qubits to a simple state, such as $\bra{000\dots}$. There are two main reasons for this requirement. The first one is that registers should be initialized to some known value before the beginning of the computation. The second one is that quantum error operations require a continuous, fresh supply of qubits in a low-entropy state. The rate at which the qubits can be zeroed will set an important time scale for many other operations.
   \item \textbf{Long} relevant \textbf{decoherence times}. The actual requirement is not that the decoherence time is long, but that it is much longer than the gate operation time.
-  \item A ``universal'' set of \textbf{quantum gates}.\cite{Deutsch1985,Deutsch1989}
-  \item A qubit-specific \textbf{measurement} capability.
+  \item A ``universal'' set of \textbf{quantum gates}.\cite{Deutsch1985,Deutsch1989} \acl{qc}, as classical, require logical gates to perform operations. Classical gates, such as OR,XOR,AND,NAND,... have a quantum version. Quantum gates work by rotating the qubit states in the Bloch space (see Fig.~\ref{Bsph}) what can result in states that do not exist in classical bits, hence, there are some quantum gates without a classical counterpart. There are gates that act in one qubit and gates that require two (or more) qubits to operate. Regardless of the embodiment of the qubits the logic gates are required to be as fast as possible since the duration of the operations will set the time scale for the decoherence time.
+  \item A qubit-specific \textbf{measurement} capability. Depending on the physical implementation the measurement procedure will vary, but in any case some properties are always desirable. For instance, if the qubit's density matrix is $
+    \rho = p\ket{\up}\bra{\up} + (1-p)\ket{\down}\bra{\down} +
+           \alpha\ket{\down}\bra{\up} + \alpha^\dagger\ket{\up}\bra{\down}
+  $ the measurement should result in $\up$ with probability $p$ and in $\down$ with probability $(1-p)$ regardless of the parameter $\alpha$ (or any other parameter, for that matter). Also, it would be desirable that the measurement process of one specific qubit does not affect any of the other qubits. If these requirements are not completely met, then the efficiency is said to be smaller than $100\%$ , which does not mean that is not enough to work. As a rule of thumb, for a quantum computer to work with an efficiency $q$, more than $1/q$ are required, so the result is robust enough.
 \end{enumerate}
 optionally, for other tasks, mainly communication related (such as secret key distribution or multiparty function evaluation)\cite{DiVincenzo1999}, two more features would be desirable:
 \begin{enumerate}
@@ -56,24 +59,15 @@ optionally, for other tasks, mainly communication related (such as secret key di
   \item The ability to interconvert stationary and flying qubits\cite{Turchette1995,Imamoglu1999}.
   \item The ability to faithfully transmit flying qubits between specified locations.
 \end{enumerate}
+%TODO understand these 2
 
 
-Decoherence times characterize the dynamics of a qubit in contact with its environment. The (somewhat overly) simplified definition of this time is that it is the characteristic time for a generic qubit state
-to be transformed into a pure mixture
-\begin{equation}
-  \ket{\psi}=a\ket{\up}+b\ket{\down} \qquad\rightarrow\qquad
-  \rho = a^2\ket{\up}\bra{\up} + b^2\ket{\down}\bra{\down}
-\end{equation}
+We are going to delve  now in the definition
 
 
 
 
 
-
-
-
-
-fin
 \section{What is a Qubit?}
 In classical computing the basic element of information is a known as a bit. All the information that we can think of in our computers is encoded in a set of bits.
 For instance one of the most famous ways of encoding text is the so-called \ac{ascii} encoding, in this case we use 7 bits to encode all the letters and numbers and some symbols, for instance $a=\texttt{1100001}$, $A=\texttt{10000011}$, $b=\texttt{1100010}$, and so on.
@@ -170,13 +164,13 @@ The description of the gates (and the problem) will be done for a generic qubit 
 Depending on the physical implementations of the Qubits, the physical interpretation may change. Either $0/1$, $+/-$, $\uaw/\daw$ are valid We may use indistinctly the following notation
 %TODO fix notation
 \begin{equation}
-  \ket{0} = \ket{\uaw} =
+  \ket{\up} = \ket{\uaw} =
   \left(\begin{array}{c}
         1 \\
         0
         \end{array}\right)
 \qquad;\qquad
-  \ket{1} = \ket{\daw} =
+  \ket{\down} = \ket{\daw} =
   \left(\begin{array}{c}
         0 \\
         1
