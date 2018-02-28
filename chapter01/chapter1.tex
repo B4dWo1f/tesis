@@ -39,14 +39,15 @@ The first ideas about \acl{qc} reach as far back as the 80's\cite{Benioff1980,Fe
 The ever shrinking size of the transistors\cite{Moore1965} started to point towards a possible problem as they would reach sizes in which the quantum effects could not be neglected in a few years.
 Instead of focusing on the ``problem'' that the quantum effects could arise, some researchers\cite{Benioff1980,Feynman1982} considered them as an opportunity since some of these quantum effects could be exploited in our favor.
 
+In fact, superposition, entanglement and %TODO finish
 Even without any experimental (physical) playground the ideas of quantum computation started to tickle the curiosity of many scientists over the years and it became a line of research on its own. % citations!
 
 In 2000 DiVincenzo gave a summary list of criteria for having a Quantum Computer\cite{DiVincenzo2000}, namely:
 \begin{enumerate}
-  \item A scalable physical system with well characterized \textbf{Qubits}.
-  \item The ability to reliably \textbf{initialize} the state of the qubits to a simple state, such as $\bra{000\dots}$.
-  \item \textbf{Long} relevant \textbf{decoherence times}, much longer than the gate operation time.
-  \item A ``universal'' set of \textbf{quantum gates}.
+  \item A scalable physical system with well characterized \textbf{Qubits}. A broader discussion about what constitutes a qubit is done later so for now it suffices to say that a qubit is a quantum two-level system. For instance the two spin states of a $\tfrac{1}{2}$ particle in a Zeeman magnetic field, or the vertical/horizontal polarization of a single photon.
+  \item The ability to reliably \textbf{initialize} the state of the qubits to a simple state, such as $\bra{000\dots}$. There are two main reasons for this requirement. The first one is that registers should be initialized to some known value before the beginning of the computation. The second one is that quantum error operations require a continuous, fresh supply of qubits in a low-entropy state. The rate at which the qubits can be zeroed will set an important time scale for many other operations.
+  \item \textbf{Long} relevant \textbf{decoherence times}. The actual requirement is not that the decoherence time is long, but that it is much longer than the gate operation time.
+  \item A ``universal'' set of \textbf{quantum gates}.\cite{Deutsch1985,Deutsch1989}
   \item A qubit-specific \textbf{measurement} capability.
 \end{enumerate}
 optionally, for other tasks, mainly communication related (such as secret key distribution or multiparty function evaluation)\cite{DiVincenzo1999}, two more features would be desirable:
@@ -55,6 +56,22 @@ optionally, for other tasks, mainly communication related (such as secret key di
   \item The ability to interconvert stationary and flying qubits\cite{Turchette1995,Imamoglu1999}.
   \item The ability to faithfully transmit flying qubits between specified locations.
 \end{enumerate}
+
+
+Decoherence times characterize the dynamics of a qubit in contact with its environment. The (somewhat overly) simplified definition of this time is that it is the characteristic time for a generic qubit state
+to be transformed into a pure mixture
+\begin{equation}
+  \ket{\psi}=a\ket{\up}+b\ket{\down} \qquad\rightarrow\qquad
+  \rho = a^2\ket{\up}\bra{\up} + b^2\ket{\down}\bra{\down}
+\end{equation}
+
+
+
+
+
+
+
+
 
 fin
 \section{What is a Qubit?}
@@ -110,20 +127,6 @@ The basic cryptographic principles used nowadays to protect on-line communicatio
 The parameter space that describes the folding of proteins is so huge that it is impossible to explore (computationally) to design custom molecules.\cite{Lanyon2009}
 database searching\cite{Grover1997}
 traveling salesman\cite{Goswami2004, Moylett2017}
-
-
-\section{Requirements for Quantum computation}
-
-DiVincenzo's criteria for quantum computer\cite{DiVincenzo2000}:
-\begin{enumerate}
-  \item A scalable physical system with well characterized qubits.
-  \item The ability to initialize the state of the qubits to a simple fiducial state, such as $\ket{000\dots}$.
-  \item Long relevant decoherence times, much longer than the gate operation time.
-  \item A ``universal'' set of quantum gates.
-  \item A qubit-specific measurement capability.
-  \item The ability to interconvert stationary and flying qubits.
-  \item The ability to faithfully transmit plying qubits between specified locations.
-\end{enumerate}
 
 
 

@@ -5,9 +5,12 @@
 5- superconductor (charge/flux)
 6- the vibrational quanta of trapped electrons, ions or atoms
 7- spin states of quantum dots
+8- Quantum algorithms
 25- qubit
 26- neutral-atom
 27- neutral-atom
+31- Decoherence
+32- Decoherence
 
 1.
 J.I. Cirac and P. Zoller, Phys. Rev. Lett. 74, 4091 (1995)
@@ -41,8 +44,19 @@ D. Loss and D. P. DiVincenzo, Phys. Rev. A 57, 120 (1998) (cond-mat/9701055)
 M. Sherwin, A. Imamoglu, and T. Montroy, "Quantum computation with quantum dots and terahertz cavity quantum electrodynamics", Phys. Rev. A 60, 3508 (1999) (quant-ph/9903065)
 T. Tanamoto, Phys. Rev. A 61, 022305 (2000) (quant-ph/9902031)
 
+8.
+D. Deutsch Proc. R. Soc. London A 400, 97 (1985)
+D. Deutsch Proc. R. Soc. London A 425, 73 (1989)
+
 25.
 B. Schumacher, Phys. Rev. A 54, 2614 (1996)
 
 26.
 G. K. Brennen, C. M. Caves, P. S. Jessen, and I. H. Deutsch, Phys. Rev. Lett. 82, 1060 (1999)
+
+31.
+J. Preskill, Proc. R. Soc. Lond A 454, 385 (1998) (quant-ph/9705031).
+
+32.
+M. A. Nielsen and I. L. Chuang, Quantum Computation and Quantum Information (Cambridge University Press, 2000)
+M. A. Nielsen, C. M. Caves, B. Schumacher, and H. Barnum, Proc. R. Soc. Lond. A 454, 277-304 (1998) (quant-ph/9706064)
