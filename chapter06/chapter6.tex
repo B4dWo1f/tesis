@@ -127,7 +127,7 @@ The term $H_t$ represents the kinetic energy arising from the hopping between ne
   0 & -\mathds{1}
   \end{array}\right)
 \end{equation}
-where the elements $\pm\mathds{1}$ refer to the identity for the upper and lower layer respectively.
+where we use the identity elements $\pm\mathds{1}$ to account for spin, orbitals and any oder degree of freedom. The sign $\pm$ is decided with respect to the layer.
 
 The vacancies are introduced in this model as an infinite on-site energy for the chosen atom(s). Unless otherwise stated everything is done in $\si{\eV}$ %$eV$
 , \emph{not hopping units}, the $p_z$-$p_z$ hopping is chosen as $t=\SI{-2.7}{\eV}$.
@@ -137,9 +137,9 @@ The vacancies are introduced in this model as an infinite on-site energy for the
 
 
 \subsection{Note on the geometry}
-Any vacancy considered will always be chosen on a hollow position (see fig~\ref{geo_sketch} $c)$) even if it not specified in the text. When only one vacancy is considered, it will be placed at the atomic position closest to the center of the island.
+Any vacancy considered will always be chosen on a hollow position (see fig~\ref{geo_sketch} $c)$) even if it not specified in the text. When only one vacancy is considered, it will be placed at the hollow atomic position closest to the center of the island.
 
-When two vacancies are considered they will be placed as separated from the edges as possible, as shown in fig~\ref{geo_sketch} $b)$ since this configuration allows the study of a wider range of the parameters $\alpha$ and $d$.
+When two vacancies are considered they will be placed as separated from the edges as possible, as shown in fig~\ref{geo_sketch} $b)$ since this configuration allows the study of a wider range of the relative angle and distance ($\alpha$ and $d$).
 % Later in the text another configuration consisting in one vacancy in the center of the island, and the other in different positions $\vec{r}=d\cos(\alpha)+d\sin(\alpha)$.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
@@ -173,12 +173,12 @@ The shift in the energy at which the in-gap state appears is linear for low elec
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-In Fig~\ref{1vac_spec} $d)$ we show four snapshots of the spatial distribution of the in-gap state. The actual lattice of the island is shown as black dots (probably indistinguishable because of the size of the image).
+In Fig~\ref{1vac_spec} $d)$ we show four snapshots of the spatial distribution of the in-gap state for different electric fields. The actual lattice of the island is shown as black dots (probably indistinguishable because of the size of the image).
 On top of each atomic position the weight of the wave function ($|c_\beta|^2$ using the notation of eq.~\eqref{general}) is plotted in blue/red for the lower/upper layer.
 On top of all this, the site of the vacancy is marked with a blue triangle.
-As a visual guide the confinement length is plotted as a black circle with diameter $2L_C$.\\
+As a visual guide the confinement length (defined later) is plotted as a black circle with diameter $2L_C$.\\
 
-At $\lambda_E=0$ the system is bipartite, so according to the Lieb's theorem, after the removal of one site, a sublattice-polarized state should appear at $E=0$. This is exactly what happens as shown in Fig.~\ref{1vac_spec}.
+At $\lambda_E=0$ the system is bipartite so, according to the Lieb's theorem\cite{Lieb1989}, after the removal of one site, a sublattice-polarized state should appear at $E=0$. This is exactly what happens as shown in Fig.~\ref{1vac_spec}.
 
 When we study the real-space distribution of the in-gap state we find that in the absence of electric field ($\lambda_E=0$) the state is spread all over the island, Fig.~\ref{1vac_spec} $d)$, no matter the size of the island (see Fig.~\ref{IPR_lc} $a)$ bellow). Notice that the effect of the border is not negligible in this regime and, in fact, is the responsible of the breaking of the expected $C_3$ symmetry of the state (at long distances, close to the vacancy the $C_3$ symmetry is almost preserved).
 
@@ -214,7 +214,7 @@ In figure~\ref{IPR_lc} we study the dependence of these four properties, for dif
 \centering
 \includegraphics[width=0.6\textwidth]{chapter06/figures/single_vac_properties.pdf}
 \vspace{-5pt}
-\caption{$a)$ Dependence of the localization length $L_c$ with the electric field for different sizes of the island. The dashed lines corresponds to the size of the each corresponding island. $b)$ IPR, $\eta$, dependence with the electric field for different sizes of the island. $c)$ and $d)$ show the degree of sublattice and layer polarization for different sizes of the island as a function the electric field. The values $\pm1$ refer to $A/B$ sublattice or up/down layer respectively.}
+\caption{$a)$ Dependence of the localization length $L_c$ with the electric field for different sizes of the island. The dashed lines corresponds to the size of the each corresponding island. $b)$ IPR, $\eta$, dependence with the electric field for different sizes of the island. $c)$ and $d)$ show the degree of sublattice and layer polarization for different sizes of the island as a function the electric field. The values $\pm1$ refer to $A/B$ sublattice and up/down layer respectively.}
 \label{IPR_lc}
 \end{figure}
 \FloatBarrier
@@ -224,9 +224,9 @@ It can be seen in Fig.~\ref{IPR_lc} $a)$ that as we approach the limit $\lambda_
 
 The shadowed region in all the panels shows the range of $\lambda_E$ in which the border effects can be relevant for the biggest island studied ($N_C=91812$). It is estimated as the $\lambda_E$ at which the results differ from those of the previous island. Of course it is only a rough estimation and it should be considered only as a guide to the eye when reading the results.
 
-In panel $b)$ the IPR is shown. Except for small islands the evolution of the IPR, as that of the $L_C$, is the same regardless of the size of the island. The increasing of the IPR with the electric field is another sign of the increasing localization of the in-gap state around the vacancie.\\
+In panel $b)$ the IPR is shown. Except for small islands the evolution of the IPR, as that of the $L_C$, is the same regardless of the size of the island. The increasing of the IPR with the electric field is another sign of the increasing localization of the in-gap state around the vacancy.\\
 
-The sublattice and layer polarization are shown in panels~\ref{IPR_lc} $c)$ and $d)$. As it can be seen at $\lambda_E=0$ the state is completely sublattice-polarized, in accordance with the Lieb's theorem, and almost layer-polarized, this almost is more easly visible in the small red component present in Fig.~\ref{1vac_spec} $d)$.
+The sublattice and layer polarization are shown in panels~\ref{IPR_lc} $c)$ and $d)$. As it can be seen at $\lambda_E=0$ the state is completely sublattice-polarized, in accordance with the Lieb's theorem, and almost layer-polarized, this ``almost'' is more easly visible in the small red component present in Fig.~\ref{1vac_spec} $d)$.
 
 As the electric field increases the bipartite character of the system is lost, in agreement with the shift of the energy of the in-gap state (no longer at $E=0$). Since the system is no longer bipartite, the sublattice polarized character of the in-gap state is no longer assured, and as shown in panel $c)$ it, in fact, decreases.
 
@@ -237,7 +237,7 @@ The decreasing of the layer polarization is easily understood by looking at Fig.
 
 
 \section{Double vacancy}
-it may be possible to control the interaction between two vacancies via an electric field by placing them at a certain distance $d$. First we are going to analyze the general phenomenology of the system studying the different states that appear as a function of the distance and angle between vacancies and the electric field.
+It may be possible to control the interaction between two vacancies via an electric field by placing them at a certain distance $d$. First we are going to analyze the general phenomenology of the system studying the different states that appear as a function of the distance and angle between vacancies and the electric field.
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
@@ -250,14 +250,15 @@ it may be possible to control the interaction between two vacancies via an elect
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-In the absence of electric field, $\lambda_E = 0$, when two vacancies are introduced in the same sublattice (since both of them have to be in hollow positions) two states appear at $E=0$ in accordance to the Lieb's Theorem as shown in Fig.~\ref{2vac_spec} $c)$. These states are sublattice-polarized and they are mostly located in the lower layer.\\
+In the absence of electric field, $\lambda_E = 0$, when two vacancies are introduced in the same sublattice (since both of them have to be in hollow positions) two states appear at $E=0$ in accordance to the Lieb's Theorem as shown in Fig.~\ref{2vac_spec}~$c)$. These states are sublattice-polarized and they are mostly located in the lower layer.\\
 
 When we switch on the electric field the spectrum opens a gap that increases linearly with the electric field but the two states associated with the vacancies remain inside the gap.
 
-If the vacancies are close enough to each other the interaction between them is big enough to split this levels (originally degenerate at $E=0$) as shown in Fig.~\ref{2vac_spec} $a)$. In this case in which the vacancies are close, it is apparent from the spatial distribution of the wave functions (panels 1-8) that a pair of bonding-antibonding states is created.
+If the vacancies are close enough to each other, the interaction between them is big enough to split these levels (originally degenerate at $E=0$) as shown in Fig.~\ref{2vac_spec} $a)$. In this case in which the vacancies are close, it is apparent from the spatial distribution of the wave functions (panels 1-8) that a pair of bonding-antibonding states is created.
 
-If the distance is between the vacancies is big enough the splitting between the in-gap states becomes negligible as shown in Fig.~\ref{2vac_spec} $b)$. Notice that panels 5 and 6 correspond to the two in-gap eigenstates, $\psi_0$ and $\psi_1$ of the Hamiltonian which are almost degenerate in energy. For that electric field ($\lambda_E=0.2$) the confinement length of these states is smaller than the distance between the vacancies, which explains why they barely interact and are, therefore, degenerate in energy.
-
+If the distance between the vacancies is big enough, the splitting between the in-gap states becomes negligible as shown in Fig.~\ref{2vac_spec}~$b)$.
+Notice that panels 5 and 6 correspond to the two in-gap eigenstates, $\psi_0$ and $\psi_1$ of the Hamiltonian which are almost degenerate in energy. For that electric field ($\lambda_E=0.2$) the confinement length of these states is smaller than the distance between the vacancies, which explains why they barely interact and are, therefore, degenerate in energy.
+On the other hand, panels 7 and 8 show the same eigenstates $\psi_0$ and $\psi_1$ for $\lambda_E=0.0$, it can be seen that these two state, degenerate at $E=0$ form a symmetric-antisymmetric pair of states mixing the electronic states of each of the adatoms.
 
 
 \subsection{Spin Exchange Interactions} %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
