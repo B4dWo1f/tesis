@@ -3,7 +3,7 @@
 Quantum gates are usually represented as matrices. A gate which acts on k qubits is represented by a $2^k\times2^k$ unitary matrix.
 The number of qubits in the input and output of the gate have to be equal. The action of the gate on a specific quantum state is found by multiplying the vector which represents the state by the matrix representing the gate. In the following, the vector representation of a single qubit is:
 \begin{equation}
-  v_0\ket{0} + v_1\ket{1} \rightarrow \left[\begin{array}{c}
+  v_0\ket{\up} + v_1\ket{\down} \rightarrow \left[\begin{array}{c}
   v_0 \\
   v_1
   \end{array}\right]
@@ -11,7 +11,7 @@ The number of qubits in the input and output of the gate have to be equal. The a
 
 and the vector representation of two qubits is
 \begin{equation}
-  v_{00}\ket{00} + v_{01}\ket{01} + v_{10}\ket{10} + v_{11}\ket{11} \rightarrow
+  v_{00}\ket{\up\up} + v_{01}\ket{\up\down} + v_{10}\ket{\down\up} + v_{11}\ket{\down\down} \rightarrow
   \left[\begin{array}{c}
   v_{00} \\
   v_{01} \\
@@ -23,7 +23,7 @@ where $\ket{ab}$ is the basis vector representing a state where the first qubit 
 
 When dealing with 1 Qubit operations the used basis will be:
 \begin{equation}
-  \mathcal{B} = \left\{\ket{\uaw},\ket{\daw}\right\}
+  \mathcal{B} = \left\{\ket{\up},\ket{\down}\right\}
 \end{equation}
 
 For 2 qubit operations the basis will be:
