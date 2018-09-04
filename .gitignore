@@ -9,3 +9,4 @@ main.pdf
 *.synctex.gz
 *.synctex.gz(busy)
 *.toc
+.latex.json

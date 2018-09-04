@@ -1,3 +1,13 @@
+Graphene Bilayer
+├── Pristine
+└── Hydrogenated
+    ├── 2D
+    ├── 0D, island, edges
+    └── Single Vacancy
+
+
+
+
 1 quantum computing
 ├──1.1 What is a Qubit?
 ├──1.2 An example: the Deutsch’s problem
