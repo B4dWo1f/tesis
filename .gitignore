@@ -6,7 +6,6 @@
 *.log
 *.out
 main.pdf
-*.synctex.gz
-*.synctex.gz(busy)
+*.synctex*
 *.toc
 .latex.json
