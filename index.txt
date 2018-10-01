@@ -1,13 +1,33 @@
+In-gap states in graphene bilayer
+Introduction
+Graphene
+├── General
+├── Low Energy regime
+├── Topology?
+└── Multilayer
+
 Graphene Bilayer
 ├── Pristine
-└── Hydrogenated
-    ├── 2D
-    ├── 0D, island, edges
-    └── Single Vacancy
+└── Electric field
+    └── Weak topology and Kink states
+
+sp3 defects
+├── Graphene
+│   ├── Single defect
+│   │   ├── 2D
+│   │   └── Embedding
+│   └── Two defect
+│       ├── 2D
+│       └── Embedding
+└── Graphene Bilayer
+
+Cold-Atoms
+
+Quantum computer
 
 
 
-
+================================================================================
 1 quantum computing
 ├──1.1 What is a Qubit?
 ├──1.2 An example: the Deutsch’s problem
