@@ -1,42 +1,47 @@
 \chapter{Graphene}
 \label{ch:graphene}
-Graphene is one of the most studied materials ever\cite{Murakami2009, CastroNeto2009a, Mas-Balleste2011, Rozhkov2016, Han2014}. Probably the next sections will not contain any new information for anyone familiar with the basic physical properties of graphene, but they will be useful for the sake of completeness.  % TODO add link
-Graphene consists of a two-dimensional array of $C$ atoms arranged in a honeycomb lattice like that of the Fig.~\ref{graphene_structure}~($a-d$). The honeycomb lattice is not a proper Bravais lattice itself so in order to describe such a system in terms of Bloch functions we can choose a wide variety of unit cells and lattice vectors. The simplest choice is the two atoms unit cell with a triangular Bravais lattice as shown in Fig~\ref{graphene_structure}~(a). Nevertheless any other choice of unit cell and lattice vectors is valid as long as it tessellates the whole space.
+Graphene is one of the most studied materials in history\cite{KatsnelsonBook, Murakami2009, CastroNeto2009a,
+Mas-Balleste2011, Rozhkov2016, Han2014, Konschuh2011a, Cooper2012, Sadurni2014}.
+Even before its experimental discovery\cite{Novoselov2004, Novoselov2005}
+deep research was devoted to it\cite{Wallace1947, Oshima2000, Forbeaux1998, VanBommel1975, Semenoff1984, Haldane1988}.
+All the basic properties have been discussed profusely\cite{Cooper2012, Geim2007}, yet, for the shake of completeness I will make a brief recap of all the relevant properties for the rest of this thesis.\\
+
+Graphene consists of a two-dimensional array of carbon, $C$ atoms arranged in a honeycomb lattice like those shown in Fig.~\ref{graphene_structure}~($a-d$)\cite{Ishigami2007}. The honeycomb lattice is not a proper Bravais lattice itself so, in order to describe such a system in terms of Bloch functions, we can choose a wide variety of unit cells and lattice vectors as long as it tessellates the space.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{chapter04/figures/graphene.pdf}
 \vspace{-5pt}
-\caption{$a-d)$ Graphene atomic structure considering different unit cells and lattice vectors. Notice that not all the descriptions of graphene use a triangular lattice, in fact $d)$ shows graphene as described with a rectangular lattice. The colored regions are the different Wigner-Seitz cells. $e)$ relevant hydrogenic orbitals for the $C$ atom.}
+\caption{$a-d)$ Graphene atomic structure considering different unit cells and lattice vectors. Notice that not all the descriptions of graphene use a triangular lattice, in fact $d)$ shows graphene as described with a rectangular lattice. The colored regions are the different Wigner-Seitz cells. $e)$ relevant hydrogenic orbitals for the $C$ atom. The $\ket{1s}$ orbital is full and only the $\ket{n=2}$ orbitals will play a role. $f)$ STM image of graphene taken from ref~\cite{Huang2011}}
 \label{graphene_structure}
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-Unless otherwise stated, we will consider that the atomic distance between carbon atoms is $d_{C-C}=a=\SI{1.4}{\angstrom}$ in accordance with literature\cite{KatsnelsonBook, Cooper2012}. % TODO more biblio
-As stated previously the honeycomb lattice is not a Bravais lattice. To describe graphene we will use a unit cell like the one depicted in Fig.~\ref{graphene_structure}~a), with two atoms in the positions
+Unless otherwise stated, we will consider that the unstrained atomic distance between carbon atoms is $d_{C-C}=a=\SI{1.4}{\angstrom}$ in accordance with literature\cite{KatsnelsonBook, Cooper2012}. % TODO more biblio
+As stated previously the honeycomb lattice is not a Bravais lattice. In orer to describe the basic properties of graphene it the minimal unit cell is the one depicted in Fig.~\ref{graphene_structure}~a), with two atoms in the positions
 \begin{equation}
-\vec{r}_0 = \tfrac{a}{2}(-1,0,0) \qquad;
+\vec{r}_0 = \tfrac{a}{2}(-1,0,0) \quad;\quad
 \vec{r}_1 = \tfrac{a}{2}(1,0,0),
 \label{at_pos}
 \end{equation}
 The lattice vectors that define the Bravais lattice are:
 \begin{equation}
-\vec{a}_1 = \tfrac{a}{2}\left(3,\sqrt{3},0\right) \qquad;
+\vec{a}_1 = \tfrac{a}{2}\left(3,\sqrt{3},0\right) \quad;\quad
 \vec{a}_2 = \tfrac{a}{2}\left(3,-\sqrt{3},0\right)
 \label{latt_vec}
 \end{equation}
 
-Once the lattice structure is clear, we turn to the atomic properties. Carbon atoms have 6 \acp{el} allocated in five orbitals. The first two \acp{el} are in the $1s$, two more in the $2s$ level and finally another two \acp{el} in the $2p$ levels (Fig.~\ref{graphene_structure}~(e)).
+Once the lattice structure is clear, we turn to the atomic properties. Carbon atoms have 6 \acp{el} allocated in five orbitals. The first two \acp{el} are in the $1s$ level, two more in the $2s$ level and finally another two \acp{el} in the $2p$ levels (Fig.~\ref{graphene_structure}~(e)).
 
-Since the orbitals $n=1$ are doubly occupied and far down in energy there is no need to consider them. The $2s$ level is also full, but not so far from the Fermi energy, so we will take a look at its importance. The $2p$ orbitals are the closest to the Fermi level, hence they will play a major role in the chemistry of graphene.
+Since the orbitals $n=1$ are doubly occupied and far down in energy there is no need to consider them. The $2s$ level is also full, but not so far from the Fermi energy (around $-\SI{-8}{\eV}$), so we will take a look at its importance. The $2p$ orbitals are the closest to the Fermi level, hence they will play a major role in the chemistry of graphene.
 
 We are going to use a \ac{tb} approximation with a basis of localized hydrogenic orbitals. Depending on the physical property that we are interested in we will consider one of two possible basis.
-
+One, considering only one orbital per lattice site:
 \begin{equation}
   \mathcal{B}_1 = \left\{\ket{\phi^1_{p_z}}, \ket{\phi^2_{p_z}},\dots, \ket{\phi^n_{p_z}}\right\}
 \label{basis1}
 \end{equation}
-
+and the other with four orbitals per atom.
 \begin{equation}
   \mathcal{B}_4 = \left\{
   \ket{\phi^1_{s}},\ket{\phi^1_{p_x}},\ket{\phi^1_{p_y}},\ket{\phi^1_{p_z}},
@@ -45,14 +50,14 @@ We are going to use a \ac{tb} approximation with a basis of localized hydrogenic
   \right\}
 \label{basis4}
 \end{equation}
-Where the superscript points out the atom and the subscript shows the corresponding orbital.
-These two basis describe graphene with only one orbital per site, or with four orbitals per site. The reasons why these two descriptions can be used will be shown in the following section %TODO add link
+The superscript points out the atom and the subscript shows the corresponding orbital.
+% These two basis describe graphene with only one orbital per site, or with four orbitals per site. The reasons why these two descriptions can be used will be shown in the following section %TODO add link
 
 \section{Basic Properties}
 \label{sec:graphene_basic_properties}
 We are going to start by using a the four orbital basis $\mathcal{B}_4$ described in \eqref{basis4} with the geometry of Fig.~\ref{graphene_structure}~a). Our Hamiltonian will have two atoms and four orbitals per atom, so it will be a $8\times8$ matrix\footnote{we consider now spinless fermions.}
 
-To calculate the Hamiltonian matrix we need the ten different hoppings that describe every pair of orbitals ($t_{s-s}$, $t_{s-p_x}$, $t_{s-p_y}$, ...). Nevertheless, the number of parameters necessary can be reduced using the symmetries of the orbitals as shown in the next subsection.
+In order to calculate the Hamiltonian matrix we need the ten different hoppings that describe every pair of orbitals ($t_{s-s}$, $t_{s-p_x}$, $t_{s-p_y}$, ...). Nevertheless, the number of parameters necessary can be reduced using the symmetries of the orbitals as shown in the next subsection.
 
 
 \section{Slater-Koster tight-binding model}
@@ -104,6 +109,7 @@ In the \ac{sk} approximation the atomic distances are encoded in the magnitude o
 %XXX Add SK formulas?
 
 This decoupling of magnitude and direction in the hoppings provides a simple model able to capture the effects of geometric deformations, strain and any symmetry (breaking) in the atomic structure. For instance the effect of buckling in graphene is easily captured by this model.\blue{bands, bands with buckling,...}
+Bismuth \cite{Liu1995}
 
 \red{explain better}
 The effect due to a reduction/increase of the hopping would be included by modifying the \ac{sk} parameters, yet the dependence of this parameters with the interatomic distance is not always easy to calculate.\\
