@@ -7,15 +7,15 @@ Among the many embodiments of qubits that already exist nowadays, one of the mos
 
 \section{Kane Proposal}
 In 1998 Bruce E. Kane proposed the realization of a quantum computer~\cite{Kane1988} using as qubits the nuclear spin of $^{31}P$ dopants in Silicon (Si:$^{31}$P).
-The electronic spin surrounding this nuclear spin would be used to interact with the nuclear spin by tunning its orbital shape with electric gates.
+The electronic spin surrounding this nuclear spin would be used to interact with the nuclear spin by tuning its orbital shape with electric gates.
 
-Without much detail, it is expected that the hyperfine interaction could be tunned using an electric gate, $A$, to modify the spatial distribution of the electronic state close to the nucleus of the $^{31}P$, as depicted in figure~\ref{kane}
+Without much detail, it is expected that the hyperfine interaction could be tuned using an electric gate, $A$, to modify the spatial distribution of the electronic state close to the nucleus of the $^{31}P$, as depicted in figure~\ref{kane}
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
 \includegraphics{chapter03/figures/kane.pdf}
 \vspace{-5pt}
-\caption{Artistic depiction of the Kane proposal for a quantum computer. The single qubit operations would be performed modifying the electronic spin and tunning the hyperfine coupling (witha an electric gate $A$) to interact with the nuclear spin. The two qubit operations would be performed by an electronic mediated state controlled also with an intermediate electric gate $J$.}
+\caption{Artistic depiction of the Kane proposal for a quantum computer. The single qubit operations would be performed modifying the electronic spin and tuning the hyperfine coupling (with an electric gate $A$) to interact with the nuclear spin. The two qubit operations would be performed by an electronic mediated state controlled also with an intermediate electric gate $J$.}
 \label{kane}
 \end{figure}
 \FloatBarrier
@@ -136,7 +136,7 @@ The first term in equation~\eqref{full_HF} represents the interaction of the nuc
 The second term represents the dipole-dipole interaction between the nuclear and electronic magnetic moments. Again for a \textit{pure} $s$ orbital this term would vanish as a consequence of the spherical symmetry of the orbital. Nevertheless, because of perturbations (from the crystal or external fields) a contribution from this term may become relevant. \red{review, and check the possible modification of $\mathcal{A}$ due to this geometric deformation}
 
 The third term is the so-called ``contact term'', and arises from the singularity at $\vec{R}=\vec{0}$ of the field created by the magnetic moment of the proton.
-This contact term describes the interaction of the magnetic moment of the electron spin with the the magnetic field inside the proton (considered as punctual). Notice that because of the presence of the delta function in this term, it will be proportional to the overlap of the wave function of the electron and the proton. This term will by the main contribution to the hyperfine interaction.\\
+This contact term describes the interaction of the magnetic moment of the electron spin with the magnetic field inside the proton (considered as punctual). Notice that because of the presence of the delta function in this term, it will be proportional to the overlap of the wave function of the electron and the proton. This term will by the main contribution to the hyperfine interaction.\\
 
 For the case of a free, isolated Hydrogen and for the $1s$ orbital the calculation of the contact term can be done exactly:
 \begin{equation}
@@ -315,7 +315,7 @@ To clarify the meaning of this spectrum we make a schematic representation of th
 \centering
 \includegraphics{chapter03/figures/levels1Qbit.pdf} %levels.png}
 \vspace{-5pt}
-\caption{Sketch of the energy levels for the 1 Qubit hamiltonian~\eqref{1qubit}. The main splitting among the different states is mainly due to the electronic Zeeman terms. The lowest energy state is determined by the competition between the nuclear Zeeman splitting and the hyperfine interaction.}
+\caption{Sketch of the energy levels for the 1 Qubit Hamiltonian~\eqref{1qubit}. The main splitting among the different states is mainly due to the electronic Zeeman terms. The lowest energy state is determined by the competition between the nuclear Zeeman splitting and the hyperfine interaction.}
 % \caption{Schematic representation of the energy levels and its respective wave functions. The states $\ket{\daw\Uaw}$ and $\ket{\uaw\Daw}$ and in fact mixed, but it is negligible (this means that $\ket{\uaw\Daw}\simeq0.9999999\ket{\uaw\Daw}+0.0002672\ket{\daw\Uaw}$). All the possible transitions are specified by $\delta_i$.}
 \label{levels1Qbit}
 \end{figure}

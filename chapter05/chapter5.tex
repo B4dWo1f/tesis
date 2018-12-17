@@ -98,7 +98,7 @@ figure here\\
 
 .\\
 
-Figure \red{figure DFT-TB} shows the compatibility of the results and lead us to the tunning of the \ac{sk} parameters.
+Figure \red{figure DFT-TB} shows the compatibility of the results and lead us to the tuning of the \ac{sk} parameters.
 
 The hyperfine coupling depends on the $V_{sp\sigma}$ and the $V_{ss\sigma}$ hopping parameters.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
@@ -152,21 +152,21 @@ I don't understand this dependence.
 
 
 
-The relation between the hyperfine coupling and the gap arises from the dependence of the extension of the \blue{zero energy} wave function on the size of the gap. This dependence can be quantified by calculating the inverse participation ratio (ipr)
+The relation between the hyperfine coupling and the gap arises from the dependence of the extension of the \blue{zero energy} wave function on the size of the gap. This dependence can be quantified by calculating the \ac{ipr}
 \begin{equation}
-  \text{ipr} = \eta = \displaystyle\sum_{\alpha}|\psi_{0}(\alpha)|^4
+  \text{IPR} = \displaystyle\sum_{\alpha}|\psi_{0}(\alpha)|^4
 \end{equation}
-where $\alpha$ labels all the atoms \blue{(orbitals)} in the unit cell, and the subindex $0$ specifies the zero energy state. Note that for a evenly completely delocalized state it is expected that $\eta\rightarrow1/N$ while for a state mostly localized in one atom $\eta\rightarrow1$. In our case, from Lieb's theorem we expect that our midgap state would be sublattice polarized (hence localized only in $N/2$ atoms), so if the state were to be evenly distributed in half of the atoms in the island the ipr would be $\eta\rightarrow2/N$. Surprisingly this prediction is quite accurate as can be seen in figure \ref{ipr}.
+where $\alpha$ labels all the atoms \blue{(orbitals)} in the unit cell, and the subindex $0$ specifies the zero energy state. Note that for a evenly completely delocalized state it is expected that $\eta\rightarrow1/N$ while for a state mostly localized in one atom $\eta\rightarrow1$. In our case, from Lieb's theorem we expect that our in-gap state would be sublattice polarized (hence localized only in $N/2$ atoms), so if the state were to be evenly distributed in half of the atoms in the island the \ac{ipr} would be $\eta\rightarrow2/N$. Surprisingly this prediction is quite accurate as can be seen in figure \ref{ipr}.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth]{chapter05/figures/ipr.png}
-\caption{\red{(missing fit in the plot, but it'll be there)} ipr, $\eta$ as a function of the island size. The dashed line corresponds to the expected dependence, for larger islands this prediction gets more accurate.}
+\caption{\red{(missing fit in the plot, but it'll be there)} \ac{ipr}, $\eta$ as a function of the island size. The dashed line corresponds to the expected dependence, for larger islands this prediction gets more accurate.}
 \label{ipr}
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-It seems paradoxical that knowing that the vast majority of the wave function is located in the 3-6 closest neighbors (see figure \ref{spectrum1}) the ipr looks so similar to the evenly distributed case.
+It seems paradoxical that knowing that the vast majority of the wave function is located in the 3-6 closest neighbors (see figure \ref{spectrum1}) the \ac{ipr} looks so similar to the evenly distributed case.
 
 \blue{testing}
 
@@ -185,9 +185,9 @@ The interesting part is that for all the islands it follows that
   \mean{|\psi|^2} = \frac{1}{N}
 \end{equation}
 
-Also, the ipr for an evenly localized states is
+Also, the \ac{ipr} for an evenly localized states is
 \begin{equation}
-  \eta = \frac{1}{N}
+   \text{IPR} = \frac{1}{N}
 \end{equation}
 
 

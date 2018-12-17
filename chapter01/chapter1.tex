@@ -19,7 +19,7 @@
 %   \item The ability to faithfully transmit plying qubits between specified locations.
 % \end{enumerate}
 
-There are moments that define history beyond our life. The Industrial revolution marked the starting point of a race that we are running even today. The automation processes that the (steam) engine started changed not only the working conditions of the world population but also the socio-economic structure of societies and even the relation of humanity with the natural world. % XXX cite global warming
+There are moments that define history beyond our life. The Industrial revolution marked the starting point of a race that we are running even today. The automation processes that the (steam) engine started changed not only the working conditions of the world population but also the socioeconomic structure of societies and even the relation of humanity with the natural world. % XXX cite global warming
 The leap in the possibilities that the engine brought was bigger that anyone at the time could have predicted.
 
 When the first computers were develop, they were able to just perform basic algebraic operations and make hard copies of the results. %XXX cite Charles Babbage and Ada Lovelace
@@ -29,7 +29,7 @@ Computers have shaped societies and human relations alike and most likely they w
 We find ourselves in a moment in which the revolution of the \acl{qc} is brewing and, quite probably, we lack the capability to capture its full potential. Nevertheless, from our limited perspective we can already see many fields were the impact of \acl{qc} will be huge.
 When efficient and reliable \acp{qc} are available, a new realm of possibilities in Chemistry and Biochemistry will open, allowing the custom discovery design of complex molecules and drugs and when we master the biochemistry of living organisms there is no tell in the limit of the possibilities.
 Cryptography will be forever changed once scalable, efficient \acl{qc} is commonly available. While cryptography may not be a popular discipline, it plays a major role in today's world, the secure communication over the internet. Transmission of content, personal/secret information, governmental or military information, financial transactions, all of them depend upon algorithms which will not hold under \acl{qc} calculations\cite{Shor1994}.
-At the same time that \ac{qc} will tear apart our current cryptographic systems it may also hold the key for ``truly'' secure communications as quantum cryptography ensures the integrity of the information to the privacy of the same.
+At the same time that \ac{qc} will tear apart our current encryption systems it may also hold the key for ``truly'' secure communications as quantum cryptography ensures the integrity of the information to the privacy of the same.
 Even classical computers may benefit from quantum computers as algorithms for faster search and optimization have been already proposed. As the corpus of available data increases exponentially the need for an efficient algorithm to search through it\cite{Grover1997} becomes apparent. Solving optimization problems\cite{Durr2006,Montanaro2016,Brandao2017} is also an important advance that will affect many different areas, particularly \emph{Machine Learning} is one of the broad applications where these algorithms can make a difference.\footnote{Even though so far only algorithms with polynomial speed-up have been proposed for this kind of problems, it is enough to make feasible complex models for image or sound recognition, natural language processing or many other applications}\\
 
 
@@ -48,7 +48,7 @@ In 2000 DiVincenzo gave a summary list of criteria for having a Quantum Computer
   \item The ability to reliably \textbf{initialize} the state of the qubits to a simple state, such as $\bra{000\dots}$. There are two main reasons for this requirement. The first one is that registers should be initialized to some known value before the beginning of the computation. The second one is that quantum error operations require a continuous, fresh supply of qubits in a low-entropy state. The rate at which the qubits can be zeroed will set an important time scale for many other operations.
   \item \textbf{Long} relevant \textbf{decoherence times}. The actual requirement is not that the decoherence time is long, but that it is much longer than the gate operation time.
   \item A ``universal'' set of \textbf{quantum gates}.\cite{Deutsch1985,Deutsch1989} \acl{qc}, as classical, require logical gates to perform operations. Classical gates, such as OR,XOR,AND,NAND,... have a quantum version. Quantum gates work by rotating the qubit states in the Bloch space (see Fig.~\ref{Bsph}) what can result in states that do not exist in classical bits, hence, there are some quantum gates without a classical counterpart. There are gates that act in one qubit and gates that require two (or more) qubits to operate. Regardless of the embodiment of the qubits the logic gates are required to be as fast as possible since the duration of the operations will set the time scale for the decoherence time.
-  \item A qubit-specific \textbf{measurement} capability. Depending on the physical implementation the measurement procedure will vary, but in any case some properties are always desirable. For instance, if the qubit's density matrix is $
+  \item A qubit-specific \textbf{measurement} capability. Depending on the physical implementation the measurement procedure will vary, but in any case some properties are always desirable. For instance, if the density matrix of the qubit is $
     \rho = p\ket{\up}\bra{\up} + (1-p)\ket{\down}\bra{\down} +
            \alpha\ket{\down}\bra{\up} + \alpha^\dagger\ket{\up}\bra{\down}
   $ the measurement should result in $\up$ with probability $p$ and in $\down$ with probability $(1-p)$ regardless of the parameter $\alpha$ (or any other parameter, for that matter). Also, it would be desirable that the measurement process of one specific qubit does not affect any of the other qubits. If these requirements are not completely met, then the efficiency is said to be smaller than $100\%$ , which does not mean that is not enough to work. As a rule of thumb, for a quantum computer to work with an efficiency $q$, more than $1/q$ are required, so the result is robust enough.
@@ -117,7 +117,7 @@ which lives in a 4D space (2n).
 If a ``complete'' quantum computer were build, the space of state that it could access would be a $2^n$ space, with $n$ the number of qubits in the system. Being able to perform operations on such a complex states would allow an effective massive parallelization on a scale far beyond any technological expectation.
 In fact it is not just a matter of scale. The possibility of accessing such complexity opens a whole new realm of problems that we can approach.
 
-The basic cryptographic principles used nowadays to protect on-line communications relay on our current impossibility of finding the prime factors of big numbers\cite{Shor1994}.
+The basic encryption principles used nowadays to protect on-line communications relay on our current impossibility of finding the prime factors of big numbers\cite{Shor1994}.
 The parameter space that describes the folding of proteins is so huge that it is impossible to explore (computationally) to design custom molecules.\cite{Lanyon2009}
 database searching\cite{Grover1997}
 traveling salesman\cite{Goswami2004, Moylett2017}
@@ -130,7 +130,7 @@ This problem is the simplest example where a quantum speed up is demonstrated~\c
 
 The Deutsch's problem can be stated as follows:
 
-\paragraph{Given an unkown black box that works as a binary 1 bit function $f(x)$, how can we know if it is a constant function, or a balanced function evaluating it only once?\\}
+\paragraph{Given an unknown black box that works as a binary 1 bit function $f(x)$, how can we know if it is a constant function, or a balanced function evaluating it only once?\\}
 \textcolor{white}{.}\\
 Notice that there are only 4 possible functions (see table~\ref{binfunc}) that take one input with two possible states and returns one output with two possible states.
 \begin{table}[h!]
@@ -243,7 +243,7 @@ The mapping that this function performs in our basis vectors is the following:
   \end{split}
 \end{equation}
 Since we are using the eigenvectors of each qubit as building blocks for our basis, all the states can be expressed as product states\blue{rephrase}. Expressing the previous mapping in these terms will be useful later on.
-Any state of the basis $\ket{\phi_i}$ can be expressed as direct product of the the state of the first qubit $\ket{x}$ and the state of the second qubit $\ket{y}$, this is  $\ket{\phi_i}=\ket{x}\otimes\ket{y}$.
+Any state of the basis $\ket{\phi_i}$ can be expressed as direct product of the state of the first qubit $\ket{x}$ and the state of the second qubit $\ket{y}$, this is  $\ket{\phi_i}=\ket{x}\otimes\ket{y}$.
 Using this notation, the mapping for the CNOT function can be written as follows:
 
 \begin{equation}
@@ -300,7 +300,7 @@ In the initial state (stage $a$) we will have both qubits in the same state. We 
   \ket{x}=\up\text{, }\ket{y}=\up
   % \ket{\psi_{a}} = \ket{1_11_2} \quad\quad;\quad\quad (\ket{x}=1, \ket{y}=1)
 \end{equation}
-We run each qubit through a Hadamard gate, eq \eqref{hadamard}, so the state at the stage $b$ would be:
+We run each qubit through a Hadamard gate, eq. \eqref{hadamard}, so the state at the stage $b$ would be:
 \begin{equation}
   \ket{\psi_{b}} =
   \left(\frac{\ket{\up}-\ket{\down}}{\sqrt{2}}\right)\otimes
@@ -358,7 +358,7 @@ The calculation for the last two terms yields:
 \end{equation}
 Notice that the evaluation of $f(x)$ is now XORded with 1 ($\down$), hence it will be flipped.\\
 
-Now, depending on the unknown nature of $f(x)$, eq \eqref{problem}, we could rewrite $\ket{\psi_c}$ in two different ways.
+Now, depending on the unknown nature of $f(x)$, eq. \eqref{problem}, we could rewrite $\ket{\psi_c}$ in two different ways.
 \begin{equation}
   \begin{split}
     &\text{if f is constant:   }f(\up)=f(\down)\quad\Rightarrow\quad
@@ -401,7 +401,7 @@ The main point in this example is that the function $f(x)$ \textbf{was executed 
 
 Naturally this is the simplest example possible, and it only provides a $\times2$ speed up in a (not really relevant) problem. Nevertheless these concepts can be applied to many other algorithms allowing a huge speed up in very important problems such as factoring big numbers, critical for current encryption systems (Shor's algorithm, that runs in polynomial time) or searching in databases, important in unsupervised machine learning algorithms (Grover's algorithm $\mathcal{O}(n)\rightarrow\mathcal{O}(\sqrt{n})$).
 
-\red{quantum chemistry, Quantum simmulations and stuff, proteins...}.
+\red{quantum chemistry, Quantum simulations and stuff, proteins...}.
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[!h]
