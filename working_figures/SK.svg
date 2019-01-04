@@ -14,7 +14,7 @@
    inkscape:export-ydpi="90"
    inkscape:export-xdpi="90"
    inkscape:export-filename="/home/ngarcia/ownCloud/work/mytesis/complex.png"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    version="1.1"
    id="svg2"
    viewBox="0 0 1834.8576 937.50952"
@@ -29,10 +29,10 @@
      fit-margin-left="0"
      fit-margin-top="0"
      inkscape:window-maximized="1"
-     inkscape:window-y="27"
+     inkscape:window-y="55"
      inkscape:window-x="0"
-     inkscape:window-height="1136"
-     inkscape:window-width="1920"
+     inkscape:window-height="1689"
+     inkscape:window-width="3200"
      inkscape:snap-center="true"
      inkscape:snap-object-midpoints="true"
      inkscape:snap-midpoints="true"
@@ -50,7 +50,7 @@
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
      inkscape:cy="-1247.6225"
-     inkscape:cx="-1378.744"
+     inkscape:cx="-3087.3154"
      inkscape:zoom="0.175"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
@@ -63,7 +63,8 @@
     <sodipodi:guide
        id="guide5594"
        orientation="0,1"
-       position="4701.9985,1633.3451" />
+       position="4701.9985,1633.3451"
+       inkscape:locked="false" />
   </sodipodi:namedview>
   <defs
      id="defs4">

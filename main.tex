@@ -80,7 +80,8 @@
 \newcommand{\diver}[1]{\vec{\nabla}\vec{#1}}
 \newcommand{\rotac}[1]{\vec{\nabla}\times#1}
 \newcommand{\red}[1]{\textcolor{red}{#1}}
-\definecolor{blue}{rgb}{0.06, 0.3, 0.57}
+%\definecolor{blue}{rgb}{0.06, 0.3, 0.57}
+\definecolor{blue}{rgb}{0.09019608, 0.38039216, 0.70196078}
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
 \newcommand{\Tr}[1]{Tr\left(#1\right)}
 \newcommand{\udaw}{\uparrow\mathrel{\mspace{-3mu}}\downarrow}
@@ -134,31 +135,41 @@
 \pagenumbering{arabic}
 
 
-%~~~~~~~~ Chapter ~~~~~~~~
-% Introduction & Quantum computing
-\input{chapter01/chapter1.tex}
 
 %~~~~~~~~ Chapter ~~~~~~~~
-% Current experimental status
-\input{chapter03/chapter3.tex}
+\input{graphene/graphene.tex}
 
 %~~~~~~~~ Chapter ~~~~~~~~
-% Graphene
-\input{chapter04/chapter4.tex}
+\input{defects/adatom.tex}
+
+%~~~~~~~~ Chapter ~~~~~~~~
+\input{artlat/artlat.tex}
 
 %~~~~~~~~ Chapter ~~~~~~~~
 % Graphene Bilayer
 \input{graphene_bilayer/graphene_bilayer.tex}
 
-%~~~~~~~~ Chapter ~~~~~~~~
-% A Graphene based Quantum Computer
-\input{chapter06/chapter6.tex}
 
-%~~~~~~~~ Chapter ~~~~~~~~
-% Hydrogenated Graphene
-\input{chapter05/chapter5.tex}
+%%~~~~~~~~ Chapter ~~~~~~~~
+%% Introduction & Quantum computing
+%\input{chapter01/chapter1.tex}
 
+%%~~~~~~~~ Chapter ~~~~~~~~
+%% Current experimental status
+%\input{chapter03/chapter3.tex}
 
+%%~~~~~~~~ Chapter ~~~~~~~~
+%% Graphene
+%\input{chapter04/chapter4.tex}
+%
+%%~~~~~~~~ Chapter ~~~~~~~~
+%% A Graphene based Quantum Computer
+%\input{chapter06/chapter6.tex}
+%
+%%~~~~~~~~ Chapter ~~~~~~~~
+%% Hydrogenated Graphene
+%\input{chapter05/chapter5.tex}
+%
 % %~~~~~~~~ Chapter ~~~~~~~~
 % % Conclusions
 % \input{chapter07/chapter7.tex}
@@ -168,17 +179,18 @@
 % \input{chapter08/chapter8.tex}
 %
 % ~~~~~~~~ Appendices ~~~~~~~~
-\appendix
+%\appendix
 % % % Low energy regime
 % % \input{appendix/low_energy_regime.tex}
 % Slater-Koster hoppings
-\input{appendix/D.tex}
-% Quantum Gates
-\input{appendix/A.tex}
-% Units
-\input{appendix/B.tex}
-% Effective exchange interaction
-\input{appendix/C.tex}
+%\input{appendix/D.tex}
+%\input{appendix/SK.tex}
+%% Quantum Gates
+%\input{appendix/A.tex}
+%% Units
+%\input{appendix/B.tex}
+%% Effective exchange interaction
+%\input{appendix/C.tex}
 
 
 %~~~~~~~~ Bibliography ~~~~~~~~
