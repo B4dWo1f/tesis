@@ -29,14 +29,21 @@
 
 %~~~~ HyperLinks
 \usepackage{hyperref}
-\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,
+            pdftitle={Electric control of in-gap states in bilayer graphene},
+            pdfsubject={PhD Thesis},
+            pdfkeywords={graphene, bilayer, slater-koster, bias, in-gap},
+            pdfauthor={Noel Garcia}}
+%            pdfproducer={Latex with hyperref, or other system},
+%            pdfcreator={pdflatex, or other tool}]{hyperref}
 
 %~~~~ Figures and Captions
 \usepackage{subfig}
 \usepackage{graphicx}  %[pdftex]
-\setkeys{Gin}{width=0.7\textwidth}
+\setkeys{Gin}{width=\textwidth}
 \usepackage{caption}
-\captionsetup{font=small,width=0.8\textwidth,justification=justified,format=plain}
+\captionsetup{font=small,width=0.8\textwidth,
+              justification=justified,format=plain}
 
 %~~~~ Manage FloatBarriers and stuff
 \usepackage{placeins}
@@ -184,17 +191,19 @@
 \appendix
 % % % Low energy regime
 % % \input{appendix/low_energy_regime.tex}
+% Models
+\input{appendix/models.tex}
 % Cells
 \input{appendix/cells.tex}
 % Slater-Koster hoppings
-%\input{appendix/D.tex}
+%%\input{appendix/D.tex}
 \input{appendix/SK.tex}
-%% Quantum Gates
-%\input{appendix/A.tex}
-%% Units
-%\input{appendix/B.tex}
-%% Effective exchange interaction
-%\input{appendix/C.tex}
+%%% Quantum Gates
+%%\input{appendix/A.tex}
+%%% Units
+%%\input{appendix/B.tex}
+%%% Effective exchange interaction
+%%\input{appendix/C.tex}
 
 
 %~~~~~~~~ Bibliography ~~~~~~~~

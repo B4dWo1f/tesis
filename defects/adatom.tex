@@ -1,5 +1,5 @@
 \chapter{Graphene monolayer}
-We consider a tight-binding model in the Slater-Koster (SK) approximation with 4 orbitals for the $C$ atom ($s$,$p_x$,$p_y$,$p_z$) and 1 orbital ($s$) for the $H$ atom. The SK parameters used are:
+We consider a tight-binding model in the Slater-Koster (SK) approximation with four orbitals for the $C$ atom ($s$, $p_x$, $p_y$, $p_z$) and one orbital ($s$) for the $H$ atom. The \ac{sk} parameters used are:
 \begin{equation}
   \begin{array}{l|cccc}
         & V_{ss\sigma} & V_{sp\sigma} & V_{pp\sigma} & V_{pp\pi} \\ \hline
@@ -14,8 +14,9 @@ We consider a tight-binding model in the Slater-Koster (SK) approximation with 4
 \label{SK_params}
 \end{equation}
 
-These parmeters are in line with those found in the literature\cite{Gosalbez-Martinez2011,Konschuh2010} and can be obtained by fitting of DFT bands (done with quantum-espresso). It is important to notice that the exact values for these parameters is not relevant since small deformation of them just result in small deformations of the band structure. The symmetries of graphene and its orbitals ensure that the components of the eigenstates are the correct ones since the $p_z$ is decoupled from all the other orbitals.
+These parmeters are in line with those found in the literature\cite{Gosalbez-Martinez2011,Konschuh2010,Saito1998} and can be obtained by fitting of DFT bands (done with quantum-espresso). It is important to notice that the exact values for these parameters is not relevant since small deformation of them just result in small deformations of the band structure. The symmetries of graphene and its orbitals ensure that the components of the eigenstates are the correct ones since the $p_z$ is decoupled from all the other orbitals.
 
+\section{Islands}
 With these parameters we consider an armchair hexagonal nanoisland ($\sim10^4-10^5$ $C$ atoms). Such a system is 0-dimensional, hence, no band structure can be defined but rather just the spectrum. Nevertheless, in the limit of an infinite island, the physical properties of graphene should be recovered.
 We can get an idea of how far from real graphene we are by considering the confinement gap. Graphene is famously known for not having a gap in the band structure. Graphene nanoislands do have a gap due to its finite size, but the larger the island, the smaller the gap until in the limit of an infinite island (graphene) the gap shall disappear. The dependence of the gap and the size of the island can be estimated as a free particle in a box of size $L$, roughly $\Delta\sim\frac{1}{L^2}$. Performing the actual calculation we can obtain see the dependence of the gap with the size of the island (see Fig.~\ref{confinement}) and estimate the necessary dimensions for our calculations.
 
