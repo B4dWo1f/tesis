@@ -1,0 +1,62 @@
+1- ion-trap
+2- spin states of quantum dots, neutral-atom
+3- NMR (Zeeman-degenerate ground states)
+4- Kane
+5- superconductor (charge/flux)
+6- the vibrational quanta of trapped electrons, ions or atoms
+7- spin states of quantum dots
+8- Quantum algorithms
+25- qubit
+26- neutral-atom
+27- neutral-atom
+31- Decoherence
+32- Decoherence
+
+1.
+J.I. Cirac and P. Zoller, Phys. Rev. Lett. 74, 4091 (1995)
+T. Pellizzari, S.A. Gardiner, J.I. Cirac, and P. Zoller, Phys. Rev. Lett. 75, 3788 (1995)
+C. Monroe, D. M. Meekhof, B. E. King, W. M. Itano, and D. J. Wineland, "Demonstration of a fundamental quantum logic gate", Phys. Rev. Lett. 75, 4714 (1995)
+A. Sorensen and K. Molmer, Phys. Rev. Lett. 82, 1971 (1999)
+S. Schneider, D. F. V. James, and G. J. Milburn, "Method of quantum computation with 'hot' trapped ions", quant-ph/9808012.
+
+2.
+Q. A. Turchette, C. J. Hood, W. Lange, H. Mabuchi, and H. J. Kimble, "Measurement of conditional phase shifts for quantum logic", Phys. Rev. Lett. 75, 4710 (1995)
+A. Imamoglu, D. D. Awschalom, G. Burkard, D. P. DiVincenzo, D. Loss, M. Sherwin, and A. Small, Phys. Rev. Lett. 83, 4204 (1999) (quant-ph/9904096)
+
+3.
+N. Gershenfeld and I. Chuang, Science 275, 350 (1997)
+D. Cory, A. Fahmy, and T. Havel, Proc. Nat. Acad. Sci. 94 (5), 1634 (1997)
+
+4.
+B. Kane, Nature 393, 133 (1998)
+R. Vrijen et al., "Electron spin resonance transistors for quantum computing in silicon-germanium heterostructures", Phys. Rev. A, in press (quant-ph/9905096)
+
+5.
+D. Averin, Solid State Commun. 105, 659 (1998)
+A. Shnirman, G. Schön, and Z. Hermin, Phys. Rev. Lett. 79, 2371 (1997)
+J. E. Mooij, T. P. Orlando, L. Levitov, L. Tian, C. H. van der Wal, and S. Lloyd, Science 285, 1036 (1999)
+
+6.
+P. M. Platzman and M. I. Dykman, Science 284, 1967 (1999)
+
+7.
+D. Loss and D. P. DiVincenzo, Phys. Rev. A 57, 120 (1998) (cond-mat/9701055)
+M. Sherwin, A. Imamoglu, and T. Montroy, "Quantum computation with quantum dots and terahertz cavity quantum electrodynamics", Phys. Rev. A 60, 3508 (1999) (quant-ph/9903065)
+T. Tanamoto, Phys. Rev. A 61, 022305 (2000) (quant-ph/9902031)
+
+8.
+D. Deutsch Proc. R. Soc. London A 400, 97 (1985)
+D. Deutsch Proc. R. Soc. London A 425, 73 (1989)
+
+25.
+B. Schumacher, Phys. Rev. A 54, 2614 (1996)
+
+26.
+G. K. Brennen, C. M. Caves, P. S. Jessen, and I. H. Deutsch, Phys. Rev. Lett. 82, 1060 (1999)
+
+31.
+J. Preskill, Proc. R. Soc. Lond A 454, 385 (1998) (quant-ph/9705031).
+
+32.
+M. A. Nielsen and I. L. Chuang, Quantum Computation and Quantum Information (Cambridge University Press, 2000)
+M. A. Nielsen, C. M. Caves, B. Schumacher, and H. Barnum, Proc. R. Soc. Lond. A 454, 277-304 (1998) (quant-ph/9706064)

@@ -88,7 +88,8 @@
 \newcommand{\rotac}[1]{\vec{\nabla}\times#1}
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 %\definecolor{blue}{rgb}{0.06, 0.3, 0.57}
-\definecolor{blue}{rgb}{0.09019608, 0.38039216, 0.70196078}
+%\definecolor{blue}{rgb}{0.09019608, 0.38039216, 0.70196078}
+\definecolor{blue}{rgb}{0.12156863, 0.46666667, 0.70588235}
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
 \newcommand{\Tr}[1]{Tr\left(#1\right)}
 \newcommand{\udaw}{\uparrow\mathrel{\mspace{-3mu}}\downarrow}
@@ -97,6 +98,7 @@
 \newcommand{\DUaw}{\Downarrow\mathrel{\mspace{-3mu}}\Uparrow}
 \newcommand{\e}[1]{\mspace{-2mu}\cdot\mspace{-2mu}10^{#1}}
 \newcommand{\ex}[1]{\mspace{-2mu}\times\mspace{-2mu}10^{#1}}
+\newcommand{\fref}[2][{}]{\hyperref[#2]{Fig.~\ref{#2}~#1}} 
 %~~~~~~~ Shortcuts ~~~~~~~
 \def\uaw{\uparrow}
 \def\daw{\downarrow}
@@ -147,16 +149,17 @@
 
 %~~~~~~~~ Chapter ~~~~~~~~
 \input{graphene/graphene.tex}
+%\input{ann/ann.tex}
 
-%~~~~~~~~ Chapter ~~~~~~~~
-\input{defects/adatom.tex}
+%%~~~~~~~~ Chapter ~~~~~~~~
+%\input{defects/adatom.tex}
 
-%~~~~~~~~ Chapter ~~~~~~~~
-\input{artlat/artlat.tex}
+%%~~~~~~~~ Chapter ~~~~~~~~
+%\input{artlat/artlat.tex}
 
-%~~~~~~~~ Chapter ~~~~~~~~
-% Graphene Bilayer
-\input{graphene_bilayer/graphene_bilayer.tex}
+%%~~~~~~~~ Chapter ~~~~~~~~
+%% Graphene Bilayer
+%\input{graphene_bilayer/graphene_bilayer.tex}
 
 
 %%~~~~~~~~ Chapter ~~~~~~~~
@@ -174,11 +177,11 @@
 %%~~~~~~~~ Chapter ~~~~~~~~
 %% A Graphene based Quantum Computer
 %\input{chapter06/chapter6.tex}
-%
-%%~~~~~~~~ Chapter ~~~~~~~~
-%% Hydrogenated Graphene
-%\input{chapter05/chapter5.tex}
-%
+
+%~~~~~~~~ Chapter ~~~~~~~~
+% Hydrogenated Graphene
+\input{chapter05/chapter5.tex}
+
 % %~~~~~~~~ Chapter ~~~~~~~~
 % % Conclusions
 % \input{chapter07/chapter7.tex}
@@ -188,22 +191,54 @@
 % \input{chapter08/chapter8.tex}
 %
 % ~~~~~~~~ Appendices ~~~~~~~~
-\appendix
-% % % Low energy regime
-% % \input{appendix/low_energy_regime.tex}
+%\appendix
+% Topological stuff
+%\input{appendix/qsh.tex}
+% % Low energy regime
+% \input{appendix/low_energy_regime.tex}
 % Models
-\input{appendix/models.tex}
+%\input{appendix/models.tex}
 % Cells
-\input{appendix/cells.tex}
+%\input{appendix/cells.tex}
 % Slater-Koster hoppings
 %%\input{appendix/D.tex}
-\input{appendix/SK.tex}
+%\input{appendix/SK.tex}
 %%% Quantum Gates
 %%\input{appendix/A.tex}
 %%% Units
 %%\input{appendix/B.tex}
 %%% Effective exchange interaction
 %%\input{appendix/C.tex}
+
+
+
+%1) Capítulo de introducción (0%)
+%    -   Keywords:  control of interactions (exchange, hyperfine, hopping) of point defects in graphene
+%     -  Long term goals:
+%-Electrically tunable Artifical Quantum Matter
+%- Kane qubit
+%
+%2) Background chapter (90%)
+%   - TB 1 orbital
+%   - TB 4 orbitales
+%   - SOC (origin in 4 orbital model)   Connection between the 2D graphene with SOC and 4 orbitals,  the  gap= sublattice* spin*valley,  the Kane & Mele model  for G. Monolayer.
+%   -  Graphene monolayer + Bilayer
+%   - Topological phases (Z2, edge states, Kane Mele model)
+%
+%3) Methods?? (TB, Embeding?, Lanczos?, Machine Learning? ) (???)
+%
+%4) Bloque Topológico:
+%     -  PRB bilayers (95%)
+%     -  PRL spin-proximity  bilayer (90%)
+%     -  Machine learning for TI (90%)
+%
+%5) Paper de la vacante (95%)
+%
+%7) Control eléctrico de la monovacante: hyperfine control (monolayer with size, bilayer with electric field) (80 %)
+%
+%8) More than 1:
+%     -  Diradicals (follow-up del 4).  Hamiltoniano azul. (80%)
+%     -  Designer matter.  (Electrical control of exchange,  artificial graphene)  (40%)
 
 
 %~~~~~~~~ Bibliography ~~~~~~~~

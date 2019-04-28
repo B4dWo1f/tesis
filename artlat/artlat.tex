@@ -27,13 +27,13 @@ To study these systems we will consider a basis of localized states that could b
   \mathcal{B} = \left\{\phi_1,\phi_2,\dots,\phi_\alpha,\dots,\phi_{N_C}\right\}
 \end{equation}
 
-The general Hamiltonian will look like this:
+The complete Hamiltonian will look like this:
 \begin{equation}
   H = H_t + H_{t'} + H_{V}
 \label{hamiltonian}
 \end{equation}
 
-The term $H_t$ represents the kinetic energy arising from the hopping between neighboring sites (intralayer), $H_{t'}$ represents the interlayer hoppings and the term $H_{V}$ corresponds to the effect of an external electric field on the electrons. Such a term is considered to be just a layer dependent shift in the on-site energies:
+The term $H_t$ represents the kinetic energy arising from the hopping between neighboring sites in the same layer, $H_{t'}$ represents the interlayer hoppings and the term $H_{V}$ corresponds to the effect of an external electric field on the electrons. Such a term is considered to be just a layer dependent shift in the on-site energies:
 % \begin{equation}
 %   H_{\lambda_E} = \lambda_E
 %   \left(\begin{array}{cc}
@@ -56,8 +56,112 @@ In the presence of vacancies, there will appear in-gap states (as many as vacanc
 \end{split}
 \end{equation}
 
-\subsection{Graphene bilayer with an electric field}
-The electronic structure of graphene bilayer in the presence of an external electric field has been widely studied. Here I summarize the basic relevant properties.\\
+\section{Effects of an external electric field}
+
+In order to open a gap in the band structure of graphene bilayer one has to apply an external electric field. One option would be to simply place an electric gate under the sample, but this approach will heavily charge the system as soon as free charges are available (for instance from a hypothetical source and drain contacts)\cite{McCann2006,Zhang2009,Taychatanapat2010}.
+The other option is to use two gates, one on top of the sample and the other underneath it. Let us discuss the second option.
+
+
+\subsection{Dual Gating}
+Let us consider a graphene bilayer, depicted by the black lines and balls in Fig.~\ref{dual_gate}, sandwiched by $SiO_2$ layers and with two gates, unoriginally referred to as top and bottom, each with a voltage $V_{t/b}$ respectively. This setup will be consider as an infinite parallel plate capacitor.
+%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{artlat/fig/dual_gate.pdf}
+\vspace{-5pt}
+\caption{Schematics of dual gating.}
+\label{dual_gate}
+\end{figure}
+\FloatBarrier
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+The role of the electric field induced by the voltage $V_t$ and $V_b$ is twofold. On one hand, it will break the symmetry between the two layers by shifting their on-site energies, on the other hand it may dope the  system.
+
+The doping (extra charge absorbed into the system) in the graphene bilayer can be estimated simply by applying Gauss' law:
+\begin{equation}
+   \diver{D} = \rho-\rho_0 = \rho_f
+\label{gauss}
+\end{equation}
+where $\rho$ is total charge density, $\rho_0$ is the bounded charge density so that $\rho_f$ is the free charge density.
+
+Since we are considering an infinite capacitor, the electric field only has $z$ component, hence the divergence of the displacement results in a derivative which can be discretized:
+\begin{equation}
+   \diver{D}=\frac{\partial D}{\partial z} =\frac{D_t-D_b}{dz} = \rho_f =
+   e\frac{N}{V} \Rightarrow D_t-D_b = e\delta n
+\label{doping}
+\end{equation}
+where $N$ and $V=Adz$ are the number of electrons and volume ($A$ is the area), and $\delta n$ is the bidimensional density of electrons.
+
+In order to calculate the potential difference between the two graphene layers, we can consider simply the average of the electric field inside the capacitor:
+\begin{equation}
+   \Delta V = \langle\vec{E}\rangle \Delta z = \frac{E_t+E_b}{2} \Delta z=
+   \frac{\Delta z}{2} \left(\frac{D_t}{\varepsilon_t} +
+                            \frac{D_b}{\varepsilon_b} \right)
+\label{potential}
+\end{equation}
+where $\Delta z$ is width of the graphene bilayer and $\varepsilon_t$ and $\varepsilon_b$ are the electric permeability of the top and bottom dielectrics. $D_t$ and $D_b$ are (the $z$-component of) the displacement fields in the top and bottom regions.
+\begin{equation}
+   D_t = \frac{\varepsilon_t}{d_t}\left(V_{t}-V^0_{t}\right) \qquad;\qquad
+   D_b = \frac{\varepsilon_b}{d_b}\left(V_{b}-V^0_{b}\right)
+\end{equation}
+where $V^0_{t/b}$ are the off-set potential required to have charge neutrality, usually referred to as \ac{cnp}.
+
+Equations \eqref{doping} and \eqref{potential} show that by choosing the appropriates $V_t$ and $V_b$ we can independently change the doping of the system and the gap opened in the band structure.
+
+
+
+\subsection{Hartree}
+Using the basis $\mathcal{B}=\left\{\phi^1_A,\phi^1_B,\phi^2_A,                 \phi^2_B\right\}$ (where $A/B$ label sublattice and $1/2$ label the graphene    layer) we can write the basic Hamiltonian that models a graphene bilayer as:
+\begin{equation}
+   H(\vec{k}) = \left(\begin{array}{cccc}
+         \epsilon_1 & f(\vec{k}) & 0 & 0 \\
+         f^*(\vec{k}) & \epsilon_1 & \gamma & 0 \\
+         0 & \gamma & \epsilon_2 & f(\vec{k}) \\
+         0 & 0 & f^*(\vec{k}) & \epsilon_2
+                \end{array}\right)
+\end{equation}
+where $\epsilon_{1/2}$ account for both the shifting of the on-site energies  in each layer and the effect of having extra charge in the opposite layer.
+\begin{equation}
+\begin{split}
+   \epsilon_1 &= \frac{e}{\varepsilon_0}\Delta z \sigma_2 + V^0_1 \\
+   \epsilon_2 &= \frac{e}{\varepsilon_0}\Delta z \sigma_1 + V^0_2
+\end{split}
+\end{equation}
+where $\sigma$ is the planar charge density, calculated as:
+\begin{equation}
+   \sigma_{\text{bottom}} = \sum^{N_{\text{occ}}}_i |\bra{\psi_i}\mathcal{O}_B \ket{\psi_i}|^2
+   \frac{e}{N_k A}
+\end{equation}
+Each of the Hartree contributions, then will be:
+\begin{equation}
+   \epsilon^{H}_1 = \frac{e^2\Delta z}{\varepsilon_0A}
+   \frac{1}{N_k}\sum|\mean{B}|^2
+\end{equation}
+The order of magnitude of the prefactor is:
+\begin{equation}
+   \frac{e^2\Delta z}{\varepsilon_0A} =
+   \frac{\SI{2.56e-38}{\coulomb\squared} \cdot \SI{3.1e-10}{\meter}}
+   {\SI{8.8e-12}{\coulomb\per\volt\per\meter} \cdot \SI{5e-20}{\meter\squared}}=
+   \SI{1.75e-17}{\joule} \sim \SI{109.23}{\eV}
+\end{equation}
+where we have used that $\si{\joule}=\si{\coulomb\volt}$. The remaining factor $\tfrac{1}{Nk}\sum\langle B\rangle\sim 0.5$ since $|\mean{B}|^2\in[0,1]$
+
+
+
+The calculation of the first terms, has to be done iteratively since the estimation of electronic density, $\delta n$, depends on the eigenfunctions of the system, which depends on the on-site energies which depend on the electronic density.
+
+%
+% XXX Calculate and describe the Hartree solution
+%
+
+
+
+
+
+
+
+\section{Biased bilayer graphene}
+The electronic structure of bilayer graphene in the presence of an external electric field has been widely studied. Here I summarize the basic relevant properties.\\
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[!ht!]
 \centering
@@ -68,7 +172,7 @@ The electronic structure of graphene bilayer in the presence of an external elec
 \end{figure}
 % \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-Rather than having a linear band structure, graphene bilayer presents parabolic bands around the $K$ point. It has zero gap, and the next bands are split by $t'$. When an electric field is switched on, a gap is open at the $K$ point as shown in Fig.~\ref{bilayer2d}. The band gap behaves linearly for small electric fields.
+Rather than having a linear band structure, bilayer graphene presents parabolic bands around the $K$ point. It has zero gap, and the next bands are split by the interlayer hopping $t'$. When an external electric field is switched on, a gap is open at the $K$ point as shown in Fig.~\ref{bilayer2d} $b)$ and $c)$. The band gap behaves linearly for small electric fields while it tends to saturation when the gap is comparable to the interlayer splitting governed by $t'$.
 
 This calculation is not exactly accurate with the experimental results\cite{Zhang2009} since it does not consider any self-consistent or screening effect at all, nevertheless it contains the necessary ingredients to describe the relevant physics of the problem, so for the sake of simplicity we will remain at this level of description.
 
@@ -328,7 +432,7 @@ What I do not understand is that the 3 atoms closest to the vacancy (containing 
 \includegraphics[width=\textwidth]{artlat/fig/hyperfine.pdf}
 \vspace{-20pt}
 \caption{Change in the hyperfine coupling with the electric field.}
-\label{Label}
+\label{latt_hyper}
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
@@ -336,13 +440,32 @@ What I do not understand is that the 3 atoms closest to the vacancy (containing 
 
 
 \section{2-D. Designer fermion lattices} %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+\subsection{The Geometry}
+Since we require vacancies to be placed only in hollow positions, its possible placements form a triangular lattice \red{($C_6$ symmetry?)}. By carefully choosing the location of the vacancies, many different meta-lattices may appear.
+%The artificial lattices that we can build by choosing the correct placing of the vacancies can form almost all the 2D Bravais lattices. \fref{art_lattices}
+%%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+%\begin{figure}[h!]
+%\centering
+%\includegraphics{path/to/file.ext}
+%\vspace{-5pt}
+%\caption{Some examples of the possible artificial lattices}
+%\label{art_lattices}
+%\end{figure}
+%\FloatBarrier
+%%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+Any structure preserving the $C_6$ symmetry can easily be achieved, but even structures breaking this symmetry are possible. For instance we can place two vacancies forming either a rectangular lattice or a honeycomb lattice. Three vacancies per unit cell allow more complex structures such as the Kagome lattice or the centered rectangular lattice.
+Strictly speaking, neither oblique nor square lattice can be exactly reproduced but these two are particular examples of the rectangular lattice, so effectively all the 2D possible lattices can be reproduced % TODO wat?!
+
+\subsection{Control parameters}
+
+
+\subsection{Artificial triangular lattice}
 By carefully choosing the placement of the vacancies, different 2D lattices can be designed. The electrically tunable gap as well as the distance among vacancies provide two parameters to design fermion models with the desired parameters.
 Almost any lattice is feasible, as illustrative examples we will examine a triangular lattice with different unit cells, i.e., a simple triangular lattice, graphene and the Kagome lattice.
 
 The effective parameters will be tuned by choosing the appropriate distances and angles between vacancies and the corresponding electric field.
 
 
-\subsection{Artificial triangular lattice}
 The simplest effective lattice that can be designed is a triangular lattice with a single site per unit cell. This lattice appears naturally when we consider only the hollow positions of the upper layer in a graphene bilayer.
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%

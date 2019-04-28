@@ -1,0 +1,785 @@
+\chapter{Real space mapping of topological invariants using artificial neural networks}
+
+\section{Introduction}
+The study of topological electronic phases is one of the central topics %themes
+in modern Condensed Matter Physics. Depending on the symmetry class different
+topological states exist, with the paradigmatic examples of
+time reversal topological insulators,\cite{RevModPhys.82.3045}
+topological superconductors,\cite{RevModPhys.83.1057}
+topological crystal insulators,\cite{PhysRevLett.106.106802}
+topological Kondo insulators\cite{PhysRevLett.104.106408} and
+topological Mott insulators\cite{PhysRevLett.100.156401} among others.
+The most fundamental quantity to characterize these states is the so called
+topological invariant, whose value determines the topological class of the
+system.
+In particular, interfaces between systems with different topological invariants
+show topologically protected excitations, resilient towards perturbations
+respecting the symmetry class of the system.
+Computationally, the calculation of the topological invariant usually requires
+the explicit knowledge of the wavefunctions of the entire 
+system.\cite{PhysRevB.83.235401,PhysRevB.95.075146,wu2017wanniertools}
+In particular,
+topological invariants can
+be calculated as the winding number of the 
+occupied wave functions 
+under
+twisted boundary
+conditions.\cite{PhysRevB.83.235401,PhysRevB.95.075146,wu2017wanniertools}
+In that way, these methods generically require computing the full
+wavefunctions, that becomes a cumbersome task for
+systems without translational symmetry consisting on thousands
+of atoms.
+
+
+In several situations of experimental relevance, translational symmetry is
+broken and systems are able to show different phases in real space due to the
+spatial modulation of the effective parameters.
+This situation might lead to protected modes between different regions of the
+system, dramatically changing the low energy properties of the whole material.
+This is the natural scenario in van der Waals heterostructures, where Moire
+patterns\cite{PhysRevB.90.075428,PhysRevB.96.085442,wang2016gaps} could coexist
+with any topological state.\cite{sanchez2017helical,Young2014}
+A more controlled situation is the proposals for topological superconductivity
+involving nanowires, where the topological state is controlled \emph{locally} by
+electric gates.\cite{Alicea2011,zhang2016ballistic}
+Even though real space formulations for the topological invariant do
+exist,\cite{PhysRevB.84.241106,PhysRevB.95.121114,loring2015k,mitchell2018amorphous,fulga2016aperiodic} their computation requires an
+integration over the whole space. Thus,  there is not a simple
+methodology to obtain a topological invariant  in inhomogeneus systems by
+evaluating solely their local properties.
+
+
+Application of Machine learning methods in Condensed Matter Physics
+is a growing area.
+A significant advantage of these techniques is that they are capable of finding the
+important degrees of freedom of a dataset without needing a profound insight of
+the treated problem.
+The identification of phase transitions\cite{VanNieuwenburg2017,PhysRevX.7.031038,ohtsuki2016deep,PhysRevE.95.062122,broecker2017quantum,koch2017mutual}
+and the study of the ground state and correlations in different quantum many
+body
+problems\cite{carleo2017solving,deng2016exact,PhysRevX.7.021021,PhysRevLett.118.216401,nagai2017self,PhysRevE.97.013306}
+are just some of the problems that Machine Learning has helped tackle in the
+past few years. Even some techniques have been used in combination with
+\textit{ab initio} calculations allowing a broader and more accurate
+understanding of
+materials.\cite{PhysRevLett.108.058301,bartok2017machine,gao2016machine}
+% Thus, our goal will be to borrow tools from machine learning to compute the
+% topological invariant of a system based only on real space information.
+Within the language of machine learning, the calculation of topological
+invariants is understood as a simple classification algorithm,\cite{PhysRevLett.120.066401,yoshioka2017learning}
+that could be
+efficiently tackled with the so called artificial neural networks.
+\cite{alexnet2012,Dede20107,Lecun1998,Goldberg2015,Bengio2003,pybrain2010jmlr}
+
+
+In this manuscript we show that artificial neural networks (ANN) are capable of
+characterizing the local topology of a system using as input a restricted amount
+of real space information.
+In particular, we show that a trained ANN identifies correctly the local
+topological character in spatially varying Hamiltonians that create
+topologically different regions in space.
+Importantly, we show that this technique, used in conjunction with the kernel
+polynomial method, allows to compute local topological invariants with
+an algorithm whose computational cost scales just linearly with the size of the
+system.
+
+The rest of the paper is organized as follows. In section~\ref{sec:met} we
+review the basics of artificial neural networks (Sec.~\ref{sec:NN}) and
+summarize the use of the kernel polynomial method to efficiently compute density
+matrices (Sec.~\ref{sec:KPM}).
+In section~\ref{sec:Topo} we apply the combined ANN-KPM technique both to a
+model Hamiltonian for a 1-D topological superconductor (Sec.~\ref{sec:1d}) and a
+2-D anomalous Hall insulator (Sec.~\ref{sec:2d}). Finally, in
+section~\ref{sec:Conc} we present our conclusions.
+
+
+
+
+\section{Method}
+\label{sec:met}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Artificial Neural Networks}
+\label{sec:NN}
+Machine Learning (ML) is a broad field that includes many different approaches,
+goals and methods.\cite{Solomonoff1957}
+The defining property of ML algorithms is that they allow computers to perform
+specific tasks without being explicitly programmed for each one of
+them.\cite{Samuel1959} Within the vast variety of ML algorithms, we will focus
+on supervised learning algorithms, which require a training dataset to fit the
+parameters in the model. One of the most common models of supervised learning are
+\emph{Artificial Neural Networks} (ANN) which have been proven very useful to
+model patterns and correlations of complex problems that cannot be modeled
+analytically such as image or sound
+recognition,\cite{alexnet2012,Dede20107,Lecun1998} and even natural language
+processing.\cite{Goldberg2015,Bengio2003}
+In our case, we aim to use an artificial neural network to characterize
+locally the topological state of a one (Fig.~\ref{fig1}~(a)) or two
+(Fig.~\ref{fig1}~(b)) dimensional system. The objective of the procedure
+is to have a neural network that, given local information about the system,
+returns the topological invariant as sketched in Fig.~\ref{fig1}~(c).
+The local information that will be provided is a local block of the density
+matrix of the system, as we will discuss later.
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.5\textwidth]{ann/figures/fig1.pdf}
+\vspace{-5pt}
+\caption{
+Panels (a,b) show a cartoon of the two different geometries of the model Hamiltonians considered  below, 
+%systems that we aim to topologically characterized.
+a one dimensional topological superconductor  (a) and a two dimensional  quantum anomalous Hall insulator (b).
+Panel (c) shows a schematic sketch of our procedure: a trained neural network
+will take as input a local density matrix, and it will return the topological
+invariant of the system.
+Panel (d) shows a sketch for an artificial neural network as described in the text, whereas
+in (e) we sketch the standard behavior of an activation function of a neuron,
+$\sigma(x)$, for different weights (colors) and bias (dashed lines).
+}
+\label{ANN}
+\label{fig1}
+\end{figure}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+ANN are loosely based on parts of the brain, consisting of neurons, modeled as
+perceptrons\cite{Rosenblatt1958}, and synapses as shown in Fig.~\ref{ANN}~(a).
+%\buemark{Every neuron in an ANN has a number of inputs and outputs in the form of real numbers}
+The neurons in an ANN do not attempt to model the actual structure or behavior
+of the biological cells\cite{Hodgkin1952}. Instead, they mimic one of their main
+features, the activation function.
+This activation function, $\sigma$, sketched in Fig.~\ref{ANN}~(b) provides the
+output of each neuron based on the received inputs and an external parameter
+(bias). For computational convenience, $\sigma$ should be any smooth and
+differentiable function defined over $\mathbb{R}$ but with its range restricted
+to a closed interval, namely $\sigma\in[-1,1]$, as depicted in Fig.~\ref{ANN}~(e).
+Usually, these functions are either the $\tanh$ or the sigmoid function, but
+others might be used without loss of generality or functionality since these
+models are only weakly sensitive to these details.\cite{Hopfield1982}
+
+
+The inputs $X$ entering each neuron are weighted by the synapses $W$ and shifted
+by the bias $b$. The synapses' weights are parameters to be tuned and they can be
+arranged as rectangular matrices, $W^{\alpha}$, so the output
+$L$ of the layer $\alpha$ can be obtained simply as:
+$L_\alpha=\sigma(X_\alpha\cdot W_\alpha + b_\alpha)$,
+where $X_\alpha$ is the input of the layer $\alpha$ (note that for the hidden
+layers $X_\alpha=L_{\alpha-1}$).
+As a formative example the outputs of every layer of the toy model sketched in
+Fig.~\ref{ANN}~(d) can be calculated as follows:
+\begin{equation}
+  \begin{split}
+    L_0 &= \sigma(X_0) \quad\text{or just}\quad L_0 = X_0 \\
+    L_1 &= \sigma\left(L_0 \cdot W_1 + b_1\right) \\
+    L_2 &= \sigma\left(L_1\cdot W_2 + b_2\right)= \hat{y}
+  \end{split}
+\label{FF}
+\end{equation}
+where $X_0$ is the input fed to the ANN.
+The matrices $W_\alpha$ and the arrays $b_\alpha$ are the parameters to be
+fitted during the training process in order to modify the activation functions
+of each of the neurons in the ways showed in Fig.~\ref{ANN}~(e). Note that the
+number of parameters in ANN models grows very quickly with the size (number of
+neurons per layer) and depth (number of layers) of the network.\\
+
+
+%In our case, we will employ ANN to implement a supervised
+%learning algorithm. This kind of algorithms consist in three phases.
+Artificial neural network, as every supervised learning algorithm, consist in
+three phases.
+First, the architecture of the model (i.e. the number of layers and neurons per
+layer) is decided depending on the complexity of the problem addressed.
+Second, the model is trained. In this process, several input-output pairs are
+provided to the model whose parameters are fitted to mimic the correlations
+present in the user-provided data.
+Finally, when the training is completed, the model can be used to evaluate new
+(unseen) input data.
+
+
+Supervised learning algorithms require a training dataset to optimize the
+parameters of the models. The training is performed by minimizing a cost
+function, $\mathcal{E}$, usually proportional to the squared difference between
+the expected output, $y$, and the actual output of the network, $\hat{y}$.
+\begin{equation}
+  \mathcal{E}=\tfrac{1}{2}(y-\hat{y})^2
+\end{equation}
+Notice that $y$ is a constant defined by the (user-provided) training dataset
+while $\hat{y}$ depends on all the parameters of the network (weights and bias).
+The minimization of $\mathcal{E}$ is, then, performed by iteratively modifying
+the values of all the weights and bias in the network until the desired output
+is obtained.
+This is a computationally complex and expensive process since the number of
+parameters can range from a few tens to millions. In fact, it was not until 1986
+that an efficient method was developed for such a purpose.\cite{Rumelhart1986}
+We use the gradient descent with the back-propagation algorithm to train the
+ANN, which is the most common approach nowadays.
+We used the open source library PyBrain,\cite{pybrain2010jmlr} to create, train and evaluate the ANN.
+
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\columnwidth]{ann/figures/fig2.pdf}
+\vspace{-5pt}
+\caption{
+Sketch of the process to evaluate the topological character of a local region
+of space. The density matrix corresponding to a certain area in space is
+calculated using the KPM, after removing the redundant elements the matrix is
+rearranged in a 1D array that is used as input for neural network that will
+provide the corresponding topological invariant as output.
+}
+\label{fig_method}
+\end{figure}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+
+
+\subsection{Correlation functions with the Kernel Polynomial method}
+\label{sec:KPM}
+In this section we review how real space correlation functions can be
+efficiently calculated using the Kernel polynomial method
+(KPM).\cite{RevModPhys.78.275}
+We will focus the discussion in the case of a normal electronic system,
+since the case of a superconductor can be treated in an analogous way.
+The main task that we have to perform is to obtain the density matrix, evaluated
+in a restricted area of real space, of a certain (very large) Hamiltonian. In
+terms of the eigenfunctions $|\Psi_k\rangle$ of the Hamiltonian $H$,
+the elements of the density
+matrix can be written as
+\begin{equation}
+\rho_{ij} = \int_{-\infty}^{E_F} \langle i | \Psi_k \rangle \langle \Psi_k | j\rangle\delta(E_k -\omega) d\omega
+\label{dens}
+\end{equation}
+where $|i\rangle$ and $|j\rangle$ are the elements of the basis for the
+Hamiltonian $H$ and $E_F$ is the Fermi energy.
+The diagonal elements of the matrix, $\rho_{ii}$, are the integrated local
+density of
+states.
+In the gapped state, the off-diagonal elements are expected to decay
+exponentially with distance. So, when the Fermi energy $E_F$ lies in the gap,
+the density matrix is properly described by restricting the calculation to a set
+of neighboring sites.
+Generically, calculating the previous matrix requires diagonalizing the full
+Hamiltonian to obtain the occupied wavefunctions, a task that scales with
+$\mathcal{O}(N^3)$, with $N$ the system size of the system.
+The Kernel Polynomial Method allows the computation of $\rho_{ij}$, for a
+restricted set of neighboring sites, with a computational cost that scales only
+as $\mathcal{O}(N)$.
+
+The KPM allows to compute the quantity
+\begin{equation}
+g_{ij}(\omega) = \sum_k \langle i | \Psi_k \rangle \langle \Psi_k | j\rangle\delta(E_k -\omega)
+\end{equation}
+which can easily be integrated to obtain the density matrix~\eqref{dens}. The
+central idea is that $g_{ij}$ can be expressed in matrix form as
+\begin{equation}
+g_{ij}(\omega) =
+\langle i | \delta (H-\omega) | j \rangle
+\label{eq5}
+\end{equation}
+
+The KPM consists on expanding equation~\eqref{eq5} in terms of Chebyshev
+polynomials $T_n(\omega)$. To do so, the Hamiltonian is first rescaled so that
+all the eigenenergies lie in the interval $\mathcal{E}_k \in (-1,1)$. The
+rescaled Hamiltonian is denoted as $\mathcal{H}$. The corresponding spectral
+function is calculated as
+\begin{equation}
+g_{ij}({\omega}) = \frac{1}{\pi \sqrt{1-\omega^2}}
+\left (\bar \mu_n + 2 \sum^N_{n=1} \tilde \mu_n T_n (\omega)
+\right )
+\label{KPM}
+\end{equation}
+The coefficients $\tilde \mu_n$ determine the expansion of a certain element
+$g_{ij}$, and are calculated as
+
+\begin{equation}
+\tilde \mu_n = g^N_n \mu_n
+\end{equation}
+where $\mu_n$ are the coefficients calculated from the Hamiltonian
+$\mathcal{H}$ and $g_n^N$ denotes the Jackson Kernel that improves the
+convergence of the series\cite{RevModPhys.78.275}
+
+\begin{equation}
+g_n^N =
+\frac{(N-n-1)\cos \frac{\pi n}{N+1} + \sin \frac{\pi n}{N+1}
+\cot \frac{\pi }{N+1}
+}
+{N+1}
+\end{equation}
+
+Given two sites $i$ and $j$, we define two vectors located in those sites
+$v_i$ and $v_j$.
+The coefficients $\mu_n$ would be calculated as a conventional functional
+expansion
+
+\begin{equation}
+\mu_n = \langle v_i | \int_{-1}^{1}\delta (\mathcal{H}-\omega)T_n(\mathcal{H}) d \omega | v_j \rangle
+\end{equation}
+which in the diagonal basis reads
+\begin{equation}
+\mu_n = \int_{-1}^{1}\langle v_i | \Psi_k \rangle \delta (\mathcal{E}_k-\omega) \langle \Psi_k | v_j \rangle T_n(\omega) d \omega
+\end{equation}
+Performing the integration over $\omega$ we get
+\begin{equation}
+\mu_n = \langle v_i | \Psi_k \rangle T_n(\mathcal{E}_k)  \langle \Psi_k | v_j \rangle =
+\langle v_i | T_n(\mathcal{H}) | v_j \rangle
+\end{equation}
+Therefore, the coefficients $\mu_n$ can be calculated as the overlap of two
+vectors
+
+\begin{equation}
+\mu_n =
+\braket{v_j}{\alpha_n}%\langle \alpha_0 | \alpha_n \rangle
+\end{equation}
+where $\alpha_n$ is calculated with
+the recursion relations associated to the Chebyshev polynomials
+\begin{equation}
+\begin{aligned}
+\ket{\alpha_0} = \ket{v_i}  \\  %|\alpha_0 \rangle = | v_i \rangle \\
+|\alpha_1 \rangle = \mathcal{H} | \alpha_0 \rangle \\
+|\alpha_{n+1} \rangle = 2\mathcal{H} | \alpha_n \rangle-
+| \alpha_{n-1} \rangle
+\end{aligned}
+\end{equation}
+This procedure thus involves matrix vector products to calculate the
+coefficients. For a sparse matrix, as it is the case of a tight binding
+Hamiltonian, the number of non-zero elements scales linearly with the system
+size, so the computational cost of calculating the density matrix for a fixed
+number of sites also scales linearly.
+This method allows to compute $g_{ij}$ at every energy simultaneously, so
+that $\rho_{ij}$ can be calculated by integration up to the Fermi energy.
+
+
+For small systems, the density matrix can be calculated also by exact
+diagonalization of the full Hamiltonian. In principle, that procedure
+allows to calculate the
+correlation function of relatively large one dimensional systems. However, for a
+two dimensional system, the dimension of the matrix will be too large in
+general. It is in that situation when the kernel polynomial method is specially
+suitable.
+
+
+\section{Topological invariants with supervised learning}
+\label{sec:Topo}
+We now describe the procedure to characterize the local topological character of
+a system using ANN.
+We choose as input the elements of the density matrix that involve one site and
+its closest neighbors.
+This procedure allows to naturally treat systems without translation
+symmetry and with disorder, as the calculation of the density matrices is not more
+computationally expensive in those situations using the previous procedure.
+% Noel: This sentence was a bit weird for me
+The process to calculate the density matrix was discussed in
+Sec.~\ref{sec:KPM} but in order to use the density matrix as input for our ANN
+some processing is required.
+The density matrix is, in general, a complex Hermitian matrix, so we will
+remove the redundant elements (namely the lower triangle) and arrange the
+remaining elements in a 1D array, concatenating the real and imaginary parts.
+Furthermore, we included the eigenvalues of the density matrix as part of the
+input. Strictly, the inclusion of the eigenvalues is a redundant operation that
+could be avoided by increasing the size and/or depth of the ANN, yet we found
+that it helped the optimization of the model with a negligible computational
+overhead.
+The output of the ANN will be the topological invariant of the system.
+The calculation of the corresponding output is done by constructing a
+translational invariant Hamiltonian in which the corresponding topological
+invariant is well defined and can be calculated in a standard way.
+Finally, since we are using the ANN as a classifier, it is convenient to encode
+the possible outputs as linearly independent vectors, $\vec{v}$, rather
+than use a single scalar. The use of vectors allows the discrimination
+between wrong answers and false positives.
+This whole architecture is sketched in Fig. \ref{fig_method}.
+
+
+
+In order to train of the ANN we generate a large number of realizations of a
+family of Hamiltonians, exploring their parameter space. For a given choice of
+parameters, we compute the topological invariant of the corresponding pristine
+case and its local density matrix.
+These procedure allows us to generate a set of inputs and outputs, which are
+used to train the NN.
+Once the ANN is trained, the model is ready to be evaluated with new data that
+the network has never tried to test the accuracy of the network.
+The last step is to create a new Hamiltonian with spatially dependent
+parameters, and evaluate the ANN with the local density matrix corresponding to a
+neighborhood of every lattice site.
+In this way, we have a procedure to locally evaluate the topological
+invariant of a systems lacking translational symmetry.
+
+
+
+
+\subsection{One dimensional topological superconductor}
+\label{sec:1d}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.5\textwidth]{ann/figures/fig3.pdf}
+\vspace{-5pt}
+\caption{
+%Matrix
+Image representation of the density matrix for two particular different states
+for the superconducting 1D system, trivial (a) and topological (b). In terms of
+the matrices shown, the task of the neural network can be understood as an image
+recognition algorithm capable of distinguishing an input (a) from (b), for
+different parameters of the Hamiltonian chosen randomly. The different indexes
+in x and y axis run over spin and electron/hole sectors in the closest sites.
+}
+\label{fig3}
+\end{figure}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+In the following, we will consider a lattice model Hamiltonian for a one
+dimensional electron gas that is able to host both trivial and topological
+superconducting states. The corresponding topological invariant is a $Z_2$
+number that can be calculated as a Berry phase.\cite{PhysRevB.88.075419}
+Such effective one dimensional system, in particular the superconducting
+topological phase, is realized in semiconducting nanowires deposited on top of a
+s-wave
+superconductor.\cite{PhysRevLett.105.077001,PhysRevLett.105.177002,mourik2012signatures,PhysRevB.84.144522,PhysRevLett.106.127001,lutchyn2017realizing,aguado2017majorana}
+The model describes electrons in a 1D chain, in the presence of Zeeman
+field, Rashba spin-orbit coupling, superconducting proximity effect
+and a sublattice imbalance term.
+Thus, the model has six different parameters: a spin-conserving hopping $t$,
+chemical potential $\mu$, Rashba spin orbit $t_R$, external Zeeman field $B_z$,
+on-site pairing term $\Delta$ and a trivial mass $m$.
+Moreover, we also include the possibility of having finite Anderson disorder
+$W_i$,
+so that the full Hamiltonian reads
+
+\begin{equation}
+\begin{split}
+  \mathcal{H} =&-t\sum_{\langle ij\rangle_\alpha}
+                \crea{c}{i\alpha}\des{c}{j\alpha}
+                 + i t_R\sum_{\langle ij\rangle_{\alpha\beta}}
+      \hat{e}_z\cdot(\vec{\sigma}_{\alpha\beta}\times\vec{d}_{ij})
+                                           \crea{c}{i\alpha}\des{c}{j\beta}\\
+      &+B_z\sum_{i\alpha}\crea{c}{i\alpha}\sigma_z\des{c}{i\alpha}
+  +\Delta \sum_i [c_{i\uparrow} c_{i\downarrow} + c^\dagger_{i\downarrow} c^\dagger_{i\uparrow}]\\
+  &+ \mu\sum_{i,\alpha}\crea{c}{i\alpha}\des{c}{i\alpha}
+  +m\sum_{i}\tau_i\crea{c}{i}\des{c}{i}
+  +\sum_{i,\alpha} W_i \crea{c}{i\alpha}\des{c}{i\alpha}
+  \label{hamil1d}
+\end{split}
+\end{equation}
+
+The previous Hamiltonian can have topological and trivial phases.
+In a nutshell, a topological phase may arise when the Zeeman term $B_z$ is such
+that the chemical potential $\mu$ crosses only one of the spin channels, so that
+a small pairing $\Delta$ and Rashba field $t_R$ gives rise to a spinless p-wave
+superconductor.\cite{PhysRevLett.106.127001}
+In the absence of both Zeeman and Rashba couplings, the induced superconducting
+gap is trivial.
+
+
+The Hamiltonian \eqref{hamil1d} is solved in the Nambu representation by defining
+a spinor wavefunction as
+$
+%\begin{equation}
+\Psi^\dagger =
+\begin{pmatrix}
+c^\dagger_{\uparrow}, &
+c^\dagger_{\downarrow} ,&
+c_{\downarrow}, &
+-c_{\uparrow}
+\end{pmatrix}
+%\end{equation}
+$
+which gives rise to a Bogoliuvov-de-Gennes Hamiltonian
+$\mathcal{H} = \frac{1}{2}\Psi^\dagger H \Psi$.
+The matrix $H$ is used to calculate the correlation functions
+$\langle c_{i,s} c_{j,s'} \rangle$
+and
+$\langle c^\dagger_{i,s} c_{j,s'} \rangle$,
+as introduced in section~\ref{sec:KPM}, by integrating the different
+$g_{ij}(\omega)$ from $\omega=-\infty$ up to $\omega=0$.
+In Fig.~\ref{fig3} we show an example of two different input data from the
+training dataset, for a topological (a) and a trivial (b) state computed for an
+open chain with $N=400$ sites using the KPM.
+It is evident that simple inspection is not enough to distinguish between the two
+of them. 
+%Interestingly, the lack of an analytic description for the
+%topological invariant based solely in the local information makes the
+%recognition of the different phases a non-trivial task, that our ANN is able to
+%handle.
+
+In order to generate the training dataset we considered different Hamiltonians
+for a bipartite chain with 400 sites by varying the different values for the
+off-plane Zeeman field $B_z$, Rashba $\lambda_R$, chemical potential $\mu$, 
+superconducting pairing $\Delta$ and sublattice imbalance $m$.
+In order to prove the robustness of our procedure, we also
+switch on the Anderson on-site
+disorder ($W\in (0.0,0.4t)$), with
+a magnitude comparable to the other energy scales.
+For the training dataset we generated 1000 different Hamiltonians with
+parameters randomly chosen in the following ranges:
+$t_R\in[-0.3t,0]$, $B_z\in[0.2t,0.8t]$, $\mu\in[t,2t]$, $\Delta\in[0.1t,0.3t]$,
+$m\in[-0.2t,0.2t]$, 
+yielding a five dimensional phase space. Using the generated Hamiltonians we
+calculate the density matrix of the central atom in the nanowire, $\rho_{ij}$,
+and its three closest neighbors.
+Since the Hamiltonian in eq.~\eqref{hamil1d} only involves two Pauli matrices for
+a linear chain, the Hamiltonian in real space can be chosen to be purely real,
+so that its density matrix will be also real.
+For each example the $Z_2$ topological invariant is calculated for the pristine
+system ($W_i=0$)
+defined by that particular set of parameters, which is used as expected
+output. Since this topological invariant only has two possibilities, we encode
+the $Z_2$ invariant as a two dimensional vector $v$, so that the topological
+case corresponds to $v=(1,0)$ and the trivial case to $v=(0,1)$.
+With this methodology a single element of the training dataset has a
+152-dimensional input and a 2-dimensional output.
+We took two hidden layers with 101 and 21 neurons.
+After training, a validation set with 200 new samples is generated to test the
+accuracy of the ANN yielding an accuracy of $\sim97\%$.
+In order to gain some insight on the ANN capabilities, we run a simple test by
+freezing all the parameters in the Hamiltonian~\eqref{hamil1d} but the chemical
+potential and comparing the actual $Z_2$ with the output provided by the ANN.
+In Fig~\ref{fig4}~(a) we see that even for unseen data the ANN is able to provide
+the correct topological invariant.
+
+Once the network is trained, it is ready to be used in the case of an inhomogeneus
+system.
+We now generate a one dimensional system following equation~\eqref{hamil1d} with
+spatially varying couplings.
+In particular, we modulate the chemical potential along the chain as shown in
+Fig.~\ref{fig4}~(b). Such modulation is feasible by means of local gates in the
+experimental realizations involving semiconducting
+nanowires.\cite{zhang2016ballistic}
+With such modulation, we observe the emergence of zero energy modes in the local
+density of states~\ref{fig4}~(c), which are expected to be a signature of a
+boundary between a trivial and topological phase.
+The evaluation of the topological invariant on every atomic position of the
+chain can be carried out by feeding the local density matrix to the trained
+neural network.
+Our network shows that the different regions of the space have different
+topological invariants as shown in Fig.~\ref{fig4}~(d).
+It is observed that the points of space where the topological invariant changes
+in Fig.~\ref{fig4}~(d) correspond to the location of the zero energy Majorana
+modes, as seen in Fig.~\ref{fig4}~(c), validating the performance of our neural network.
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.45\textwidth]{ann/figures/fig4.pdf}
+\vspace{-5pt}
+\caption{
+(a) Comparison of the topological invariant computed exactly with the one
+predicted by the trained neural network in a pristine system,
+showing that the ANN perfectly captures the phase transitions
+in the homogeneus system. Afterwards, we
+create a inhomogeneus system with modulated chemical potential as shown in
+panel (b).
+Such modulation creates trivial and topological zones, with Majorana modes
+pinned at the transition points (c).
+The neural network is then evaluated in every point of the space, yielding a
+site-dependent topological invariant shown in (d). The topological
+transitions shown in (d) mark the existence of zero Majorana modes obtained
+in (c).
+The parameters used are $\lambda_R=-0.3t$
+%($Z_{ee,x}=Z_{ee,y}=0$,
+$B_{z}=0.5t$, $m=0$, and $\Delta =0.1t$.
+}
+\label{fig4}
+\end{figure}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+The success of the neural network in describing the topological order of the
+different phases implies that, locally, the density matrix carries
+enough information to distinguish between the two cases. In particular, the
+elements of $\rho_{ij}$ involving $\langle c_{i,s} c_{j,s'}\rangle$ encode
+information about the induced superconducting order parameter, both in the $s$
+and $p$-wave channels, which physically is expected to determine the topological
+phase.
+If, in comparison, only the diagonal part of the density matrix was used
+as input for the neural network, it would not be possible to distinguish between
+trivial and topological states.
+This is easily understood taking into account that the diagonal part of
+$\rho_{ij}$ accounts for the total occupation numbers and two topologically
+inequivalent band-structures can have arbitrarily similar density of states.
+
+\subsection{Two dimensional Chern insulator}
+\label{sec:2d}
+In this section we will use an analogous methodology to study a topological two
+dimensional state. In particular, we consider a model Hamiltonian for
+electrons moving in a honeycomb lattice with Rashba spin orbit coupling $t_R$,
+off-plane exchange $B_z$, that is known to result in a two dimensional Quantum
+Anomalous Hall state (QAH)\cite{Qiao2010}:
+\begin{equation}
+\begin{array}{c@{}l}
+  H = -t\sum_{\langle ij\rangle_\alpha}\crea{c}{i\alpha}\des{c}{j\alpha}
+    + i t_R\sum_{\langle ij\rangle_{\alpha\beta}}
+    \hat{e}_z\cdot(\vec{\sigma}_{\alpha\beta}\times\vec{d}_{ij})
+                                         \crea{c}{i\alpha}\des{c}{j\beta}\\
+    +B_z\sum_{i\alpha}\crea{c}{i\alpha}\sigma_z\des{c}{i\alpha}
+    % +\lambda_{m}  % for consistence with the other equation
+    +m\sum_{i,\alpha}\tau_i\crea{c}{i\alpha}\des{c}{i\alpha}  \\
+  +\sum_{i,\alpha} W_i \crea{c}{i\alpha}\des{c}{i\alpha}
+  \end{array}
+\label{hamil:2d}
+\end{equation}
+where $t_R$ is the Rashba coupling, $\vec{\sigma}$ are the spin Pauli matrices,
+$B_z$ is the external Zeeman field and $\tau_i=\pm1$ is the sublattice operator.
+The first term is the usual tight-binding hopping term, the second one describes
+the Rashba interaction~\cite{Qiao2010,Min2006} and the third term is the
+so-called exchange or Zeeman term which couples to the spin degree of freedom.
+The fourth term is a trivial mass term that assigns an opposite on-site
+energy for the atoms in each of the sublattices, that we introduce in order
+to have a trivial insulator phase in the model.
+Finally, the last term is an Anderson disorder term that we introduce
+to prove the robustness of the procedure. For $m=0$, and $B_z\neq0$ and
+$t_R\neq 0$, the model has a topological gap with a  with Chern number
+$\mathcal{C}=\pm 2$. For $m\neq 0$ and $B_z=0$. the model has a trivial
+($\mathcal{C}=0$) gap.
+
+Each of these Hamiltonian terms can effectively describe different experimental
+situations. The sublattice imbalance could arise for a graphene monolayer
+deposited on boron nitride in a commensurate
+fashion.\cite{wang2016gaps,PhysRevB.88.035448}
+The Rashba and exchange fields naturally arise for a graphene monolayer
+deposited over a ferromagnetic insulator, such as
+YIG,\cite{tang2017approaching,PhysRevLett.114.016603}
+EuO\cite{PhysRevB.95.075418} or
+CrI$_3$.\cite{huang2017layer,zhang2017strong}
+Furthermore, the non commensuration of graphene with the substrate creates Moire
+patterns, resulting in an effective spatial modulation of the different
+contributions.\cite{PhysRevB.90.075428,PhysRevB.96.085442,wang2016gaps}
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.5\textwidth]{ann/figures/fig5.pdf}
+\caption{
+Real and imaginary parts of the density matrix for a trivial $\mathcal{C}=0$ (a,b)
+and a topological $\mathcal{C}=2$ (c,d) two dimensional system.
+In this case, the neural network will implement an image recognition algorithm,
+where the input are the two images representing the real and imaginary parts.
+}
+\label{fig5}
+\end{figure}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+
+It is worth mentioning two important differences with respect to the model
+presented in Sec.~\ref{sec:1d}. On one hand, now the Hamiltonian involves the
+three Pauli matrices, so in general it will be complex. This implies that the
+calculated density matrices will also be complex, so that the neural network
+will receive as input both the real and imaginary components.
+On the other hand, since we are dealing now with a two dimensional system, a
+finite island will have $L^2$ sites, with $L$ the typical size of the island.
+In particular, the calculation of a the density matrix with the wavefunctions of
+an island with side $L\approx 300$ would require the diagonalization of matrix
+of dimension $L^2\approx 90000$, whose computational complexity is $L^6$. It is
+in this situation where the KPM will be specially useful, as it allows us to
+calculate the density matrix with a computational complexity of the number of
+sites, $L^2$.
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.5\textwidth]{ann/figures/fig6.pdf}
+\caption{
+(a) Comparison between the exact Chern number (black) and the prediction of the
+trained neural network (red) using as input the local density matrix. Once the
+accuracy of the network has been checked, we created a big graphene island with
+modulated mass and exchange term as shown in (b). The neural network is used
+to evaluate the topological invariant in each atom, yielding the result shown
+in (c). The boundary between different topological phases is expected to give
+rise to in-gap states, which is confirmed by calculating the in-gap spectral
+function as shown in (d).
+}
+\label{DOS_fig}
+\label{fig6}
+\end{figure}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+We now move to apply our methodology to the system defined by
+eq.~\eqref{hamil:2d}.
+First, to train the neural network, we generate different spatially uniform
+Hamiltonians by choosing randomly each of the coupling parameters. The Zeeman
+and Rashba were randomly generated in the interval $t_R\in[-0.4t,0.4t]$ and the mass
+between $m\in[0,0.4t]$. Again, random Anderson-like disorder comparable to the other
+interactions are introduced all across the system $W_i\in [0.0,0.4t]$.
+The training dataset consisted in 564 samples. 
+% and the testing dataset had 586 samples.
+For every set of parameters, we built the Hamiltonian as in eq.~\eqref{hamil:2d}
+and calculated the local density matrix for the central atom and its three first
+neighbors which are used as input of the network, in this case a 128-dimensional
+array.
+Again we chose having two hidden layers with 101 and 21 neurons.
+It is worth considering again the challenging task of distinguishing
+between different inputs as those shown in Fig.~\ref{fig5}, which
+highlights that the classification of topological and trivial phases based only
+in local properties is far from being a trivial task.
+
+The output for each input was obtained by calculating the Chern number of the
+ground state of the system integrating the Berry curvature in the Brillouin zone
+of a translational invariant ($W_i=0$) Hamiltonian with the same parameters.
+Once the network was trained, we tested its  accuracy on a validation
+dataset with 586 samples randomly generated,  showing an accuracy of $\sim92\%$.
+The comparison of the result predicted by the network and the one calculated
+exactly in  a system with translational invariance is shown in
+Fig.~\ref{fig6}~(a) for the different topological phases.
+
+After the training, we generated a graphene nano-island with 7400 atoms. In this
+island, we choose a spatially modulated exchange field of the form
+$B_z(x,y) = 0.1t[\cos(0.15 x)+\cos(0.15 y)+2]$, a modulated mass term of the form
+$m(x,y) = 0.1t[\sin(0.15 x)+\sin(0.15 y)+2]$ (shown in Fig.~\ref{fig6}~(b)), and a
+constant Rashba coupling $\lambda_R = 0.2$.
+The previous modulations are expected to create neighboring trivial and
+topological areas depending on which is the dominant contribution, mass or
+exchange and Rashba couplings.
+With such a Hamiltonian, we calculated the local density matrix using the Kernel
+polynomial method, that was used as input of the neural network.
+The result of the evaluation of the neural network across the sample is shown in
+Fig.~\ref{fig6}~(c). % Note that the transition regions are somewhat troublesome for the ANN. This is due to the fact that these algorithms provide a smooth output, so it would require much more training to sharpen the transitions.
+It can be seen that different regions with different Chern number appear according
+to the spatial modulation of the Hamiltonian parameters.
+The significance of the different regions becomes clear once the in-gap density
+of states is calculated in Fig.~\ref{fig6}~(d). This shows both in-gap modes
+precisely at the boundary between different regions, as expected form the
+bulk-boundary correspondence,  as well as edge states all around the sample.
+
+This result  highlights that the artificial neural network faithfully distinguishes
+between the different phases based solely in local information, providing an
+useful method to calculate the topological invariant in systems without
+translational symmetry.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+\label{sec:Conc}
+We have shown that an artificial neural network is capable of predicting the
+topological nature of different model Hamiltonians using as an input a local
+sector of the density matrix, {\em i.e.}, evaluating solely \emph{local properties}.
+Our procedure consisted on training an artificial neural network using as
+input the subspace of the density matrix corresponding to a local area of the
+sample, and as output the topological invariant that an analogous (pristine and
+translational invariant) Hamiltonian with the same effective parameters would
+have.
+
+We applied this procedure to two well known models,  a  1D
+topological superconductor and 2D topological insulator. In both
+cases we considered finite systems with a space dependent Hamiltonian that
+create regions with both topological and trivial character.
+By evaluating the network with local quantities for each Hamiltonian we showed
+that the different topological domains are accurately identified by the network,
+even when the inhomogeneus systems have Anderson-like disorder, proving that
+this methodology can be applied for disordered systems.
+
+It is worth remarking that the training procedure is carried out for a specific
+model, and tested in that same model for different parameters, including local
+modulations in space.
+An open question is whether this methodology can be extended to cases with the
+same topological classes but different geometries.
+%Joaquin: not sure of what this means. Examples?
+%Noel: This means for instance that we are not sure if it should work or not in another QASH that is realized in any other material that is not a honeycomb lattice
+Finally, it is interesting to note that an analogous methodology could be
+applied  
+to interacting systems, so that similar procedures could be exploited
+to identify
+quantum spin liquid states in two dimensional spin systems.
