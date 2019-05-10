@@ -127,28 +127,28 @@ The \ac{sk} description of the \ac{tb} hopping integrals allows the formulation 
 \subsubsection{Angular dependence}
 An example of this decoupling can be shown in the following gedankenexperiment. Let us consider graphene and let us displace vertically a little bit one of the sublattices\footnote{If it boggles your mind you can shift all the atomic positions to keep the $C$-$C$ distance as $a=\SI{1.4}{\angstrom}$}
 so we end up with a slightly distorted graphene in which not all the atoms are in the same plane. This shift out of the plane has an important effect in the band structure since it breaks the mirror symmetry that kept the $p_z$ orbitals isolated from every other orbital.
-This mixing of the $p_z$ manifold with all the other orbitals happens at $\Gamma$ and it can be seen in both in the band structure and in the \ac{dos}
+This mixing of the $p_z$ manifold with all the other orbitals happens mainly at $\Gamma$ and it can be seen in both in the band structure and in the \ac{dos}
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
 \includegraphics{graphene/figures/banddos_G_buck.pdf}
 \vspace{-5pt}
-\caption{Caption}
+\caption{a) Pristine graphene band structure and DOS. b) Buckled graphene band structure and DOS. c) zoom around the $\Gamma$ point where the $\sigma$-orbitals hybridize with the $\pi$-manifold.}
 \label{fig:buckling}
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-
+This simple example shows how easy it is to account for geometric distortions. The buckling used in this example is similar to that naturally occurring in other materials such as 2-D Bismuth crystals.
 
 \subsubsection{Other materials}
 Once we have the machinery to build \ac{sk} hamiltonians, simply by changing the \ac{sk} parameters we can describe different materials.
-Bismuth, or $h-BN$  % TODO cite
-are simple examples in which the \ac{sk} description works well.\\
+In this section we compare graphene, bismuth and $h-BN$  % TODO cite
+as simple examples where the \ac{sk} description works well.\\
 
 %
 % Graphene TB
 %
-The required parameters, extracted both from the literature\cite{} and/or by fitting of \ac{dft} calculated bands, are (in $\si{\eV}$):
+In order to describe graphene, different sets of parameters can be found in the literature\cite{}. Nevertheless some of the parameters used here have been fitted from \ac{dft} calculations. The \ac{sk} parameters in $\si{\eV}$ used for graphene are:
 \begin{equation}
   \begin{array}{l|cccc}
     Hopping & V_{ss\sigma} & V_{sp\sigma} & V_{pp\sigma} & V_{pp\pi} \\ \hline
@@ -162,11 +162,11 @@ The required parameters, extracted both from the literature\cite{} and/or by fit
   \end{array}
 \label{G_SK_params}
 \end{equation}
-where the hoppings with a hypothetical $H$ atom have been included for convenience.
+where the hoppings with a hypothetical $H$ atom have been included for later convenience.\\
 
-To describe the relevant features of $h-BN$ it suffices to add a different on-site energy for the $B$ and $N$ ($E_{B} = -E_{N} =\SI{2.5}{\eV}$) atoms while keeping the inter-atomic hoppings similar to those of graphene.
+To describe the relevant features of $h-BN$ it suffices to add a different on-site energy for the $B$ and $N$ ($E_{B} = -E_{N} =\SI{2.5}{\eV}$) atoms while keeping the inter-atomic hoppings similar to those of graphene.\\
 
-Bismuth is a little bit trickier since an accurate description requires up to third neighbor hoppings (and spin-orbit coupling, which we will neglect for the moment). The \ac{sk} parameters, taken from~\citen{Liu1995} are:
+Bismuth is a little bit more complex since an accurate description requires up to third neighbor hoppings (and spin-orbit coupling as well, which we will neglect for the moment). The \ac{sk} parameters, taken from~\citen{Liu1995} are:
 \begin{equation}
   \begin{array}{c|cccc}
     Hopping & V_{ss\sigma} & V_{sp\sigma} & V_{pp\sigma} & V_{pp\pi} \\ \hline
@@ -200,8 +200,9 @@ where $\mathcal{O}_{p_z}$ is the $p_z$ projector operator and $\ket{\psi_{\alpha
 \caption{a) Graphene bands in the \ac{sk} approximation, with $s$, $p_x$, $p_y$, $p_z$ orbitals for the $C$ atoms. The color denote the $p_z$ component of each state. It can be seen that the $p_z$ orbital are decoupled from the rest of the orbitals. b) $h-BN$ band structure, similar to that of graphene, but with a gap open due to the difference in the on-site energies between the $B$ and $N$ atoms. c) Bismuth band structure, since its atomic structure is buckled, the $p_z$ orbital is not decoupled from the others as it can be seen by the smooth change in color of the central bands.}
 \label{SKbands}
 \end{figure}
-%\FloatBarrier
+\FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
 
 \section{Basic Properties}
 \label{sec:graphene_basic_properties}
@@ -209,7 +210,6 @@ where $\mathcal{O}_{p_z}$ is the $p_z$ projector operator and $\ket{\psi_{\alpha
 %  General description of bands
 %  Low energy,
 %
-
 We are going to use a \ac{tb} model in the \ac{sk} approximation with four orbitals per carbon atom to describe graphene. The band structure obtained with this model is shown in \fref{bandsG}.
 
 The first thing to notice about the graphene bands is the orbital distribution of the bands. As mentioned before the $p_z$ orbitals are responsible for the central bands, crossing the Fermi energy at $E_F=\SI{0.0}{\eV}$. Due to the mirror symmetry (with respect to the atomic plane), every hopping between the $\sigma$-orbitals and $p_z$ vanishes exactly (see the definition of $V_{sp\sigma}$ in \fref{orbitals}a)).
@@ -275,37 +275,25 @@ yet in graphene these parameters vanish: $\varepsilon_{A}=\varepsilon_{B}=\varep
 
 \subsection{Mass}
 If we were to consider not graphene but some other material with the same structure but different on-site energies for each sublattice, a so-called ``mass'' term would have to be introduced. This was hinted during the single orbital description by keeping the hypothetical on-site energies.
-The main effect of such a term is to open a gap at the Dirac points.
+The main effect of such a term is to open a trivial gap at the Dirac points.
 
 \subsection{Zeeman}
-The application of an external magnetic field usually has several effects in a material. While a lot of interesting Physics is developed around the formation of Landau levels, we will restrict our study to the simpler case of the Zeeman splitting of the energy levels. This effect consists of a splitting of up ($\uaw$) and down ($\daw$) spin.
+The application of an external magnetic field usually has several effects in a material. While a lot of interesting Physics is developed around the formation of Landau levels, we will restrict our study to the simpler case of the Zeeman splitting of the energy levels. This effect consists of a symmetric splitting of up ($\uaw$) and down ($\daw$) spin, resulting in a vertical shift the bands for each spin flavor.
 
-\subsection{Interlayer}
-We can consider an adiabatic formation of bilayer graphene (or $n$-layer graphene, for that matter) by considering two layers of graphene infinitely apart and bringing them together. We can describe the Hamiltonian of the system at the first moment as two disconnected sectors of the same Hamiltonian, equivalent to the limit $\eta\rightarrow0$ in eq.~\eqref{Gbi}. The Hamiltonian in the one orbital basis $\mathcal{B}_1$ reads:
-\begin{equation}
-  H = \left(\begin{array}{cccc}
-     0 & tf(\vec{k}) & 0 & 0 \\
-     tf(\vec{k}) & 0 & \eta & 0 \\
-     0 & \eta & 0 & tf(\vec{k}) \\
-     0 & 0 & tf(\vec{k}) & 0
-  \end{array}\right) \quad;\quad
-  \mathcal{B}_1 = \left\{\ket{\phi_{1A}}, \ket{\phi_{1B}},
-                        \ket{\phi_{2A}}, \ket{\phi_{2B}}\right\}
-\label{Gbi}
-\end{equation}
-where the numbers label the layer and the letters the sublattice.
-
-When the two layers
 \subsection{Electric field and Rashba}
 An electric field has several effects, that will be discussed later on along the thesis. It should suffice for now to discuss briefly the two main consequences.
-The first feature is that an electric field would deform the atomic orbitals, breaking the mirror symmetry which protects the $\pi$-manifold. The breaking of this symmetry opens an effective channel for mixing $s$ and $p_z$ orbitals.
+The first feature is that an electric field would deform the atomic orbitals, breaking the mirror symmetry that protects the $\pi$-manifold. The breaking of this symmetry opens an effective channel for mixing $s$ and $p_z$ orbitals.
+
+This effect, alongside the \ac{soc} opens a spin-flip channel via the following process: an $\uaw$ electron in a $p_z$ can transition to a $s$ orbital in the same atom, then to a $p_{x/y}$ orbital, which is connected via \ac{soc} with a $p_z$ with spin $\daw$.
+
+We will neglect this process since both the mixing of the $s$ and the $p_z$ orbital\cite{Min2006} and the \ac{soc}\cite{Kane2005, Yao2007, Boettger2007,Gmitra2009} are quite small.
 
 If we consider bilayer graphene, the application of an electric field has another important effect. It shifts the on-site energy of each layer which results in an opening of a gap in the band structure. This results in a very useful feature that will be exploited throughout the thesis.
 
 
 \subsection{Spin-Orbit coupling}
 \label{sec:soc}
-The \ac{soc} is relativistic interaction that can be interpreted in classical terms (allowing the existence of spin in classical physics) as the interaction between the spin of the electron and the electrostatic potential of the nucleus.
+The \acf{soc} is relativistic interaction that can be interpreted in classical terms (allowing the existence of spin in classical physics) as the interaction between the spin of the electron and the electrostatic potential of the nucleus.
 
 In most of this section we are going to use the four orbital basis \eqref{basis4} with the geometry of \fref{graphene_summary}b), also described in the firs section of the chapter. Our Hamiltonian will have two atoms per unit cell and four orbitals per atom, so it will be a $8\times8$ matrix. When interactions concerning the spin are taken into account, the basis will be doubled with the following order:
 \begin{equation}
@@ -350,6 +338,36 @@ just by taking into account the relations
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+\subsection{Interlayer}
+The last term that we will be interested in is the interlayer coupling when the system is formed by more than one layer of graphene. This term and its effects will be discussed later on, so we will just hint here an interesting way to think about it, leaving for later a deeper analysis.
+
+We can consider the adiabatic formation of bilayer graphene (or $n$-layer graphene, for that matter) by considering two layers of graphene infinitely apart and bringing them together.
+We can use the following basis to describe such a system:
+\begin{equation}
+  \mathcal{B}_1 = \left\{\ket{\phi_{1A}}, \ket{\phi_{1B}},
+                        \ket{\phi_{2A}}, \ket{\phi_{2B}}\right\}
+\end{equation}
+where the numbers label the layer and the letters the sublattice.
+
+Since the two layers are infinitely apart, we can consider no interaction between them, hence we can describe the Hamiltonian of the system at the initial moment as two disconnected sectors of the same Hamiltonian, equivalent to the limit $\eta\rightarrow0$ in eq.~\eqref{Gbi}. The Hamiltonian in the one orbital basis $\mathcal{B}_1$ reads:
+\begin{equation}
+  H = \left(\begin{array}{cc|cc}
+     0 & tf(\vec{k}) & 0 & 0 \\
+     tf(\vec{k}) & 0 & 0 & 0 \\ \hline
+     0 & 0 & 0 & tf(\vec{k}) \\
+     0 & 0 & tf(\vec{k}) & 0
+  \end{array}\right) + 
+  \eta \left(\begin{array}{cc|cc}
+     0 & 0  & 0  & 0 \\
+     0 & 0  & t' & 0 \\ \hline
+     0 & t' & 0  & 0 \\
+     0 & 0  & 0  & 0
+  \end{array}\right)
+\label{Gbi}
+\end{equation}
+$\eta$ will be used as a dummy parameter to switch on and off the interlayer coupling adiabatically.
+When a more complex basis is used, all the \ac{sk} parameters will be scaled so that the interlayer hopping among $p_z$ orbitals is $t'=\SI{0.4}{\eV}$ in accordance with the literature\cite{KatsnelsonBook}.
 
 
 

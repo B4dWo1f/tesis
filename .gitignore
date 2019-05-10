@@ -5,7 +5,8 @@
 *.fls
 *.log
 *.out
-main.pdf
 *.synctex*
 *.toc
 .latex.json
+main.pdf
+full.pdf
