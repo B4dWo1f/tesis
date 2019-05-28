@@ -372,42 +372,117 @@ When a more complex basis is used, all the \ac{sk} parameters will be scaled so 
 
 
 
-%\input{graphene/qsh.tex}
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Islands}
-%With these parameters we consider an armchair hexagonal nanoisland ($\sim10^4-10^5$ $C$ atoms). Such a system is 0-dimensional, hence, no band structure can be defined but rather just the spectrum. Nevertheless, in the limit of an infinite island, the physical properties of graphene should be recovered.
-%We can get an idea of how far from real graphene we are by considering the confinement gap. Graphene is famously known for not having a gap in the band structure. Graphene nanoislands do have a gap due to its finite size, but the larger the island, the smaller the gap until in the limit of an infinite island (graphene) the gap shall disappear. The dependence of the gap and the size of the island can be estimated as a free particle in a box of size $L$, roughly $\Delta\sim\frac{1}{L^2}$. Performing the actual calculation we can obtain see the dependence of the gap with the size of the island (see Fig.~\ref{confinement}) and estimate the necessary dimensions for our calculations.
+%\section{Graphene Bilayer}
+%\label{ch:bilayer}
+%Graphite is made out of weakly bounded graphene layers, which is one of the reasons why exfoliating it is relatively easy. Extensive work has been devoted to systems in which two layers are isolated\cite{McCann2012}.
 %
+%The description is not much different from that of graphene: the Bravais lattice is still a triangular lattice with lattice vectors described by \eqref{latt_vec}, hence the \ac{fbz} is the same. The main difference is that the minimal basis now has four atomic positions.
 %%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 %\begin{figure}[h!]
-%  \centering
-%  \includegraphics[width=0.9\textwidth]{graphene/figures/cell.pdf}
-%  \vspace{-5pt}
-%\caption{Confinement gap for a monolayer and a bilayer of graphene. The island index labels the size of the island by the number of ``benzene blocks'' along the diagonal as shown in red in the right panel. The dashed line at $0.25eV$ corresponds to the largest gap opened bia electric gating in graphene bilayer\cite{Zhang2009}. We will consider the islands big enough to be considered as graphene when their confinement gap lies in the shadowed region.}
-%\label{confinement}
+%\centering
+%\includegraphics{graphene/figures/graphene_bi_summary.pdf}
+%\vspace{-5pt}
+%\caption{a) Cartoon depiction of the atomic structure of bilayer graphene using the lattice vectors defined in \eqref{latt_vec}. b) Band structure of bilayer graphene. Notice the c) Comparison of the band structure and \ac{dos} in the presence of an external electric field.}
+%\label{Gbi_summary}
 %\end{figure}
 %\FloatBarrier
 %%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%In bilayer graphene the $p_z$ manifold is no longer decoupled from the other orbitals since there are hopping processes between the $p_z$ orbitals in one layer and the $s$ orbitals in the other layer. Nevertheless the $p_x$ and $p_y$ still have no direct hopping with the $p_z$ orbitals.
+%While it is true that the symmetry protecting the $p_z$ manifold is broken in this system, the fact remains that at low energy and around the $K$ points the $p_z$ description is enough (and exactly at the Dirac points it is an exact description).\\
 %
-%When 4 orbitals are considered, the breaking of the $C_3$ symmetry at the edges (ie, the $C$ atoms in the edges are missing 1 neighbor) results in near-zero energy states due to the unmet $\sigma$ bonds, combination of $s$, $p_x$ and $p_y$. In order to get rid of these artificious states we consider the island edges to be pasivated by Hydrogen atoms as shown in Fig.~\ref{confinement}. This way the dangling bonds hybridize and get lifted/drowned to the $\sigma$ manifolds.
-%Although physically founded, the inclusion of $H$ pasivating atoms is somehow a technical construct to remove the dangling bonds from the low energy spectrum, hence, the strength of the $C-H$ bonds is not relevant and it should suffice to shift the $\sigma$ states far away from the low energy part of the spectrum.
+%There are several ways in which we can stack several graphene layers. Until further notice we will consider only Bernal stacking, meaning that only one of the sublattices of one layer is connected to the opposite sublattice of the other layer. This configuration results in having in each layer one sublattice which is ``\emph{connected}'' and another that lays on ``\emph{hollow}'' sites (\fref{Gbi_summary}{a)}).
 %
-%
-%
-%
-%%The \ac{sk} parameters used for graphene are:
-%%\begin{equation}
-%%  V_{ss\sigma}= \SI{-7.76}{\eV} \quad;\quad
-%%  V_{sp\sigma}= \SI{8.16}{\eV} \quad;\quad
-%%  V_{pp\sigma}= \SI{7.48}{\eV} \quad;\quad
-%%  V_{pp\pi}= \SI{-2.7}{\eV}
-%%\label{sk_params}
-%%\end{equation}
+%We can approach bilayer graphene by considering two decoupled layers of graphene. In this case we would have twice the typical graphene band structure, one for each layer. When the interlayer coupling is switched on (see \eqref{Gbi}) two of the bands split from the rest according to the interlayer hopping $t'$ and the other two become parabolic.\\
 %
 %
+%
+%\subsection{electric field}
+%It is well known that the band structure of bilayer graphene changes dramatically in the presence of an external electric field\cite{Oostinga2007, Zhang2009, Taychatanapat2010, Allen2012, Castro2010a, Ponomarenko2011, Sui2015}.
+%The application of an electric field has several effects in the electronic structure of the system.
+%
+%The most obvious effect is the different shift of the on-site energies for each layer. This effect breaks the bipartite-ness of the system and results in a tunable band gap as reported by many experiments.
+%
+%Another effect is the possible doping of the system. By simply gating bilayer graphene we would be introducing a lot of carriers resulting in huge filling factors. This problem/feature can be address and, in fact used to our advantage by using dual-gating rather than a single gate as we will see in the following sections.
+%
+%Finally, the last effect is the appearance of a Rashba-like term due to the deformation of the atomic orbitals which could open both $s-p_z$ hoppings and a spin flip channel (when combined with the \ac{soc}).
+%
+%
+%\subsubsection{Gap opening}
+%The effect of an electric field in the electronic structure is just a layer dependent shift in the on-site energies of the atomic orbitals. In particular, in the basis \eqref{basis_bi}, it can be written as
+%\begin{equation}
+%   H_\mathcal{E} = \mathcal{E}\Lambda = \left(
+%   \begin{array}{cc|cc}
+%     \mathcal{E} & 0 & 0 & 0\\
+%     0 & \mathcal{E} & 0 & 0\\ \hline
+%     0 & 0 & -\mathcal{E} & 0\\
+%     0 & 0 & 0 & -\mathcal{E}\\
+%   \end{array}\right)
+%\label{Helec}
+%\end{equation}
+%where $\Lambda$ is the layer operator and $\mathcal{E}$ the strength of the electric field.
+%
+%In particular, a band gap is open at the Dirac points as shown in \fref{Gbi_summary}{c)}. Along with this effect, there are other processes not captured by the model, for instance a strong redistribution of the charge will take place in the system, polarizing the two layers in opposition to the applied electric field. This screening process has be addressed in the literature showing that its main effect is a Hartree renormalization of the gap\cite{McCann2006,Wang2016a}. While this effects are certainly not negligible we can adopt an empirical approach based on the experimental observation\cite{Zhang2009, Taychatanapat2010} of a gap up to $\Delta=\SI{250}{\meV}$, regardless of the real voltage required to achieve it.
+%
+%
+%
+%\subsubsection{Doping}
+%%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.5\textwidth]{graphene/figures/dual_gate.pdf}
+%\vspace{-5pt}
+%\caption{Schematics of dual gating.}
+%\label{dual_gate}
+%\end{figure}
+%\FloatBarrier
+%%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%The doping (extra charge absorbed into the system) in the graphene bilayer can  be estimated simply by applying Gauss' law:
+%\begin{equation}
+%   \diver{D} = \rho-\rho_0 = \rho_f
+%\label{gauss}
+%\end{equation}
+%where $\rho$ is total charge density, $\rho_0$ is the bounded charge density so that $\rho_f$ is the free charge density.
+%
+%The dual-gating setup can be considered as an infinite capacitor, hence, the electric field only has $z$ component, hence the divergence of the displacement results in a derivative which can be discretized:
+%\begin{equation}
+%   \diver{D}=\frac{\partial D}{\partial z} =\frac{D_t-D_b}{dz} = \rho_f =
+%   e\frac{N}{V} \Rightarrow D_t-D_b = e\delta n
+%\label{doping}
+%\end{equation}
+%where $N$ and $V=Adz$ are the number of electrons and volume respectively ($A$ is the area), and $\delta n$ is the bidimensional density of electrons.
+%
+%In order to calculate the potential difference between the two graphene layers, we can consider simply the average of the electric field inside the capacitor:
+%\begin{equation}
+%   \Delta V = \langle\vec{E}\rangle \Delta z = \frac{E_t+E_b}{2} \Delta z=
+%   \frac{\Delta z}{2} \left(\frac{D_t}{\varepsilon_t} +
+%                            \frac{D_b}{\varepsilon_b} \right)
+%\label{potential}
+%\end{equation}
+%where $\Delta z$ is width of the graphene bilayer and $\varepsilon_t$ and       $\varepsilon_b$ are the electric permeability of the top and bottom             dielectrics. $D_t$ and $D_b$ are (the $z$-component of) the displacement fields in the top and bottom regions.
+%\begin{equation}
+%   D_t = \frac{\varepsilon_t}{d_t}\left(V_{t}-V^0_{t}\right) \qquad;\qquad
+%   D_b = \frac{\varepsilon_b}{d_b}\left(V_{b}-V^0_{b}\right)
+%\end{equation}
+%where $V^0_{t/b}$ are the off-set potential required to have charge neutrality, usually referred to as \ac{cnp}.
+%
+%Equations \eqref{doping} and \eqref{potential} show that by choosing the        appropriates $V_t$ and $V_b$ we can independently change the doping of the      system and the gap opened in the band structure.
+%
+%
+%
+%
+%
+%\subsubsection{Rashba}
+%Another effect is the mixing of the $p_z$ with the other orbitals. The presence of the electric field deforms the atomic orbitals breaking the symmetries present in the purely hydrogenic orbitals. In particular a new intra-atomic hopping $p_z$ and the $p_{x/y}$ orbitals appear. The application of an electric field leads to the appearance of an intrinsic Rashba and \ac{soc} similar to the terms proposed by Kane and Mele\cite{Kane2005}.
+%Following the calculations in \citef{Min2006}\cite{Min2006} we can see that the relation between the applied electric field and the effective intra-atomic Rashba follow the equation:
+%\begin{equation}
+%   \lambda_R=\frac{e\mathcal{E}z_0}{3V_{sp\sigma}}\xi \qquad;\qquad
+%   \lambda_{SOC}=\frac{|E_{s}|}{18V^2_{sp\sigma}}\xi^2
+%\label{rashba}
+%\end{equation}
+%where $\xi\sim\SI{6}{\meV}$ is the atomic carbon spin-orbit coupling strength
+%which for a typical electric field of $\mathcal{E}\sim\SI{50}{\V}/\SI{300}{\nm}$ result in an effective Rashba coupling $\lambda_R\sim\SI{0.011}{\meV}$ and the \ac{soc} $\lambda_{SOC}\sim\SI{0.0011}{\meV}$.
+%
+%These terms, are in the scale of $\SI{e-2}{\meV}$ while the gap open can reach up to $\SI{2.5e2}{\meV}$ so we will neglect these interactions from now on.
 %

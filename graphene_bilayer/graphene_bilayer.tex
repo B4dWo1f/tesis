@@ -1,4 +1,4 @@
-\chapter{Hydrogenated Graphene Bilayer}
+\chapter{Graphene Bilayer}
 \label{ch:bilayer}
 Graphite is made out of weakly bounded graphene layers, which is one of the reasons why exfoliating it is relatively easy. Extensive work has been devoted to systems in which two layers are isolated\cite{McCann2012}.
 
@@ -20,11 +20,19 @@ There are several ways in which we can stack several graphene layers. Until furt
 
 We can approach bilayer graphene by considering two decoupled layers of graphene. In this case we would have twice the typical graphene band structure, one for each layer. When the interlayer coupling is switched on (see \eqref{Gbi}) two of the bands split from the rest according to the interlayer hopping $t'$ and the other two become parabolic.\\
 
+In order to account for this new hoppings we keep the \ac{sk} model and simply scale the graphene parameters so that the interlayer $p_z$ hopping takes the value $t'=\SI{0.4}{\meV}$. So, the \ac{sk} parameter can be obtained simply by multiplying the parameters in \ref{G_SK_params} by the factor $f\sim0.05$
 
 
 \section{electric field}
-It is well known that the band structure of bilayer graphene changes dramatically in the presence of an external electric field\cite{Zhang2009, Taychatanapat2010, Allen2012, Castro2010a, Ponomarenko2011, Sui2015}.
-The application of an electric field has several effects in the electronic structure of the system. We will review now its main effects.
+It is well known that the band structure of bilayer graphene changes dramatically in the presence of an external electric field\cite{Oostinga2007, Zhang2009, Taychatanapat2010, Allen2012, Castro2010a, Ponomarenko2011, Sui2015}.
+The application of an electric field has several effects in the electronic structure of the system.
+
+The most obvious effect is the different shift of the on-site energies for each layer. This effect breaks the bipartite-ness of the system and results in a tunable band gap as reported by many experiments.
+
+Another effect is the possible doping of the system. By simply gating bilayer graphene we would be introducing a lot of carriers resulting in huge filling factors. This problem/feature can be address and, in fact used to our advantage by using dual-gating rather than a single gate as we will see in the following sections.
+
+Finally, the last effect is the appearance of a Rashba-like term due to the deformation of the atomic orbitals which could open both $s-p_z$ hoppings and a spin flip channel (when combined with the \ac{soc}).
+
 
 \subsection{Gap opening}
 The effect of an electric field in the electronic structure is just a layer dependent shift in the on-site energies of the atomic orbitals. In particular, in the basis \eqref{basis_bi}, it can be written as
@@ -40,60 +48,152 @@ The effect of an electric field in the electronic structure is just a layer depe
 \end{equation}
 where $\Lambda$ is the layer operator and $\mathcal{E}$ the strength of the electric field.
 
-In particular, a band gap is open at the Dirac points as shown in \fref{Gbi_summary}{c)}.
+In particular, a band gap is open at the Dirac points as shown in \fref{Gbi_summary}{c)}. Along with this effect, there are other processes not captured by the model, for instance a strong redistribution of the charge will take place in the system, polarizing the two layers in opposition to the applied electric field. This screening process has be addressed in the literature showing that its main effect is a Hartree renormalization of the gap\cite{McCann2006,Wang2016a}. While this effects are certainly not negligible we can adopt an empirical approach based on the experimental observation\cite{Zhang2009, Taychatanapat2010} of a gap up to $\Delta=\SI{250}{\meV}$, regardless of the real voltage required to achieve it.
+
+
+
+\subsection{Doping}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{graphene_bilayer/figures/dual_gate.pdf}
+\vspace{-5pt}
+\caption{Schematics of dual gating.}
+\label{dual_gate}
+\end{figure}
+\FloatBarrier
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+The doping (extra charge absorbed into the system) in the graphene bilayer can  be estimated simply by applying Gauss' law:
+\begin{equation}
+   \diver{D} = \rho-\rho_0 = \rho_f
+\label{gauss}
+\end{equation}
+where $\rho$ is total charge density, $\rho_0$ is the bounded charge density so that $\rho_f$ is the free charge density.
+
+The dual-gating setup can be considered as an infinite capacitor, hence, the electric field only has $z$ component, hence the divergence of the displacement results in a derivative which can be discretized:
+\begin{equation}
+   \diver{D}=\frac{\partial D}{\partial z} =\frac{D_t-D_b}{dz} = \rho_f =
+   e\frac{N}{V} \Rightarrow D_t-D_b = e\delta n
+\label{doping}
+\end{equation}
+where $N$ and $V=Adz$ are the number of electrons and volume respectively ($A$ is the area), and $\delta n$ is the bidimensional density of electrons.
+
+In order to calculate the potential difference between the two graphene layers, we can consider simply the average of the electric field inside the capacitor:
+\begin{equation}
+   \Delta V = \langle\vec{E}\rangle \Delta z = \frac{E_t+E_b}{2} \Delta z=
+   \frac{\Delta z}{2} \left(\frac{D_t}{\varepsilon_t} +
+                            \frac{D_b}{\varepsilon_b} \right)
+\label{potential}
+\end{equation}
+where $\Delta z$ is width of the graphene bilayer and $\varepsilon_t$ and       $\varepsilon_b$ are the electric permeability of the top and bottom             dielectrics. $D_t$ and $D_b$ are (the $z$-component of) the displacement fields in the top and bottom regions.
+\begin{equation}
+   D_t = \frac{\varepsilon_t}{d_t}\left(V_{t}-V^0_{t}\right) \qquad;\qquad
+   D_b = \frac{\varepsilon_b}{d_b}\left(V_{b}-V^0_{b}\right)
+\end{equation}
+where $V^0_{t/b}$ are the off-set potential required to have charge neutrality, usually referred to as \ac{cnp}.
+
+Equations \eqref{doping} and \eqref{potential} show that by choosing the        appropriates $V_t$ and $V_b$ we can independently change the doping of the      system and the gap opened in the band structure.
+
+
+
+
 
 \subsection{Rashba}
-Another effect is the mixing of the $p_z$ with the other orbitals. The presence of the electric field deforms the atomic orbitals breaking the symmetries present in the purely hydrogenic orbitals. In particular the $p_z-s$ hopping is increased new hoppings between the $p_z$ and the $p_{x/y}$ orbitals appear.
+Another effect is the mixing of the $p_z$ with the other orbitals. The presence of the electric field deforms the atomic orbitals breaking the symmetries present in the purely hydrogenic orbitals. In particular a new intra-atomic hopping $p_z$ and the $p_{x/y}$ orbitals appear. The application of an electric field leads to the appearance of an intrinsic Rashba and \ac{soc} similar to the terms proposed by Kane and Mele\cite{Kane2005}.
+Following the calculations in \citef{Min2006}\cite{Min2006} we can see that the relation between the applied electric field and the effective intra-atomic Rashba follow the equation:
+\begin{equation}
+   \lambda_R=\frac{e\mathcal{E}z_0}{3V_{sp\sigma}}\xi \qquad;\qquad
+   \lambda_{SOC}=\frac{|E_{s}|}{18V^2_{sp\sigma}}\xi^2
+\label{rashba}
+\end{equation}
+where $\xi\sim\SI{6}{\meV}$ is the atomic carbon spin-orbit coupling strength
+which for a typical electric field of $\mathcal{E}\sim\SI{50}{\V}/\SI{300}{\nm}$ result in an effective Rashba coupling $\lambda_R\sim\SI{0.011}{\meV}$ and the \ac{soc} $\lambda_{SOC}\sim\SI{0.0011}{\meV}$.
+
+These terms, are in the scale of $\SI{e-2}{\meV}$ while the gap open can reach up to $\SI{2.5e2}{\meV}$ so we will neglect these interactions from now on.
+
+\section{Kink states}
+An interesting feature of this system appears when we applied an electric field of different sign in different regions of the system. The opening of an opposite gap in two different regions leads to the appearance of kink states in the interface. In addition to its experimental observation\cite{Li2016}, we can provide a quick example of these states.
+
+We consider an 2d sheet of bilayer graphene which has $\mathcal{E}>0$ for atomic positions with $x>0$ and $\mathcal{E}<0$ otherwise.
+%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{figure}[h!]
+\centering
+\includegraphics{graphene_bilayer/figures/kink_states.pdf}
+\vspace{-5pt}
+\caption{Caption}
+\label{Label}
+\end{figure}
+\FloatBarrier
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+In order to study the states at the interface between these two regions we consider the Green's function for the interface:
+\begin{equation}
+  G(E,k_{\parallel}) = \frac{1}{E+i\epsilon-H_0(k_\parallel)-\Sigma_R(k_\parallel)-\Sigma_L(k_\parallel)}
+\end{equation}
+where each self-energy $\Sigma_{L/R}$ can be calculated by solving iteratively the coupled equations:
+\begin{equation}
+\begin{split}
+  \Sigma_R(E,k_\parallel) &= V_R(k_\parallel)g_R(E,k_\parallel)V^{\dagger}_R(E,k_\parallel) \\
+  g_R(E,k_\parallel) &= \frac{1}{E-H_0(k_\parallel)-\Sigma_R(E,k_\parallel)}
+\end{split}
+\end{equation}
+and analogously for the left self energy $\Sigma_L$. Once the Green's function is calculated, the \ac{dos} is calculated as usual as:
+\begin{equation}
+   \rho(E,k_\parallel) = \frac{-1}{\pi}\Im{G(E,k_{\parallel})}
+\end{equation}
+
+
+
+
 
 
 
 \newpage
-Kane's proposal~\cite{Kane1988}, and all the experimental realizations of it~\cite{Morello2010}, based the control of the Qubits in the manipulation of the electronic states with an electric gate that would modify the electronic cloud around the $^{31}P$ nucleus.
-
-Since graphene is a purely \ac{2dm} its electronic properties are highly tunable by proximity, electric gating or other techniques. First we make a quick review of the properties of \ac{gb} and the effect of an external electric field and then we explore the possibility of the realization of 1 and 2-Qubit operations.
-
-\section{Graphene Bilayer}
-The minimal unit cell for describing \ac{gb} contains four atoms, disposed as seen in the inset in Fig.~\ref{bilayer}. The lattice vectors describing the Bravais lattice are the same as in the case of monolayer graphene (see Sec.~\ref{ch:graphene}). Since the interlayer distance, is  around three times bigger than the C-C distance, $d_\text{inter} \sim \SI{3.3}{\angstrom}$ (from literature~\cite{Charlier1994a,Lam2008,Brihuega2012}), it is expected that the interlayer hopping will be smaller, in fact from literature~\cite{KatsnelsonBook} we get that the interlayer hopping $t'\simeq 0.15\cdot t_{\pi-\pi}\simeq\SI{0.4}{\eV}$
-The effect of the interlayer interaction is to ``parabolize'' the linear bands around the $K$ points and double the $p_z$ manifold bands.
-%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-\begin{figure}[h!]
-\centering
-\includegraphics{chapter06/figures/bilayer_bandDOS.pdf}
-\vspace{-5pt}
-\caption{Band structure and \ac{dos} of bilayer graphene along the $\Gamma-K-K'-\Gamma$ path and density of states. The red shadowed region shows the contribution of the $p_z$ manifold, \emph{almost} decoupled from the other orbitals.}
-\label{bilayer}
-\end{figure}
-\FloatBarrier
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-The $p_z$ bands at the $K$ point are split by an amount proportional to the interlayer hopping
-
-Notice that in the bilayer the $p_z$ manifold is no longer decoupled from the rest of the orbitals (for instance there is a finite hopping between $p_z$ orbitals from one layer and $s$ orbitals of the other), nevertheless close to the Fermi energy the approximation of considering only $p_z$ orbitals is still justified.
-The general aspect of the \ac{dos} is similar to that of the graphene but it is important to notice that at $E=0$ the \ac{dos} is now finite.
-
- \section{Effect of the electric field}
-The main effect of an external electric field applied to bilayer graphene is to shift the (on-site) energy of the electrons, we can write such a Hamiltonian term like
-% external potential energy
-
-\begin{equation}
-  H_{\vec{E}} = \lambda_e q_e \vec{d} \widehat{E} %\sum_i \varepsilon_l \crea{c}{i}\des{c}{i}
-\end{equation}
-where $\lambda_e$ is the magnitude of the external electric field, $\vec{d}$ is the interlayer distance, and $\widehat{E}$ is the electric field along the interlayer direction.
-% where $E$ is an external electric field along the direction and d is the interlayer separation of bilayer graphene.
-% where $\varepsilon_l=\pm1$ depending on the layer, $l$,  of the atom $i$.
-
-The effect of such a term in \ac{gb} is just to open a gap~\cite{Zhang2009,Yamashiro2012,Brihuega2012,Lam2008,Min2007} close to the Fermi energy as shown in fig~\ref{bi_Efield}.
-
-%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=\textwidth]{chapter06/figures/bilayer_elec.pdf}
-  \vspace{-10pt}
-  \caption{\ac{dos} of a bilayer graphene system in the absence (left panel) and presence (right panel) of an electric field $E=\SI{0.5}{\eV}$.} %XXX UNITS
-  \label{bi_Efield}
-\end{figure}
-\FloatBarrier
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-
+%Kane's proposal~\cite{Kane1988}, and all the experimental realizations of it~\cite{Morello2010}, based the control of the Qubits in the manipulation of the electronic states with an electric gate that would modify the electronic cloud around the $^{31}P$ nucleus.
+%
+%Since graphene is a purely \ac{2dm} its electronic properties are highly tunable by proximity, electric gating or other techniques. First we make a quick review of the properties of \ac{gb} and the effect of an external electric field and then we explore the possibility of the realization of 1 and 2-Qubit operations.
+%
+%\section{Graphene Bilayer}
+%The minimal unit cell for describing \ac{gb} contains four atoms, disposed as seen in the inset in Fig.~\ref{bilayer}. The lattice vectors describing the Bravais lattice are the same as in the case of monolayer graphene (see Sec.~\ref{ch:graphene}). Since the interlayer distance, is  around three times bigger than the C-C distance, $d_\text{inter} \sim \SI{3.3}{\angstrom}$ (from literature~\cite{Charlier1994a,Lam2008,Brihuega2012}), it is expected that the interlayer hopping will be smaller, in fact from literature~\cite{KatsnelsonBook} we get that the interlayer hopping $t'\simeq 0.15\cdot t_{\pi-\pi}\simeq\SI{0.4}{\eV}$
+%The effect of the interlayer interaction is to ``parabolize'' the linear bands around the $K$ points and double the $p_z$ manifold bands.
+%%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+%\begin{figure}[h!]
+%\centering
+%\includegraphics{chapter06/figures/bilayer_bandDOS.pdf}
+%\vspace{-5pt}
+%\caption{Band structure and \ac{dos} of bilayer graphene along the $\Gamma-K-K'-\Gamma$ path and density of states. The red shadowed region shows the contribution of the $p_z$ manifold, \emph{almost} decoupled from the other orbitals.}
+%\label{bilayer}
+%\end{figure}
+%\FloatBarrier
+%%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%The $p_z$ bands at the $K$ point are split by an amount proportional to the interlayer hopping
+%
+%Notice that in the bilayer the $p_z$ manifold is no longer decoupled from the rest of the orbitals (for instance there is a finite hopping between $p_z$ orbitals from one layer and $s$ orbitals of the other), nevertheless close to the Fermi energy the approximation of considering only $p_z$ orbitals is still justified.
+%The general aspect of the \ac{dos} is similar to that of the graphene but it is important to notice that at $E=0$ the \ac{dos} is now finite.
+%
+% \section{Effect of the electric field}
+%The main effect of an external electric field applied to bilayer graphene is to shift the (on-site) energy of the electrons, we can write such a Hamiltonian term like
+%% external potential energy
+%
+%\begin{equation}
+%  H_{\vec{E}} = \lambda_e q_e \vec{d} \widehat{E} %\sum_i \varepsilon_l \crea{c}{i}\des{c}{i}
+%\end{equation}
+%where $\lambda_e$ is the magnitude of the external electric field, $\vec{d}$ is the interlayer distance, and $\widehat{E}$ is the electric field along the interlayer direction.
+%% where $E$ is an external electric field along the direction and d is the interlayer separation of bilayer graphene.
+%% where $\varepsilon_l=\pm1$ depending on the layer, $l$,  of the atom $i$.
+%
+%The effect of such a term in \ac{gb} is just to open a gap~\cite{Zhang2009,Yamashiro2012,Brihuega2012,Lam2008,Min2007} close to the Fermi energy as shown in fig~\ref{bi_Efield}.
+%
+%%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+%\begin{figure}[h!]
+%  \centering
+%  \includegraphics[width=\textwidth]{chapter06/figures/bilayer_elec.pdf}
+%  \vspace{-10pt}
+%  \caption{\ac{dos} of a bilayer graphene system in the absence (left panel) and presence (right panel) of an electric field $E=\SI{0.5}{\eV}$.} %XXX UNITS
+%  \label{bi_Efield}
+%\end{figure}
+%\FloatBarrier
+%%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%
 % Analogously to the discussed scenario of a vacancy in (monolayer) graphene, the introduction of a vacancy also results in the appearance of a ``zero energy state''. In the presence of an external electric field the impurity state will not appear at $E=0$ but shifted in energy as shown in fig.~\ref{dos_bi_dfct}
 
 % %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
