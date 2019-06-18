@@ -1,17 +1,69 @@
-\chapter{$sp^3$ Defects}
-\label{ch:vacancy}
-We turn now to the introduction of defects on graphene, in particular chemisorbed adatoms.
-We will focus on defects which bond strongly with one of the $p_z$ orbital. This kind of defects effectively remove one of the $p_z$ sites acting as if a vacancy was introduced in the system. This effective system of a honeycomb lattice with a vacancy that has no other effect than the removal of a site is widely accepted and experimentally supported.\cite{}
-For the first sections of this chapter we will remain in this approximation and later on we will discuss its implementation in a \ac{sk} framework.
+%~~~~~~~~~~~~~~~~ PREAMBULO ~~~~~~~~~~~~~~~~%
+% \documentclass[a4paper]{article}
+\documentclass[aps,prb,twocolumn,superscriptaddress]{revtex4-1}
+\usepackage[utf8]{inputenc}   % Use UTF-8
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.png,.jpg,.eps}
 
-In general chemisorbed adatoms on graphene induce a $sp^3$ deformation in the lattice, which breaks mirror symmetry and mixes the $p_z$ orbitals with all the other orbitals. This deformation is quite interesting by itself\cite{CastroNeto2009} and it is believed to increase significantly (and locally) the effect of the \ac{soc}. Nevertheless that is only one of the effects of this kind of defects.
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm}
+\newcommand{\redmark}[1] {\color{red}\textbf{#1}\color{black}\normalsize}
+\newcommand{\bluemark}[1] {\color{blue}\textbf{#1}\color{black}\normalsize}
 
-One of the most interesting effect (in my opinion) of the chemical functionalization of graphene is the appearance of a zero energy state bounded around the defect. This state has very interesting properties and has been quite studied.\cite{Duplock2004,yazyev2007,Boukhvalov2008,Palacios2008,Yazyev2010,santos2012,Soriano2010,Leconte2011,Soriano2011}
-The very nature of this kind of defects makes them difficult to study. On one hand if we want to study a single, well isolated defect we would need huge unit cells and even in this case the interaction among them would not vanish completely. On the other hand, if we consider a finite system, as big as our computer can manage, we would still face problems since the finite nature of such a system would introduce a confinement gap in the spectrum, strongly modifying the extended nature of the state.
-With these technical difficulties its electronic properties, for instance its magnetic moment, is not without controversy.
-In this chapter we study this system and introduce a method that allows us to compute the Green's function of a defective region coupled with an infinite sheet of pristine graphene, providing a deeper insight in this system.
 
-Before getting into a deeper description, it is interesting to remind ourselves the system at hand. The introduction of a single Hydrogen atom in graphene locates a single electron around itself. This means that, naively, we have a system with a single electronic spin $S=1/2$ very close to a single nuclear spin, $I=1/2$, that of the H adatom. Such a system has a strong resemblance to a number of systems used as qubits\cite{}, and certainly it is a problem worth looking into. But more on that later.
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+%~~~~~~~~~~~~~~~ COMANDOS PROPIOS ~~~~~~~~~~~~~~%
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newcommand{\braket}[2]{\langle#1|#2\rangle}
+\newcommand{\crea}[2]{#1^{\dagger}_{#2}}
+\newcommand{\des}[2]{#1_{#2}}
+\newcommand{\grad}[1]{\vec{\nabla}#1}
+\newcommand{\diver}[1]{\vec{\nabla}\vec{#1}}
+\newcommand{\rotac}[1]{\vec{\nabla}\times#1}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+%~~~~~~~~~~~~~~~~~~~~ OVERWRITE COMMANDS ~~~~~~~~~~~~~~~~~~~~%
+\renewcommand{\Im}[1]{\operatorname{\mathbb{I}m}\left[#1\right]}
+\renewcommand{\Re}[1]{\operatorname{\mathbb{R}e}\left[#1\right]}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CUERPO ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{document}
+
+\title{Anomalous magnetism in hydrogenated graphene}
+\author{N. A. Garc\'ia-Mart\'inez}
+\affiliation{QuantaLab, International Iberian Nanotechnology Laboratory (INL), Braga, Portugal}
+
+\author{J. L. Lado}
+\affiliation{QuantaLab, International Iberian Nanotechnology Laboratory (INL), Braga, Portugal}
+
+\author{D. Jacob}
+\affiliation{Max-Planck-Institut f\"ur Mikrostrukturphysik, Weinberg 2, 06120 Halle, Germany}
+\affiliation{Nano-Bio Spectroscopy Group, Departamento de F\'isica de Materiales, Universidad del Pa\'is Vasco, UPV/EHU, Av. Tolosa 72, 20018 San Sebasti\'an, Spain}
+\affiliation{IKERBASQUE, Basque Foundation for Science, Maria Diaz de Haro 3, 48013 Bilbao, Spain}
+
+\author{J. Fern\'andez-Rossier}
+\affiliation{QuantaLab, International Iberian Nanotechnology Laboratory (INL), Braga, Portugal}
+\affiliation{Departamento de Fisica Aplicada, Universidad de Alicante, San Vicente del Raspeig, 03690 Spain}
+
+
+
+\date{\today}
+
+\begin{abstract}
+We revisit the problem of local moment formation in graphene due to chemisorption of individual atomic hydrogen or other analogous sp$^3$ covalent functionalizations.
+We describe graphene with the single orbital Hubbard model, so that the H chemisorption is equivalent to a vacancy in the honeycomb lattice. In order to circumvent artifacts related to periodic unit cells, we use either huge simulation cells of up to $8\times10^5$ sites, or an  embedding scheme that allows the modeling of a single vacancy in an otherwise pristine infinite honeycomb lattice. We find three results that stress the anomalous nature of the magnetic moment ($m$) in this system. First,  in the non-interacting ($U=0$), zero temperature ($T=0$) case, the $m(B)$ is a continuous smooth curve with divergent susceptibility, different from  the step-wise constant function found for a single unpaired spins in a gapped system. Second, for $U=0$ and $T>0$, the linear susceptibility  follows a power law $\propto{T}^{-\alpha}$ with an exponent of $\alpha=0.77$ different from conventional Curie's law. For $U>0$, in the mean field approximation, the integrated moment is smaller than $m=1\mu_B$, in contrast with results using periodic unit cells.
+These three results highlight that the magnetic response of  the local moment  induced by sp$^3$ functionalizations in graphene is different both from  that of local moments in gaped systems, for which the magnetic moment is quantized and  follows a Curie law,  and from Pauli paramagnetism in  conductors, for which a linear susceptibility can be defined at $T=0$.
+\end{abstract}
+
+\maketitle
 
 \section{Introduction}
 Whether or not the addition of an impurity atom into an otherwise non-magnetic crystal results in the formation of local moments is one of the central problems in condensed matter physics.\cite{anderson1961localized}
@@ -105,7 +157,7 @@ Since a single defect in an infinite system breaks the translational symmetry, w
 %%
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[t!]
-\centering\includegraphics{defects/fig/DOSlDOS.pdf}
+\centering\includegraphics[width=0.5\textwidth]{DOSlDOS.pdf}
 \caption{$(a)$ Total density of states of a single vacancy in an infinite graphene sheet. A divergence in the density of states appears at $E=0$ when the vacancy is introduced. $(b)$ Scheme of the division of the system into a defected unit cell and a pristine environment. $(c)$ Local Density of States for the zero energy state related to a vacancy in graphene. Side by side we can compare the calculations for two unit cells with different geometry. The vacancy is depicted as a white circle. As expected the spatial distribution of this state is located in the 3-6 closest atoms to the vacancy.}
 \label{regions}
 \label{DOS}
@@ -301,7 +353,7 @@ It is apparent that the total moment $M=\sum_i m_i$ integrates to $M=\pm \frac{g
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE 2 ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[t!]
   \centering
-  \includegraphics{defects/fig/comparison.pdf}
+  \includegraphics[width=0.5\textwidth]{comparison.pdf}
   \caption{$(a)$ Sketch for the Zeeman split  DOS associated to  graphene with an individual $sp^3$ functionalization. Panel $(b)$ shows the magnetization of the first 3 neighbors of the defect as a function of the applied magnetic field for a hydrogen atom in a graphene quantum dot (blue) and a single hydrogen atom in pristine graphene (black), the green line is the result for a conventional metal, modeled by graphene with the chemical potential well above the Dirac point.}
   \label{mb}
 \end{figure}
@@ -363,7 +415,7 @@ For $T=0$ the results of the previous section show that this quantity diverges, 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[t!]
   \centering
-  \includegraphics{defects/fig/temp_sus.pdf}
+  \includegraphics[width=0.5\textwidth]{temp_sus.pdf}
   \caption{$(a)$ Magnetization of the first 3 neighbors of the vacancy as a
     function of the applied magnetic field for different temperatures, dashed lines are calculated using the KPM and continuous lines are calculated using the embedding method. $(b)$ Temperature dependence of the susceptibility in comparison with Curie's Law. $(c$-$d)$ Dependence of the susceptibility with the doping and the temperature, showing that for some values of $\mu$ there is a non-monotonous behavior of the susceptibility with temperature.}
   \label{mag_temp}
@@ -406,7 +458,7 @@ In general, the results of the mean field calculation yield a non-zero magnetiza
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[t!]
   \centering
-    \includegraphics{defects/fig/figMF.pdf}
+    \includegraphics[width=0.5\textwidth]{figMF.pdf}
   \vspace{-15pt}
   \caption{$(a)$ Magnetization of an individual $sp^3$ functionalized system, calculated within the mean field  Hubbard  approximation. $(b)$ Total magnetization of the defected region as a function of its coupling to the rest of the otherwise pristine system. $(c)$ Total magnetization of the defected region as a function of the Hubbard $U$ for different sizes of the unit cells. $(d)$ Total magnetization as a function of the size of the unit cell for two $U$ values, notice that the magnetization is far from the expected $m=1\mu_B$ value.}
   \label{MF}
@@ -430,7 +482,7 @@ As it is shown in Fig.~\ref{MF} (b), in the quantum dot regime $\lambda_\Sigma =
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
-\includegraphics{defects/fig/MFfig2_dos.pdf}
+\includegraphics[width=0.45\textwidth]{MFfig2_dos.pdf}
 \vspace{-15pt}
 \caption{$(a)$ total and spin-resolved DOS for the Hubbard model. $(b)$ spin splitting, $\Delta$ as a function of the Hubbard interaction $U$ and, in the inset, as a function of the size of the unit cell.}
 \label{MFdos}
@@ -484,3 +536,23 @@ some doping values) magnetic susceptibility.
 We have also shown by means of mean-field calculations that the resulting magnetic moment is non-quantized in the whole regime explored. Our results should pave the way for future work treating many-body spin fluctuations beyond mean field theory\cite{haase2011magnetic,sofo2012magnetic,mitchell13}
 
 
+\section{Acknowledgments}
+
+The authors acknowledge financial support by Marie-
+Curie-ITN 607904-SPINOGRAPH. JFR acknowledges financial  supported  by  MEC-Spain  (FIS2013-47328-C2-2-P  and  MAT2016-78625-C2)  and  Generalitat  Valenciana  (ACOMP/2010/070),  Prometeo,  by  ERDF  funds
+through the Portuguese Operational Program for Competitiveness  and  Internationalization  COMPETE  2020,
+and National Funds through FCT- The Portuguese Foundation  for  Science  and  Technology,  under  the  project
+PTDC/FIS-NAN/4662/2014  (016656).   This  work  has
+been financially supported in part by FEDER funds. JLL
+and  N.G.M.  thank  the  hospitality  of  the  Departamento  de
+Fisica Aplicada at the Universidad de Alicante.
+J.L.L. thanks P. San-Jose for showing
+the kernel polynomial method.
+We acknowledge Ivan Brihuega, Manuel Melle-Franco, Juanjo Palacios and H. Gonzalez for fruitful discussions.
+
+%\bibliographystyle{ieeetr}
+\bibliographystyle{apsrev4-1}
+\bibliography{biblio}
+%\bibliographystyle{unsrt}
+\end{document}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
