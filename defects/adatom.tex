@@ -14,30 +14,27 @@ In this chapter we study this system and introduce a method that allows us to co
 Before getting into a deeper description, it is interesting to remind ourselves the system at hand. The introduction of a single Hydrogen atom in graphene locates a single electron around itself. This means that, naively, we have a system with a single electronic spin $S=1/2$ very close to a single nuclear spin, $I=1/2$, that of the H adatom. Such a system has a strong resemblance to a number of systems used as qubits\cite{}, and certainly it is a problem worth looking into. But more on that later.
 
 \section{Introduction}
-Whether or not the addition of an impurity atom into an otherwise non-magnetic crystal results in the formation of local moments is one of the central problems in condensed matter physics.\cite{anderson1961localized}
+Whether or not the addition of an impurity atom into an otherwise non-magnetic crystal results in the formation of local moments is one of the central problems in condensed matter physics.\cite{Anderson1961}
 In the cases when the host is either a conductor with a well defined Fermi surface, or an insulator with the Fermi energy inside an energy gap, the problem is well understood.
-In the former case, the formation of a local moment is controlled by the competition between the addition energies of the impurity levels and their broadening, due to quasi-particle tunneling in and out of the impurity\cite{anderson1961localized,Daybell1968}. This quantity depends on the density of states of the energy of the localized level.
+In the former case, the formation of a local moment is controlled by the competition between the addition energies of the impurity levels and their broadening, due to quasi-particle tunneling in and out of the impurity\cite{Anderson1961, Daybell1968}. This quantity depends on the density of states of the energy of the localized level.
 In contrast, when the impurity level lies inside a gap, as it happens for donors in semiconductors, the unpaired electronic spin behaves like a paramagnetic center with $S=1/2$.\cite{Slichter1955}
 
 
 The hydrogenation of graphene has attracted interest for various reasons. In
 the dense limit, it leads to the opening of a large
 band-gap.\cite{elias2009,Sofo2007} In the dilute limit, chemisorbed hydrogen
-was predicted to create a $S=1/2$ local moment
-\cite{Duplock2004,yazyev2007,Boukhvalov2008,Palacios2008,Yazyev2010,santos2012} associated
-with the formation of an $E=0$, or mid-gap, state that hosts an unpaired electron.
+was predicted to create a $S=1/2$ local moment\cite{Duplock2004,yazyev2007,Boukhvalov2008,Palacios2008,Yazyev2010,santos2012} associated with the formation of an $E=0$, or mid-gap, state that hosts an unpaired electron.
 This led early on to propose hydrogenated graphene as a magnetic material with
 spin-dependent transport properties\cite{Soriano2010,Leconte2011,Soriano2011}
-apt for spintronics in graphene.\cite{han2014graphene} Recent scanning
-tunneling microscope experiments\cite{gonzalez2016atomic} match the computed
+apt for spintronics in graphene.\cite{han2014graphene} Recent \ac{stm} experiments\cite{Brihuega2016} match the computed
 theoretical density of states as a function of both energy and position, that
 shows a split resonance close to the Dirac point, providing thereby indirect
 evidence for local moment formation. %Experiments on hydrogenated
 It also has been proposed that the small local lattice distortion induced by
 the $sp^3$ hybridization enhances the effect of spin-orbit
-interaction.\cite{Castro2009,gmitra13} This has been proposed as the
+interaction.\cite{Castro2009a,Gmitra2013} This has been proposed as the
 explanation for the observation of large spin Hall angles in hydrogenated
-graphene.\cite{balakrishnan2013colossal} Resonant scattering with the zero mode
+graphene.\cite{Balakrishnan2013} Resonant scattering with the zero mode
 resonance has also been considered as a source of enhanced quasi-particle spin
 relaxation in graphene.\cite{Wojtaszek2013,Kochan2014,soriano2015}
 
@@ -53,7 +50,7 @@ one atomic site, and 1 electron, in the honeycomb lattice\footnote{This vacancy
 in the effective model is different from a real vacancy in graphene, which
 entails the formation dangling bonds from the $sp^2$ orbitals, in addition to
 the removal of the $\pi$ orbital as well}.
-The removal of a site in the honeycomb lattice breaks sub-lattice symmetry and produces a zero energy state.\cite{Pereira2006,kumazaki2007,Wehling2007,Pereira2008,Palacios2008}
+The removal of a site in the honeycomb lattice breaks sub-lattice symmetry and produces a zero energy state.\cite{Pereira2006,Kumazaki2007,Wehling2007,Pereira2008,Palacios2008}
 
 In gapped graphene structures, such as graphene with a spin-orbit gap,
 \cite{Gonzalez2012} graphene nanoribbons,\cite{Palacios2008} or a planar
@@ -66,8 +63,8 @@ The rest of this manuscript is devoted to study the case of a $sp^3$ chemisorpti
 The DOS of the resonant state diverges at $E=0$ and hence lacks a Lorentzian lineshape.   % mixed situation insulator-metal
 This situation is genuinely different from conventional magnetic impurities in metals, that are coupled to a bath with finite DOS and show conventional Lorentzian lineshapes and it is also different for the situation in which the resonant state lies inside a proper gap.
 
-Previous works usually address this problem by using supercells, where translational symmetry is preserved, hence considering not a single defect but a periodic array of them.\cite{Duplock2004,Boukhvalov2008,Yazyev2010,Sofo2012,gonzalez2016atomic}
-%\cite{Boukhvalov2008,Duplock2004,zhou2009ferromagnetism,Yazyev2010,Sofo2012,gonzalez2016atomic,}
+Previous works usually address this problem by using supercells, where translational symmetry is preserved, hence considering not a single defect but a periodic array of them.\cite{Duplock2004,Boukhvalov2008,Yazyev2010,Sofo2012,Brihuega2016}
+%\cite{Boukhvalov2008,Duplock2004,zhou2009ferromagnetism,Yazyev2010,Sofo2012,Brihuega2016}
 In this case the bands of such a system will always present a gap which at half filling, results in a quantized $m=1\mu_B$ magnetic moment since all the valence bands would be doubly occupied but only one of the two states in the gap would be occupied.
 While this approach has been proven very useful in many studies, it does not strictly solve the problem of a single impurity in an otherwise pristine graphene sheet.
 To tackle this problem we use two different methodologies. On the one hand, we
@@ -100,7 +97,7 @@ The second one is the kernel polynomial method, that allows the calculation of s
 
 
 \subsection{The embedding technique}
-We first present a general method to study single impurities in infinite systems, from now on referred as embedding technique, devised earlier by one of us in a similar context.\cite{Jacob2010orbital}
+We first present a general method to study single impurities in infinite systems, from now on referred as embedding technique, devised earlier by one of us in a similar context.\cite{Jacob2010}
 Since a single defect in an infinite system breaks the translational symmetry, we cannot use a Bloch description. Instead, we describe the system in terms of Green's functions, making use of the Dyson equation.
 %%
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
@@ -161,7 +158,7 @@ crystal. The final expression for the self-energy $\Sigma_{AB}$ reads:
 (E+i\eta-H(\vec{k})})^{-1}d^2\vec{k} \right )^{-1}
 \label{selfenergy}
 \end{equation}
-where $H_{A'}$ describes a region with the same dimensions than the original defective region $A$, but without the defect(s). This is a general procedure and can be applied for multi-band Hamiltonians. As long as the dimensions of the pristine and the defected Hamiltonian are the same, it can deal with more than one defect without computational overhead. Notice that this method does not require the analytic evaluation of the host crystal Green's function necessary in a recently proposed method\cite{settnes2015}, and can be applied to a very large class of systems, including superconductors.\cite{lado2016}
+where $H_{A'}$ describes a region with the same dimensions than the original defective region $A$, but without the defect(s). This is a general procedure and can be applied for multi-band Hamiltonians. As long as the dimensions of the pristine and the defected Hamiltonian are the same, it can deal with more than one defect without computational overhead. Notice that this method does not require the analytic evaluation of the host crystal Green's function necessary in a recently proposed method\cite{Settnes2015}, and can be applied to a very large class of systems, including superconductors.\cite{Lado2016}
 
 The combination of equations \eqref{Gdyson} and \eqref{selfenergy} allows the computation of the Green's function of the defective area, $G_A$, embedded in an otherwise pristine crystal as shown in Fig.~\ref{regions}. The density of states (DOS) of an atom $i$ in region $A$ can then be calculated from the imaginary part of the Green's function as
 \begin{equation}
@@ -171,8 +168,8 @@ The combination of equations \eqref{Gdyson} and \eqref{selfenergy} allows the co
 \end{equation}
 where $G_{i,i}$ is the diagonal matrix element $(i,i)$ of the Green's function. Summing over the contributions from all atoms $i$ in region $A$, the total DOS of region $A$ is obtained.
 
-In Fig.~\ref{DOS} we show the results of the method for the case of a single vacancy in the honeycomb lattice. Fig.~\ref{DOS} (a) shows the density of states both for pristine graphene, that shows the characteristic $\rho \propto |E|$ around the Dirac point,\cite{Katsnelson2012} and for the defective case, that presents a diverging zero energy resonance. The embedding method permits also the calculation of the local density of states as shown in Fig.~\ref{DOS} (c), where we show the map of the density of states evaluated at $E=0$, finding that the main contribution for this state comes from the 3-6 nearest neighbors to the vacancy that belong to the sublattice opposite to the one of the missing site.\cite{Pereira2006,kumazaki2007,Wehling2007,Pereira2008,Palacios2008}
-Of course, for the case of a non-interacting single vacancy, this problem can be dealt with using the standard T matrix theory.\cite{libro-Economou,Gonzalez2012,Wehling2007}. The embedding method shows its added value when it comes to treat several vacancies or when interactions are included, as we discuss now.
+In Fig.~\ref{DOS} we show the results of the method for the case of a single vacancy in the honeycomb lattice. Fig.~\ref{DOS} (a) shows the density of states both for pristine graphene, that shows the characteristic $\rho \propto |E|$ around the Dirac point,\cite{Katsnelson2012} and for the defective case, that presents a diverging zero energy resonance. The embedding method permits also the calculation of the local density of states as shown in Fig.~\ref{DOS} (c), where we show the map of the density of states evaluated at $E=0$, finding that the main contribution for this state comes from the 3-6 nearest neighbors to the vacancy that belong to the sublattice opposite to the one of the missing site.\cite{Pereira2006,Kumazaki2007,Wehling2007,Pereira2008,Palacios2008}
+Of course, for the case of a non-interacting single vacancy, this problem can be dealt with using the standard T matrix theory.\cite{Economou2006,Gonzalez2012,Wehling2007}. The embedding method shows its added value when it comes to treat several vacancies or when interactions are included, as we discuss now.
 
 
 \subsection{Mean field Hubbard model }
@@ -193,7 +190,7 @@ Exact solutions of this model are, in general, not possible so that we use a mea
   \right]
 \end{equation}
 where $\langle n_{i,\sigma} \rangle$ stand for the expectation values of the number operators computed with the eigenstates of the mean field Hamiltonian.
-Of course, this is a non-linear problem that is solved self-consistently.  Here, this is done in combination with the two dimensional embedding technique, which is formally similar to the one dimensional case.\cite{munoz2009}
+Of course, this is a non-linear problem that is solved self-consistently.  Here, this is done in combination with the two dimensional embedding technique, which is formally similar to the one dimensional case.\cite{Munoz2009}
 In this approach, the occupations in the external region $B$ are frozen to $\langle n_{i,\uparrow}\rangle= \langle n_{i,\downarrow}\rangle=\frac{1}{2}$.  In contrast, the expected values of the defective cell are calculated by self-consistent iteration.
 
 
@@ -203,7 +200,7 @@ In a first step, we assume a random guess spin polarization and then compute the
  \label{occ}
 \end{equation}
 which defines a new Hamiltonian for region $A$,$H_A \rightarrow \bar H_A + H^{MF}_U$%(\{m_i\})$
-, including the mean field Hubbard term.\cite{Fernandez2007,Palacios2008} Notice that the numerical integration of eq. \eqref{occ} is much more efficiently done in the complex plane using Cauchy's integral theorem. Also it is important to notice that even when the Hamiltonian for the region $A$ will change over the self-consistent iterations the self-energies will not since they do not depend on what is inside of said region.
+, including the mean field Hubbard term.\cite{Fernandez-Rossier2007,Palacios2008} Notice that the numerical integration of eq. \eqref{occ} is much more efficiently done in the complex plane using Cauchy's integral theorem. Also it is important to notice that even when the Hamiltonian for the region $A$ will change over the self-consistent iterations the self-energies will not since they do not depend on what is inside of said region.
 This procedure is iterated until a self-consistent solution is found.
 
 The magnetic moment is calculated as the difference of the expected values of each spin densities.
@@ -241,7 +238,7 @@ the modified coefficients of the expansion,
 \begin{equation}
 \bar \mu_n = g^N_n \mu_n
 \end{equation}
-that are obtained using the Jackson kernel\cite{jackson1912approximation}
+that are obtained using the Jackson kernel\cite{Jackson1912}
 \begin{equation}
 g_n^N =
 \frac{(N-n-1)\cos \frac{\pi n}{N+1} + \sin \frac{\pi n}{N+1}
@@ -378,7 +375,7 @@ In particular, we obtain a high temperature power law dependence $\chi \propto T
 This exponent reflects, again, the anomalous nature of the $sp^3$ local moment in infinite graphene, in marked contrast with the behavior of the same chemical functionalization in a gapped graphene structure.
 Interestingly, $\chi(T)$ has been measured\cite{Nair2012} for defective graphene obtaining a Curie law dependence, probably because the samples used are in fact nanoflakes with small confinement gaps that permit the existence of in-gap states with quantized spins.
 
-Further insight into the magnetic properties of this system is obtained by considering the dependence of the magnetic susceptibility as a function of the graphene chemical potential, that could be modified by gating doping,\cite{nair2013dual} as shown in Fig.~\ref{mag_temp} (c,d).
+Further insight into the magnetic properties of this system is obtained by considering the dependence of the magnetic susceptibility as a function of the graphene chemical potential, that could be modified by gating doping,\cite{Nair2013} as shown in Fig.~\ref{mag_temp} (c,d).
 The maximal local susceptibility is obtained at half-filling and small temperatures where it monotonically decreases both with temperature and doping.
 In comparison, in the case of slightly doped samples, the magnetic
 susceptibility can either increase or decrease as a function of the
@@ -453,27 +450,27 @@ weakly on the size of the defective region, $A$, in the embedding calculation
 (inset of Fig.~\ref{MFdos} (b)).\\
 
 
-We now address the connection between the DOS in Fig.~\ref{MFdos}(a), that shows two spin-split peaks around the Fermi energy,  and the STM $dI/dV$ spectra reported by Gonz\'alez {\em et al.}\cite{gonzalez2016atomic}.
+We now address the connection between the DOS in Fig.~\ref{MFdos}(a), that shows two spin-split peaks around the Fermi energy,  and the STM $dI/dV$ spectra reported by Gonz\'alez {\em et al.}\cite{Brihuega2016}.
 Whereas the experimental $dI/dV$ curve also shows   two peaks,
-the interpretation of the  experimental observations\cite{gonzalez2016atomic} requires some caution. The  spin-split peaks in the mean field calculation arise  from the   breaking of the spin symmetry.  This band splitting does indeed occur in    ferromagnetic systems  large enough to keep the magnetization frozen along a given direction that defines a spin quantization axis that permits the definition of the spin orientation of the spin-split bands. The quantum fluctuations of this mean field picture can be safely neglected for a large enough magnetic moment, but this is definitely not the case of a system that, at most, has $S=1/2$.
+the interpretation of the  experimental observations\cite{Brihuega2016} requires some caution. The  spin-split peaks in the mean field calculation arise  from the   breaking of the spin symmetry.  This band splitting does indeed occur in    ferromagnetic systems  large enough to keep the magnetization frozen along a given direction that defines a spin quantization axis that permits the definition of the spin orientation of the spin-split bands. The quantum fluctuations of this mean field picture can be safely neglected for a large enough magnetic moment, but this is definitely not the case of a system that, at most, has $S=1/2$.
 
 
 Therefore, the origin of the two peaks observed in the experiments
-\cite{gonzalez2016atomic} is {\em not} the spin splitting of the graphene energy levels, in line with the discussion Gonzalez {\em et al.}\cite{gonzalez2016atomic}.  A more correct interpretation of the split peaks is the following. The STM $dI/dV$ is proportional to the spectral function of the surface, in this case,  graphene. The spectral function of a localized level has two peaks,  associated to the addition $E>E_f$ and removal $E<E_f$ of an electron in the system. Their energy difference is a measurement of the {\em addition energy} of the system, i.e., the Coulomb repulsion between the host localized electron and a second additional electron injected in the system. When the addition energy is larger than the temperature, as in the experiment, the system is in the so called Coulomb-Blokade regime. This entails the existence of an unpaired spin, very much like in the Anderson model\cite{anderson1961localized} and does not preclude the emergence of Kondo effect at very low temperatures. The proper treatment of the addition energies in this system would involve solving the single impurity problem of a resonance in a Dirac bath in a many body  framework\cite{haase2011magnetic,sofo2012magnetic,mitchell13}, which is out of the scope of the present work.
+\cite{Brihuega2016} is {\em not} the spin splitting of the graphene energy levels, in line with the discussion Gonzalez {\em et al.}\cite{Brihuega2016}.  A more correct interpretation of the split peaks is the following. The STM $dI/dV$ is proportional to the spectral function of the surface, in this case,  graphene. The spectral function of a localized level has two peaks,  associated to the addition $E>E_f$ and removal $E<E_f$ of an electron in the system. Their energy difference is a measurement of the {\em addition energy} of the system, i.e., the Coulomb repulsion between the host localized electron and a second additional electron injected in the system. When the addition energy is larger than the temperature, as in the experiment, the system is in the so called Coulomb-Blokade regime. This entails the existence of an unpaired spin, very much like in the Anderson model\cite{Anderson1961} and does not preclude the emergence of Kondo effect at very low temperatures. The proper treatment of the addition energies in this system would involve solving the single impurity problem of a resonance in a Dirac bath in a many body  framework\cite{Haase2011,Sofo2012,Mitchell2013}, which is out of the scope of the present work.
 
 Finally, for a truly localized level with wave function $\phi_0$, described with the Hubbard model,  both the addition energy and the mean field spin-splitting are roughly given by  $U\sum_i |\psi_0(i)|^4$.  Therefore,  even if the spin-splitting  of the mean field theory is conceptually different from the addition energy observed experimentally, these two quantities roughly described by the same formula.
 
 
 
 \subsection{Localization}
-Our calculations show that magnetic moment associated to a hydrogen ad-atom is dellocalized in more than 250 carbon atoms.
+Our calculations show that magnetic moment associated to a hydrogen ad-atom is delocalized in more than 250 carbon atoms.
 In this sense, our calculations highlight the anomalous nature of the resonance due to a single $sp^3$ impurity in contrast to the phenomenology in gapped systems. This behavior arise from the special condition of the DOS, (null only in exactly one point) and the absence of an energy scale able to confine the $E=0$ resonance.
 
 
 It is worth noting that in real graphene some effects not captured by the first neighbor Hubbard model that can play a relevant role. First, the existence of second neighbor carbon hopping breaks electron-hole symmetry and shifts  the vacancy state away from $E=0$. Second, single hydrogenation introduces an effective on-site energy in the carbon atom that is actually finite, although rather large, which also leads to a displacement of the resonance away from zero energy.
 Third, non-local electronic interaction in graphene may have a sizable effect on the magnetic moment.
 And finally, spin-orbit coupling would open a gap of around $0.03meV$.
-\cite{PhysRevB.80.235431}
+\cite{Gmitra2009}
 Whether any of the previous perturbations would be capable of moving the system to the conventional quantum dot regime would require a careful study with a first principles Hamiltonian, which is out of the scope of the present work.
 
 \section{Conclusions}
@@ -481,6 +478,6 @@ Whether any of the previous perturbations would be capable of moving the system 
 We have addressed the problem of the local moment formation induced by an individual $sp^3$ functionalization in graphene, with chemisorbed atomic hydrogen as the  main motivation.  We model this within the single orbital Hubbard model, so that the functionalization is modeled as a vacancy in the  honeycomb lattice.  We have shown that the magnetic moment in this system  departs from  the conventionally accepted $m=1\mu_B$ picture. This relates to the fact that the lack of a gap in graphene prevents the existence of a standard in-gap state that can host an unpaired electron. Our calculations show that the local moment induced by $sp^3$ functionalization in otherwise gapless and pristine graphene
  give rise to specific signatures in the magnetic response of the system, such as a non-Curie temperature dependence and a non-linear (and non-monotonic for
 some doping values) magnetic susceptibility.
-We have also shown by means of mean-field calculations that the resulting magnetic moment is non-quantized in the whole regime explored. Our results should pave the way for future work treating many-body spin fluctuations beyond mean field theory\cite{haase2011magnetic,sofo2012magnetic,mitchell13}
+We have also shown by means of mean-field calculations that the resulting magnetic moment is non-quantized in the whole regime explored. Our results should pave the way for future work treating many-body spin fluctuations beyond mean field theory\cite{Haase2011,Sofo2012,Mitchell2013}
 
 
