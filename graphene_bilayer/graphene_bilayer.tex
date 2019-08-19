@@ -2,7 +2,63 @@
 \label{ch:bilayer}
 Graphite is made out of weakly bounded graphene layers, which is one of the reasons why exfoliating it is relatively easy. Extensive work has been devoted to systems in which two layers are isolated\cite{McCann2012}.
 
-The description is not much different from that of graphene: the Bravais lattice is still a triangular lattice with lattice vectors described by \eqref{latt_vec}, hence the \ac{fbz} is the same. The main difference is that the minimal basis now has four atomic positions.
+There are two ways to stack two graphene layers in a commensurate way. The first option is to align directly one layer on top of the other, so every atom is connected to an atom from the other layer. This is the so-called $AA$-stacking.
+The other option is to have the top layer shifted by one atomic position as shown in \fref{Gbi_stack}a,c). The later stacking, commonly called Bernal stacking or $AB$-stacking, is the most common one according to both experiments and calculations\cite{Norimatsu2010,Charlier1994,Charlier1994a}.
+
+In both stackings the overall band structure is quite similar (\fref{Gbi_stack}b,d)) since the interlayer interaction is around one order of magnitude weaker than the intralayer ones.
+%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{figure}[h!]
+\centering
+\includegraphics{graphene_bilayer/figures/bilayer_stackings.pdf}
+\vspace{-20pt}
+\caption{a,b) Cartoon depiction of the atomic structure of bilayer graphene in $AA$-stacking and band structure of $AA$-stacking respectively. c,d) Cartoon depiction of the atomic structure of bilayer graphene in $AB$-stacking and band structure of $AB$-stacking respectively. e) Comparison of the $AA$ and $AB$ stackings in the band structure around the $K$ point.}
+\label{Gbi_stack}
+\end{figure}
+\FloatBarrier
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+The main differences happen around the $K$ ($K'$) points. It can be shown in \fref{Gbi_stack}e). In the $K$ points the $\vec{k}$ dependence vanishes. The Hamiltonian, then, reads:
+\begin{equation}
+   H^{AA}_0 = \left(\begin{array}{cccc}
+         0 & t & t' & 0 \\
+         t & 0 & 0 & t' \\
+         t' & 0 & 0 & t \\
+         0 & t' & t & 0
+   \end{array}\right)\quad;\quad
+   H^{AB}_0 = \left(\begin{array}{cccc}
+         0 & t & 0 & 0 \\
+         t & 0 & t' & 0 \\
+         0 & t' & 0 & t \\
+         0 & 0 & t & 0
+   \end{array}\right)
+\end{equation}
+in the basis $\mathcal{B}=\left\{\ket{\phi^A_{1}}, \ket{\phi^B_{1}}, \ket{\phi^A_{2}}, \ket{\phi^B_{2}}\right\}$, where the numbers label the layer and the letters label the sublattices.
+By rearranging the basis into $\mathcal{B}=\left\{\ket{\phi^A_{1}}, \ket{\phi^A_{2}},\ket{\phi^B_{1}}, \ket{\phi^B_{2}}\right\}$ it can be shown that the $H^{AB}_0$ shows two vanishing subspaces while $H^{AA}_0$ does not:
+\begin{equation}
+   H^{AA}_0 = \left(\begin{array}{cccc}
+         0 & t' & t & 0 \\
+         t' & 0 & 0 & t \\
+         t & 0 & 0 & t' \\
+         0 & t & t' & 0
+   \end{array}\right)\quad;\quad
+   H^{AB}_0 = \left(\begin{array}{cc|cc}
+         0 & 0 & t & 0 \\
+         0 & 0 & t' & t \\ \hline
+         t & t' & 0 & 0 \\
+         0 & t & 0 & 0
+   \end{array}\right)
+\end{equation}
+This fact shows that we can expect two zero eigenvalues at the $K$ points for the $AB$-stacking, while there should be a gap in the $AA$-stacking.\\
+
+In order to understand these band structures we can start with two decoupled graphene layers, and then turn on the interlayer hopping via an adiabatic parameter $\eta\in[0,1]$.
+
+When $\eta=0$ the band structure is just that of graphene, but twofold. In the $AA$-stacking every atom interacts with another atom from the other layer, it is to be expected a bonding-antibonding-like splitting for every $\vec{k}$, in fact that is exactly what happens, and vertical rigid shift of the band structure. Around the $K$ point this translates in having two cones placed at $E=\pm t'$.
+In the $AB$-stacking only one of the atoms of each layer interacts via $t'$, one could think that around the $K$ point one of the cones hybridizes into a bonding-antibonding splitting and it would remain a cone with two gapped pseudo-cones at $E=\pm t'$, but the calculation does not yield exactly that, but rather a ``parabolized'' version of this scenario. The parabolic component comes from second order hoppings between the two layers.\\
+
+
+Since the $AB$-stacking is the most common one, and the most appropriate for our goals, we will focus the rest of the discussion in this kind of stacking.\\
+
+
+The description for the Bernal stacking is not much different from that of graphene: the Bravais lattice is still a triangular lattice with lattice vectors described by \eqref{latt_vec}, hence the \ac{fbz} is the same. The main difference is that the minimal basis now has four atomic positions.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
@@ -24,7 +80,7 @@ In order to account for this new hoppings we keep the \ac{sk} model and simply s
 
 
 \section{electric field}
-It is well known that the band structure of bilayer graphene changes dramatically in the presence of an external electric field\cite{Oostinga2007, Zhang2009, Taychatanapat2010, Allen2012, Castro2010a, Ponomarenko2011, Sui2015}.
+It is well known that the band structure of bilayer graphene changes dramatically in the presence of an external electric field\cite{McCann2006, Castro2007, Oostinga2007, Zhang2009, Taychatanapat2010, Castro2010a, Ponomarenko2011, Allen2012, Sui2015}.
 The application of an electric field has several effects in the electronic structure of the system.
 
 The most obvious effect is the different shift of the on-site energies for each layer. This effect breaks the bipartite-ness of the system and results in a tunable band gap as reported by many experiments.
