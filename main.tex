@@ -113,6 +113,8 @@
 \renewcommand{\Im}[1]{\operatorname{\mathbb{I}m}\left[#1\right]}
 \renewcommand{\Re}[1]{\operatorname{\mathbb{R}e}\left[#1\right]}
 \AtBeginDocument{\renewcommand{\hbar}{\hslash}}
+%\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\thefootnote}{\Roman{footnote}}
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
 
@@ -148,20 +150,21 @@
 %~~~~~~~~ Chapter ~~~~~~~~
 \input{introduction/intro.tex}
 
-%~~~~~~~~ Chapter ~~~~~~~~
-\input{graphene/graphene.tex}
+%%~~~~~~~~ Chapter ~~~~~~~~
+%\input{graphene/graphene.tex}
+%
+%%~~~~~~~~ Chapter ~~~~~~~~
+%% Graphene Bilayer
+%\input{graphene_bilayer/graphene_bilayer.tex}
+%
+%%~~~~~~~~ Chapter ~~~~~~~~
+%\input{defects/adatom.tex}
+%\input{bilayer_defect/bilayer_defect.tex}
+%\input{defects/hyperfine.tex}
+%
+%%~~~~~~~~ Chapter ~~~~~~~~
+%\input{artlat/artlat.tex}
 
-%~~~~~~~~ Chapter ~~~~~~~~
-% Graphene Bilayer
-\input{graphene_bilayer/graphene_bilayer.tex}
-
-%~~~~~~~~ Chapter ~~~~~~~~
-\input{defects/adatom.tex}
-\input{bilayer_defect/bilayer_defect.tex}
-\input{defects/hyperfine.tex}
-
-%~~~~~~~~ Chapter ~~~~~~~~
-\input{artlat/artlat.tex}
 
 
 
@@ -195,23 +198,23 @@
 %
 % ~~~~~~~~ Appendices ~~~~~~~~
 \appendix
-% Topological stuff
-\input{appendix/qsh.tex}
-\input{ann/ann.tex}
-% % Low energy regime
-% \input{appendix/low_energy_regime.tex}
-% Models
-\input{appendix/models.tex}
-% Cells
-\input{appendix/cells.tex}
-% Slater-Koster hoppings
-\input{appendix/SK.tex}
-%%% Quantum Gates
-%%\input{appendix/A.tex}
-% Units
-\input{appendix/B.tex}
-%%% Effective exchange interaction
-%%\input{appendix/C.tex}
+%% Topological stuff
+%\input{appendix/qsh.tex}
+%\input{ann/ann.tex}
+%% % Low energy regime
+%% \input{appendix/low_energy_regime.tex}
+%% Models
+%\input{appendix/models.tex}
+%% Cells
+%\input{appendix/cells.tex}
+%% Slater-Koster hoppings
+%\input{appendix/SK.tex}
+%%%% Quantum Gates
+%%%\input{appendix/A.tex}
+%% Units
+%\input{appendix/B.tex}
+%%%% Effective exchange interaction
+%%%\input{appendix/C.tex}
 
 
 
