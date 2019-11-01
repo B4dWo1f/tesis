@@ -75,6 +75,7 @@
   inter-unit-product={}\cdot{},
   exponent-product={}\mspace{-2mu}\cdot\mspace{-2mu}{}
 }
+\usepackage{leftidx}  % http://ctan.org/pkg/leftidx
 
 %~~~~~~~~~~~~~~~ COMANDOS PROPIOS ~~~~~~~~~~~~~~%
 \newcommand{\mean}[1]{\langle#1\rangle}
@@ -100,6 +101,10 @@
 \newcommand{\ex}[1]{\mspace{-2mu}\times\mspace{-2mu}10^{#1}}
 \newcommand{\fref}[2][{}]{\hyperref[#2]{Fig.~\ref{#2}~#1}} 
 \renewcommand{\eqref}[2][{}]{\hyperref[#2]{eq.~\ref{#2}~#1}} 
+\newcommand{\ie}{i.\,e. }
+\newcommand{\Ie}{I.\,e. }
+\newcommand{\eg}{e.\,g. }
+\newcommand{\Eg}{E.\,g. }
 %~~~~~~~ Shortcuts ~~~~~~~
 \def\uaw{\uparrow}
 \def\daw{\downarrow}
@@ -123,6 +128,9 @@
 \begin{document}
 %~~~~~~~~ Cover ~~~~~~~~
 % Missing
+
+%~~~~~~~~ Title ~~~~~~~~
+\input{title.tex}
 
 %~~~~~~~~ Dedication ~~~~~~~~
 % \input{covers/dedication.tex}
@@ -150,20 +158,24 @@
 %~~~~~~~~ Chapter ~~~~~~~~
 \input{introduction/intro.tex}
 
-%%~~~~~~~~ Chapter ~~~~~~~~
-%\input{graphene/graphene.tex}
-%
-%%~~~~~~~~ Chapter ~~~~~~~~
-%% Graphene Bilayer
-%\input{graphene_bilayer/graphene_bilayer.tex}
-%
-%%~~~~~~~~ Chapter ~~~~~~~~
-%\input{defects/adatom.tex}
-%\input{bilayer_defect/bilayer_defect.tex}
-%\input{defects/hyperfine.tex}
-%
-%%~~~~~~~~ Chapter ~~~~~~~~
-%\input{artlat/artlat.tex}
+%~~~~~~~~ Chapter ~~~~~~~~
+\input{graphene/graphene.tex}
+
+%~~~~~~~~ Chapter ~~~~~~~~
+% Graphene Bilayer
+\input{graphene_bilayer/graphene_bilayer.tex}
+
+%~~~~~~~~ Chapter ~~~~~~~~
+\input{defects/adatom.tex}
+
+%~~~~~~~~ Chapter ~~~~~~~~
+\input{bilayer_defect/bilayer_defect.tex}
+
+%~~~~~~~~ Chapter ~~~~~~~~
+\input{defects/hyperfine.tex}
+
+%~~~~~~~~ Chapter ~~~~~~~~
+\input{artlat/artlat.tex}
 
 
 
@@ -198,21 +210,21 @@
 %
 % ~~~~~~~~ Appendices ~~~~~~~~
 \appendix
-%% Topological stuff
-%\input{appendix/qsh.tex}
-%\input{ann/ann.tex}
+% Slater-Koster hoppings
+\input{appendix/SK.tex}
+% Topological stuff
+\input{appendix/qsh.tex}
+\input{ann/ann.tex}
 %% % Low energy regime
 %% \input{appendix/low_energy_regime.tex}
 %% Models
 %\input{appendix/models.tex}
 %% Cells
 %\input{appendix/cells.tex}
-%% Slater-Koster hoppings
-%\input{appendix/SK.tex}
 %%%% Quantum Gates
 %%%\input{appendix/A.tex}
-%% Units
-%\input{appendix/B.tex}
+% Units
+\input{appendix/B.tex}
 %%%% Effective exchange interaction
 %%%\input{appendix/C.tex}
 

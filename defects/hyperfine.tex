@@ -63,10 +63,10 @@ The energy of the in-gap state as a function of both parameters is shown in \fre
 %\FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-It is clear that in order to recover the 1-orbital intuition (in-gap state at $E=0$), we require the limit $V_{sp\sigma}\to\infty$. The position of the in-gap state is the most obvious effect, but the composition of its wave-function can change other properties that we discuss in the next sections.
+It is clear that in order to recover the 1-orbital intuition (in-gap state at $E=0$) and the experimental observations\cite{Sofo2012,Brihuega2016}, we require the limit $V_{sp\sigma}\to\infty$. The position of the in-gap state is the most obvious effect, but the composition of its wave-function can change other properties that we discuss in the next sections.
 
 
-The experimental value for these parameters is difficult to infer\cite{}, and even \ac{dft} calculations depend strongly on the system at hand, so we will consider a wide range of values and explore the resulting physics.\\
+The experimental value for these parameters is difficult to infer\cite{}, and even \ac{dft} calculations depend strongly on the system at hand, so we will consider a wide range of values and explore the resulting physics.
 
 
 
@@ -75,7 +75,7 @@ The experimental value for these parameters is difficult to infer\cite{}, and ev
 Functionalized graphene has many interesting properties. 
 
 There is an electronic spin $S=1/2$, and a nuclear spin $I=1/2$ very close in space. A natural question is how big is the interaction between them. In particular, if this interaction were \emph{big enough} and \emph{tunable enough}, the system would have all the necessary ingredients to behave as a single qubit.
-This idea follows very closely the Kane's proposal for a silicon based nuclear spin qubit\cite{Kane1988}. In this proposal Kane suggests that it would be possible to use the nuclear spin of Phosphorus dopants ($^{31}P$) embedded in Silicon as qubits. The interaction with the qubits would be mediated by the electronic states bounded to the impurity and it could be tuned via an external electric gate which would shift and deform the electronic cloud around the $^{31}P$ to increase/decrease the hyperfine interaction, effectively switching on and off the interaction of the nuclear spin with the rest of the world.
+This idea follows very closely the Kane's proposal for a silicon based nuclear spin qubit\cite{Kane1988}. In this proposal Kane suggests that it would be possible to use the nuclear spin of Phosphorus dopants ($\leftidx{^{31}}P$) embedded in Silicon as qubits. The interaction with the qubits would be mediated by the electronic states bounded to the impurity and it could be tuned via an external electric gate which would shift and deform the electronic cloud around the $\leftidx{^{31}}P$ to increase/decrease the hyperfine interaction, effectively switching on and off the interaction of the nuclear spin with the rest of the world.
 Similarly using an electric gate between two dopants it would be possible to tune the inter-qubit interactions.
 Let us address the ``strong enough'' requirement in the following section, leaving the tunability question for later chapters. 
 
@@ -139,7 +139,7 @@ where $\ket{\psi}$ is any of the eigenstates of the Hamiltonian and $\ket{\phi_s
 
 Of course other orbitals centered at the other atoms would also contribute to the hyperfine interaction (since the wave function does not vanish at the position of the nucleus), nevertheless the \ac{tb} approximation does not offer the tools to deal with the deformation of the orbitals what makes it impossible to estimate the evaluation of the orbitals at the $H$ nucleus and comparison with \ac{dft} calculations show that this effect is not the main one for describing this physics\cite{Ranjbar2010}.
 
-For the case of Si:$^{31}$P the hyperfine coupling in MegaHertz is\cite{Dehollain2014,Kalra2014}
+For the case of $Si:\leftidx{^{31}}P$ the hyperfine coupling in MegaHertz is\cite{Dehollain2014,Kalra2014}
 %$4\pi\mathcal{A}/\hbar=58MHz$
 %XXX $\frac{\mathcal{A}}{2\pi\hbar} = \SI{58}{\MHz}$ ?????
 $\frac{\mathcal{A}}{2\pi\hbar} = \SI{117}{\MHz}$
@@ -158,18 +158,31 @@ Since we do not have a reliable estimation of the \ac{sk} parameters of the adat
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-While the position of the in-gap state does not change a lot with the $V_{ss\sigma}$, the hyperfine coupling does present a significant variance with this parameter. This behavior is expected since the increasing the $s-s$ hybridization would reduce the available $H_s$ weight in the in-gap wave function.
+While the position of the in-gap state does not change a lot with the $V_{ss\sigma}$, the hyperfine coupling does present a significant variance with this parameter. This behavior is expected since the increasing the $s-s$ hybridization would reduce the available $H_s$ weight for the in-gap wave function.
 
-Without a thorough study of these parameters (out of the scope of this work) it is worth noting that there is a range of parameters in which the hyperfine coupling is 
+%Without a thorough study of these parameters (out of the scope of this work) it is worth noting that there is a range of parameters in which the hyperfine coupling is 
+
+%This numbers for the hyperfine coupling are not as big as for the $Si:\leftidx{^{31}}P$, nonetheless the tunability of this quantity almost a
+The interesting
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{figure}[h!]
+\centering
+\includegraphics{defects/fig/hyperfine.pdf}
+\vspace{-5pt}
+\caption{Hyperfine coupling as a function of SK parameter and electric field}
+\label{Label}
+\end{figure}
+\FloatBarrier
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
 
 
 
-\newpage
+
 \section{A Qubit Idea}
 
-
-Finally, we can write the complete Hamiltonian for our nuclear qubit as a combination of the previous ones:
+In this system we have all the ingredients from the Kane's proposal, so we can write the complete Hamiltonian for our nuclear qubit as a combination of the previous ones:
 \begin{equation}
   H = -g_e\mu_e\frac{1}{2}\vec{B}\vec{\sigma}^e
       -g_p\mu_p\frac{1}{2}\vec{B}\vec{\sigma}^p

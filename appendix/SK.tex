@@ -9,9 +9,14 @@ In this chapter we just summarize the \ac{sk} hoppings. In every case it is assu
 The formulas for the $s-p$ hoppings are:
 \begin{equation}
 \begin{split}
-  t_{s-s} &= V_{ss\sigma}\\
-  t_{s-p_x} &= l V_{ss\sigma}\\
+  t_{ss} &= V_{ss\sigma}\\
+  t_{sp_x} &= l V_{ss\sigma}\\
 \end{split}
+\end{equation}
+by symmetry it follows that:
+\begin{equation}
+   t_{sp_y}(l,m,n) = t_{sp_x}(m,-l,n) \qquad \text{and} \qquad
+   t_{sp_z}(l,m,n) = t_{sp_x}(n,m,-l)
 \end{equation}
 The formulas for hoppings among the $p$ orbitals are:
 \begin{equation}
@@ -21,6 +26,15 @@ The formulas for hoppings among the $p$ orbitals are:
   t_{p_x-p_z} &= ln V_{pp\sigma} - ln V_{pp\pi}
 \end{split}
 \end{equation}
+which imply that:
+\begin{equation}
+\begin{split}
+   t_{p_yp_y}(l,m,n) &= t_{p_xp_x}(m,-l,n) \\
+   t_{p_yp_z}(l,m,n) &= t_{p_xp_y}(m,n,l) \\
+   t_{p_zp_z}(l,m,n) &= t_{p_zp_z}(n,m,-l)
+\end{split}
+\end{equation}
+
 the formulas for the $s-d$ hoppings are:
 \begin{equation*}
 \begin{split}
