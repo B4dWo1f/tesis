@@ -1,8 +1,8 @@
 \chapter{Graphene Bilayer}
 \label{ch:bilayer}
-Graphite is made out of two weakly bounded graphene layers. Extensive work has been devoted to systems in which two layers are isolated\cite{McCann2012}.
+Graphite is made out of weakly bounded graphene layers which, incidentally, is the main reason why it is such an exfoliable material. When graphene is obtained by exfoliation it is very common to find regions where not one but two or more layers are extracted. We will focus now in the cases in which just two layers are isolated.
 
-There are two ways to stack two graphene layers in a commensurate way. The first option is to align directly one layer on top of the other, so every atom in one layer is connected to an atom from the other layer. This is the so-called $AA$-stacking.
+There are two ways to stack two graphene layers in a commensurate way. The first option is to align directly one layer on top of the other, so every atom in one layer is connected to an atom from the other layer\fref{Gbi_stack}a). This is the so-called $AA$-stacking.
 The other option is to have the top layer shifted by one atomic position as shown in \fref{Gbi_stack}c). The later stacking, commonly called Bernal stacking or $AB$-stacking, is the most common one according to both experiments and \ac{dft} calculations\cite{Norimatsu2010,Charlier1994,Charlier1994a}.
 
 In both stackings the overall band structure (see \fref{Gbi_stack}b,d)) is quite similar since the interlayer interaction is around one order of magnitude weaker than any intralayer hopping.
@@ -18,14 +18,67 @@ In both stackings the overall band structure (see \fref{Gbi_stack}b,d)) is quite
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 At first glance it may seen that both stackings result in a very similar band structure. The main differences happen around the $K$ ($K'$) points as it is shown in \fref{Gbi_stack}e).
 
-%In order to understand these band structures we can start with two decoupled graphene layers, and then turn on the interlayer hopping via an adiabatic parameter $\eta\in[0,1]$.
+In order to understand these band structures we can consider the adiabatic formation of bilayer graphene (or $n$-layer graphene, for that matter) starting with two layers of graphene infinitely apart and bringing them together.
+We will use the following basis to describe such a system:
+\begin{equation}
+  \mathcal{B}_1 = \left\{\ket{\phi_{1A}}, \ket{\phi_{1B}},
+                        \ket{\phi_{2A}}, \ket{\phi_{2B}}\right\}
+\label{basis_bi}
+\end{equation}
+where the numbers label the layer and the letters the sublattice.
+\bigskip
+
+Initially there is no hopping between the layers, but as they are brought together a finite hopping appears. We will simulate this adiabatic process including a factor $\eta\in[0,1]$ in the interlayer hoppings.
+
+
+Since the two layers are infinitely apart, we can consider no interaction between them, hence we can describe the Hamiltonian of the system at the initial moment as two disconnected sectors of the same Hamiltonian, equivalent to the limit $\eta\rightarrow0$ in eq.~\eqref{Gbi}. The Hamiltonian in the one orbital basis $\mathcal{B}_1$ reads:
+\begin{equation}
+   H(\vec{k}) = \left(\begin{array}{cc|cc}
+     0 & tf(\vec{k}) & 0 & 0 \\
+     tf^{\dagger}(\vec{k}) & 0 & 0 & 0 \\ \hline
+     0 & 0 & 0 & tf(\vec{k}) \\
+     0 & 0 & tf^{\dagger}(\vec{k}) & 0
+  \end{array}\right) + 
+  \eta H_\text{inter}
+\label{Gbi}
+\end{equation}
+$\eta\in[0,1]$ will be used as a dummy parameter to switch on and off the interlayer coupling adiabatically and where the interlayer term can be either
+\begin{equation}
+H^{AA}_\text{inter}=\left(\begin{array}{cc|cc}
+                          0  & 0  & t' & 0 \\
+                          0  & 0  & 0  & t'\\ \hline
+                          t' & 0  & 0  & 0 \\
+                          0  & t' & 0  & 0\end{array}\right)
+\quad\text{or}\quad
+H^{AB}_\text{inter}=\left(\begin{array}{c|cc|c}
+                          0 & 0  & 0  & 0 \\ \hline
+                          0 & 0  & t' & 0 \\
+                          0 & t' & 0  & 0 \\ \hline
+                          0 & 0  & 0  & 0\end{array}\right)
+\end{equation}
+When a more complex basis is used, all the \ac{sk} parameters will be scaled so that the interlayer hopping among $p_z$ orbitals is $t'=\SI{0.4}{\eV}$ in accordance with the literature\cite{KatsnelsonBook}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 In order to understand these band structures we can restrict ourselves to analyze the $\vec{k}=K$ point. In this point the $\vec{k}$ dependence vanishes, $f(K)=0$. So the Hamiltonian \eqref{Gbi} reads:
 
 \begin{equation}
-   H^{AA}(K) = \left(\begin{array}{cccc}
+   H^{AA}(K) = \left(\begin{array}{cc|cc}
          0 & 0 & t' & 0 \\
-         0 & 0 & 0 & t' \\
+         0 & 0 & 0 & t' \\\hline
          t' & 0 & 0 & 0 \\
          0 & t' & 0 & 0
    \end{array}\right)\quad;\quad
@@ -42,7 +95,7 @@ When $\eta=0$ the band structure is just that of graphene, but twofold, so at th
 For $\eta>0$, in the $AA$-stacking, every atom interacts with another atom from the other layer it is obvious from \eqref{HK} that there will be no states at $E=0$ but rather two degenerate states at $E=\pm t'$.
 %, it is to be expected a bonding-antibonding-like splitting for every $\vec{k}$, in fact that is exactly what happens, and vertical rigid shift of the band structure. Around the $K$ point this translates in having two cones placed at $E=\pm t'$.
 
-In the $AB$-stacking only one of the atoms of each layer interacts via $t'$, at the $K$ point two states will remain at $E=0$, while the other will be shifted to $E=\pm t$.
+In the $AB$-stacking only one of the atoms of each layer interacts via $t'$, at the $K$ point two states will remain at $E=0$, while the other will be shifted to $E=\pm t'$.
 %, one could think that around the $K$ point one of the cones hybridizes into a bonding-antibonding splitting and it would remain a cone with two gapped pseudo-cones at $E=\pm t'$, but the calculation does not yield exactly that, but rather a ``parabolized'' version of this scenario. The parabolic component comes from second order hoppings between the two layers.\\
 
 %in the basis $\mathcal{B}=\left\{\ket{\phi^A_{1}}, \ket{\phi^B_{1}}, \ket{\phi^A_{2}}, \ket{\phi^B_{2}}\right\}$, where the numbers label the layer and the letters label the sublattices.
@@ -83,11 +136,11 @@ The description for the Bernal stacking is not much different from that of graph
 In bilayer graphene the $p_z$ manifold is no longer decoupled from the other orbitals since there are hopping processes between the $p_z$ orbitals in one layer and the $s$ orbitals in the other layer. Nevertheless the $p_x$ and $p_y$ still have no direct hopping with the $p_z$ orbitals.
 While it is true that the symmetry protecting the $p_z$ manifold is broken in this system, the fact remains that at low energy and around the $K$ points the $p_z$ description is enough (and exactly at the Dirac points it is an exact description).\\
 
-There are several ways in which we can stack several graphene layers. Until further notice we will consider only Bernal stacking, meaning that only one of the sublattices of one layer is connected to the opposite sublattice of the other layer. This configuration results in having in each layer one sublattice which is ``\emph{connected}'' and another that lays on ``\emph{hollow}'' sites (\fref{Gbi_summary}{a)}).
-
-We can approach bilayer graphene by considering two decoupled layers of graphene. In this case we would have twice the typical graphene band structure, one for each layer. When the interlayer coupling is switched on (see \eqref{Gbi}) two of the bands split from the rest according to the interlayer hopping $t'$ and the other two become parabolic.\\
-
-In order to account for this new hoppings we keep the \ac{sk} model and simply scale the graphene parameters so that the interlayer $p_z$ hopping takes the value $t'=\SI{0.4}{\meV}$. So, the \ac{sk} parameter can be obtained simply by multiplying the parameters in \ref{G_SK_params} by the factor $f\sim0.05$
+%There are several ways in which we can stack several graphene layers. Until further notice we will consider only Bernal stacking, meaning that only one of the sublattices of one layer is connected to the opposite sublattice of the other layer. This configuration results in having in each layer one sublattice which is ``\emph{connected}'' and another that lays on ``\emph{hollow}'' sites (\fref{Gbi_summary}{a)}).
+%
+%We can approach bilayer graphene by considering two decoupled layers of graphene. In this case we would have twice the typical graphene band structure, one for each layer. When the interlayer coupling is switched on (see \eqref{Gbi}) two of the bands split from the rest according to the interlayer hopping $t'$ and the other two become parabolic.\\
+%
+%In order to account for this new hoppings we keep the \ac{sk} model and simply scale the graphene parameters so that the interlayer $p_z$ hopping takes the value $t'=\SI{0.4}{\meV}$. So, the \ac{sk} parameter can be obtained simply by multiplying the parameters in \ref{G_SK_params} by the factor $f\sim0.05$
 
 
 \section{electric field}
@@ -180,10 +233,6 @@ which for a typical electric field of $\mathcal{E}\sim\SI{50}{\V}/\SI{300}{\nm}$
 These terms, are in the scale of $\SI{e-2}{\meV}$ while the gap open can reach up to $\SI{2.5e2}{\meV}$ so we will neglect these interactions from now on.
 
 
-\section{Spin proximity}
-Another way to interact with the spin degree
-
-
 \section{Kink states}
 An interesting feature of this system appears when we applied an electric field of different sign in different regions of the system. The opening of an opposite gap in two different regions leads to the appearance of kink states in the interface. In addition to its experimental observation\cite{Li2016}, we can provide a quick example of these states.
 
@@ -213,6 +262,58 @@ Once the Green's function is calculated, the \ac{dos} is calculated as usual as:
 \begin{equation}
    \rho(E,k_\parallel) = \frac{-1}{\pi}\Im{G(E,k_{\parallel})}
 \end{equation}
+
+
+
+\subsection{Spin proximity}
+$CrI_3$ is a two dimensional ferromagnetic insulating material\cite{Klein2018,Song2018,Wang2018}, %,Jiang2018,Huang2018,Jiang2018b}
+if bilayer graphene is sandwiched by two layers of $CrI_3$ as shown in \fref{cri3}, 
+
+%% ~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~ %
+%\begin{figure}[h!]
+%\centering
+%  \subfloat{\includegraphics[width=0.54\textwidth]{graphene_bilayer/figures/cri3.pdf}}
+%  \qquad
+%  \subfloat{\includegraphics[width=0.34\textwidth]{graphene_bilayer/figures/cri3_bands.pdf}}
+%\vspace{-5pt}
+%\caption{a) diagram of the two considered configurations. b) band structure for the ferro and antiferromagnetic configurations.}
+%\label{cri3}
+%\end{figure}
+%%\FloatBarrier
+%% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+
+If there are two domains with opposite magnetization
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{figure}[h!]
+\centering
+\includegraphics{graphene_bilayer/figures/cri3_full.pdf}
+\vspace{-5pt}
+\caption{kink states between two different regions}
+\label{cri32}
+\end{figure}
+\FloatBarrier
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+
+\begin{eqnarray}
+{\cal H}_{\sigma}(\vec{k})=\left(
+\begin{array}{cccc}
+\eta\sigma \frac{\Delta}{2} & f(\vec{k}) & 0& 0 \\
+f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
+0 & t'  &  \sigma \frac{\Delta}{2} &  f(\vec{k})\\
+ 0 & 0 &  f(\vec{k})^* & \sigma \frac{\Delta}{2}
+\end{array}
+\right)
+\label{hmodel}
+\end{eqnarray}
+
+
+
+
+
+
 
 
 

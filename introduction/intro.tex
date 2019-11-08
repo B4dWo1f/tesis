@@ -6,6 +6,82 @@
 % --> possibilities -->
 %
 
+Condensed Matter Physics is an immensely broad topic. It encompasses many different materials at different scales and with many different approaches.
+This thesis sits on the theoretical side and is essentially computational, nonetheless it has the flavor of Applied Physics or even Material Science. Naturally many other paths could have been followed, experiments pursued, theoretical models deepened and many topics could be further studied, but the line has to be drawn at some point.
+
+Through out the whole thesis the driving force has been sometimes the possibility of interesting results, regardless their ``immediate'' utility, and some times the possibility of real world application in the near/mid future.
+This position, midway between applications and fundamental research, might be a bit uncomfortable since experimentalists or industry-oriented people might find it a bit vague or hypothetical whereas fundamental researchers might think of it as too narrow, or even missing the big picture.
+
+In contrast I think this ``equidistance'' provides a privileged position to explore a number of interesting topics without loosing touch with experimental reality.
+\bigskip
+
+This whole thesis revolves around graphene and graphene-based systems. One can find a number of reasons for this: its a relatively new material, it has many physically interesting properties and the potential for plenty of applications, it draws a lot of attention form the research community...
+One could say that the scientific community may have gone through an ``interest'' bubble involving graphene and, as a consequence, graphene has been advertised as a miraculous material, with the potential to change the world as we know it. This statement may be seen in \fref{topics}, where I have analyzed the book of abstract of the APS March Meeting for a number of years.
+%\footnote{after 2018 the format of the pdf file changed and I did not update the parser, but anyone interested and willing is welcome to contribute}
+It counts the number of abstracts containing a given term and normalizes the count to the total number of abstracts that year. This is a very rough estimate, of course, but the resulting counting is arguably related to the interest of the condensed matter community on a certain topic.
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{figure}[h!]
+\centering
+\includegraphics{introduction/figures/topics.png}
+\vspace{-25pt}
+\caption{Evolution through out the years of different topics at the APS March Meeting. The plot was done by counting the number of abstracts containing a given word and normalizing it by the total number of abstracts in the conference.}
+\label{topics}
+\end{figure}
+%\FloatBarrier
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+The case of graphene is very interesting, since one can see its raise since (almost) its discovery and the beginning of its decay.
+
+While the graphene bubble might be a real effect, I would like to point out the trend over the years of the terms next to it in \fref{topics}: topolog\textcolor{gray}{[y,ical]}, 2d, dirac, \textcolor{gray}{quantum-,spin-,anomalous-}hall, dichal\textcolor{gray}{cogenides, $MoS_2$,$WS_2$,$WSe_2$}. All of these terms are undoubtedly related to graphene an clearly they show a monotonically growing trend.
+\medskip
+
+Graphene itself is very interesting and it probably deserves all the fame and attention that it gets, but for me the importance of graphene lies in the fact that it has become the gateway for many other materials and research branches.
+
+The understanding of graphene has been the spark to start a race in two dimensional materials research. \ac{2dm} are a very interesting family of materials both form an applied point of view and from the perspective of fundamental research.
+On one hand, any industry-related property (conductance tunability, magnetism...) becomes instantly interesting just because its 2D nature ensures smaller sizes and cheaper products.
+On the other hand their 2D nature place them right in the frontier between the classical and quantum regime: they are macroscopic (sometimes reaching millimeters) but being one atom thick there are non negligible quantum effects what makes the fascinating from the fundamental physics point of view.
+Since its discovery many other bidimensional materials have been synthesized: Bismuth, $MoS_2$, $WeS_2$, $WSe_2$, $BN$, $CrI_3$... each with their unique set of properties and its list of possible applications.
+
+Some of these materials will be mentioned during the thesis, but graphene will be the common thread through out the thesis.
+\bigskip
+
+One of the most interesting properties of graphene is that, being two dimensional, all of it is a surface, and electrons living in surfaces respond strongly to external perturbations.
+If a superconductor is placed nearby, electrons in graphene will behave in a superconductor way\cite{},
+if placed on top of an insulator it will open a gap\cite{}, if subjected to an external field its electronic states will be heavily modified.
+A material in which so many different states may appear is interesting in itself, so it is no wonder why having such a panoply of different phases at their disposal, scientists quickly thought of the possibility of mixing different 2D materials in order to engineer properties at will\cite{Geim2013}.
+
+In the spirit of these combined structures, commonly known as Van der Waals heterostructures, this thesis extensively explores the properties and applications of a bilayer of graphene.
+%TODO meh....change
+\bigskip
+
+Even though it will not be discussed in the thesis, it is mandatory to comment on the recent discovery of superconductivity on bilayer graphene\cite{}
+In this case the two layers need to be rotated an exact angle, what makes a moire pattern emerge. In the edges of this pattern the electrons get localized resulting on the emergence of a bunch of almost flat bands. The electron-electron interaction then, with the correct filling conspire to result in a superconductor state, in a way that is very similar to that of the case of cuprates.
+While this phase is nothing new, its appearance in graphene, a system the chemistry of which has been very well known for a long time, may be a game changer. The low energy effective model of graphene is probably the most studied in the history of Condensed Matter Physics so one may expect that studying the complex problem of superconductivity would be easier in this case.
+Well, it is probably too soon to tell but it looks like superconductivity will not give up its secrets so easily and even though the low energy Hamiltonian of graphene is very well known, its extension to the twisted bilayer is not so easy. Still this is a topic to keep an eye on since it may result in amazing new physics and long-waited technological applications.
+\bigskip
+
+Bilayer graphene does not fall short from the monolayer. The main property that will be exploited during the thesis is the fact that bilayer graphene undergoes a transition from conductor to insulator in the presence of an electric field.
+Opening and closing a gap is a very powerful resource when dealing with electronic states since it affects the spatial localization of the electrons and many properties depend on this. In particular it is very interesting to consider a number of quasi-localized electronic states placed at the correct distance for the change in localization via gap-opening to influence their interactions.
+Even, going one step further, it is not far-fetched to think of an scenario in which we can combine the this tunable gap with some spin interactions being able to tune the electronic states for each spin channel independently.
+\bigskip
+
+
+\newpage
+This thesis has somewhat been driven, at least in part, by a proposal dating all the way back to 1988\cite{Kane1988} on how to build a \emph{quantum computer}. In this proposal Bruce E. Kane suggested Phosphorus impurities in Silicon ($Si: \leftidx{^{31}}P$) as the building block for a silicon based nuclear spin quantum computer.
+Any proposal for building quantum computers (or qubits, for that matter) has to deal with the conflict between two opposing requirements. On one hand we need the qubits to be well isolated from the environment so interactions with the outside world does not affect the quantum state of the computer. On the other hand, we need to be able to interact strongly and quickly with the qubits in order to change or read its state.
+
+The idea to tackle this contradiction was to use the nuclear spin (1/2) of the $\leftidx{^{31}}P$ to store information, due to the relatively low concentration of nuclear spins in the system, and the electric cloud around them as mediators among $P$ impurities.
+The way to control the interactions would be based on the application of electric gates which would distort the electronic states increasing or decreasing the hyperfine interaction (coupling between the nuclear and the electronic spin) as well as tuning the electronic configuration in between defects.
+\medbreak
+
+Ignoring the specific nature of the materials, the relevant ingredients in this proposal are a nuclear spin 1/2, which is expected to be isolated from the rest of the universe upon the application of an electric field, An electronic spin 1/2 located somewhat around the nuclear spin and with a big response to an electric field so the interaction between the two spins can be highly tuned.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
 We are today on the verge of a technological revolution, a quantum leap\footnote{pun intended} that holds the promise for a revolution in chemistry, pharmacology, telecommunications, virtually any application in which optimization is a problem and even Condensed Matter Physics itself.
 But let us start from the beginning.
 \medbreak
@@ -18,11 +94,11 @@ Step by step it was found that as the energy scales of the experiments grew smal
 The development and understanding of the laws of \ac{qm} was fast and in merely 30 years there were entire research fields centered already in different aspects or applications of it.
 
 Of particular interest to this thesis is the line of material science and condensed matter physics research. Prior to the understanding of \ac{qm}, there was no theory to explain the properties of any material.
-Wether a piece of rock was able to conduct heat or electricity was essentially a matter of trial and error. Of course some experimental observations led Chemists to build a collection of somewhat empirical laws and group elements based on similar properties, but there was no microscopic understanding of the mechanisms leading to these properties.
+Whether a piece of rock was able to conduct heat or electricity was essentially a matter of trial and error. Of course some experimental observations led Chemists to build a collection of somewhat empirical laws and group elements based on similar properties, but there was no microscopic understanding of the mechanisms leading to these properties.
 
 The capabilities of \ac{qm} to predict electronic properties of different materials led to a revolution in science, technology and ultimately society. The extensive research on semiconductor materials during the 1960s was key to the invention of the transistor: a device that can block or allow the flow of electrical current at will.
 
-The transistor is the basic building block for any electronic device. Nowadays there are millions if not billions of transistors in our computers or smartphones, but only a few thousand were enough to send 3 humans to the moon (and back!). For the last 50 years, transistors have operated based on the fine-tune of the band population of two neighbouring materials creating an effective potential barrier between them preventing electrons to move freely.
+The transistor is the basic building block for any electronic device. Nowadays there are millions if not billions of transistors in our computers or smartphones, but only a few thousand were enough to send 3 humans to the moon (and back!). For the last 50 years, transistors have operated based on the fine-tune of the band population of two neighboring materials creating an effective potential barrier between them preventing electrons to move freely.
 As the electronic industry developed the need for smaller transistors became apparent, the smaller the transistors are, the more can be fit in a particular device.
 This race towards miniaturization pushed the development of new materials and techniques to size down transistors all the way to the current\footnote{In mass production, there are plenty of claims for smaller transistors.} $\sim\SI{14}{\nm}$. As expected, when we shrink the components of the transistors, we approach a limit in which quantum effects irrelevant until now may take a major role. The simplest obstacle that the shrinking of transistors have to deal with is the quantum tunnel effect, by which the electrons would be able to flow through the potential barrier, rendering the transistor unable to effectively stop electric current.
 
@@ -62,28 +138,20 @@ Since then there has been huge developments both theoretical and experimental to
 
 
 
-\newpage
-This thesis has somewhat been driven, at least in part, by a proposal dating all the way back to 1988\cite{Kane1988} on how to build a \emph{quantum computer}. In this proposal Bruce E. Kane suggested Phosphorus impurities in Silicon ($Si: \leftidx{^{31}}P$) as the building block for a silicon based nuclear spin quantum computer.
-Any proposal for building quantum computers (or qubits, for that matter) has to deal with the conflict between two opposing requirements. On one hand we need the qubits to be well isolated from the environment so interactions with the outside world does not affect the quantum state of the computer. On the other hand, we need to be able to interact strongly and quickly with the qubits in order to change or read its state.
 
-The idea to tackle this contradiction was to use the nuclear spin (1/2) of the $\leftidx{^{31}}P$ to store information, due to the relatively low concentration of nuclear spins in the system, and the electric cloud around them as mediators among $P$ impurities.
-The way to control the interactions would be based on the application of electric gates which would distort the electronic states increasing or decreasing the hyperfine interaction (coupling between the nuclear and the electronic spin) as well as tuning the electronic configuration in between defects.
-\medbreak
-
-Ignoring the specific nature of the materials, the relevant ingredients in this proposal are a nuclear spin 1/2, which is expected to be isolated from the rest of the universe upon the application of an electric field, An electronic spin 1/2 located somewhat around the nuclear spin and with a big response to an electric field so the interaction between the two spins can be highly tuned.
 \medbreak
 
 
 % Graphene
 In general, states near surfaces are very susceptible to external biases. In particular, \ac{2d} materials present highly manipulable electronic states since they only have the surface to live in.
-Even before its discovery, graphene has draught a lot of attention. Many of its properties were expected well twenty years before its experimental discovery. While it is arguably true that there has been an over-hype bubble around its supposed miraculous applications, it is definitely true that graphene has been the gateway towards a whole new realm of phenomena in condensed matter physics. 
+Even before its discovery, graphene has drawn a lot of attention. Many of its properties were expected well twenty years before its experimental discovery. While it is arguably true that there has been an over-hype bubble around its supposed miraculous applications, it is definitely true that graphene has been the gateway towards a whole new realm of phenomena in condensed matter physics. 
 
 Initially most of its interest relied in the expectancy of a new Hall phase emerging without the need of an external magnetic field\cite{Kane2005a,Ostrovsky2008} and the experimental observation of the \ac{qhe}, a macroscopic effect of a purely quantum phenomenon\cite{Zhang2005}.
 Also fact that some high-energy physics models were naturally realized in graphene was a huge motivation for this material to hoard the attention of a big part of the condensed matter community.
 
 Certainly graphene has many interesting properties, but when two layers of graphene are placed one on top of each other there is a property that will be central for the development of this thesis.
 
-Graphene bilayer is the only known material which can open a gap upon application of an electric field. It has been shown that an electri
+Graphene bilayer is the only known material which can open a gap upon application of an electric field. It has been shown that an electric
 
 
 

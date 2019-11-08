@@ -299,14 +299,15 @@ If we were to consider not graphene but some other material with the same struct
 The main effect of such a term is to open a trivial gap at the Dirac points as it was shown in the $h-BN$ bands \fref{SKbands}b).
 
 \subsection{Zeeman}
-The application of an external magnetic field usually has several effects in a material. While a lot of interesting Physics is developed around the formation of Landau levels, we will restrict our study to the simpler case of the Zeeman splitting of the energy levels. This effect consists of a symmetric splitting of up ($\uaw$) and down ($\daw$) spins, resulting in a vertical shift the bands for each spin flavor.
+The application of an external magnetic field usually has several effects in a material. While a lot of interesting Physics is developed around the formation of Landau levels\cite{}, %TODO
+ we will restrict our study to the simpler case of the Zeeman splitting of the energy levels. This effect consists of a symmetric splitting of up ($\uaw$) and down ($\daw$) spins, resulting in a vertical shift the bands for each spin flavor. %TODO figure
 
 \subsection{Spin-Orbit coupling}
 \label{sec:soc}
 The \acf{soc} is a relativistic interaction that can be interpreted in classical terms (allowing the existence of spin in classical physics) as the interaction between the spin of the electron and the electrostatic potential of the nucleus.
 
 In most of this section we are going to use the four orbital basis \eqref{basis4} with the geometry of \fref{graphene_summary}b), also described in the first section of the chapter.
-Our Hamiltonian will have two atoms per unit cell and four orbitals per atom, so it will be a $8\times8$ matrix. When interactions concerning the spin are taken into account, the basis will be doubled with the following order:
+In this basis there are two atoms per unit cell and four orbitals per atom, so our Hamiltonian would be a $8\times8$ matrix. When interactions concerning the spin are taken into account, the basis needs to be doubled with the following order:
 \begin{equation}
   \mathcal{B}^{s}_4 = \left\{
   \ket{\phi^1_{s\uaw}},
@@ -322,16 +323,12 @@ Our Hamiltonian will have two atoms per unit cell and four orbitals per atom, so
 \label{basis4spin}
 \end{equation}
 
-So the Hamiltonian term can be written as follows:
+So the \ac{soc} Hamiltonian term can be written as follows:
 \begin{equation}
-   H_{SO}= \lambda_{SO}\vec{L}\vec{S}
-\label{soc}
-\end{equation}
-
-which is often rewritten as
-\begin{equation}
-   H_{SO} = \lambda_{SO}\left[L_zS_z+
+   H_{SO}= \lambda_{SO}\vec{L}\vec{S} = 
+   \lambda_{SO}\left[L_zS_z+
    \frac{1}{2}\left(L^{+}S^{-}+L^{-}S^{+}\right)\right]
+\label{soc}
 \end{equation}
 just by taking into account the relations
 \begin{equation*}
@@ -344,55 +341,34 @@ just by taking into account the relations
 \centering
 \includegraphics{graphene/figures/banddos_SOC.pdf}
 \vspace{-5pt}
-\caption{a) Graphene band structure in the presence of \ac{soc}. The gap due to \ac{soc} is not visible at this scale but the mixing of the $p_z$ orbital with the $\sigma$-bands becomes apparent near the $\Gamma$. The value used here is completely unrealistic with the porpoise of an easier visualization. b) Zoom to the surroundings of the Dirac point. A gap is }
+\caption{a) Graphene band structure in the presence of \ac{soc}. The gap due to \ac{soc} is not visible at this scale but the mixing of the $p_z$ orbital with the $\sigma$-bands becomes apparent near $\Gamma$. b) Zoom to the surroundings of the Dirac point. A gap is open in the band structure turning graphene into a topological insulator. The spikes in the DOS are just an artifact of the calculation due, mainly, to the limited precision in the k-space integration.}
 \label{fig:SOC}
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-The most obvious effect of this term is the opening of a gap at the $K$ points.  necertheless it
+This term is responsible for the opening of a band gap at the $K$ points. The opening of this gap turns graphene into a \ac{ti}. %TODO cite
 
-\subsection{Electric field and Rashba}
-An electric field has several effects, that will be discussed later on along the thesis. It should suffice for now to discuss briefly the two main consequences.
-The first feature is that an electric field would deform the atomic orbitals, breaking the mirror symmetry that protects the $\pi$-manifold. The breaking of this symmetry opens an effective channel for mixing $s$ and $p_z$ orbitals.
 
-This effect, alongside the \ac{soc} opens a spin-flip channel via the following process: an $\uaw$ electron in a $p_z$ can transition to a $s$ orbital in the same atom, then to a $p_{x/y}$ orbital, which is connected via \ac{soc} with a $p_z$ with spin $\daw$.
+\subsection{Electric field and Rashba}  %XXX REVIEW
+An electric field has several effects that will be discussed extensively along the thesis. It should suffice for now to discuss briefly the orbital consequences.
+When an external electric field perpendicular to the material is applied the atomic orbitals get deformed, breaking the mirror symmetry that protects the $\pi$-manifold. The breaking of this symmetry opens an effective hopping channel for mixing $s$ and $p_z$ orbitals.
 
-We will neglect this process since both the mixing of the $s$ and the $p_z$ orbital\cite{Min2006} and the \ac{soc}\cite{Kane2005, Yao2007, Boettger2007,Gmitra2009} are quite small.
+Another effect, alongside the \ac{soc}, is the appearance of a spin-flip channel via the following process: an $\uaw$ electron in a $p_z$ can transition to a $s$ orbital in the same atom via rashba hopping, then to a $p_{x/y}$ orbital centered in a neighboring atom, which is connected via \ac{soc} with a $p_z$ with spin $\daw$.
+
+Following the calculations in \cite{Min2006} we can see that the relation between the applied electric field and the effective intra-atomic Rashba follow the equation:
+\begin{equation}
+   \lambda_R=\frac{e\mathcal{E}z_0}{3V_{sp\sigma}}\xi \qquad;\qquad
+   \lambda_{SOC}=\frac{|E_{s}|}{18V^2_{sp\sigma}}\xi^2
+\label{rashba}
+\end{equation}
+where $\xi\sim\SI{6}{\meV}$ is the atomic carbon spin-orbit coupling strength
+which for a typical electric field of $\mathcal{E}\sim\SI{50}{\V}/\SI{300}{\nm}$ result in an effective Rashba coupling $\lambda_R\sim\SI{0.011}{\meV}$ and the \ac{soc} $\lambda_{SOC}\sim\SI{0.0011}{\meV}$.
+
+These terms, are in the scale of $\SI{e-2}{\meV}$ while the gap open can reach up to $\SI{2.5e2}{\meV}$ so we will neglect these interactions from now on.
+
 
 If we consider bilayer graphene, the application of an electric field has another important effect. It shifts the on-site energy of each layer which results in an opening of a gap in the band structure. This results in a very useful feature that will be exploited throughout the thesis.
-
-
-\subsection{Interlayer}
-The last term that we will be interested in is the interlayer coupling when the system is formed by more than one layer of graphene. This term and its effects will be discussed later on, so we will just hint here an interesting way to think about it, leaving for later a deeper analysis.
-
-We can consider the adiabatic formation of bilayer graphene (or $n$-layer graphene, for that matter) by considering two layers of graphene infinitely apart and bringing them together.
-We can use the following basis to describe such a system:
-\begin{equation}
-  \mathcal{B}_1 = \left\{\ket{\phi_{1A}}, \ket{\phi_{1B}},
-                        \ket{\phi_{2A}}, \ket{\phi_{2B}}\right\}
-\label{basis_bi}
-\end{equation}
-where the numbers label the layer and the letters the sublattice.
-
-Since the two layers are infinitely apart, we can consider no interaction between them, hence we can describe the Hamiltonian of the system at the initial moment as two disconnected sectors of the same Hamiltonian, equivalent to the limit $\eta\rightarrow0$ in eq.~\eqref{Gbi}. The Hamiltonian in the one orbital basis $\mathcal{B}_1$ reads:
-\begin{equation}
-  H = \left(\begin{array}{cc|cc}
-     0 & tf(\vec{k}) & 0 & 0 \\
-     tf^{\dagger}(\vec{k}) & 0 & 0 & 0 \\ \hline
-     0 & 0 & 0 & tf(\vec{k}) \\
-     0 & 0 & tf^{\dagger}(\vec{k}) & 0
-  \end{array}\right) + 
-  \eta \left(\begin{array}{cc|cc}
-     0 & 0  & 0  & 0 \\
-     0 & 0  & t' & 0 \\ \hline
-     0 & t' & 0  & 0 \\
-     0 & 0  & 0  & 0
-  \end{array}\right)
-\label{Gbi}
-\end{equation}
-$\eta\in[0,1]$ will be used as a dummy parameter to switch on and off the interlayer coupling adiabatically.
-When a more complex basis is used, all the \ac{sk} parameters will be scaled so that the interlayer hopping among $p_z$ orbitals is $t'=\SI{0.4}{\eV}$ in accordance with the literature\cite{KatsnelsonBook}.
 
 
 
