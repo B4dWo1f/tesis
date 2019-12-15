@@ -1,175 +1,233 @@
 %~~~~~~~~ Chapter ~~~~~~~~
 \chapter{Introduction}
+\label{ch:introduction}
+\bigskip
 
+% kane Qspin
+% hyperfine & exchange
+% Qsimulator
+In this thesis we pursue the design of graphene based nuclear spin qubits.
+The idea is to place $\ce{H}$ adatoms on bilayer graphene and use electric gating to control the band gap and, with it, the hyperfine interaction as well as the exchange interaction among adatoms.
+\smallskip
+
+This system is inspired by the ``Silicon-based nuclear spin quantum computer'' proposed by B. E. Kane\cite{Kane1988} in 1988.
+Every proposal for building qubits has to deal with two opposing requirements: the need for the qubits to be completely isolated from the environment and the need for the qubits to interact quickly and strongly on demand so it can be read or written.
+%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{wrapfigure}{R}{0.5\textwidth}
+\centering
+\vspace{-10pt}
+\includegraphics[width=0.45\textwidth]{introduction/figures/kane.pdf}
+\vspace{-7pt}
+\caption{Sketch of the Kane's proposal for a silicon-based nuclear spin quantum computer. An electric gating $A$ controls the hyperfine interaction by increasing/decreasing the electronic density around the nucleus, allowing the isolation of the nuclear spin on demand. Similarly, an inter-qubit gate allows the interconnection of different qubits.}
+\label{kane_proposal}
+\end{wrapfigure}
+\FloatBarrier
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+In Kane's proposal $\ce{P}$ dopants in $\ce{Si}$ ($\ce{Si}:\leftidx{^{31}}{\ce{P}}$) were to be used as physical platform for the qubits. The quantum information would be stored in the nuclear spin ($I=1/2$) of the $\ce{P}$ dopants and the surrounding electronic spin ($S=1/2$) would be used to interact with it. This approach takes advantage of the naturally weak interaction with the nuclear spin and the high tunability of the surrounding electronic states.
+
+The control of these interactions was proposed via electric gating so the electronic states could be deformed in the vicinity of the $\ce{P}$ nucleus, thus increasing/decreasing the hyperfine interaction as shown in \fref{kane_proposal}.
+The interaction between different qubits could be switched on and off using electric gating as well although its implementation requires the dopants to be at a certain distance (with atomic precision), which is definitely a challenge in this platform.
+% Morello? Experimental status?
+\medskip
+
+Our proposal replaces $\ce{Si}$ by bilayer graphene and the $\ce{P}$ dopants by $\ce{H}$ adatoms. This systems provides the same ingredients: a nuclear spin $I=1/2$ and an electronic spin $S=1/2$ spatially close to them. The electronic states in graphene (and graphene bilayer) are known to be highly tunable, in particular an external electric field would allow the control of the relevant properties in this system.
+
+One of the advantages of bilayer graphene over $\ce{Si}:\leftidx{^{31}}{\ce{P}}$ is that nowadays there are methods to place the $\ce{H}$ adatoms with atomic precision and in a reversible way\cite{Brihuega2016,Brihuega2017}
+Another advantage is that the electric control of the interactions happens naturally since bilayer graphene opens a band gap on the application of an external electric field\cite{McCann2006, Castro2007, Oostinga2007, Zhang2009, Taychatanapat2010, Castro2010a, Ponomarenko2011, Allen2012, Sui2015}. This tunable band gap provides a handy knob to control the localization length of the electronic states which results in the control of its effective electron-electron interactions as well as the interactions with the nuclear spins.
+\medskip
+
+The study of the tunable interactions in this system led us to the realization that $\ce{H}$ adatoms on bilayer graphene provide a framework where localized states can be placed at will and where the interactions among them are highly tunable upon the application of an external electric field.
+Such a system is the ideal playground to implement physical realizations of a wide variety of hamiltonians.
+%The ability to engineer physical system to realize model hamiltonians is a long wished goal in the analogue quantum simulations community.
+In particular, our analysis show that by carefully choosing the placement of the adatoms (the distance and relative position among them) one can engineer the interactions to transition from weakly to strongly interacting systems where $U\gg t$
+\bigskip
+
+This situation in which we can create localized electronic states at will and engineer the electron-electron interactions is specially appealing after the recent discovery of an unconventional superconducting phase in twisted bilayer graphene\cite{Cao2018,Cao2018a}.
+Even though it will not be discussed in the thesis, it is worth pointing out the similarities between our proposal and the newly found twisted bilayer graphene physics.
+In order to get superconductivity in twisted bilayer graphene two requirements are to be met. First, the twisting angle needs to take a very low (and particular) value. This requirement ensures the emergence of a Moire pattern which is responsible for the localization of electronic states in the boundaries between domains. This localized states result in the emergence of (almost) flat bands all over the Brillouin zone and very close to the Fermi energy. Second, the fine tuning of the filling factor is key to place the Fermi level in the middle of the flat bands and conveniently tune the electron-electron interaction.
+The resulting phase diagram is quite similar to that of the cuprates family what may suggest a similar microscopic mechanism for superconductivity to appear. The big difference is that while cuprates are a somewhat complex material, the chemistry of graphene has been very well known for a long time, and the behavior of the $p$ orbitals (rather than $d$ orbitals) is much simpler.
+The low energy effective model of graphene is probably the most studied in the history of Condensed Matter Physics so one may expect that studying the complex problem of unconventional superconductivity would be easier in this case.
+
+Nevertheless, it looks like superconductivity will not give up its secrets so easily since, even though the low energy Hamiltonian of graphene is very well known, its extension to the twisted bilayer is not so easy.
+It is probably too soon to tell but the introduction of superconductivity in the graphene/2d-materials community my be a game changer for this hundred year old problem of superconductivity.
+\bigskip
+
+
+
+This thesis approaches these systems mainly from a computational point of view.
 %
-% Quantum mechanics --> technological advances --> limits --> quantum control
-% --> possibilities -->
+%Condensed Matter Physics is an immensely broad topic. It encompasses many different systems at different scales and with many different approaches.
+%This thesis sits on the theoretical side and is essentially computational, nonetheless it might have the flavor of Applied Physics or even Material Science. Naturally many other paths could have been followed, experiments pursued, theoretical models deepened and many topics could be further studied, but the line has to be drawn at some point.
 %
-
-Condensed Matter Physics is an immensely broad topic. It encompasses many different materials at different scales and with many different approaches.
-This thesis sits on the theoretical side and is essentially computational, nonetheless it has the flavor of Applied Physics or even Material Science. Naturally many other paths could have been followed, experiments pursued, theoretical models deepened and many topics could be further studied, but the line has to be drawn at some point.
-
 Through out the whole thesis the driving force has been sometimes the possibility of interesting results, regardless their ``immediate'' utility, and some times the possibility of real world application in the near/mid future.
-This position, midway between applications and fundamental research, might be a bit uncomfortable since experimentalists or industry-oriented people might find it a bit vague or hypothetical whereas fundamental researchers might think of it as too narrow, or even missing the big picture.
+This position, midway between fundamental research and real world applications, might be a bit uncomfortable since experimentalists or industry-oriented people might find it a bit vague or hypothetical whereas fundamental researchers might think of it as too narrow, or even missing the big picture.
 
 In contrast I think this ``equidistance'' provides a privileged position to explore a number of interesting topics without loosing touch with experimental reality.
 \bigskip
 
-This whole thesis revolves around graphene and graphene-based systems. One can find a number of reasons for this: its a relatively new material, it has many physically interesting properties and the potential for plenty of applications, it draws a lot of attention form the research community...
-One could say that the scientific community may have gone through an ``interest'' bubble involving graphene and, as a consequence, graphene has been advertised as a miraculous material, with the potential to change the world as we know it. This statement may be seen in \fref{topics}, where I have analyzed the book of abstract of the APS March Meeting for a number of years.
-%\footnote{after 2018 the format of the pdf file changed and I did not update the parser, but anyone interested and willing is welcome to contribute}
-It counts the number of abstracts containing a given term and normalizes the count to the total number of abstracts that year. This is a very rough estimate, of course, but the resulting counting is arguably related to the interest of the condensed matter community on a certain topic.
+This thesis revolves around graphene and graphene-based systems, with a special focus on the applications of a particular case: bilayer graphene.
+%One can find a number of reasons for choosing graphene: it is (was) a relatively new material, it has many physically interesting properties and the potential for plenty of applications, it draws a lot of attention form the research community...
+One could say that the scientific community may have gone through an ``interest bubble'' involving graphene and, as a consequence, it has been advertised as a miraculous material with the potential to change the world as we know it. I will not address the controversy of the almighty properties of graphene but I would like to briefly address the graphene hype within the scientific community.
+In order to have a somewhat quantitative description of the graphene hype I have analyzed the book of abstracts of the APS March Meeting since 2005 until 2017.\footnote{notice that 2018 is missing since I could not find the pdf for the full book of abstracts}
+The analysis counts the number of abstracts containing a given term (or groups of terms) and normalizes the count to the total number of abstracts that year.
+This quantity is a very rough estimate, of course, but the resulting count is arguably related to the interest of the condensed matter community on a certain topic.
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
 \includegraphics{introduction/figures/topics.png}
-\vspace{-25pt}
-\caption{Evolution through out the years of different topics at the APS March Meeting. The plot was done by counting the number of abstracts containing a given word and normalizing it by the total number of abstracts in the conference.}
+\vspace{-20pt}
+\caption{Evolution through out the years of different topics at the APS March Meeting. The plot was done by counting the number of abstracts containing a given word and normalizing it by the total number of abstracts in the conference. Note that the bars are placed in chronological order for each item.}
 \label{topics}
 \end{figure}
 %\FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-The case of graphene is very interesting, since one can see its raise since (almost) its discovery and the beginning of its decay.
-
-While the graphene bubble might be a real effect, I would like to point out the trend over the years of the terms next to it in \fref{topics}: topolog\textcolor{gray}{[y,ical]}, 2d, dirac, \textcolor{gray}{quantum-,spin-,anomalous-}hall, dichal\textcolor{gray}{cogenides, $MoS_2$,$WS_2$,$WSe_2$}. All of these terms are undoubtedly related to graphene an clearly they show a monotonically growing trend.
+The case of graphene, first block of bars in \fref{topics}, is very interesting, since one can see its raise since (almost) its discovery and the beginning of its decay. This trend is a strong indicator of a possible interest bubble, but I would like to point out the trend over the years of the terms next to it in \fref{topics}: topolog\textcolor{gray}{[y,ical]}, 2d, dirac, \textcolor{gray}{quantum-,spin-,anomalous-}hall, dichal\textcolor{gray}{cogenides, $\ce{MoS2}$,$\ce{WS2}$,$\ce{WSe2}$}\footnote{the terms in grey are grouped during the counting process}.
+All of these terms are undoubtedly related to graphene an clearly they show a steadily growing trend.
 \medskip
 
-Graphene itself is very interesting and it probably deserves all the fame and attention that it gets, but for me the importance of graphene lies in the fact that it has become the gateway for many other materials and research branches.
+Graphene itself is very interesting and it probably deserves all the fame and attention that it gets, but I would argue that the importance of graphene lies in the fact that it has become the gateway for many other materials and even research branches.
 
-The understanding of graphene has been the spark to start a race in two dimensional materials research. \ac{2dm} are a very interesting family of materials both form an applied point of view and from the perspective of fundamental research.
-On one hand, any industry-related property (conductance tunability, magnetism...) becomes instantly interesting just because its 2D nature ensures smaller sizes and cheaper products.
-On the other hand their 2D nature place them right in the frontier between the classical and quantum regime: they are macroscopic (sometimes reaching millimeters) but being one atom thick there are non negligible quantum effects what makes the fascinating from the fundamental physics point of view.
-Since its discovery many other bidimensional materials have been synthesized: Bismuth, $MoS_2$, $WeS_2$, $WSe_2$, $BN$, $CrI_3$... each with their unique set of properties and its list of possible applications.
-
+The understanding of graphene has been the spark to start the race of two dimensional materials research. \ac{2dm} are a very interesting family of materials both form an applied point of view and from the perspective of fundamental research.
+On one hand, any industry-related property (conductance tunability, magnetism...) becomes instantly interesting just because its 2D nature ensures smaller sizes and possibly cheaper products.
+On the other hand their 2D nature place them right in the frontier between the classical and quantum regime: they are macroscopic (sometimes reaching millimeters) but being one atom thick there are non negligible quantum effects all over the place, what makes the fascinating from the fundamental physics point of view.
+Since the discovery of graphene many other bidimensional materials have been synthesized: $\ce{MoS2}$, $\ce{WSe2}$, $\ce{MoT2}$, $\ce{BN}$, $\ce{CrI3}$, $\ce{NbSe2}$, $\ce{TaS2}$, $\ce{MnBi2Te4}$... each with their unique set of properties and its list of possible applications. But everything started with graphene.
 Some of these materials will be mentioned during the thesis, but graphene will be the common thread through out the thesis.
-\bigskip
+%\bigskip
 
-One of the most interesting properties of graphene is that, being two dimensional, all of it is a surface, and electrons living in surfaces respond strongly to external perturbations.
-If a superconductor is placed nearby, electrons in graphene will behave in a superconductor way\cite{},
-if placed on top of an insulator it will open a gap\cite{}, if subjected to an external field its electronic states will be heavily modified.
-A material in which so many different states may appear is interesting in itself, so it is no wonder why having such a panoply of different phases at their disposal, scientists quickly thought of the possibility of mixing different 2D materials in order to engineer properties at will\cite{Geim2013}.
+%One of the most interesting properties of graphene is that, being two dimensional, it is all surface, and electrons living in surfaces respond strongly to external perturbations.
+%If a superconductor is placed nearby, electrons in graphene will behave in a superconductor way\cite{},
+%if placed on top of an insulator it will develop a gap\cite{}, if subjected to an external field its electronic states will be heavily modified.
+%A material in which so many different states may appear is interesting in itself, so it is no wonder why having such a panoply of different phases at their disposal, scientists quickly thought of the possibility of mixing different 2D materials in order to engineer properties at will\cite{Geim2013}.
 
-In the spirit of these combined structures, commonly known as Van der Waals heterostructures, this thesis extensively explores the properties and applications of a bilayer of graphene.
+%In the spirit of these combined structures, commonly known as Van der Waals heterostructures, this thesis extensively explores the properties and applications of a bilayer of graphene.
 %TODO meh....change
-\bigskip
+%\bigskip
 
-Even though it will not be discussed in the thesis, it is mandatory to comment on the recent discovery of superconductivity on bilayer graphene\cite{}
-In this case the two layers need to be rotated an exact angle, what makes a moire pattern emerge. In the edges of this pattern the electrons get localized resulting on the emergence of a bunch of almost flat bands. The electron-electron interaction then, with the correct filling conspire to result in a superconductor state, in a way that is very similar to that of the case of cuprates.
-While this phase is nothing new, its appearance in graphene, a system the chemistry of which has been very well known for a long time, may be a game changer. The low energy effective model of graphene is probably the most studied in the history of Condensed Matter Physics so one may expect that studying the complex problem of superconductivity would be easier in this case.
-Well, it is probably too soon to tell but it looks like superconductivity will not give up its secrets so easily and even though the low energy Hamiltonian of graphene is very well known, its extension to the twisted bilayer is not so easy. Still this is a topic to keep an eye on since it may result in amazing new physics and long-waited technological applications.
-\bigskip
 
-Bilayer graphene does not fall short from the monolayer. The main property that will be exploited during the thesis is the fact that bilayer graphene undergoes a transition from conductor to insulator in the presence of an electric field.
+
+The reason to focus on bilayer graphene was that it presents a property that is really hard to find in other materials. Bilayer graphene undergoes a transition from conductor to insulator in the presence of an electric field.
 Opening and closing a gap is a very powerful resource when dealing with electronic states since it affects the spatial localization of the electrons and many properties depend on this. In particular it is very interesting to consider a number of quasi-localized electronic states placed at the correct distance for the change in localization via gap-opening to influence their interactions.
 Even, going one step further, it is not far-fetched to think of an scenario in which we can combine the this tunable gap with some spin interactions being able to tune the electronic states for each spin channel independently.
 \bigskip
 
 
-\newpage
-This thesis has somewhat been driven, at least in part, by a proposal dating all the way back to 1988\cite{Kane1988} on how to build a \emph{quantum computer}. In this proposal Bruce E. Kane suggested Phosphorus impurities in Silicon ($Si: \leftidx{^{31}}P$) as the building block for a silicon based nuclear spin quantum computer.
-Any proposal for building quantum computers (or qubits, for that matter) has to deal with the conflict between two opposing requirements. On one hand we need the qubits to be well isolated from the environment so interactions with the outside world does not affect the quantum state of the computer. On the other hand, we need to be able to interact strongly and quickly with the qubits in order to change or read its state.
-
-The idea to tackle this contradiction was to use the nuclear spin (1/2) of the $\leftidx{^{31}}P$ to store information, due to the relatively low concentration of nuclear spins in the system, and the electric cloud around them as mediators among $P$ impurities.
-The way to control the interactions would be based on the application of electric gates which would distort the electronic states increasing or decreasing the hyperfine interaction (coupling between the nuclear and the electronic spin) as well as tuning the electronic configuration in between defects.
-\medbreak
-
-Ignoring the specific nature of the materials, the relevant ingredients in this proposal are a nuclear spin 1/2, which is expected to be isolated from the rest of the universe upon the application of an electric field, An electronic spin 1/2 located somewhat around the nuclear spin and with a big response to an electric field so the interaction between the two spins can be highly tuned.
+%Considering this playground of tunable gaps and electrically controlled  localization lengths we considered the role of defects in bilayer graphene and their behavior under the influence of external fields. In particular Hydrogen, $\ce{H}$, chemisorbed adatoms will play a major role in this thesis.
+%
+%This kind of defects produce quasi-localized electronic states around them, and the localization length of these states is strongly determined by the band gap in the system. Without going into much detail for now, we focused in the spin interactions in such a system. On one hand the chemisorbed $\ce{H}$ atoms trap a single electron ($S=1/2$) in their vicinity, on the other hand, their nucleus consists of a single proton ($I=1/2$), and the interaction between them is controlled, again, by the spreading of the electronic state.
 
 
+\bigskip
+\bigskip
+The rest of this thesis is structured as follows. \chref{ch:graphene} and \chref{ch:bilayer} review the basic properties of graphene and bilayer graphene respectively, as well as most of the methods of calculation used along the thesis.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
+\chref{ch:vacancy} is based on the publication [\cite{Garcia-Martinez2017}] and it explores a number of properties of $sp^3$ defects on graphene.
 
-We are today on the verge of a technological revolution, a quantum leap\footnote{pun intended} that holds the promise for a revolution in chemistry, pharmacology, telecommunications, virtually any application in which optimization is a problem and even Condensed Matter Physics itself.
-But let us start from the beginning.
-\medbreak
+\chref{ch:vacancy_bilayer} expands onto the effects of $sp^3$ defects on bilayer graphene.
 
-The laws of \ac{qm} started developing at the beginning of the XX century. At that moment, it was commonly thought that only a few details in the laws of Physics remained unexplained, but as Physicists delved deeper in these unexplained phenomena (namely the photo-electric effect and the black body radiation), it became clear that there was some missing piece.
+\chref{ch:hyperfine} explores the tunability of the hyperfine coupling
 
-Step by step it was found that as the energy scales of the experiments grew smaller, the well-founded laws of \emph{classical} physics started failing.
-% infrared catastrophe
-% atomic model (electron radiation)
-The development and understanding of the laws of \ac{qm} was fast and in merely 30 years there were entire research fields centered already in different aspects or applications of it.
-
-Of particular interest to this thesis is the line of material science and condensed matter physics research. Prior to the understanding of \ac{qm}, there was no theory to explain the properties of any material.
-Whether a piece of rock was able to conduct heat or electricity was essentially a matter of trial and error. Of course some experimental observations led Chemists to build a collection of somewhat empirical laws and group elements based on similar properties, but there was no microscopic understanding of the mechanisms leading to these properties.
-
-The capabilities of \ac{qm} to predict electronic properties of different materials led to a revolution in science, technology and ultimately society. The extensive research on semiconductor materials during the 1960s was key to the invention of the transistor: a device that can block or allow the flow of electrical current at will.
-
-The transistor is the basic building block for any electronic device. Nowadays there are millions if not billions of transistors in our computers or smartphones, but only a few thousand were enough to send 3 humans to the moon (and back!). For the last 50 years, transistors have operated based on the fine-tune of the band population of two neighboring materials creating an effective potential barrier between them preventing electrons to move freely.
-As the electronic industry developed the need for smaller transistors became apparent, the smaller the transistors are, the more can be fit in a particular device.
-This race towards miniaturization pushed the development of new materials and techniques to size down transistors all the way to the current\footnote{In mass production, there are plenty of claims for smaller transistors.} $\sim\SI{14}{\nm}$. As expected, when we shrink the components of the transistors, we approach a limit in which quantum effects irrelevant until now may take a major role. The simplest obstacle that the shrinking of transistors have to deal with is the quantum tunnel effect, by which the electrons would be able to flow through the potential barrier, rendering the transistor unable to effectively stop electric current.
-
-Quantum effects will play an important role as technology shrinks, but this may not be necessarily a problem.
-
-
-\medbreak
-
-Quantum limit is a feature. Feynman "control of atomic properties"
-
-Quantum computers
-
-Quantum simulations
+\chref{ch:designer} studies the possibilities of $\ce{H}$ adatoms on bilayer graphene as a platform to perform analogue quantum simulations.
 
 
 
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-The development of Quantum Technologies has barely started and it already promises a revolution in many different fields, from medicine and pharmacology, computation, encryption, any application in which optimization is a problem and even the understanding of quantum mechanics itself.
-There is probably nothing riskier than trying to make technological predictions, but even governments around the world are taking action to be in the forefront of this revolution\cite{QTF} and big companies such as Google, IBM or Microsoft are investing huge amounts of money in these topics. But let us start from the beginning.
-\medbreak
+%Following these lines, this thesis has somewhat been driven by a proposal dating all the way back to 1988\cite{Kane1988} on how to build a \emph{quantum computer}. In this proposal Bruce E. Kane suggested Phosphorus impurities in Silicon ($\ce{Si}:\leftidx{^{31}}{\ce{P}}$) as the building block for a silicon based nuclear spin quantum computer.
 
-% Quantum technologies
-Nowadays we are barely getting a glimpse of the potential of quantum technologies to impact technology and science in general, but Quantum computation is not something that we just thought about.
-Ever since we started the race to shrink every computer component, we headed towards the limit of quantum computation. A transistor is a device able to switch on and off an electrical current on command. They are the basic building block for any kind of computerized device. The first transistors were macroscopic, some centimeters and wired by hand. As the potential of computers grew, the need to create more, cheaper and smaller transistors launched the race for miniaturization. %Moore's Law is the empir
-Nowadays a single transistor is the size of a few nanometers. At this scale  quantum effects start playing a significant role.
-If there is a potential barrier stopping the electric current and it becomes smaller and smaller at some point the tunnel effect will be probable enough to render the transistor unable to stop any electric current at all.
-This is one of the simplest limitations that computers face as we miniaturize components.
+%Any proposal for building quantum computers (or qubits, for that matter) has to deal with the conflict between two opposing requirements. On one hand we need the qubits to be well isolated from the environment so interactions with the outside world does not affect the quantum state of the computer. On the other hand, we need to be able to interact strongly and quickly with the qubits in order to change or read its state.
 
-While it may seem that dealing with the inevitable quantum effects is a big inconvenience, scientists began to consider the possibility of using these effects to our benefit.
-The first ideas about the possibilities for quantum computing started in the 80s and 90s\cite{Benioff1980, Feynman1982, Manin1980, Shor1994} showed that a quantum computer could tackle problems that a classical computer simply could not.
+%The idea to tackle this contradiction was to use the nuclear spin (1/2) of the $\leftidx{^{31}}{\ce{P}}$ to store information, due to the relatively low concentration of nuclear spins in the system, and the electric cloud around them as mediators among $\ce{P}$ impurities.
+%The way to control the interactions would be based on the application of electric gates which would distort the electronic states increasing or decreasing the hyperfine interaction (coupling between the nuclear and the electronic spin) as well as tuning the electronic configuration in between defects.
+%\medbreak
 
-Since then there has been huge developments both theoretical and experimental towards the realization of a platform in which to perform \emph{quantum computations}.
+%Ignoring the specific nature of the materials involved, the relevant ingredients in this proposal are a nuclear spin 1/2, which is expected to be isolated from the rest of the universe upon the application of an electric field, An electronic spin 1/2 located somewhat around the nuclear spin and with a big response to an electric field so the interaction between the two spins can be highly tuned.
+%\bigskip
 
 
 
 
-\medbreak
 
 
-% Graphene
-In general, states near surfaces are very susceptible to external biases. In particular, \ac{2d} materials present highly manipulable electronic states since they only have the surface to live in.
-Even before its discovery, graphene has drawn a lot of attention. Many of its properties were expected well twenty years before its experimental discovery. While it is arguably true that there has been an over-hype bubble around its supposed miraculous applications, it is definitely true that graphene has been the gateway towards a whole new realm of phenomena in condensed matter physics. 
 
-Initially most of its interest relied in the expectancy of a new Hall phase emerging without the need of an external magnetic field\cite{Kane2005a,Ostrovsky2008} and the experimental observation of the \ac{qhe}, a macroscopic effect of a purely quantum phenomenon\cite{Zhang2005}.
-Also fact that some high-energy physics models were naturally realized in graphene was a huge motivation for this material to hoard the attention of a big part of the condensed matter community.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%We are today on the verge of a technological revolution, a quantum leap\footnote{pun intended} that holds the promise for a revolution in chemistry, pharmacology, telecommunications, virtually any application in which optimization is a problem and even Condensed Matter Physics itself.
+%But let us start from the beginning.
+%\medbreak
 
-Certainly graphene has many interesting properties, but when two layers of graphene are placed one on top of each other there is a property that will be central for the development of this thesis.
+%The laws of \ac{qm} started developing at the beginning of the XX century. At that moment, it was commonly thought that only a few details in the laws of Physics remained unexplained, but as Physicists delved deeper in these unexplained phenomena (namely the photo-electric effect and the black body radiation), it became clear that there was some missing piece.
 
-Graphene bilayer is the only known material which can open a gap upon application of an electric field. It has been shown that an electric
+%Step by step it was found that as the energy scales of the experiments grew smaller, the well-founded laws of \emph{classical} physics started failing.
+%% infrared catastrophe
+%% atomic model (electron radiation)
+%The development and understanding of the laws of \ac{qm} was fast and in merely 30 years there were entire research fields centered already in different aspects or applications of it.
+
+%Of particular interest to this thesis is the line of material science and condensed matter physics research. Prior to the understanding of \ac{qm}, there was no theory to explain the properties of any material.
+%Whether a piece of rock was able to conduct heat or electricity was essentially a matter of trial and error. Of course some experimental observations led Chemists to build a collection of somewhat empirical laws and group elements based on similar properties, but there was no microscopic understanding of the mechanisms leading to these properties.
+
+%The capabilities of \ac{qm} to predict electronic properties of different materials led to a revolution in science, technology and ultimately society. The extensive research on semiconductor materials during the 1960s was key to the invention of the transistor: a device that can block or allow the flow of electrical current at will.
+
+%The transistor is the basic building block for any electronic device. Nowadays there are millions if not billions of transistors in our computers or smartphones, but only a few thousand were enough to send 3 humans to the moon (and back!). For the last 50 years, transistors have operated based on the fine-tune of the band population of two neighboring materials creating an effective potential barrier between them preventing electrons to move freely.
+%As the electronic industry developed the need for smaller transistors became apparent, the smaller the transistors are, the more can be fit in a particular device.
+%This race towards miniaturization pushed the development of new materials and techniques to size down transistors all the way to the current\footnote{In mass production, there are plenty of claims for smaller transistors.} $\sim\SI{14}{\nm}$. As expected, when we shrink the components of the transistors, we approach a limit in which quantum effects irrelevant until now may take a major role. The simplest obstacle that the shrinking of transistors have to deal with is the quantum tunnel effect, by which the electrons would be able to flow through the potential barrier, rendering the transistor unable to effectively stop electric current.
+
+%Quantum effects will play an important role as technology shrinks, but this may not be necessarily a problem.
+%\medbreak
+
+%Quantum limit is a feature. Feynman "control of atomic properties"
+
+%Quantum computers
+
+%Quantum simulations
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%The development of Quantum Technologies has barely started and it already promises a revolution in many different fields, from medicine and pharmacology, computation, encryption, any application in which optimization is a problem and even the understanding of quantum mechanics itself.
+%There is probably nothing riskier than trying to make technological predictions, but even governments around the world are taking action to be in the forefront of this revolution\cite{QTF} and big companies such as Google, IBM or Microsoft are investing huge amounts of money in these topics. But let us start from the beginning.
+%\medbreak
+
+%% Quantum technologies
+%Nowadays we are barely getting a glimpse of the potential of quantum technologies to impact technology and science in general, but Quantum computation is not something that we just thought about.
+%Ever since we started the race to shrink every computer component, we headed towards the limit of quantum computation. A transistor is a device able to switch on and off an electrical current on command. They are the basic building block for any kind of computerized device. The first transistors were macroscopic, some centimeters and wired by hand. As the potential of computers grew, the need to create more, cheaper and smaller transistors launched the race for miniaturization. %Moore's Law is the empir
+%Nowadays a single transistor is the size of a few nanometers. At this scale  quantum effects start playing a significant role.
+%If there is a potential barrier stopping the electric current and it becomes smaller and smaller at some point the tunnel effect will be probable enough to render the transistor unable to stop any electric current at all.
+%This is one of the simplest limitations that computers face as we miniaturize components.
+%
+%While it may seem that dealing with the inevitable quantum effects is a big inconvenience, scientists began to consider the possibility of using these effects to our benefit.
+%The first ideas about the possibilities for quantum computing started in the 80s and 90s\cite{Benioff1980, Feynman1982, Manin1980, Shor1994} showed that a quantum computer could tackle problems that a classical computer simply could not.
+%
+%Since then there has been huge developments both theoretical and experimental towards the realization of a platform in which to perform \emph{quantum computations}.
+%\medbreak
+
+%% Graphene
+%In general, states near surfaces are very susceptible to external biases. In particular, \ac{2d} materials present highly manipulable electronic states since they only have the surface to live in.
+%Even before its discovery, graphene has drawn a lot of attention. Many of its properties were expected well twenty years before its experimental discovery. While it is arguably true that there has been an over-hype bubble around its supposed miraculous applications, it is definitely true that graphene has been the gateway towards a whole new realm of phenomena in condensed matter physics.
+%
+%Initially most of its interest relied in the expectancy of a new Hall phase emerging without the need of an external magnetic field\cite{Kane2005a,Ostrovsky2008} and the experimental observation of the \ac{qhe}, a macroscopic effect of a purely quantum phenomenon\cite{Zhang2005}.
+%Also fact that some high-energy physics models were naturally realized in graphene was a huge motivation for this material to hoard the attention of a big part of the condensed matter community.
+
+%Certainly graphene has many interesting properties, but when two layers of graphene are placed one on top of each other there is a property that will be central for the development of this thesis.
+
+%Graphene bilayer is the only known material which can open a gap upon application of an electric field. It has been shown that an electric
 
 
 %\newpage
 %In order to start wrapping our minds around this Quantum Revolution, we need to look back to the beginning of the XIX century. Back then Physics was consider to be completely understood, except for a couple of seemingly simple experiments, namely the photoelectric effect and the black body radiation. These phenomena were the gateway to discover the realm of Quantum Mechanics.
-%
-%Many experiments followed and the theory was not left behind. Soon we had a framework with the mathematical tools to describe all these new phenomena. Nevertheless having the basic laws that rule this 
-%
-%
+
+%Many experiments followed and the theory was not left behind. Soon we had a framework with the mathematical tools to describe all these new phenomena. Nevertheless having the basic laws that rule this
+
 %\medbreak
 %The world has seen all sorts of revolutions all throughout history. While not necessarily every revolution has turned the world into a better place, when we account just for the scientific or technological revolutions, this is usually the case.
-%
+
 %%At the end of the XVIII century, the invention of the steam engine and its later introduction in the industrial processes allowed a huge step forward for many societies and, for better or worse\cite{}%climate
 %%, reshaped the world.
 %%The Industrial Revolution changed the way we travel and work, it changed the scale at which humans interacted with the planet and, arguably, the universe.
 %%The whole world has seen how virtually any index measuring quality of life has been raising ever since\cite{}.\footnote{Sadly this trend has not been homogeneous at all around the globe and these changes have been much more clear in some countries than others.}
-%
+
 %%Similarly, another huge revolution came along with
 %The worldwide introduction of computers in most households and the construction of a worldwide web interconnecting ``everyone'' in the world has been one of the biggest revolutions over the last 30 years. The information technologies have changed the job-market landscape, the way humans learn, shop, the way we socialize even the way we fight wars. Even in their first stages computers were able to put two men on the moon and bring them back with less computational power than the cheapest smartphone available today.
 %Our daily habits, our leisure time, even crucial historical events\cite{Alhindi2012} have been determined by the use of computers and the internet.
@@ -178,7 +236,7 @@ Graphene bilayer is the only known material which can open a gap upon applicatio
 %\medbreak
 %
 %\newpage
-%For nowadays computers to exist, it was necessary the development of Quantum Mechanics. Starting with the beginning of the XX century, physicist realised that Physics was not completely understood but rather there were many mysteries when 
+%For nowadays computers to exist, it was necessary the development of Quantum Mechanics. Starting with the beginning of the XX century, physicist realised that Physics was not completely understood but rather there were many mysteries when
 %
 %
 %
@@ -208,7 +266,7 @@ Graphene bilayer is the only known material which can open a gap upon applicatio
 %
 %Quantum technologies\cite{QTF}
 %
-%The research on semiconductor physics can be hard to pin-point, 
+%The research on semiconductor physics can be hard to pin-point,
 %
 %
 %In this work we study a variety of properties regarding defected graphene bilayer. Starting from the basic concepts of graphene, we build our way to the role of sp$^3$-defects in graphene bilayer such as chemisorbed Hydrogen adatoms.

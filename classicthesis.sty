@@ -389,11 +389,14 @@
     \ifthenelse{\boolean{@linedheaders}}%
     {% lines above and below, number right
     \titleformat{\chapter}[display]%
-        % {\relax}{\raggedleft{\color{green!70!black}\chapterNumber\thechapter} \\ }{0pt}%
-        {\relax}{\raggedleft{\color{blue}\chapterNumber\thechapter} \\ }{0pt}%
-        %{\relax}{\raggedleft{\color{halfgray}\chapterNumber\thechapter} \\ }{0pt}%
-        {\titlerule\vspace*{.9\baselineskip}\raggedright\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]%
-        %{\vspace*\raggedright\spacedallcaps}[\vspace*{.8\baselineskip}\huge\titlerule]%
+        %  % {\relax}{\raggedleft{\color{green!70!black}\chapterNumber\thechapter} \\ }{0pt}%
+        %  {\relax}{\raggedleft{\color{blue}\chapterNumber\thechapter} \\ }{0pt}%
+        %  %{\relax}{\raggedleft{\color{halfgray}\chapterNumber\thechapter} \\ }{0pt}%
+        %  {\titlerule\vspace*{.9\baselineskip}\raggedright\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]%
+        %  %{\vspace*\raggedright\spacedallcaps}[\vspace*{.8\baselineskip}\huge\titlerule]%
+        % XXX here
+        {\relax}{\vspace*{-3\baselineskip}\makebox[\linewidth][r]{\color{blue}\chapterNumber\thechapter}}{0pt}%
+        {\vspace*{-3\baselineskip}\Huge\raggedright}[\normalsize\vspace*{.8\baselineskip}\titlerule]%
     }{% something like Bringhurst
     \titleformat{\chapter}[display]%
         {\relax}{\mbox{}\oldmarginpar{\vspace*{-3\baselineskip}\color{halfgray}\chapterNumber\thechapter}}{0pt}%
@@ -416,7 +419,7 @@
     % spacing
     \ifthenelse{\boolean{@nochapters}}%
         {\relax}%
-        {\titlespacing*{\chapter}{0pt}{1\baselineskip}{1.2\baselineskip}}
+        {\titlespacing*{\chapter}{0pt}{10\baselineskip}{1.2\baselineskip}}
     \titlespacing*{\section}{0pt}{1.25\baselineskip}{1\baselineskip}
     \titlespacing*{\subsection}{0pt}{1.25\baselineskip}{1\baselineskip}
     \titlespacing*{\paragraph}{0pt}{1\baselineskip}{1\baselineskip}

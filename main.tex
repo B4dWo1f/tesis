@@ -23,6 +23,7 @@
 \numberwithin{equation}{chapter}
 \numberwithin{figure}{chapter}
 \usepackage{amssymb,amsthm,dsfont}
+\usepackage{mhchem}
 
 %~~~~ citations
 \usepackage[noadjust,super]{cite}
@@ -44,6 +45,7 @@
 \usepackage{caption}
 \captionsetup{font=small,width=0.9\textwidth,
               justification=justified,format=plain}
+\usepackage{wrapfig}
 
 %~~~~ Manage FloatBarriers and stuff
 \usepackage{placeins}
@@ -99,8 +101,9 @@
 \newcommand{\DUaw}{\Downarrow\mathrel{\mspace{-3mu}}\Uparrow}
 \newcommand{\e}[1]{\mspace{-2mu}\cdot\mspace{-2mu}10^{#1}}
 \newcommand{\ex}[1]{\mspace{-2mu}\times\mspace{-2mu}10^{#1}}
-\newcommand{\fref}[2][{}]{\hyperref[#2]{Fig.~\ref{#2}~#1}} 
-\renewcommand{\eqref}[2][{}]{\hyperref[#2]{eq.~\ref{#2}~#1}} 
+\newcommand{\fref}[2][{}]{\hyperref[#2]{Fig.~\ref{#2}~#1}}
+\newcommand{\chref}[1]{\hyperref[#1]{Chapter~\ref{#1}}}
+\renewcommand{\eqref}[2][{}]{\hyperref[#2]{eq.~\ref{#2}~#1}}
 \newcommand{\ie}{i.\,e. }
 \newcommand{\Ie}{I.\,e. }
 \newcommand{\eg}{e.\,g. }
@@ -168,12 +171,12 @@
 %~~~~~~~~ Chapter ~~~~~~~~
 \input{defects/adatom.tex}
 
-%~~~~~~~~ Chapter ~~~~~~~~
-\input{bilayer_defect/bilayer_defect.tex}
-
+%%~~~~~~~~ Chapter ~~~~~~~~
+%\input{bilayer_defect/bilayer_defect.tex}
+%
 %%~~~~~~~~ Chapter ~~~~~~~~
 %\input{defects/hyperfine.tex}
-
+%
 %%~~~~~~~~ Chapter ~~~~~~~~
 %\input{artlat/artlat.tex}
 
@@ -208,10 +211,10 @@
 %% % Conclusions
 %% \input{chapter08/chapter8.tex}
 %%
-%% ~~~~~~~~ Appendices ~~~~~~~~
-%\appendix
-%% Slater-Koster hoppings
-%\input{appendix/SK.tex}
+% ~~~~~~~~ Appendices ~~~~~~~~
+\appendix
+ Slater-Koster hoppings
+\input{appendix/SK.tex}
 %% Topological stuff
 %\input{appendix/qsh.tex}
 %\input{ann/ann.tex}
