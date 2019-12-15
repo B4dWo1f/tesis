@@ -38,7 +38,7 @@ Since the two layers are infinitely apart, we can consider no interaction betwee
      tf^{\dagger}(\vec{k}) & 0 & 0 & 0 \\ \hline
      0 & 0 & 0 & tf(\vec{k}) \\
      0 & 0 & tf^{\dagger}(\vec{k}) & 0
-  \end{array}\right) + 
+  \end{array}\right) +
   \eta H_\text{inter}
 \label{Gbi}
 \end{equation}
@@ -234,9 +234,9 @@ These terms, are in the scale of $\SI{e-2}{\meV}$ while the gap open can reach u
 
 
 \section{Kink states}
-An interesting feature of this system appears when we applied an electric field of different sign in different regions of the system. The opening of an opposite gap in two different regions leads to the appearance of kink states in the interface. In addition to its experimental observation\cite{Li2016}, we can provide a quick example of these states.
+An interesting feature of this system appears when we applied an electric field of different sign in different regions of the system\cite{Martin2008,Jung2011,Yin2016,Li2016,Li2018b}. The opening of an opposite gap in two different regions leads to the appearance of kink states in the interface. In addition to its experimental observation\cite{Li2016}, we can provide a quick example of these states.
 
-We consider an 2d sheet of bilayer graphene which has $\mathcal{E}>0$ for atomic positions with $x>0$ and $\mathcal{E}<0$ otherwise.
+We consider a 2d sheet of bilayer graphene which has $\mathcal{E}>0$ for atomic positions with $x>0$ and $\mathcal{E}<0$ otherwise.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
@@ -251,7 +251,7 @@ In order to study the states at the interface between these two regions we consi
 \begin{equation}
   G(E,k_{\parallel}) = \frac{1}{E+i\epsilon-H_0(k_\parallel)-\Sigma_R(k_\parallel)-\Sigma_L(k_\parallel)}
 \end{equation}
-where each self-energy $\Sigma_\alpha$ with $\alpha\in\{L/R\}$ can be calculated by solving iteratively the coupled equations:
+where $\epsilon$ is a small analytic continuation and each self-energy $\Sigma_\alpha$ with $\alpha\in\{L/R\}$ can be calculated by solving iteratively the coupled equations:
 \begin{equation}
 \begin{split}
   \Sigma_\alpha(E,k_\parallel) &= V_\alpha(k_\parallel)g_\alpha(E,k_\parallel)V^{\dagger}_\alpha(E,k_\parallel) \\
@@ -265,9 +265,9 @@ Once the Green's function is calculated, the \ac{dos} is calculated as usual as:
 
 
 
-\subsection{Spin proximity}
-$CrI_3$ is a two dimensional ferromagnetic insulating material\cite{Klein2018,Song2018,Wang2018}, %,Jiang2018,Huang2018,Jiang2018b}
-if bilayer graphene is sandwiched by two layers of $CrI_3$ as shown in \fref{cri3}, 
+\section{Spin proximity}
+This section is a quick overview of the paper $CrI_3$ is a two dimensional ferromagnetic insulating material\cite{Klein2018,Song2018,Wang2018}, %,Jiang2018,Huang2018,Jiang2018b}
+if bilayer graphene is sandwiched by two layers of $CrI_3$ as shown in \fref{cri3},
 
 %% ~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~ %
 %\begin{figure}[h!]
@@ -308,9 +308,6 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 \right)
 \label{hmodel}
 \end{eqnarray}
-
-
-
 
 
 
@@ -369,7 +366,7 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%   %%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 %%   %
 %%   % Analogously to the discussed scenario of a vacancy in (monolayer) graphene, the introduction of a vacancy also results in the appearance of a ``zero energy state''. In the presence of an external electric field the impurity state will not appear at $E=0$ but shifted in energy as shown in fig.~\ref{dos_bi_dfct}
-%%   
+%%
 %%   % %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 %%   % \begin{figure}[h!]
 %%   % \centering
@@ -380,12 +377,12 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%   % \end{figure}
 %%   % \FloatBarrier
 %%   % %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-%%   
+%%
 %%   % \subsection{About the charge neutrality}
 %%   % when a bias is applied to \ac{gb} there is the chance that some charge is transferred form one layer to the other\cite{Wang2016a,Zhang2009}. To be sure of how relevant this effect is we calculate where the Fermi Energy lies as well as the charge in each layer.
-%%   
-%%   
-%%   
+%%
+%%
+%%
 %%   % % The position where the adatom is introduced now is important since one of the sublattices of each layer is fully connected to the other layer. All the possibilities for the H chemisorption are depicted in figure\red{FIG}. We will consider only the structure (b).
 %%   % %
 %%   % % %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
@@ -426,12 +423,12 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%   \section{1 Hydrogen adatom}
 %%   \subsection{General considerations} %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 %%   To study hydrogrnation of graphene bilayer we will consider a hexagonal armchair island big enough for the splitting among energy levels to be negligible compared with the splitting opened due to the external electric field.
-%%   
+%%
 %%   To study these systems we will consider a basis of localized states that could be considered to be the $p_z$ hydrogenoid orbitals.
 %%   \begin{equation}
 %%     \mathcal{B} = \left\{\phi_1,\phi_2,\dots,\phi_\beta,\dots,\phi_{N_C}\right\}
 %%   \end{equation}
-%%   
+%%
 %%   Written in such a basis, the general Hamiltonian and its eigenvectors, then, will look like
 %%   \begin{equation}
 %%     H = H_t + H_{\lambda_E} \quad\quad;\quad\quad
@@ -439,8 +436,8 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%     \ket{\psi_\alpha} = \sum_\beta c_\beta\ket{\phi_\beta}
 %%   \label{general}
 %%   \end{equation}
-%%   
-%%   
+%%
+%%
 %%   The term $H_t$ represents the kinetic energy arising from the hopping between neighboring sites and the term $H_{\lambda_E}$ corresponds to the effect of an external electric field on the electrons. Such a term takes the form:
 %%   \begin{equation}
 %%     H_{\lambda_E} = \lambda_E
@@ -450,17 +447,17 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%     \end{array}\right)
 %%   \end{equation}
 %%   where we use the identity elements $\pm\mathds{1}$ to account for spin, orbitals and any oder degree of freedom. The sign $\pm$ is decided with respect to the layer.
-%%   
+%%
 %%   The vacancies are introduced in this model as an infinite on-site energy for the chosen atom(s). Unless otherwise stated everything is done in $\si{\eV}$ %$eV$
 %%   , \emph{not hopping units}, the $p_z$-$p_z$ hopping is chosen as $t=\SI{-2.7}{\eV}$.
-%%   
-%%   
-%%   
-%%   
-%%   
+%%
+%%
+%%
+%%
+%%
 %%   \subsection{Note on the geometry}
 %%   Any vacancy considered will always be chosen on a hollow position (see fig~\ref{geo_sketch} $c)$) even if it not specified in the text. When only one vacancy is considered, it will be placed at the hollow atomic position closest to the center of the island.
-%%   
+%%
 %%   When two vacancies are considered they will be placed as separated from the edges as possible, as shown in fig~\ref{geo_sketch} $b)$ since this configuration allows the study of a wider range of the relative angle and distance ($\alpha$ and $d$).
 %%   % Later in the text another configuration consisting in one vacancy in the center of the island, and the other in different positions $\vec{r}=d\cos(\alpha)+d\sin(\alpha)$.
 %%   %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
@@ -473,17 +470,17 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%   \end{figure}
 %%   \FloatBarrier
 %%   %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-%%   
+%%
 %%   Note that as long as the border effects are negligible, and due to the $C_3$ symmetry of the in-gap states in graphene, we only need to explore the range of angles between vacancies of $\alpha\in\left[0,\tfrac{\pi}{3}\right]$.
-%%   
-%%   
+%%
+%%
 %%   \subsection{Single vacancy} %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 %%   Since we are studying an island with a single vacancy, the energy levels are a discrete set of energies. In figure~\ref{1vac_spec}~c) the difference in the spectrum due to the introduction of a vacancy at $\lambda_E=0$ is shown. When a vacancy is introduced, an in-gap state appears at $E=0$ and some \emph{(quasi-)}degeneracies are broken.
-%%   
+%%
 %%   The effect of the electric field in the spectrum is shown in figure~\ref{1vac_spec} $a)$ and $b)$. Its main effect is to open a gap, linearly dependent with the electric field.
-%%   
+%%
 %%   The shift in the energy at which the in-gap state appears is linear for low electric field, but it remains in-gap for all the regime of electric fields studied. In fig~\ref{1vac_spec} $a$-$c)$ only the eight eigenvalues closest to $E=0$ are plotted. Nevertheless, since the spacing between levels is much smaller than the gap open by the electric field, they appear grouped in two sets of almost-degenerate energies, one at $E>0$ and the other at $E<0$.\\
-%%   
+%%
 %%   %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 %%   \begin{figure}[!ht!]
 %%   \centering
@@ -494,20 +491,20 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%   \end{figure}
 %%   \FloatBarrier
 %%   %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-%%   
+%%
 %%   In Fig~\ref{1vac_spec} $d)$ we show four snapshots of the spatial distribution of the in-gap state for different electric fields. The actual lattice of the island is shown as black dots (probably indistinguishable because of the size of the image).
 %%   On top of each atomic position the weight of the wave function ($|c_\beta|^2$ using the notation of eq.~\eqref{general}) is plotted in blue/red for the lower/upper layer.
 %%   On top of all this, the site of the vacancy is marked with a blue triangle.
 %%   As a visual guide the confinement length (defined later) is plotted as a black circle with diameter $2L_C$.\\
-%%   
+%%
 %%   At $\lambda_E=0$ the system is bipartite so, according to the Lieb's theorem\cite{Lieb1989}, after the removal of one site, a sublattice-polarized state should appear at $E=0$. This is exactly what happens as shown in Fig.~\ref{1vac_spec}.
-%%   
+%%
 %%   When we study the real-space distribution of the in-gap state we find that in the absence of electric field ($\lambda_E=0$) the state is spread all over the island, Fig.~\ref{1vac_spec} $d)$, no matter the size of the island (see Fig.~\ref{IPR_lc} $a)$ bellow). Notice that the effect of the border is not negligible in this regime and, in fact, is the responsible of the breaking of the expected $C_3$ symmetry of the state (at long distances, close to the vacancy the $C_3$ symmetry is almost preserved).
-%%   
-%%   
+%%
+%%
 %%   Another important aspect is that the distribution of this wave function is such that in the upper layer (the one containing the vacancy) the wave function is quite confined around the vacancy (3-6 closest atoms) and it barely changes with the electric field, whereas in the lower layer the spreading of the wave function varies from the whole space available, to a few angstroms.
-%%   
-%%   
+%%
+%%
 %%   To study quantitatively the properties of the in-gap state $\psi_0$ we define four quantities that will be useful later on.
 %%   \begin{itemize}
 %%     \item \emph{Confinement length}, $L_C$, defined, hand-wavingly, as the distance at which more than $90\%$ of the state is located
@@ -529,7 +526,7 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%     \end{equation}
 %%     where the operators $\widehat{\mathcal{S}}$ and $\widehat{\mathcal{L}}$ measure the component of a given state in a given sublattice and layer respectively. Both $SP$ and $SL$ have to be, by definition, in the closed interval $\left[-1,1\right]$.
 %%   \end{itemize}
-%%   
+%%
 %%   In figure~\ref{IPR_lc} we study the dependence of these four properties, for different sizes of the island, as a function of the electric field.
 %%   %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 %%   \begin{figure}[!ht]
@@ -541,26 +538,26 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%   \end{figure}
 %%   \FloatBarrier
 %%   %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-%%   
+%%
 %%   It can be seen in Fig.~\ref{IPR_lc} $a)$ that as we approach the limit $\lambda_E\rightarrow0$ the confinement length collapses to the size of the island, shown as a dashed line for each size studied. This plateau is just the effect of having an in-gap state spread all over the island.
-%%   
+%%
 %%   The shadowed region in all the panels shows the range of $\lambda_E$ in which the border effects can be relevant for the biggest island studied ($N_C=91812$). It is estimated as the $\lambda_E$ at which the results differ from those of the previous island. Of course it is only a rough estimation and it should be considered only as a guide to the eye when reading the results.
-%%   
+%%
 %%   In panel $b)$ the IPR is shown. Except for small islands the evolution of the IPR, as that of the $L_C$, is the same regardless of the size of the island. The increasing of the IPR with the electric field is another sign of the increasing localization of the in-gap state around the vacancy.\\
-%%   
+%%
 %%   The sublattice and layer polarization are shown in panels~\ref{IPR_lc} $c)$ and $d)$. As it can be seen at $\lambda_E=0$ the state is completely sublattice-polarized, in accordance with the Lieb's theorem, and almost layer-polarized, this ``almost'' is more easly visible in the small red component present in Fig.~\ref{1vac_spec} $d)$.
-%%   
+%%
 %%   As the electric field increases the bipartite character of the system is lost, in agreement with the shift of the energy of the in-gap state (no longer at $E=0$). Since the system is no longer bipartite, the sublattice polarized character of the in-gap state is no longer assured, and as shown in panel $c)$ it, in fact, decreases.
-%%   
+%%
 %%   The decreasing of the layer polarization is easily understood by looking at Fig.~\ref{1vac_spec} $d)$. For small $\lambda_E$ the in-gap state is mostly spread over the lower layer, while for large $\lambda_E$ the in-gap state occupies roughly the same area in both layers resulting in a $\bra{\psi_0}\widehat{\mathcal{L}}\ket{\psi_0} \rightarrow 0$
-%%   
+%%
 %%   % It is to be expected that if two vacancies are placed much closer than $r\sim60\text{angs}$, they could interact strongly rendering its isolation impossible even with big electric fields.
-%%   
-%%   
-%%   
+%%
+%%
+%%
 %%   \section{Double vacancy}
 %%   It may be possible to control the interaction between two vacancies via an electric field by placing them at a certain distance $d$. First we are going to analyze the general phenomenology of the system studying the different states that appear as a function of the distance and angle between vacancies and the electric field.
-%%   
+%%
 %%   %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 %%   \begin{figure}[h!]
 %%   \centering
@@ -571,21 +568,21 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%   \end{figure}
 %%   \FloatBarrier
 %%   %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-%%   
+%%
 %%   In the absence of electric field, $\lambda_E = 0$, when two vacancies are introduced in the same sublattice (since both of them have to be in hollow positions) two states appear at $E=0$ in accordance to the Lieb's Theorem as shown in Fig.~\ref{2vac_spec}~$c)$. These states are sublattice-polarized and they are mostly located in the lower layer.\\
-%%   
+%%
 %%   When we switch on the electric field the spectrum opens a gap that increases linearly with the electric field but the two states associated with the vacancies remain inside the gap.
-%%   
+%%
 %%   If the vacancies are close enough to each other, the interaction between them is big enough to split these levels (originally degenerate at $E=0$) as shown in Fig.~\ref{2vac_spec} $a)$. In this case in which the vacancies are close, it is apparent from the spatial distribution of the wave functions (panels 1-8) that a pair of bonding-antibonding states is created.
-%%   
+%%
 %%   If the distance between the vacancies is big enough, the splitting between the in-gap states becomes negligible as shown in Fig.~\ref{2vac_spec}~$b)$.
 %%   Notice that panels 5 and 6 correspond to the two in-gap eigenstates, $\psi_0$ and $\psi_1$ of the Hamiltonian which are almost degenerate in energy. For that electric field ($\lambda_E=0.2$) the confinement length of these states is smaller than the distance between the vacancies, which explains why they barely interact and are, therefore, degenerate in energy.
 %%   On the other hand, panels 7 and 8 show the same eigenstates $\psi_0$ and $\psi_1$ for $\lambda_E=0.0$, it can be seen that these two state, degenerate at $E=0$ form a symmetric-antisymmetric pair of states mixing the electronic states of each of the adatoms.
-%%   
-%%   
+%%
+%%
 %%   \subsection{Spin Exchange Interactions} %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 %%   Starting from the notes on the effective exchange, equations 9 and 10. I focus for now on the effective coupling $J$.
-%%   
+%%
 %%   Let's remember that for getting to that formula we start from two in-gap states that should be associated to each of the vacancies.
 %%   In our case, the in-gap states, $\psi_0$ and $\psi_1$, take the form of bonding-antibonding states, hence we can define a left $\psi_L$ and right $\psi_R$ states as:
 %%   \begin{equation}
@@ -597,15 +594,15 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%     \bra{\psi_L}X\ket{\psi_L} < \bra{\psi_R}X\ket{\psi_R}
 %%   \end{equation*}
 %%   where $X$ is the position (in the $X$-axis) operator.
-%%   
-%%   
+%%
+%%
 %%   \subsubsection{Anti-ferromagnetic coupling}
 %%   The in-gap states can form a bonding-antibonding pair resulting in a splitting of the levels, $\Delta_0$. The Anti-ferromagnetic coupling is defined as
 %%   \begin{equation}
 %%     J_{AF} \propto \Delta^2_0     %\frac{\Delta^2_0}{U_{Eff}}
 %%   \end{equation}
-%%   
-%%   
+%%
+%%
 %%   \subsubsection{Ferromagnetic coupling}
 %%   The operator that creates an electron at the atom i with spin $\sigma$ can be written as:
 %%   \begin{equation}
@@ -631,7 +628,7 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%                    R^*(i)L(i)\crea{a}{R\sigma}\des{a}{L\sigma}
 %%     \end{split}
 %%   \end{equation}
-%%   
+%%
 %%   Now we expand the Hubbard operator,
 %%   \begin{equation*}
 %%     H_U = U\sum_i n_{i\uaw}n_{i\daw}
@@ -710,7 +707,7 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%                      \crea{a}{R\uaw}\des{a}{L\uaw}n_{R\daw}\right)
 %%     \end{split}
 %%   \end{equation}
-%%   
+%%
 %%   We can rename the couplings of these terms for an easier interpretation\footnote{the deduction was made for $n_\uaw n_\daw$, but the Hubbard term actually reads $H_U = U\sum_i n_{i\uaw}n_{i\daw}$}:
 %%   \begin{equation}
 %%     \begin{split}
@@ -753,7 +750,7 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%              t^*_{RL} \left(n_{R\uaw}\crea{a}{R\daw}\des{a}{L\daw}+
 %%                      \crea{a}{R\uaw}\des{a}{L\uaw}n_{R\daw}\right)
 %%   \end{equation}
-%%   
+%%
 %%   \subsection{Heisenberg coupling}
 %%   In order to try to make apparent the effective Heisenberg term we first expand the standard Heisengberg Hamiltonian in terms of the density operators.
 %%   \begin{equation}
@@ -761,7 +758,7 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%     -J \left[S^z_LS^z_R+\frac{1}{2}\left(S^+_LS^-_R+S^-_LS^+_R\right)\right]
 %%   \end{equation}
 %%   The Ising contribution, can be written in terms of the density operators by taking into account that $S^z_\alpha = (n_\alpha\uaw-n_\alpha\daw)/2$,
-%%   
+%%
 %%   \begin{equation}
 %%     \mathcal{H}_{Ising} = -J S^z_LS^z_R = -\frac{J}{4}
 %%         \left(n_{L\uaw}n_{R\uaw}+n_{L\daw}n_{R\daw}-
@@ -883,12 +880,12 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%              t^*_{RL} \left(n_{R\uaw}\crea{a}{R\daw}\des{a}{L\daw}+
 %%                      \crea{a}{R\uaw}\des{a}{L\uaw}n_{R\daw}\right)
 %%   \end{equation}
-%%   
-%%   
-%%   
+%%
+%%
+%%
 %%   \subsection{Electric control of the Effective Exchange Coupling} %~~~~~~~~~~~~~~~~%
 %%   For the biggest island studied the evolution of the ferromagnetic $J_F$ coupling is shown in Fig.~\ref{exchange}.
-%%   
+%%
 %%   %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 %%   \begin{figure}[h!]
 %%   \centering
@@ -899,26 +896,26 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%   \end{figure}
 %%   \FloatBarrier
 %%   %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-%%   
+%%
 %%   The shadowed region in Fig.~\ref{exchange} is the same as in Fig.~\ref{IPR_lc} but its interpretation it is a little bit more subtle. It still represents the range of electric fields at which the in-gap states are expected to be spread in a region big enough to be affected by the border effects, but now, this region is not restrictive enough since the there will be a competition between the distance between the vacancies and its distance to the borders (see Fig.~\ref{geo_sketch} $b)$).
-%%   
+%%
 %%   In fact for the island used for the calculations in Fig.~\ref{exchange} distances between vacancies bigger than $d\sim 100\text{\AA}$ are to be considered with great caution. For big enough electric fields, of course, there is no problem with the border effects (the states are confined enough).
-%%   
-%%   
+%%
+%%
 %%   \subsection{Kondo coupling}
 %%   We try now to make apparent a Kondo contribution from the Hubbard term
 %%   \begin{equation}
 %%     H_{J_{K}} = J_c \sum_c \vec{S}_z \vec{S}_c + J_v \sum_v \vec{S}_z \vec{S}_v
 %%   \end{equation}
 %%   These terms will contribute to the decoherence times.
-%%   
+%%
 %%   We consider first a single vacancy, and start from eq~\eqref{creation}, only now, since there is only one operator for the in-gap state.
 %%   \begin{equation}
 %%     \crea{c}{i\sigma} = \sum_v\psi^*_v(i)\crea{a}{v_\sigma}+
 %%                       \sum_c\psi^*_c(i)\crea{a}{c_\sigma}+
 %%                       Z^*(i)\crea{a}{Z\sigma}
 %%   \end{equation}
-%%   
+%%
 %%   Now we are interested in the mixing of the in-gap state and the conduction and valence states.
 %%   %\sum_v\psi_v(i)\crea{a}{v_\sigma}+\sum_c\psi_c(i)\crea{a}{c_\sigma}+Z^*(i)\crea{a}{Z\sigma}
 %%   %\sum_v\psi_v(i)\des{a}{v_\sigma}+\sum_c\psi_c(i)\des{a}{c_\sigma}+Z^*(i)\des{a}{Z\sigma}
@@ -938,7 +935,7 @@ f^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 %%     Z^*_\sigma Z_\sigma\crea{a}{Z\sigma}\des{a}{Z\sigma}
 %%     \end{split}
 %%   \end{equation}
-%%   
+%%
 %%   The full Hubbard term, then reads:
 %%   \begin{equation}
 %%     \begin{split}
