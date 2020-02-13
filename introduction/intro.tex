@@ -1,17 +1,44 @@
 %~~~~~~~~ Chapter ~~~~~~~~
+\chapter{List of Publications}
+A complete list of my publications:
+\begin{itemize}
+   \item Coupling of the $\ce{As}$ $A_{1g}$ phonon to magnetism in iron pnictides\cite{Garcia-Martinez2013}
+
+   \item Interaction-driven phases in the half-filled spinless honeycomb lattice from exact diagonalization\cite{Garcia-Martinez2013a}
+
+   \item Edge states in graphene-like systems\cite{Lado2015}
+
+   \item Quantum spin Hall phase in multilayer graphene\cite{Garcia-Martinez2015}
+
+   \item Anomalous magnetism in hydrogenated graphene\cite{Garcia-Martinez2017}
+
+   \item Real-space mapping of topological invariants using artificial neural networks\cite{Carvalho2018}
+
+   \item Electrical spin manipulation in graphene nanostructures\cite{Ortiz2018}
+
+   \item Van der Waals spin valves\cite{Cardoso2018}
+
+   \item Exchange Rules for Diradical $\pi$-Conjugated Hydrocarbons\cite{Ortiz2019}
+
+   \item Designer fermion models in functionalized graphene bilayers\cite{Garcia-Martinez2019}
+\end{itemize}
+
+
+
+% ~~~~ Introduction ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \chapter{Introduction}
 \label{ch:introduction}
-\bigskip
 
 % kane Qspin
 % hyperfine & exchange
 % Qsimulator
-In this thesis we pursue the design of graphene based nuclear spin qubits.
-The idea is to place $\ce{H}$ adatoms on bilayer graphene and use electric gating to control the band gap and, with it, the hyperfine interaction as well as the exchange interaction among adatoms.
-\smallskip
 
-This system is inspired by the ``Silicon-based nuclear spin quantum computer'' proposed by B. E. Kane\cite{Kane1988} in 1988.
-Every proposal for building qubits has to deal with two opposing requirements: the need for the qubits to be completely isolated from the environment and the need for the qubits to interact quickly and strongly on demand so it can be read or written.
+The initial goal of this thesis was the design of graphene based nuclear spin qubits very much inspired in the proposal for nuclear spin qubits in Silicon by B. E. Kane\cite{Kane1988}, but in the process of studying how to control the spin interactions of different hydrogen adatoms in graphene we thought of a different application of this platform, namely, analog quantum simulation of fermionic lattice models.
+
+% The quantum information would be stored in the nuclear spin of $\ce{H}$ adatoms chemisorbed on top of bilayer graphene and in order to interact with it we propose the use of electric gating which it is known to control the band gap of the system and, with it, the hyperfine interaction as well as the exchange interaction among adatoms.
+% \smallskip
+
+Every proposal for building qubits has to deal with two opposing requirements: the need for the qubits to be completely isolated from the environment and the need for them to interact quickly and strongly on demand so it can be read or written to.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{wrapfigure}{R}{0.5\textwidth}
 \centering
@@ -21,12 +48,16 @@ Every proposal for building qubits has to deal with two opposing requirements: t
 \caption{Sketch of the Kane's proposal for a silicon-based nuclear spin quantum computer. An electric gating $A$ controls the hyperfine interaction by increasing/decreasing the electronic density around the nucleus, allowing the isolation of the nuclear spin on demand. Similarly, an inter-qubit gate allows the interconnection of different qubits.}
 \label{kane_proposal}
 \end{wrapfigure}
-\FloatBarrier
+% \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-In Kane's proposal $\ce{P}$ dopants in $\ce{Si}$ ($\ce{Si}:\leftidx{^{31}}{\ce{P}}$) were to be used as physical platform for the qubits. The quantum information would be stored in the nuclear spin ($I=1/2$) of the $\ce{P}$ dopants and the surrounding electronic spin ($S=1/2$) would be used to interact with it. This approach takes advantage of the naturally weak interaction with the nuclear spin and the high tunability of the surrounding electronic states.
 
-The control of these interactions was proposed via electric gating so the electronic states could be deformed in the vicinity of the $\ce{P}$ nucleus, thus increasing/decreasing the hyperfine interaction as shown in \fref{kane_proposal}.
-The interaction between different qubits could be switched on and off using electric gating as well although its implementation requires the dopants to be at a certain distance (with atomic precision), which is definitely a challenge in this platform.
+In Kane's proposal: ``Silicon-based nuclear spin quantum computer'', $\ce{P}$ dopants in $\ce{Si}$ ($\ce{Si}:\leftidx{^{31}}{\ce{P}}$) were to be used as physical platform for the qubits. The quantum information would be stored in the nuclear spin of the $\ce{P}$ dopants ($I=1/2$) and the surrounding electronic spin ($S=1/2$) would be used to interact with it. This approach takes advantage of the naturally weak interaction with the nuclear spin and the high tunability of the surrounding electronic states.
+
+When $\ce{P}$ dopants are introduced in $\ce{Si}$, an electron is confined in the vicinity of the dopant. The extension of such state can be as large as hundreds of ångströms so, if there are several dopants in the same area, the electronic states can act as an effective coupling among the nuclear spins of the dopants\cite{Slichter1990}. The coupling of the nuclear and the electronic spin is mediated by the hyperfine interaction so the spin state can be transferred between the nucleai and the electrons and the nuclear spin state may even be detectable by its effect on the electronic states\cite{Stich1996}.
+
+
+The control of these interactions was proposed via electric gating. The electronic states could be deformed in the vicinity of the $\ce{P}$ nucleus, thus increasing/decreasing the hyperfine interaction as shown in \fref{kane_proposal}.
+The interaction between different qubits could be switched on and off using electric gating as well although its implementation requires the dopants to be at a very specific distance (with atomic precision), which is definitely a challenge in this platform.
 % Morello? Experimental status?
 \medskip
 

@@ -1,6 +1,7 @@
 \chapter{Graphene Bilayer}
 \label{ch:bilayer}
 Graphite is made out of weakly bounded graphene layers which, incidentally, is the main reason why it is such an exfoliable material. When graphene is obtained by exfoliation it is very common to find regions where not one but two or more layers are extracted. We will focus now in the cases in which just two layers are isolated.
+%\bigskip
 
 There are two ways to stack two graphene layers in a commensurate way. The first option is to align directly one layer on top of the other, so every atom in one layer is connected to an atom from the other layer\fref{Gbi_stack}a). This is the so-called $AA$-stacking.
 The other option is to have the top layer shifted by one atomic position as shown in \fref{Gbi_stack}c). The later stacking, commonly called Bernal stacking or $AB$-stacking, is the most common one according to both experiments and \ac{dft} calculations\cite{Norimatsu2010,Charlier1994,Charlier1994a}.
@@ -10,11 +11,11 @@ In both stackings the overall band structure (see \fref{Gbi_stack}b,d)) is quite
 \begin{figure}[h!]
 \centering
 \includegraphics{graphene_bilayer/figures/bilayer_stackings.pdf}
-\vspace{-20pt}
+\vspace{-10pt}
 \caption{a,b) Cartoon depiction of the atomic structure of bilayer graphene in $AA$-stacking and band structure of $AA$-stacking respectively. c,d) Cartoon depiction of the atomic structure of bilayer graphene in $AB$-stacking and band structure of $AB$-stacking respectively. e) Comparison of the $AA$ and $AB$ stackings in the band structure around the $K$ point.}
 \label{Gbi_stack}
 \end{figure}
-\FloatBarrier
+% \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 At first glance it may seen that both stackings result in a very similar band structure. The main differences happen around the $K$ ($K'$) points as it is shown in \fref{Gbi_stack}e).
 
@@ -58,31 +59,16 @@ H^{AB}_\text{inter}=\left(\begin{array}{c|cc|c}
 \end{equation}
 When a more complex basis is used, all the \ac{sk} parameters will be scaled so that the interlayer hopping among $p_z$ orbitals is $t'=\SI{0.4}{\eV}$ in accordance with the literature\cite{KatsnelsonBook}.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 In order to understand these band structures we can restrict ourselves to analyze the $\vec{k}=K$ point. In this point the $\vec{k}$ dependence vanishes, $f(K)=0$. So the Hamiltonian \eqref{Gbi} reads:
 
 \begin{equation}
-   H^{AA}(K) = \left(\begin{array}{cc|cc}
+   H^{AA}(K) = \eta\left(\begin{array}{cc|cc}
          0 & 0 & t' & 0 \\
          0 & 0 & 0 & t' \\\hline
          t' & 0 & 0 & 0 \\
          0 & t' & 0 & 0
    \end{array}\right)\quad;\quad
-   H^{AB}(K) = \left(\begin{array}{c|cc|c}
+   H^{AB}(K) = \eta\left(\begin{array}{c|cc|c}
          0 & 0 & 0 & 0 \\ \hline
          0 & 0 & t' & 0 \\
          0 & t' & 0 & 0 \\ \hline
@@ -92,7 +78,7 @@ In order to understand these band structures we can restrict ourselves to analyz
 \end{equation}
 
 When $\eta=0$ the band structure is just that of graphene, but twofold, so at the $K$ point there are 4 degenerate states.
-For $\eta>0$, in the $AA$-stacking, every atom interacts with another atom from the other layer it is obvious from \eqref{HK} that there will be no states at $E=0$ but rather two degenerate states at $E=\pm t'$.
+For $\eta>0$, in the $AA$-stacking, every atom interacts with another atom from the other layer it is obvious from \eqref{HK} that there will be no states in $K$ at $E=0$ but rather two degenerate states at $E=\pm t'$.
 %, it is to be expected a bonding-antibonding-like splitting for every $\vec{k}$, in fact that is exactly what happens, and vertical rigid shift of the band structure. Around the $K$ point this translates in having two cones placed at $E=\pm t'$.
 
 In the $AB$-stacking only one of the atoms of each layer interacts via $t'$, at the $K$ point two states will remain at $E=0$, while the other will be shifted to $E=\pm t'$.
@@ -122,7 +108,7 @@ In the $AB$-stacking only one of the atoms of each layer interacts via $t'$, at 
 Since the $AB$-stacking is the most common one, and the most appropriate for our goals, we will focus the rest of the discussion in this kind of stacking.\\
 
 
-The description for the Bernal stacking is not much different from that of graphene: the Bravais lattice is still a triangular lattice with lattice vectors described by \eqref{latt_vec}, hence the \ac{fbz} is the same. The main difference is that the minimal basis now has four atomic positions.
+The description for the Bernal stacking is not much different from that of graphene: the  with lattice vectors described by \eqref{latt_vec}, hence the \ac{fbz} is the same. The main difference is that the minimal basis now has four atomic positions.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering

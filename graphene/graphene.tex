@@ -14,14 +14,20 @@
 %   -  Graphene monolayer + Bilayer
 %   - Topological phases (Z2, edge states, Kane Mele model)
 
-In this chapter we review the basics of graphene...
-\bigskip
-
-Graphene is one of the most studied materials in history\cite{KatsnelsonBook, Geim2007, Murakami2009, CastroNeto2009a,
-Mas-Balleste2011, Konschuh2011a, Cooper2012, Han2014, Sadurni2014, Rozhkov2016}.
-Even before its experimental discovery\cite{Novoselov2004, Novoselov2005},
-extensive research was devoted to it\cite{Wallace1947, VanBommel1975, Semenoff1984, Haldane1988, Forbeaux1998, Oshima2000}.
+Graphene is one of the most studied materials in history\cite{KatsnelsonBook, Geim2007, Murakami2009, CastroNeto2009a, Mas-Balleste2011, Konschuh2011a, Cooper2012, Han2014, Sadurni2014, Rozhkov2016}.
+Even before its experimental discovery\cite{Novoselov2004, Novoselov2005}, extensive research was devoted to it\cite{Wallace1947, VanBommel1975, Semenoff1984, Haldane1988, Forbeaux1998, Oshima2000}.
 All the basic properties have been discussed profusely, yet, for the sake of completeness, I will make a brief recap of all the properties relevant for the rest of this thesis.\\
+
+%XXX
+% Graphene properties summary
+% ambipolar field effect
+% Hall
+% 0 gap semiconductor
+% large mobility
+% mechanical properties
+% dirac electrons
+% 
+% 2 modelos, 1 orb, 4 orb, SK
 
 Graphene consists of a two-dimensional array of carbon atoms arranged in a honeycomb structure\cite{Huang2011} % TODO more references
 like the one shown in \fref{graphene_summary}(a,b).
@@ -110,7 +116,11 @@ As a system grows complex, more and more parameters are needed to describe it. I
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 The \ac{sk} approximation\cite{Slater1954} takes into account the symmetry of the atomic orbitals to reduce the number of parameters needed since some of them are related by rotations or other symmetry operations.
 
-The \ac{sk} model encodes the two-center hopping integrals\cite{Ashcroft1976, Grosso2000} $t_{\phi_1-\phi_2} = \bra{\phi_1(\vec{r})}H'(\vec{r},\vec{r}')\ket{\phi_2(\vec{r'})}$ along high symmetry directions in a set of constants: $V_{\alpha\alpha'm}$, where $\alpha$ and $\alpha'$ label the orbitals and m refer to the component of angular momentum along the line between the center of the two orbitals. In \fref{fig:SK}a) it can be seen how two examples, the $V_{sp\pi}$ and $V_{sp\sigma}$, are defined\footnote{Notice that in graphene $V_{sp\pi}$ automatically vanishes because of the symmetry of the orbitals.}.
+The \ac{sk} model encodes the two-center hopping integrals\cite{Ashcroft1976, Grosso2000} 
+
+$$t_{\phi_1-\phi_2} = \bra{\phi_1(\vec{r})}H'(\vec{r},\vec{r}')\ket{\phi_2(\vec{r'})}$$
+
+along high symmetry directions in a set of constants: $V_{\alpha\alpha'm}$, where $\alpha$ and $\alpha'$ label the orbitals and m refer to the component of angular momentum along the line between the center of the two orbitals. In \fref{fig:SK}a) it can be seen how two examples, the $V_{sp\pi}$ and $V_{sp\sigma}$, are defined\footnote{Notice that in graphene $V_{sp\pi}$ automatically vanishes because of the symmetry of the orbitals.}.
 
 It is important to notice that the radial information, \ie the distance between atoms, is enclosed in the \ac{sk} parameters $V_{\alpha\alpha'm}$, while the angular dependence, \ie the atomic positions, provide the functional dependencies in the \ac{sk} model. For instance, if we focus on the hopping between two $p_x$ orbitals separated by a distance $\vec{r}=|\vec{r}|(l,m,n)$:
 \begin{equation}
@@ -335,7 +345,7 @@ In this basis there are two atoms per unit cell and four orbitals per atom, so o
 
 So the \ac{soc} Hamiltonian term can be written as follows:
 \begin{equation}
-   H_{SO}= \lambda_{SO}\vec{L}\vec{S} = 
+   H_{SO}= \lambda_{SO}\vec{L}\vec{S} =
    \lambda_{SO}\left[L_zS_z+
    \frac{1}{2}\left(L^{+}S^{-}+L^{-}S^{+}\right)\right]
 \label{soc}

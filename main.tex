@@ -1,4 +1,4 @@
-\documentclass[openright,fontsize=11pt,a4paper,footinclude=true,
+\documentclass[openright,fontsize=13pt,a4paper,footinclude=true,
                numbers=noenddot,headinclude=true]{scrreprt}
 
 %~~~~ Encoding for this file
@@ -43,7 +43,7 @@
 \usepackage{graphicx}  %[pdftex]
 \setkeys{Gin}{width=\textwidth}
 \usepackage{caption}
-\captionsetup{font=small,width=0.9\textwidth,
+\captionsetup{font=small,width=0.85\textwidth,
               justification=justified,format=plain}
 \usepackage{wrapfig}
 
@@ -138,7 +138,7 @@
 %~~~~~~~~ Dedication ~~~~~~~~
 % \input{covers/dedication.tex}
 
-% %~~~~~~~~ Agradecimientos ~~~~~~~~
+%~~~~~~~~ Agradecimientos ~~~~~~~~
 % \input{covers/agradecimientos.tex}
 
 %~~~~~~~~ Index ~~~~~~~~
@@ -171,12 +171,12 @@
 %~~~~~~~~ Chapter ~~~~~~~~
 \input{defects/adatom.tex}
 
-%%~~~~~~~~ Chapter ~~~~~~~~
-%\input{bilayer_defect/bilayer_defect.tex}
-%
-%%~~~~~~~~ Chapter ~~~~~~~~
-%\input{defects/hyperfine.tex}
-%
+%~~~~~~~~ Chapter ~~~~~~~~
+\input{bilayer_defect/bilayer_defect.tex}
+
+%~~~~~~~~ Chapter ~~~~~~~~
+\input{defects/hyperfine.tex}
+
 %%~~~~~~~~ Chapter ~~~~~~~~
 %\input{artlat/artlat.tex}
 
@@ -213,11 +213,12 @@
 %%
 % ~~~~~~~~ Appendices ~~~~~~~~
 \appendix
- Slater-Koster hoppings
+% Slater-Koster hoppings
+\input{appendix/list_pub.tex}
 \input{appendix/SK.tex}
-%% Topological stuff
-%\input{appendix/qsh.tex}
-%\input{ann/ann.tex}
+% Topological stuff
+\input{appendix/qsh.tex}
+\input{ann/ann.tex}
 %%% % Low energy regime
 %%% \input{appendix/low_energy_regime.tex}
 %%% Models
@@ -226,8 +227,8 @@
 %%\input{appendix/cells.tex}
 %%%%% Quantum Gates
 %%%%\input{appendix/A.tex}
-%% Units
-%\input{appendix/B.tex}
+% Units
+\input{appendix/B.tex}
 %%%%% Effective exchange interaction
 %%%%\input{appendix/C.tex}
 
