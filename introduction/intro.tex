@@ -33,12 +33,13 @@ A complete list of my publications:
 % hyperfine & exchange
 % Qsimulator
 
-The initial goal of this thesis was the design of graphene based nuclear spin qubits very much inspired in the proposal for nuclear spin qubits in Silicon by B. E. Kane\cite{Kane1988}, but in the process of studying how to control the spin interactions of different hydrogen adatoms in graphene we thought of a different application of this platform, namely, analog quantum simulation of fermionic lattice models.
+The initial goal of this thesis was the design of graphene based nuclear spin qubits, very much inspired in the proposal for nuclear spin qubits in Silicon by B. E. Kane\cite{Kane1988}, in 1988. Nevertheless, in the process of studying the spin interactions among different hydrogen adatoms in graphene we thought of a different application of this platform, namely, analog quantum simulation of fermionic lattice models resulting in a broad study of a number of systems with interesting properties, and the promise for not-so-long-term applications.
+\smallskip
 
 % The quantum information would be stored in the nuclear spin of $\ce{H}$ adatoms chemisorbed on top of bilayer graphene and in order to interact with it we propose the use of electric gating which it is known to control the band gap of the system and, with it, the hyperfine interaction as well as the exchange interaction among adatoms.
 % \smallskip
 
-Every proposal for building qubits has to deal with two opposing requirements: the need for the qubits to be completely isolated from the environment and the need for them to interact quickly and strongly on demand so it can be read or written to.
+Every proposal for building qubits has to deal with two opposing requirements: the need for the qubits to be completely isolated from the environment and the need for them to interact quickly and strongly on demand so they can be read or written to.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{wrapfigure}{R}{0.5\textwidth}
 \centering
@@ -48,23 +49,35 @@ Every proposal for building qubits has to deal with two opposing requirements: t
 \caption{Sketch of the Kane's proposal for a silicon-based nuclear spin quantum computer. An electric gating $A$ controls the hyperfine interaction by increasing/decreasing the electronic density around the nucleus, allowing the isolation of the nuclear spin on demand. Similarly, an inter-qubit gate allows the interconnection of different qubits.}
 \label{kane_proposal}
 \end{wrapfigure}
-% \FloatBarrier
+\FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+The building blocks for Kane's proposal: ``Silicon-based nuclear spin quantum computer'', are $\ce{P}$ dopants in $\ce{Si}$ ($\ce{Si}:\leftidx{^{31}}{\ce{P}}$) since $\leftidx{^{31}}{\ce{P}}$. A necessary requirement for a quantum computer is the isolation of the qubits, $\ce{Si}$ was selected for its abundance of isotopes with nuclear spin $I=0$, in addition the huge industry behind computing ensures the know-how to manipulate this material as necessary. Once the host material was chosen, the options for donors were quite limited, in fact it turns out that the only shallow donor in $\ce{Si}$ with nuclear spin $I=1/2$ is Phosphorus, and in particular the isotope\cite{Feher1959, Wilson1961} $\leftidx{^{31}}{\ce{P}}$.
 
-In Kane's proposal: ``Silicon-based nuclear spin quantum computer'', $\ce{P}$ dopants in $\ce{Si}$ ($\ce{Si}:\leftidx{^{31}}{\ce{P}}$) were to be used as physical platform for the qubits. The quantum information would be stored in the nuclear spin of the $\ce{P}$ dopants ($I=1/2$) and the surrounding electronic spin ($S=1/2$) would be used to interact with it. This approach takes advantage of the naturally weak interaction with the nuclear spin and the high tunability of the surrounding electronic states.
+% In the original proposal, the quantum information would be stored in the nuclear spin of the $\ce{P}$ dopants ($I=1/2$) and the surrounding electronic spin ($S=1/2$) would be used to interact with it.
 
-When $\ce{P}$ dopants are introduced in $\ce{Si}$, an electron is confined in the vicinity of the dopant. The extension of such state can be as large as hundreds of ångströms so, if there are several dopants in the same area, the electronic states can act as an effective coupling among the nuclear spins of the dopants\cite{Slichter1990}. The coupling of the nuclear and the electronic spin is mediated by the hyperfine interaction so the spin state can be transferred between the nucleai and the electrons and the nuclear spin state may even be detectable by its effect on the electronic states\cite{Stich1996}.
+When $\ce{P}$ dopants are introduced in $\ce{Si}$, an electron is confined in the vicinity of the dopant. The extension of such state can be as large as hundreds of ångströms so, if there are several dopants in the same area, the electronic states can act as an effective coupling among the nuclear spins of the dopants\cite{Slichter1990}.
 
+This approach takes advantage of the naturally weak interaction with the nuclear spin and the high tunability of the surrounding electronic states.
+The coupling of the nuclear and the electronic spin is mediated by the hyperfine interaction so the spin state can be transferred between the nucleus and the electrons and the nuclear spin state may even be detectable by its effect on the electronic states\cite{Stich1996}.
 
-The control of these interactions was proposed via electric gating. The electronic states could be deformed in the vicinity of the $\ce{P}$ nucleus, thus increasing/decreasing the hyperfine interaction as shown in \fref{kane_proposal}.
-The interaction between different qubits could be switched on and off using electric gating as well although its implementation requires the dopants to be at a very specific distance (with atomic precision), which is definitely a challenge in this platform.
+% Three external parameters are necessary for this proposal: \begin{enumerate*}\item an electric gate above each donor to control the strength of the hyperfine interaction and, hence, the resonance frequency of the nuclear spins beneath them \item electric gates between the donors to turn on and off electron-mediated coupling between the nuclear spins \item a globally applied A.C. magnetic field to flip nuclear spins at resonance.\end{enumerate*}
+
+In order to control the interactions in this system an electric gate on top of each of the dopants is required. The electronic states could be deformed in the vicinity of the $\ce{P}$ nucleus, thus increasing/decreasing the hyperfine interaction, as shown in \fref{kane_proposal}, resulting in a shift of the resonance frequency for the spin flip.
+The interaction between different qubits could be switched on and off using electric gating as well although its implementation requires the dopants to be at a very specific distance (with atomic precision), which is definitely a challenge in this platform. Similarly the idea is to increase/decrease the electronic density in the inter-qubit space in order to allow/prevent the propagation of the spin information.
 % Morello? Experimental status?
 \medskip
 
-Our proposal replaces $\ce{Si}$ by bilayer graphene and the $\ce{P}$ dopants by $\ce{H}$ adatoms. This systems provides the same ingredients: a nuclear spin $I=1/2$ and an electronic spin $S=1/2$ spatially close to them. The electronic states in graphene (and graphene bilayer) are known to be highly tunable, in particular an external electric field would allow the control of the relevant properties in this system.
+\section{Our proposal}
+Our proposal replaces the $\ce{P}$ dopants in $\ce{Si}$ by $\ce{H}$ adatoms on bilayer graphene.
+This system provides the same ingredients: a host with virtually no nuclear spin impurities\footnote{The abundance of Carbon isotopes with nuclear spin $I=0$ is $\sim98.9\%$ while this number for Silicon is $\sim92.2\%$}, a dopant with nuclear spin $I=1/2$ and a surrounding electronic spin $S=1/2$ spatially bounded to them.
+The electronic states in graphene (and graphene bilayer) are known to be highly tunable, in particular an external electric field would allow the control of the relevant properties in this system such as the localization length of the electronic states.
 
-One of the advantages of bilayer graphene over $\ce{Si}:\leftidx{^{31}}{\ce{P}}$ is that nowadays there are methods to place the $\ce{H}$ adatoms with atomic precision and in a reversible way\cite{elias2009,Brihuega2016,Brihuega2017}
-Another advantage is that the electric control of the interactions happens naturally since bilayer graphene opens a band gap on the application of an external electric field\cite{McCann2006, Castro2007, Oostinga2007, Zhang2009, Taychatanapat2010, Castro2010a, Ponomarenko2011, Allen2012, Sui2015}. This tunable band gap provides a handy knob to control the localization length of the electronic states which results in the control of its effective electron-electron interactions as well as the interactions with the nuclear spins.
+% XXX picture of the system
+
+The initial reason to consider this system was the tunability of a band gap upon the application of an external electric field\cite{McCann2006, Castro2007, Oostinga2007, Zhang2009, Taychatanapat2010, Castro2010a, Ponomarenko2011, Allen2012, Sui2015}.
+This tunable band gap provides a handy knob to control the localization length of the electronic states which results in the control of its effective electron-electron interactions as well as the interactions with the nuclear spins.
+
+Another advantages of bilayer graphene over $\ce{Si}:\leftidx{^{31}}{\ce{P}}$ is that nowadays there are methods to place the $\ce{H}$ adatoms with atomic precision and in a reversible way\cite{elias2009,Brihuega2016,Brihuega2017}. In particular round 20 $\ce{H}$ atoms have already been placed in a single sample and, in principle, there should be no physical limit since the process could be automatized for larger arrays.
 \medskip
 
 The study of the tunable interactions in this system led us to the realization that $\ce{H}$ adatoms on bilayer graphene provide a framework where localized states can be placed at will and where the interactions among them are highly tunable upon the application of an external electric field.
@@ -81,10 +94,9 @@ The low energy effective model of graphene is probably the most studied in the h
 
 Nevertheless, it looks like superconductivity will not give up its secrets so easily since, even though the low energy Hamiltonian of graphene is very well known, its extension to the twisted bilayer is not so easy.
 It is probably too soon to tell but the introduction of superconductivity in the graphene/2d-materials community my be a game changer for this hundred year old problem of superconductivity.
-\bigskip
 
 
-
+\section{Scope of this thesis}
 This thesis approaches these systems mainly from a computational point of view.
 %
 %Condensed Matter Physics is an immensely broad topic. It encompasses many different systems at different scales and with many different approaches.
@@ -138,10 +150,10 @@ Some of these materials will be mentioned during the thesis, but graphene will b
 
 
 
-The reason to focus on bilayer graphene was that it presents a property that is really hard to find in other materials. Bilayer graphene undergoes a transition from conductor to insulator in the presence of an electric field.
-Opening and closing a gap is a very powerful resource when dealing with electronic states since it affects the spatial localization of the electrons and many properties depend on this. In particular it is very interesting to consider a number of quasi-localized electronic states placed at the correct distance for the change in localization via gap-opening to influence their interactions.
-Even, going one step further, it is not far-fetched to think of an scenario in which we can combine the this tunable gap with some spin interactions being able to tune the electronic states for each spin channel independently.
-\bigskip
+% The reason to focus on bilayer graphene was that it presents a property that is really hard to find in other materials. Bilayer graphene undergoes a transition from conductor to insulator in the presence of an electric field.
+% Opening and closing a gap is a very powerful resource when dealing with electronic states since it affects the spatial localization of the electrons and many properties depend on this. In particular it is very interesting to consider a number of quasi-localized electronic states placed at the correct distance for the change in localization via gap-opening to influence their interactions.
+% Even, going one step further, it is not far-fetched to think of an scenario in which we can combine the this tunable gap with some spin interactions being able to tune the electronic states for each spin channel independently.
+% \bigskip
 
 
 %Considering this playground of tunable gaps and electrically controlled  localization lengths we considered the role of defects in bilayer graphene and their behavior under the influence of external fields. In particular Hydrogen, $\ce{H}$, chemisorbed adatoms will play a major role in this thesis.
