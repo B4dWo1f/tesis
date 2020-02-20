@@ -39,8 +39,12 @@ for c in cites:
    if '@article' in entry:
       articles.append(c)
 
+cont = 0
 for cite in articles:
-   print('\nDoing',cite)
    url = get_url(cite)
    if not 'arxiv' in url:
+      print('\nDoing',cite)
       print(url)
+      cont += 1
+
+print(f'\n\n{cont} papers without arxiv')
