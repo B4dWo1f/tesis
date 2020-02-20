@@ -16,22 +16,40 @@
 
 Graphene is one of the most studied materials in history\cite{KatsnelsonBook, Geim2007, Murakami2009, CastroNeto2009a, Mas-Balleste2011, Konschuh2011a, Cooper2012, Han2014, Sadurni2014, Rozhkov2016}.
 Even before its experimental discovery\cite{Novoselov2004, Novoselov2005}, extensive research was devoted to it\cite{Wallace1947, VanBommel1975, Semenoff1984, Haldane1988, Forbeaux1998, Oshima2000}.
-All the basic properties have been discussed profusely, yet, for the sake of completeness, I will make a brief recap of all the properties relevant for the rest of this thesis.\\
+All the basic properties have been discussed profusely, yet, for the sake of completeness, I will make a brief recap of all the properties relevant for the rest of this thesis.
+\medskip
 
 %XXX
 % Graphene properties summary
+% 0 gap semiconductor
 % ambipolar field effect
 % Hall
-% 0 gap semiconductor
 % large mobility
 % mechanical properties
 % dirac electrons
-% 
-% 2 modelos, 1 orb, 4 orb, SK
 
+% 2 modelos, 1 orb, 4 orb, SK
 Graphene consists of a two-dimensional array of carbon atoms arranged in a honeycomb structure\cite{Huang2011} % TODO more references
 like the one shown in \fref{graphene_summary}(a,b).
+
+It has a peculiar band structure featuring two pairs of opposing cones touching exactly at the Fermi level. There are two main characteristics to highlight from this configuration, first, that the pairs of cones meet in a single point at the Fermi energy, and second, that the dispersion of the band structure is exactly linear for low energies.
+This band structure is very unusual since it has available states for conduction infinitesimally close to the Fermi level (like a metal) but it has no Fermi surface (like a semiconductor/insulator). For this reason it is usually defined as a zero-gap semiconductor.
+The linear dispersion of the band structure is responsible for the strong modulation of the electric conductivity upon the application of an electric field. This phenomenon, usually known as field effect, is due to the strong doping induced via electric gating, which moves the Fermi level across the cones resulting in an important increase of the carriers density available for conduction. Also, since the band structure is symmetric around the Fermi Energy (electron-hole symmetry) this field effect can be induced for both electrons and holes.
+\medskip
+
+Another consequence of the band structure is the observed \ac{qhe}\cite{Zheng2002,Zhang2005,Gusynin2005,Peres2006a,Brey2006,Fertig2007,Ostrovsky2008,Fujita2016}. Graphene presents a half integer \ac{qhe} due to the topological nature of its band structure.
+\bigskip
+
+
+
+
+
+
 Unless otherwise stated, we will consider that the unstrained atomic distance between carbon atoms is $d_{\ce{C}-\ce{C}}=a=\SI{1.4}{\angstrom}$ in accordance with literature\cite{KatsnelsonBook, Cooper2012, Ishigami2007}. % TODO more biblio
+
+The band structure at low energy is composed solely of $p_z$ orbitals and it presents two distinctive set of cones at the $K$ and $K'$ points (see \fref{bandsG}). This two cones meet exactly at the Fermi energy resulting in a very peculiar configuration. This band structure is usually referred to as a zero gap semiconductor. It has characteristics from both conductors and semiconductors, namely, the Fermi surface has measure zero (it is a single point per cone), but it has available states infinitely close.
+
+Such a peculiar band structure shows a strong field-effect transistor allows the control of in-plane electric current by applying a voltage bias, what is usually 
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
