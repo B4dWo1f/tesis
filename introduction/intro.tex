@@ -1,30 +1,4 @@
 %~~~~~~~~ Chapter ~~~~~~~~
-\chapter{List of Publications}
-A complete list of my publications:
-\begin{itemize}
-   \item Coupling of the $\ce{As}$ $A_{1g}$ phonon to magnetism in iron pnictides\cite{Garcia-Martinez2013}
-
-   \item Interaction-driven phases in the half-filled spinless honeycomb lattice from exact diagonalization\cite{Garcia-Martinez2013a}
-
-   \item Edge states in graphene-like systems\cite{Lado2015}
-
-   \item Quantum spin Hall phase in multilayer graphene\cite{Garcia-Martinez2015}
-
-   \item Anomalous magnetism in hydrogenated graphene\cite{Garcia-Martinez2017}
-
-   \item Real-space mapping of topological invariants using artificial neural networks\cite{Carvalho2018}
-
-   \item Electrical spin manipulation in graphene nanostructures\cite{Ortiz2018}
-
-   \item Van der Waals spin valves\cite{Cardoso2018}
-
-   \item Exchange Rules for Diradical $\pi$-Conjugated Hydrocarbons\cite{Ortiz2019}
-
-   \item Designer fermion models in functionalized graphene bilayers\cite{Garcia-Martinez2019}
-\end{itemize}
-
-
-
 % ~~~~ Introduction ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \chapter{Introduction}
 \label{ch:introduction}
@@ -33,13 +7,13 @@ A complete list of my publications:
 % hyperfine & exchange
 % Qsimulator
 
-The initial goal of this thesis was the design of graphene based nuclear spin qubits, very much inspired in the proposal for nuclear spin qubits in Silicon by B. E. Kane\cite{Kane1988}, in 1988. Nevertheless, in the process of studying the spin interactions among different hydrogen adatoms in graphene we thought of a different application of this platform, namely, analog quantum simulation of fermionic lattice models resulting in a broad study of a number of systems with interesting properties, and the promise for not-so-long-term applications.
-\smallskip
+The initial goal of this thesis was the design of graphene based nuclear spin qubits, very much inspired in the proposal for nuclear spin qubits in Silicon by B. E. Kane\cite{Kane1988}, in 1988. Nevertheless, in the process of studying the spin interactions among hydrogen adatoms in graphene we thought of another application for this platform, namely, analog quantum simulation of fermionic lattice models resulting in a broad study of a number of systems with interesting properties, and the promise for not-so-long-term applications.
+\medskip
 
 % The quantum information would be stored in the nuclear spin of $\ce{H}$ adatoms chemisorbed on top of bilayer graphene and in order to interact with it we propose the use of electric gating which it is known to control the band gap of the system and, with it, the hyperfine interaction as well as the exchange interaction among adatoms.
 % \smallskip
 
-Every proposal for building qubits has to deal with two opposing requirements: the need for the qubits to be completely isolated from the environment and the need for them to interact quickly and strongly on demand so they can be read or written to.
+But let us start from the beginning. Every proposal for building qubits has to deal with two opposing requirements: the need for the qubits to be completely isolated from the environment and the need for them to interact quickly and strongly on demand so they can be read or written to.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{wrapfigure}{R}{0.5\textwidth}
 \centering
@@ -51,44 +25,51 @@ Every proposal for building qubits has to deal with two opposing requirements: t
 \end{wrapfigure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-The building blocks for Kane's proposal: ``Silicon-based nuclear spin quantum computer'', are $\ce{P}$ dopants in $\ce{Si}$ ($\ce{Si}:\leftidx{^{31}}{\ce{P}}$) since $\leftidx{^{31}}{\ce{P}}$. A necessary requirement for a quantum computer is the isolation of the qubits, $\ce{Si}$ was selected for its abundance of isotopes with nuclear spin $I=0$, in addition the huge industry behind computing ensures the know-how to manipulate this material as necessary. Once the host material was chosen, the options for donors were quite limited, in fact it turns out that the only shallow donor in $\ce{Si}$ with nuclear spin $I=1/2$ is Phosphorus, and in particular the isotope\cite{Feher1959, Wilson1961} $\leftidx{^{31}}{\ce{P}}$.
+Kane's proposal: ``Silicon-based nuclear spin quantum computer'' deals with the first requirement in the following way. The quantum information is to be stored in the nuclear spin of Phosphorus atoms inserted in a matrix of Silicon ($\ce{Si}:\leftidx{^{31}}{\ce{P}}$). The $\ce{Si}$ was selected for its abundance of isotopes with nuclear spin $I=0$ in addition to the huge industry behind it, ensuring the know-how to manipulate this material as needed. Once the host material was chosen, the options for donors were quite limited, in fact it turns out that the only shallow donor in $\ce{Si}$ with nuclear spin $I=1/2$ is Phosphorus and, in particular, the isotope $\leftidx{^{31}}{\ce{P}}$. In addition, a number of studies\cite{Feher1959, Wilson1961, Waugh1988} show that its nuclear spin relaxation time can exceed 10 hours, and it is likely to be as high as $10^{18}$ seconds for lower temperatures. % phonon
 
-% In the original proposal, the quantum information would be stored in the nuclear spin of the $\ce{P}$ dopants ($I=1/2$) and the surrounding electronic spin ($S=1/2$) would be used to interact with it.
-
-When $\ce{P}$ dopants are introduced in $\ce{Si}$, an electron is confined in the vicinity of the dopant. The extension of such state can be as large as hundreds of ångströms so, if there are several dopants in the same area, the electronic states can act as an effective coupling among the nuclear spins of the dopants\cite{Slichter1990}.
-
-This approach takes advantage of the naturally weak interaction with the nuclear spin and the high tunability of the surrounding electronic states.
-The coupling of the nuclear and the electronic spin is mediated by the hyperfine interaction so the spin state can be transferred between the nucleus and the electrons and the nuclear spin state may even be detectable by its effect on the electronic states\cite{Stich1996}.
+When $\ce{P}$ dopants are introduced in $\ce{Si}$, an electron is confined in the vicinity of the dopant. The extension of such state can be as large as hundreds of ångströms so, if there are several dopants in the same area, the electronic states can act as an effective coupling among their nuclear spins\cite{Slichter1990}.
 
 % Three external parameters are necessary for this proposal: \begin{enumerate*}\item an electric gate above each donor to control the strength of the hyperfine interaction and, hence, the resonance frequency of the nuclear spins beneath them \item electric gates between the donors to turn on and off electron-mediated coupling between the nuclear spins \item a globally applied A.C. magnetic field to flip nuclear spins at resonance.\end{enumerate*}
 
-In order to control the interactions in this system an electric gate on top of each of the dopants is required. The electronic states could be deformed in the vicinity of the $\ce{P}$ nucleus, thus increasing/decreasing the hyperfine interaction, as shown in \fref{kane_proposal}, resulting in a shift of the resonance frequency for the spin flip.
-The interaction between different qubits could be switched on and off using electric gating as well although its implementation requires the dopants to be at a very specific distance (with atomic precision), which is definitely a challenge in this platform. Similarly the idea is to increase/decrease the electronic density in the inter-qubit space in order to allow/prevent the propagation of the spin information.
+In order to control the interactions in this system an electric gate on top of each of the dopants is required. The electronic states could be deformed in the vicinity of the $\ce{P}$ nucleus, as shown in \fref{kane_proposal}, increasing/decreasing the hyperfine interaction resulting in a shift of the resonance frequency for the spin flip.
+The interaction between different qubits could be switched on and off using electric gating as well although its implementation requires, among other things, the dopants to be at a very specific distance (with atomic precision), which is definitely a challenge in this platform. Similarly the idea is to increase/decrease the electronic density in the inter-qubit space in order to allow/prevent the propagation of the spin information.
+% XXX finish
 % Morello? Experimental status?
-\medskip
+
+
+This approach takes advantage of the naturally weak interactions with the nuclear spin and the high tunability of the surrounding electronic states.
+The coupling of the nuclear and the electronic spin is mediated by the hyperfine interaction so the spin state can be transferred between the nucleus and the electrons.
+
+Another big challenge is the detection of the spin time at any given time of any of the components. Although there is not an ultimate answer for this problem, there are many ideas to work around it. The simplest option could be the use of a number of qubits all in parallel so the macroscopic magnetization could be measured. If the nuclear spins are incorporated into an electronic devices it is possible to infer the nuclear spin based on the electronic properties.\cite{Kane1992,Wald1994,Stich1996,Dixon1997,Dobers1988,Stegner2006}.
 
 \section{Our proposal}
 Our proposal replaces the $\ce{P}$ dopants in $\ce{Si}$ by $\ce{H}$ adatoms on bilayer graphene.
-This system provides the same ingredients: a host with virtually no nuclear spin impurities\footnote{The abundance of Carbon isotopes with nuclear spin $I=0$ is $\sim98.9\%$ while this number for Silicon is $\sim92.2\%$}, a dopant with nuclear spin $I=1/2$ and a surrounding electronic spin $S=1/2$ spatially bounded to them.
+This system provides the same ingredients: a host with virtually no nuclear spin impurities,\footnote{The abundance of Carbon isotopes with nuclear spin $I=0$ is $\sim98.9\%$ while this number for Silicon is $\sim92.2\%$}, a dopant with nuclear spin $I=1/2$ and a surrounding electronic spin $S=1/2$ spatially bounded to them.
+
+The purer composition of $\ce{C}$ will translate in less decoherence for the $\ce{H}$ nuclear spin, resulting in longer relaxation times. The nuclear-electron interaction is mediated by the hyperfine coupling which only exists for $s$-orbitals, and the $1s$ level is the one binding the electron closest to the nucleus, making $\ce{H}$ a good candidate.
+%
+At the same time, the chemisorption of the $\ce{H}$ adatom binds strongly its electron to the $\pi$ electrons of graphene, removing most of it from the $s$-orbital, luckily the occupation of this orbital is highly tunable via electric gating. This tunability is a key element for this proposal since it is the mechanism that will allow us to switch on and off the interactions with the qubits.
+
 The electronic states in graphene (and graphene bilayer) are known to be highly tunable, in particular an external electric field would allow the control of the relevant properties in this system such as the localization length of the electronic states.
 
 % XXX picture of the system
 
-The initial reason to consider this system was the tunability of a band gap upon the application of an external electric field\cite{McCann2006, Castro2007, Oostinga2007, Zhang2009, Taychatanapat2010, Castro2010a, Ponomarenko2011, Allen2012, Sui2015}.
-This tunable band gap provides a handy knob to control the localization length of the electronic states which results in the control of its effective electron-electron interactions as well as the interactions with the nuclear spins.
+The initial reason to consider this system was the possibility of opening a band gap upon the application of an external electric field\cite{McCann2006, Castro2007, Oostinga2007, Zhang2009, Taychatanapat2010, Castro2010a, Ponomarenko2011, Allen2012, Sui2015}.
+This conductor to insulator transition provides a handy knob to control the localization length of the electronic states which results in the control of its effective electron-electron interactions as well as the interactions with the nuclear spins.
 
-Another advantages of bilayer graphene over $\ce{Si}:\leftidx{^{31}}{\ce{P}}$ is that nowadays there are methods to place the $\ce{H}$ adatoms with atomic precision and in a reversible way\cite{elias2009,Brihuega2016,Brihuega2017}. In particular round 20 $\ce{H}$ atoms have already been placed in a single sample and, in principle, there should be no physical limit since the process could be automatized for larger arrays.
+Another advantage of using $\ce{H}$ adatoms on top of bilayer graphene over $\ce{Si}:\leftidx{^{31}}{\ce{P}}$ is that nowadays there are methods to place the $\ce{H}$ adatoms with atomic precision and in a reversible way\cite{elias2009,Brihuega2016,Brihuega2017}. In particular around 20 $\ce{H}$ atoms have already been placed in a single sample and, in principle, there should be no physical limit since the process could be automatized for larger arrays.
 \medskip
 
 The study of the tunable interactions in this system led us to the realization that $\ce{H}$ adatoms on bilayer graphene provide a framework where localized states can be placed at will and where the interactions among them are highly tunable upon the application of an external electric field.
-Such a system is the ideal playground to implement physical realizations of a wide variety of hamiltonians.
+Such a system is the ideal playground to implement physical realizations of a wide variety of hamiltonians, the ultimate goal for analog quantum simulations.
 %The ability to engineer physical system to realize model hamiltonians is a long wished goal in the analogue quantum simulations community.
-In particular, our analysis show that by carefully choosing the placement of the adatoms (the distance and relative position among them) one can engineer the interactions to transition from weakly to strongly interacting systems where $U\gg t$
+In particular, our analysis show that by carefully choosing the placement of the adatoms (the distance and relative position among them) one can engineer the electron-electron interactions to explore both weakly and strongly interacting systems.
 \bigskip
 
 This situation in which we can create localized electronic states at will and engineer the electron-electron interactions is specially appealing after the recent discovery of an unconventional superconducting phase in twisted bilayer graphene\cite{Cao2018,Cao2018a}.
 Even though it will not be discussed in the thesis, it is worth pointing out the similarities between our proposal and the newly found twisted bilayer graphene physics.
 In order to get superconductivity in twisted bilayer graphene two requirements are to be met. First, the twisting angle needs to take a very low (and particular) value. This requirement ensures the emergence of a Moire pattern which is responsible for the localization of electronic states in the boundaries between domains. This localized states result in the emergence of (almost) flat bands all over the Brillouin zone and very close to the Fermi energy. Second, the fine tuning of the filling factor is key to place the Fermi level in the middle of the flat bands and conveniently tune the electron-electron interaction.
+
 The resulting phase diagram is quite similar to that of the cuprates family what may suggest a similar microscopic mechanism for superconductivity to appear. The big difference is that while cuprates are a somewhat complex material, the chemistry of graphene has been very well known for a long time, and the behavior of the $p$ orbitals (rather than $d$ orbitals) is much simpler.
 The low energy effective model of graphene is probably the most studied in the history of Condensed Matter Physics so one may expect that studying the complex problem of unconventional superconductivity would be easier in this case.
 
@@ -111,7 +92,7 @@ In contrast I think this ``equidistance'' provides a privileged position to expl
 This thesis revolves around graphene and graphene-based systems, with a special focus on the applications of a particular case: bilayer graphene.
 %One can find a number of reasons for choosing graphene: it is (was) a relatively new material, it has many physically interesting properties and the potential for plenty of applications, it draws a lot of attention form the research community...
 One could say that the scientific community may have gone through an ``interest bubble'' involving graphene and, as a consequence, it has been advertised as a miraculous material with the potential to change the world as we know it. I will not address the controversy of the almighty properties of graphene but I would like to briefly address the graphene hype within the scientific community.
-In order to have a somewhat quantitative description of the graphene hype I have analyzed the book of abstracts of the APS March Meeting since 2005 until 2017.\footnote{notice that 2018 is missing since I could not find the pdf for the full book of abstracts}
+In order to have a somewhat quantitative description of the graphene hype I have analyzed the book of abstracts of the APS March Meeting since 2005 until 2019.\footnote{notice that 2018 is missing since I could not find the pdf for the full book of abstracts}
 The analysis counts the number of abstracts containing a given term (or groups of terms) and normalizes the count to the total number of abstracts that year.
 This quantity is a very rough estimate, of course, but the resulting count is arguably related to the interest of the condensed matter community on a certain topic.
 
@@ -126,7 +107,7 @@ This quantity is a very rough estimate, of course, but the resulting count is ar
 %\FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-The case of graphene, first block of bars in \fref{topics}, is very interesting, since one can see its raise since (almost) its discovery and the beginning of its decay. This trend is a strong indicator of a possible interest bubble, but I would like to point out the trend over the years of the terms next to it in \fref{topics}: topolog\textcolor{gray}{[y,ical]}, 2d, dirac, \textcolor{gray}{quantum-,spin-,anomalous-}hall, dichal\textcolor{gray}{cogenides, $\ce{MoS2}$,$\ce{WS2}$,$\ce{WSe2}$}\footnote{the terms in grey are grouped during the counting process}.
+The case of graphene, first block of bars in \fref{topics}, is very interesting, since one can see its raise since (almost) its discovery and the beginning of its decay. This trend is a strong indicator of a possible interest bubble, but I would like to point out the trend over the years of the terms next to it in \fref{topics}: topolog\textcolor{gray}{[y,ical]}, 2d, dirac, \textcolor{gray}{quantum-,spin-,anomalous-}hall, dichal\textcolor{gray}{cogenides, $\ce{MoS2}$, $\ce{WS2}$, $\ce{WSe2}$}\footnote{the terms in grey are grouped during the counting process}.
 All of these terms are undoubtedly related to graphene an clearly they show a steadily growing trend.
 \medskip
 
@@ -135,9 +116,11 @@ Graphene itself is very interesting and it probably deserves all the fame and at
 The understanding of graphene has been the spark to start the race of two dimensional materials research. \ac{2dm} are a very interesting family of materials both form an applied point of view and from the perspective of fundamental research.
 On one hand, any industry-related property (conductance tunability, magnetism...) becomes instantly interesting just because its 2D nature ensures smaller sizes and possibly cheaper products.
 On the other hand their 2D nature place them right in the frontier between the classical and quantum regime: they are macroscopic (sometimes reaching millimeters) but being one atom thick there are non negligible quantum effects all over the place, what makes the fascinating from the fundamental physics point of view.
-Since the discovery of graphene many other bidimensional materials have been synthesized: $\ce{MoS2}$, $\ce{WSe2}$, $\ce{MoT2}$, $\ce{BN}$, $\ce{CrI3}$, $\ce{NbSe2}$, $\ce{TaS2}$, $\ce{MnBi2Te4}$... each with their unique set of properties and its list of possible applications. But everything started with graphene.
+Since the discovery of graphene many other bidimensional materials have been synthesized: $\ce{MoS2}$, $\ce{WSe2}$, $\ce{MoT2}$, $\ce{BN}$, $\ce{CrI3}$, $\ce{NbSe2}$, $\ce{TaS2}$, $\ce{MnBi2Te4}$... each with their unique set of properties and its list of possible applications in the rapidly growing field of Quantum Technologies. % Footnote to the flagship?
+%But everything started with graphene.
 Some of these materials will be mentioned during the thesis, but graphene will be the common thread through out the thesis.
 %\bigskip
+
 
 %One of the most interesting properties of graphene is that, being two dimensional, it is all surface, and electrons living in surfaces respond strongly to external perturbations.
 %If a superconductor is placed nearby, electrons in graphene will behave in a superconductor way\cite{},
@@ -160,8 +143,32 @@ Some of these materials will be mentioned during the thesis, but graphene will b
 %
 %This kind of defects produce quasi-localized electronic states around them, and the localization length of these states is strongly determined by the band gap in the system. Without going into much detail for now, we focused in the spin interactions in such a system. On one hand the chemisorbed $\ce{H}$ atoms trap a single electron ($S=1/2$) in their vicinity, on the other hand, their nucleus consists of a single proton ($I=1/2$), and the interaction between them is controlled, again, by the spreading of the electronic state.
 
-
 \bigskip
+A complete list of my publications:
+\begin{itemize}
+   \item Coupling of the $\ce{As}$ $A_{1g}$ phonon to magnetism in iron pnictides\cite{Garcia-Martinez2013}
+
+   \item Interaction-driven phases in the half-filled spinless honeycomb lattice from exact diagonalization\cite{Garcia-Martinez2013a}
+
+   \item Edge states in graphene-like systems\cite{Lado2015}
+
+   \item Quantum spin Hall phase in multilayer graphene\cite{Garcia-Martinez2015}
+
+   \item Anomalous magnetism in hydrogenated graphene\cite{Garcia-Martinez2017}
+
+   \item Real-space mapping of topological invariants using artificial neural networks\cite{Carvalho2018}
+
+   \item Electrical spin manipulation in graphene nanostructures\cite{Ortiz2018}
+
+   \item Van der Waals spin valves\cite{Cardoso2018}
+
+   \item Exchange rules for diradical $\pi$-Conjugated Hydrocarbons\cite{Ortiz2019}
+
+   \item Designer fermion models in functionalized graphene bilayers\cite{Garcia-Martinez2019}
+\end{itemize}
+
+
+
 \bigskip
 The rest of this thesis is structured as follows. \chref{ch:graphene} and \chref{ch:bilayer} review the basic properties of graphene and bilayer graphene respectively, as well as most of the methods of calculation used along the thesis.
 
