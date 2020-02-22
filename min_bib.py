@@ -33,18 +33,8 @@ for line in all_cites:
 
 cites = list(set(cites))
 cites = [c for c in cites if len(c)>0]
-articles = []
-for c in cites:
-   entry = get_entry(c)
-   if '@article' in entry:
-      articles.append(c)
 
 cont = 0
-for cite in articles:
-   url = get_url(cite)
-   if not 'arxiv' in url:
-      print('\nDoing',cite)
-      print(url)
-      cont += 1
-
-print(f'\n\n{cont} papers without arxiv')
+for cite in cites:
+   print(get_entry(cite))
+   print()

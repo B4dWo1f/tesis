@@ -15,7 +15,7 @@
 %   - Topological phases (Z2, edge states, Kane Mele model)
 
 Graphene is one of the most studied materials in history\cite{KatsnelsonBook, Geim2007, Murakami2009, CastroNeto2009a, Mas-Balleste2011, Konschuh2011a, Cooper2012, Han2014, Sadurni2014, Rozhkov2016}.
-Even before its experimental discovery\cite{Novoselov2004, Novoselov2005}, extensive research was devoted to it\cite{Wallace1947, VanBommel1975, Semenoff1984, Haldane1988, Forbeaux1998, Oshima2000}.
+Even before its experimental discovery, extensive research was devoted to it\cite{Novoselov2004, Novoselov2005,Wallace1947, VanBommel1975, Semenoff1984, Haldane1988, Forbeaux1998, Oshima2000}.
 All the basic properties have been discussed profusely, yet, for the sake of completeness, I will make a brief recap of all the properties relevant for the rest of this thesis.
 \medskip
 
@@ -23,46 +23,63 @@ All the basic properties have been discussed profusely, yet, for the sake of com
 % Graphene properties summary
 % 0 gap semiconductor
 % ambipolar field effect
+% dirac electrons
 % Hall
 % large mobility
 % mechanical properties
-% dirac electrons
 
 % 2 modelos, 1 orb, 4 orb, SK
 Graphene consists of a two-dimensional array of carbon atoms arranged in a honeycomb structure\cite{Huang2011} % TODO more references
 like the one shown in \fref{graphene_summary}(a,b).
 
+%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{wrapfigure}{R}{0.5\textwidth}
+\centering
+\vspace{-10pt}
+\includegraphics[width=0.48\textwidth]{graphene/figures/bands_min.pdf}
+\vspace{-7pt}
+\caption{a) Band structure of graphene over the whole Brillouin Zone. Notice the cones in the $K$ and $K'$ points. b) Contour plot over the Brillouin Zone marking the high symmetry points.}
+\label{G_bands_min}
+\end{wrapfigure}
+\FloatBarrier
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
 It has a peculiar band structure featuring two pairs of opposing cones touching exactly at the Fermi level. There are two main characteristics to highlight from this configuration, first, that the pairs of cones meet in a single point at the Fermi energy, and second, that the dispersion of the band structure is exactly linear for low energies.
-This band structure is very unusual since it has available states for conduction infinitesimally close to the Fermi level (like a metal) but it has no Fermi surface (like a semiconductor/insulator). For this reason it is usually defined as a zero-gap semiconductor.
-The linear dispersion of the band structure is responsible for the strong modulation of the electric conductivity upon the application of an electric field. This phenomenon, usually known as field effect, is due to the strong doping induced via electric gating, which moves the Fermi level across the cones resulting in an important increase of the carriers density available for conduction. Also, since the band structure is symmetric around the Fermi Energy (electron-hole symmetry) this field effect can be induced for both electrons and holes.
+
+This band structure is very unusual since it has available states for conduction infinitesimally close to the Fermi level (like a metal) but it has no Fermi surface (like a semiconductor or insulator). For this reason it is usually defined as a zero-gap semiconductor.
+
+The linear dispersion of the band structure is responsible for the strong modulation of the electric conductivity upon the application of an electric field. This phenomenon, usually known as field effect, is due to the strong doping induced via electric gating, which moves the Fermi level across the cones resulting in an important increase of the carriers density available for conduction which can be either electrons or holes since the band structure is symmetric around the Fermi Energy (electron-hole symmetry).
 \medskip
 
-Another consequence of the band structure is the observed \ac{qhe}\cite{Zheng2002,Zhang2005,Gusynin2005,Peres2006a,Brey2006,Fertig2007,Ostrovsky2008,Fujita2016}. Graphene presents a half integer \ac{qhe} due to the topological nature of its band structure.
-\bigskip
+The linear dispersion is of special interest not only for the condensed matter community but also for the high energy. The electrons  subjected to this linear dispersion are mathematically equivalent to having massless spin $1/2$ particles obeying the Dirac's equation. This equivalency is quite straight forward from the analytical calculation of the tight-binding and is explored in detail later on.
+\medskip
+
+Another consequence of the band structure is the observed \ac{qhe}\cite{Zheng2002,Zhang2005,Gusynin2005,Peres2006a,Brey2006,Fertig2007,Ostrovsky2008,Fujita2016}. Graphene presents a half integer \ac{qhe} due to the topological nature of its band structure, which arises from a non-trivial Berry phase.
+
+Although not measured experimentally, graphene is expected to be a \ac{ti}, meaning that when all the interactions are taken into account, particularly the \ac{soc}, the described linear dispersion is supposed to open a small gap, in the order of a few $\si{\micro\eV}$ %XXX check
+which would be impossible to see due to temperature smearing and device precision.
+This gap nonetheless is not a standard insulating band gap. In finite samples the band structure would appear gapped everywhere, but two conducting channels would appear on the edges of the sample.
+This conducting states, spatially bounded to the edge of the system, are the so-called topological edge states and are known to be robust against any perturbation (that does not close the gap by breaking time-reversal symmetry).  %XXX check
+
+Appendices \ref{ch:QSH} and \ref{ch:ANN} are two published papers which expand on these topics. The former explores the topological character of few-layer-graphene exploring the proximity effect of different materials. The later explores the bulk-edge correspondence using neural networks to estimate the topological phase of some systems based only on a subset of the density matrix corresponding to the bulk region.
 
 
 
-
-
-
+\section{Basic definitions}
 Unless otherwise stated, we will consider that the unstrained atomic distance between carbon atoms is $d_{\ce{C}-\ce{C}}=a=\SI{1.4}{\angstrom}$ in accordance with literature\cite{KatsnelsonBook, Cooper2012, Ishigami2007}. % TODO more biblio
 
-The band structure at low energy is composed solely of $p_z$ orbitals and it presents two distinctive set of cones at the $K$ and $K'$ points (see \fref{bandsG}). This two cones meet exactly at the Fermi energy resulting in a very peculiar configuration. This band structure is usually referred to as a zero gap semiconductor. It has characteristics from both conductors and semiconductors, namely, the Fermi surface has measure zero (it is a single point per cone), but it has available states infinitely close.
-
-Such a peculiar band structure shows a strong field-effect transistor allows the control of in-plane electric current by applying a voltage bias, what is usually 
-
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \centering
 \includegraphics{graphene/figures/graphene_summary.pdf}
 \vspace{-5pt}
 \caption{$a)$ STM image of graphene taken from ref~\cite{Huang2011}. $b)$ Cartoon depiction of the atomic structure of graphene using the lattice vectors defined in \eqref{latt_vec} and the Wigner-Seitz cell. $c)$ Reciprocal vectors $\vec{b}_i$ and two representations of the FBZ. $d)$ Band structure and DOS of graphene calculated in the tight-binding approximation (details later in the text).}
 \label{graphene_summary}
 \end{figure}
-\FloatBarrier
+% \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-The honeycomb structure is not a Bravais lattice, so, in order to describe the system in terms of Bloch functions, we have to choose a unit cell and the appropriate lattice vectors to tessellate the space.
+The honeycomb structure is not a Bravais lattice so, in order to describe the system in terms of Bloch functions, we have to choose a unit cell and the appropriate lattice vectors to tessellate the space.
 Naturally there are infinite possibilities to do so, but the simplest one is that depicted in \fref{graphene_summary}b).
 %The simplest unit cell and  Bravais lattice with which we can describe graphene is the one depicted in \fref{graphene_summary}a).
 It consists of two atoms per unit cell and a triangular lattice. We will consider the following atomic positions:
@@ -82,16 +99,16 @@ This geometry defines a hexagonal Wigner-Seitz cell (blue region on \fref{graphe
 
 
 Once the atomic and lattice structure is clear, we turn to the electronic properties. Carbon atoms have 6 electrons allocated in five orbitals distributed in the layers with quantum number $n\in\{1,2\}$.
-The first two electrons are in the $1s$ level, two more in the $2s$ level and finally another two \acp{el} in the $2p$ levels (\fref{orbitals}).
+The first two electrons are in the $1s$ level, two more in the $2s$ level and finally another two \acp{el} in the three $2p$ levels (\fref{orbitals}).
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \centering
 \includegraphics{graphene/figures/orbitals.pdf}
 \vspace{-5pt}
 \caption{Cartoon depiction of the hydrogenoid orbitals involved in the graphene chemical and physical properties. The color of the orbitals shows the parity of the orbital what will be relevant when building tight-binding models.}
 \label{orbitals}
 \end{figure}
-\FloatBarrier
+% \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 Since the orbitals $n=1$ are doubly occupied and far down in energy, there is no need to consider them. The $2s$ level is also full, but they show a strong hopping with neighbouring $p$ orbitals which are around the Fermi energy so we will consider their contribution. The $2p$ orbitals are the closest to the Fermi level, hence they will play a major role in the chemistry of graphene.
 \medbreak
@@ -105,60 +122,59 @@ With this description of the system we can build a basis which will have four or
   \right\}
 \label{basis4}
 \end{equation}
-where the superscript points out the atom and the subscript shows the corresponding orbital. The bands calculated in the \ac{tb} approximation resulting from this description are shown in \fref{graphene_summary}d). We will delve in the physical properties later on, but for now it should suffice to point out the linear dispersion in the $K$ and $K'$ points around the Fermi energy (taken always as $E_F=\SI{0}{\eV}$) as well as the decoupling of the two bands involved in the low energy regime. These two bands (colored in orange) are composed exclusively by $p_z$ orbitals as it can be seen in the \ac{dos}.
+where the superscript points out the atom and the subscript shows the corresponding orbital. The bands calculated in the \ac{tb} approximation resulting from this description are shown in \fref{graphene_summary}d). We will delve in the physical properties later on, but for now it should suffice to point out the linear dispersion in the $K$ and $K'$ points around the Fermi energy (taken always as $E_F=\SI{0}{\eV}$) as well as the decoupling of the two bands involved in the low energy regime. These two bands (colored in orange) are composed exclusively by $p_z$ orbitals as it can be seen in the \ac{dos} (side panel of \fref{graphene_summary}d)).
+\smallskip
 
-In many cases we will not be interested in the properties of the orbitals that do not contribute to those two bands. In those cases we will reduce our basis and consider only one orbital per Carbon atom, resulting in the basis:
+In many cases it is enough to describe the two bands closest to the Fermi energy since the phenomenon at hand is restricted to the low energy region. In those cases we will reduce our basis and consider only the $p_z$ orbitals, resulting in the basis:
 \begin{equation}
   \mathcal{B}_1 = \left\{\ket{\phi^1_{p_z}}, \ket{\phi^2_{p_z}},\dots, \ket{\phi^n_{p_z}}\right\}
 \label{basis1}
 \end{equation}
 \medskip
 
-There are a number of ways in which the \ac{tb} approximation can be applied. In the next section we show the details for the Hamiltonian models used all along this thesis.
+There are a number of ways to build a \acf{tb} Hamiltonian. When using the single orbital basis \eqref{basis1} the hopping parameters are a single scalar and it is enough to fit the band width to estimate it, but for a more complex description using the four orbital basis \eqref{basis4} the estimation of the parameters is not so easy. In the next section we show the details for the Hamiltonian models used all along this thesis.
 
 
 \section{Slater-Koster tight-binding model}
 \label{ssec:SK}
-In general, the hopping parameters are an input in any \acf{tb} model. They are usually calculated by fitting eigenvalues (and possibly eigenfunctions) obtained from \ac{dft} calculations. Another way to calculate the hopping parameters is to project the eigenfunctions into a basis of localized atomic orbitals so the interpretation in terms of hydrogenoid orbitals is easier.
+In general, the hopping parameters are an input in any \acf{tb} model. They are usually calculated by fitting eigenvalues (and possibly eigenfunctions) obtained from \ac{dft} calculations. Another way to calculate the hopping parameters is to project the \ac{dft} eigenfunctions into a basis of localized atomic orbitals so the interpretation in terms of hydrogenoid orbitals is easier.
 
 As a system grows complex, more and more parameters are needed to describe it. In fact, the number of hoppings grows with the size of the basis, $n_\mathcal{B}$, as $\sum^{n_\mathcal{B}}_i i$. Nevertheless since the number of different orbitals is finite and a larger basis means only a more complex arrangement of orbitals, one could expect that not every parameter is completely independent from the others.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=0.85\textwidth]{graphene/figures/hoppings.pdf}
 \vspace{-5pt}
 \caption{$a)$ Definition of the parallel and perpendicular hoppings. Notice that $V_{sp\pi}=0$ because of the symmetry of the orbitals (integral of the product of an even and an odd function). $b)$ Decomposition of a $p_z$-$s$ hopping in terms of its parallel and perpendicular projections. $c)$ Using the symmetry of the orbitals we can relate different hopping integral by simple rotations.}
 \label{fig:SK}
 \end{figure}
-\FloatBarrier
+% \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 The \ac{sk} approximation\cite{Slater1954} takes into account the symmetry of the atomic orbitals to reduce the number of parameters needed since some of them are related by rotations or other symmetry operations.
 
 The \ac{sk} model encodes the two-center hopping integrals\cite{Ashcroft1976, Grosso2000} 
-
 $$t_{\phi_1-\phi_2} = \bra{\phi_1(\vec{r})}H'(\vec{r},\vec{r}')\ket{\phi_2(\vec{r'})}$$
+along high symmetry directions in a set of constants: $V_{\alpha\alpha'm}$, where $\alpha$ and $\alpha'$ label the orbitals and m refer to the component of angular momentum along the line between the center of the two orbitals. Two examples of these constants, $V_{sp\pi}$ and $V_{sp\sigma}$\footnote{Notice that in graphene $V_{sp\pi}$ automatically vanishes because of the symmetry of the orbitals.}, are shown in \fref{fig:SK}a).
 
-along high symmetry directions in a set of constants: $V_{\alpha\alpha'm}$, where $\alpha$ and $\alpha'$ label the orbitals and m refer to the component of angular momentum along the line between the center of the two orbitals. In \fref{fig:SK}a) it can be seen how two examples, the $V_{sp\pi}$ and $V_{sp\sigma}$, are defined\footnote{Notice that in graphene $V_{sp\pi}$ automatically vanishes because of the symmetry of the orbitals.}.
-
-It is important to notice that the radial information, \ie the distance between atoms, is enclosed in the \ac{sk} parameters $V_{\alpha\alpha'm}$, while the angular dependence, \ie the atomic positions, provide the functional dependencies in the \ac{sk} model. For instance, if we focus on the hopping between two $p_x$ orbitals separated by a distance $\vec{r}=|\vec{r}|(l,m,n)$:
+It is important to notice that the radial information, \ie the distance between atoms, is enclosed in the \ac{sk} parameters $V_{\alpha\alpha'm}$, while the angular dependence, \ie the atomic positions, provide the functional dependencies in the \ac{sk} model. For instance, if we focus on the hopping between two $p_x$ orbitals\cite{Slater1954} separated by a distance $\vec{r}=|\vec{r}|(l,m,n)$:
 \begin{equation}
   t_{p_x-p_x}(\vec{r})=  t_{p_x-p_x}(l,m,n) = l^2 V_{pp\sigma}(r) + (1-l^2) V_{pp\pi}(r)
 \end{equation}
 The radial information (distance between atoms) will be encoded in the numerical values of $V_{pp\sigma}$ and $V_{pp\pi}$ while the geometrical information of the lattice will be contained in the factors $l^2$ and $(1-l^2)$
 
-Most of the time the distance dependence of the parameters can be ignored, but as rule of thumb one can consider that the \ac{sk} parameters will decrease as the distance between the orbitals increases.
-The exact ratio depends on the orbitals and different approximations can be found in the literature\cite{Harrison1930}, but $V_{\alpha,\alpha'm}(r)\sim1/r^5$ is a standard estimation.
+Most of the time the distance dependence of the parameters can be ignored, but as a rule of thumb one can consider that the \ac{sk} parameters will decrease as the distance between the orbitals increases.
+The exact ratio depends on the orbitals and the crystalline structure, and different approximations can be found in the literature\cite{Harrison1930}, but $V_{\alpha,\alpha'm}(r)\sim1/r^5$ is a standard estimation.
 \bigbreak
 
 
-The \ac{sk} description of the \ac{tb} hopping integrals allows the formulation of every hopping in terms of a few parameters which encode the distance between orbitals while preserving the angular information in the analytical formulation which can be checked in appendix \ref{SKhoppings}.
+The \ac{sk} description of the \ac{tb} hopping integrals allows the formulation of every hopping in terms of a few parameters which encode the distance between orbitals while preserving the angular information in the analytical formulation which has been reproduced from the original publication in appendix \ref{SKhoppings}.
 \medbreak
 
 
 % XXX ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-By projecting the hopping integrals into its parallel and perpendicular components we reduce the number of parameters needed to account for all possible hoppings. For instance, we only need two parameters: $V_{pp\sigma}$ and $V_{pp\pi}$ in order to express all six $p-p$ hoppings.
+By projecting the hopping integrals into its parallel and perpendicular components (see \fref{fig:SK}b)) we reduce the number of parameters needed to account for all possible hoppings. For instance, we only need two parameters: $V_{pp\sigma}$ and $V_{pp\pi}$ in order to express all six $p-p$ hoppings.
 
-This description of the hopping parameters also accounts for the symmetry of the orbitals. For instance \fref{fig:SK}c) it is shown the relation between the hoppings $t_{p_{z},p_{x}}$ and $t_{p_{z},p_{y}}$. If we forget about the labels in the axis, we can realize that these two hoppings are in fact equivalent since one can be obtained as a rotation of the other.
+This description of the hopping parameters also accounts for the symmetry of the orbitals. For instance \fref{fig:SK}c) shows the relation between the hoppings $t_{p_{z},p_{x}}$ and $t_{p_{z},p_{y}}$. If we forget about the labels in the axis, we can realize that these two hoppings are in fact equivalent since one can be obtained as a rotation of the other.
 
 If we define the unitary vector $\hat{r} = \vec{r}/|\vec{r}|$ and its components $\hat{r}=(l,m,n)$ we can see that
 \begin{equation}
@@ -166,18 +182,18 @@ If we define the unitary vector $\hat{r} = \vec{r}/|\vec{r}|$ and its components
 \end{equation}
 notice that the change in the arguments is equivalent to perform a rotation of the vector $\vec{r}$ of $-\pi/2$ around the $Z$ axis as depicted in \fref{fig:SK}c).
 
-The \ac{sk} model exploits this kind of transformations in order to calculate every possible hopping, as shown in appendix \ref{SKhoppings}.
+The \ac{sk} model exploits this kind of transformations in order to calculate every possible hopping, which has been done in appendix \ref{SKhoppings}.
 
 
 \subsection{Slater-Koster versatility}
 
 
 \subsubsection{Angular dependence}
-An example of this decoupling can be shown in the following gedankenexperiment. Let us consider graphene and let us displace vertically a little bit one of the sublattices\footnote{If it boggles your mind you can shift all the atomic positions to keep the $\ce{C}$-$\ce{C}$ distance as $a=\SI{1.4}{\angstrom}$}
+An example of the versatility of decoupling the angular and radial dependencies can be shown in the following gedankenexperiment. Let us consider graphene and let us displace vertically a little bit one of the sublattices\footnote{If it boggles your mind you can shift all the atomic positions to keep the $\ce{C}$-$\ce{C}$ distance as $a=\SI{1.4}{\angstrom}$}
 so we end up with a slightly distorted graphene in which not all the atoms are in the same plane. This shift out of the plane has an important effect in the band structure since it breaks the mirror symmetry that kept the $p_z$ orbitals isolated from every other orbital.
-This mixing of the $p_z$ manifold with all the other orbitals happens mainly at $\Gamma$ and it can be seen in both in the band structure and in the \ac{dos}.
+This mixing of the $p_z$ manifold with all the other orbitals happens mainly at $\Gamma$ and it can be seen both in the band structure and in the \ac{dos}.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \centering
 \includegraphics{graphene/figures/banddos_G_buck.pdf}
 \vspace{-5pt}
@@ -216,7 +232,7 @@ where the hoppings with a hypothetical $\ce{H}$ atom have been included for late
 The description of $\pmb{h-\ce{BN}}$ is quite similar to that of graphene, it suffices to add a different on-site energy for the $\ce{B}$ and $\ce{N}$ atoms ($E_{\ce{B}} = -E_{\ce{N}} =\SI{2.5}{\eV}$) while keeping the inter-atomic hoppings similar to those of graphene.
 \medbreak
 
-\textbf{Bismuth} is a little bit more complex since an accurate description requires up to third neighbor hoppings (and spin-orbit coupling as well, which we will neglect for the moment). The \ac{sk} parameters, taken from~\citen{Liu1995} are:
+\textbf{Bismuth} is a little bit more complex since an accurate description requires up to third neighbor hoppings (and spin-orbit coupling as well, which we will neglect for the moment). The \ac{sk} parameters, taken from~[\citen{Liu1995}] are:
 \begin{equation}
   \begin{array}{c|cccc}
     Hopping & V_{ss\sigma} & V_{sp\sigma} & V_{pp\sigma} & V_{pp\pi} \\ \hline
@@ -235,7 +251,7 @@ The description of $\pmb{h-\ce{BN}}$ is quite similar to that of graphene, it su
 The respective band structure of all these materials is shown in \fref{SKbands}.
 For all panels, the color, $\mathcal{C}$ represents the weight of the $p_z$ orbital in each state:
 \begin{equation*}
-   \mathcal{C} = \bra{\psi_{\alpha}}\mathcal{O}_{p_z}\ket{\psi_{\alpha}}
+   \mathcal{C}_\alpha = \bra{\psi_{\alpha}}\mathcal{O}_{p_z}\ket{\psi_{\alpha}}
 \end{equation*}
 where $\mathcal{O}_{p_z}$ is the $p_z$ projector operator and $\ket{\psi_{\alpha}}$ are the Hamiltonian eigenfunctions.
 \begin{equation*}
@@ -244,7 +260,7 @@ where $\mathcal{O}_{p_z}$ is the $p_z$ projector operator and $\ket{\psi_{\alpha
    \text{for} \quad\ket{\phi_i}\in\mathcal{B}_4
 \end{equation*}
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \centering
 \includegraphics{graphene/figures/banddos.pdf}
 \vspace{-15pt}
@@ -272,7 +288,7 @@ The presence of \textit{only} $p_z$ orbitals around the Fermi energy makes it po
 The second thing to notice is that around the Fermi level, the band dispersion is linear. In particular, the band structure forms two pairs of cones in the $K$ and $K'$ points of the \ac{fbz}. This famous feature %TODO cite
 is responsible for many of the interesting properties of graphene %TODO cite{Klein, HEP analogies, anomalies, topology,...}
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \begin{center}
   %\includegraphics[width=1.1\textwidth]{graphene/figures/banddos_C.pdf}
   \makebox[\textwidth][c]{\includegraphics[width=1.2\textwidth]{graphene/figures/banddos_C.pdf}}
@@ -289,7 +305,7 @@ In fact it is an easy exercise to calculate the band dispersion analytically. Th
    V^{\dagger}_1 e^{i\vec{k}\vec{a}_1} + V^{\dagger}_2 e^{i\vec{k}\vec{a}_2}
 \label{hk}
 \end{equation}
-where, in the one orbital basis $\mathcal{B}_1$ described by \eqref{basis1} can be written as
+where $\vec{a}_i$ are the lattice vectors described in \eqref{latt_vec} and, in the one orbital basis $\mathcal{B}_1$ described by \eqref{basis1}, can be written as
 \begin{equation}
    H_0 = \left(\begin{array}{cc}
                \varepsilon_A & t \\
@@ -325,7 +341,11 @@ yet in graphene these parameters vanish: $\varepsilon_{A}=\varepsilon_{B}=\varep
 \end{equation}
 
 %
+%
+% XXX
 % TODO Dirac derivation
+%
+%
 %
 
 \medbreak
@@ -345,7 +365,7 @@ The application of an external magnetic field usually has several effects in a m
 The \acf{soc} is a relativistic interaction that can be interpreted in classical terms (allowing the existence of spin in classical physics) as the interaction between the spin of the electron and the electrostatic potential of the nucleus.
 
 In most of this section we are going to use the four orbital basis \eqref{basis4} with the geometry of \fref{graphene_summary}b), also described in the first section of the chapter.
-In this basis there are two atoms per unit cell and four orbitals per atom, so our Hamiltonian would be a $8\times8$ matrix. When interactions concerning the spin are taken into account, the basis needs to be doubled with the following order:
+In this basis there are two atoms per unit cell and four orbitals per atom, so our Hamiltonian would be a $8\times8$ matrix. When interactions concerning the spin are taken into account, the basis needs to be doubled and we choose the following order to do so:
 \begin{equation}
   \mathcal{B}^{s}_4 = \left\{
   \ket{\phi^1_{s\uaw}},
@@ -364,6 +384,7 @@ In this basis there are two atoms per unit cell and four orbitals per atom, so o
 So the \ac{soc} Hamiltonian term can be written as follows:
 \begin{equation}
    H_{SO}= \lambda_{SO}\vec{L}\vec{S} =
+   \lambda_{SO}\left[L_xS_x + L_yS_y + L_zS_z \right] =
    \lambda_{SO}\left[L_zS_z+
    \frac{1}{2}\left(L^{+}S^{-}+L^{-}S^{+}\right)\right]
 \label{soc}
@@ -375,7 +396,7 @@ just by taking into account the relations
 \end{equation*}
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \centering
 \includegraphics{graphene/figures/banddos_SOC.pdf}
 \vspace{-5pt}
@@ -385,7 +406,9 @@ just by taking into account the relations
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-This term is responsible for the opening of a band gap at the $K$ points. The opening of this gap turns graphene into a \ac{ti}. %TODO cite
+This term is responsible for the opening of a band gap at the $K$ points turning graphene into a \ac{ti}. %TODO cite
+This term is known to be equivalent to having a second neighbor imaginary hopping in the $p_z$ manifold\cite{Haldane1988,Kane2005,Kane2005a}. This term induces a non-trivial Berry phase which gives rise to its topological behavior.
+This term is at the core of the \ac{qsh} effect observed in experiment.
 
 
 \subsection{Electric field and Rashba}  %XXX REVIEW
@@ -398,7 +421,7 @@ Following the calculations in \cite{Min2006} we can see that the relation betwee
 \begin{equation}
    \lambda_R=\frac{e\mathcal{E}z_0}{3V_{sp\sigma}}\xi \qquad;\qquad
    \lambda_{SOC}=\frac{|E_{s}|}{18V^2_{sp\sigma}}\xi^2
-\label{rashba}
+% \label{rashba}
 \end{equation}
 where $\xi\sim\SI{6}{\meV}$ is the atomic carbon spin-orbit coupling strength
 which for a typical electric field of $\mathcal{E}\sim\SI{50}{\V}/\SI{300}{\nm}$ result in an effective Rashba coupling $\lambda_R\sim\SI{0.011}{\meV}$ and the \ac{soc} $\lambda_{SOC}\sim\SI{0.0011}{\meV}$.
@@ -418,7 +441,7 @@ If we consider bilayer graphene, the application of an electric field has anothe
 %
 %The description is not much different from that of graphene: the Bravais lattice is still a triangular lattice with lattice vectors described by \eqref{latt_vec}, hence the \ac{fbz} is the same. The main difference is that the minimal basis now has four atomic positions.
 %%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-%\begin{figure}[h!]
+%\begin{figure}[!ht]
 %\centering
 %\includegraphics{graphene/figures/graphene_bi_summary.pdf}
 %\vspace{-5pt}
@@ -467,7 +490,7 @@ If we consider bilayer graphene, the application of an electric field has anothe
 %
 %\subsubsection{Doping}
 %%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-%\begin{figure}[h!]
+%\begin{figure}[!ht]
 %\centering
 %\includegraphics[width=0.5\textwidth]{graphene/figures/dual_gate.pdf}
 %\vspace{-5pt}
