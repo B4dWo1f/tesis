@@ -61,7 +61,7 @@ which would be impossible to see due to temperature smearing and device precisio
 This gap nonetheless is not a standard insulating band gap. In finite samples the band structure would appear gapped everywhere, but two conducting channels would appear on the edges of the sample.
 This conducting states, spatially bounded to the edge of the system, are the so-called topological edge states and are known to be robust against any perturbation (that does not close the gap by breaking time-reversal symmetry).  %XXX check
 
-Appendices \ref{ch:QSH} and \ref{ch:ANN} are two published papers which expand on these topics. The former explores the topological character of few-layer-graphene exploring the proximity effect of different materials. The later explores the bulk-edge correspondence using neural networks to estimate the topological phase of some systems based only on a subset of the density matrix corresponding to the bulk region.
+Appendices \ref{ch:QSH} and \ref{ch:ANN} are two published papers which expand on these topics. The former explores the topological character of few-layer-graphene exploring the proximity effect of different materials. The later explores the bulk-edge correspondence\cite{Hasan2010} using neural networks to estimate the topological phase of some systems based only on a subset of the density matrix corresponding to the bulk region.
 
 
 
@@ -94,7 +94,7 @@ The lattice vectors that define the triangular Bravais lattice are, then:
 \vec{a}_2 = \tfrac{a}{2}\left(3,-\sqrt{3},0\right)
 \label{latt_vec}
 \end{equation}
-This geometry defines a hexagonal Wigner-Seitz cell (blue region on \fref{graphene_summary}b)) with area $\sim\SI{5.1}{\angstrom\squared}$. The reciprocal lattice vectors are depicted in \fref{graphene_summary}c) and can be easily calculated using the relation\cite{Ashcroft1976}: $\vec{a}_i\vec{b}_j=2\pi\delta_{ij}$. Notice that the canonical \ac{fbz} shown in \fref{graphene_summary}c) is an hexagon (just like the Wigner–Seitz cell) but nothing changes if instead we use the colored rhomboidal region, which is much more convenient for computational calculations.
+This geometry defines a hexagonal Wigner-Seitz cell (blue region on \fref{graphene_summary}b)) with area $\sim\SI{5.1}{\angstrom\squared}$. The reciprocal lattice vectors are depicted in \fref{graphene_summary}c) and can be easily calculated using the relation\cite{Ashcroft1976}: $\vec{a}_i\vec{b}_j=2\pi\delta_{ij}$. Notice that the canonical \ac{fbz} shown in \fref{graphene_summary}c) is an hexagon (just like the Wigner–Seitz cell) but nothing changes if we use the colored rhomboidal region instead, which is much more convenient for computational calculations.
 \medbreak
 
 
@@ -145,7 +145,7 @@ As a system grows complex, more and more parameters are needed to describe it. I
 \centering
 \includegraphics[width=0.85\textwidth]{graphene/figures/hoppings.pdf}
 \vspace{-5pt}
-\caption{$a)$ Definition of the parallel and perpendicular hoppings. Notice that $V_{sp\pi}=0$ because of the symmetry of the orbitals (integral of the product of an even and an odd function). $b)$ Decomposition of a $p_z$-$s$ hopping in terms of its parallel and perpendicular projections. $c)$ Using the symmetry of the orbitals we can relate different hopping integral by simple rotations.}
+\caption{$a)$ Definition of the parallel and perpendicular hoppings. Notice that $V_{sp\pi}=0$ because of the symmetry of the orbitals (integral of the product of an even and an odd function). $b)$ Decomposition of a $p_z$-$s$ hopping in terms of its parallel and perpendicular projections. $c)$ These two hoppings must have the same value regardless of the definition of the axes. This is the way \ac{sk} hoppings are derived from one another.}
 \label{fig:SK}
 \end{figure}
 % \FloatBarrier
@@ -285,7 +285,7 @@ We are going to use a \ac{tb} model in the \ac{sk} approximation with four orbit
 The first thing to notice about the graphene bands is the orbital distribution of the bands. As mentioned before, the $p_z$ orbitals are responsible for the central bands, crossing the Fermi energy ($E_F=\SI{0.0}{\eV}$). Due to the mirror symmetry of the system (with respect to the atomic plane), every hopping between the $\sigma$-orbitals and $p_z$ vanishes exactly (see the definition of $V_{sp\sigma}$ in \fref{orbitals}a)).
 The presence of \textit{only} $p_z$ orbitals around the Fermi energy makes it possible to describe the system solely with these orbitals.
 
-The second thing to notice is that around the Fermi level, the band dispersion is linear. In particular, the band structure forms two pairs of cones in the $K$ and $K'$ points of the \ac{fbz}. This famous feature %TODO cite
+The second thing to notice is that around the Fermi level, the band dispersion is linear. In particular, the band structure forms two pairs of cones in the $K$ and $K'$ points of the \ac{fbz}. This famous feature, dubbed the Dirac Cones %TODO cite
 is responsible for many of the interesting properties of graphene %TODO cite{Klein, HEP analogies, anomalies, topology,...}
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[!ht]
@@ -427,6 +427,7 @@ where $\xi\sim\SI{6}{\meV}$ is the atomic carbon spin-orbit coupling strength
 which for a typical electric field of $\mathcal{E}\sim\SI{50}{\V}/\SI{300}{\nm}$ result in an effective Rashba coupling $\lambda_R\sim\SI{0.011}{\meV}$ and the \ac{soc} $\lambda_{SOC}\sim\SI{0.0011}{\meV}$.
 
 These terms, are in the scale of $\SI{e-2}{\meV}$ while the gap open can reach up to $\SI{2.5e2}{\meV}$ so we will neglect these interactions from now on.
+\bigskip
 
 
 If we consider bilayer graphene, the application of an electric field has another important effect. It shifts the on-site energy of each layer which results in an opening of a gap in the band structure. This results in a very useful feature that will be exploited throughout the thesis.
