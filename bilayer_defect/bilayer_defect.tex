@@ -1,4 +1,4 @@
-\chapter{Vacancies in Biased Bilayer Graphene}
+\chapter{$sp^3$ defect in Biased Bilayer Graphene}
 \label{ch:vacancy_bilayer}
 %\section{Introduction [not serious]}
 %Theoretical Physicist have been dreaming with theoretical models since they realized it was much easier to write down and solve some equations than find a material governed by such equations. For years without end, we have created more and more models, useful, and boring, and silly, and interesting ones, but just theoretical models non the less.
@@ -181,10 +181,11 @@
 
 When a single vacancy is placed in graphene bilayer (or graphene, for that matter), the translational invariance is broken, so its description in terms of Bloch functions is not possible. The previously introduced embedding technique (see \ref{sec:GF}) provides a workaround in which we consider the defective part of the system to be restricted to a limited region while the rest of the system remains pristine.
 This approach is quite computationally expensive and while it provides a way to calculate the Green's function, it is not possible to obtain the wave function which will be necessary later on.
-In order to retain the wave function information we are going to consider a finite hexagonal island with armchair edges. We will consider a big enough island so we can neglect the edge effects. The largest island will be $\SI{50.6}{\nm}$ in diameter, containing 131772 atoms.  % limit RAM-patience
 
-\section{Position}
-\subsection{A note on the geometry}
+In order to retain the wave function information we are going to consider a finite hexagonal island with armchair edges. We will consider a big enough island so we can neglect the edge effects. The largest island will be $\SI{50.6}{\nm}$ in diameter, containing 131772 atoms.  % limit RAM-patience
+Such a system will be our playground to explore the behavior of a single vacancy when an external electric field is applied.
+
+\section{A note on the geometry}
 %All the vacancies considered will always be chosen on a hollow position (see fig~\ref{geo_sketch} $c)$) even if it not specified in the text. The behavior of vacancies in connected sites is studied somewhere else\cite{Castro2010}.
 
 When only one vacancy is considered, it will be placed at the (hollow) atomic position closest to the center of the island in order to maximize the distance to the edges.
@@ -203,9 +204,8 @@ When more than two vacancies are considered, they will be placed in the vertices
 \caption{$a)$ and $b)$ show sketches of the position of the vacancies and relevant geometric information. In the upper left corner the real atomic structure is shown using blue for the lower layer and red for the upper one. The length $L_C$ is the typical size of the in-gap state.} % $c$ atomic structure showing the ``connected'' and ``hollow'' sites in the upper layer as well as the $A/B$ sublattices (in red/blue).}
 \label{geo_sketch}
 \end{figure}
-\FloatBarrier
+% \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In the case of graphene monolayer, every atomic position is equivalent, so regardless of the position in which the adatom is introduced, the physical effect will be the same.
 This is not the case for $AB$-stacked bilayer graphene. In each layer one of the sublattices is connected to atoms of the other layer, while the other sublattice lays on hollow spaces.
 
@@ -215,40 +215,18 @@ This is not the case for $AB$-stacked bilayer graphene. In each layer one of the
 \includegraphics{defects/fig/hollow_connected.pdf}
 \vspace{-20pt}
 \caption{a,b) Evolution of the spectrum for adatom on a connected site. The in-gap state is shifted directly by the electric field with $100\%$ sublattice and layer polarization, without noticing the bottom layer. Panels c-f) belong to an adatom on a hollow position. e) Evolution of the spectrum with the applied electric field. c) IPR and confinement length dependence on the electric field. f) Evolution of the layer and sublattice polarization as the system loses its bipartite character.}
-\label{Label}
+\label{fig:hollow-connected}
 \end{figure}
-\FloatBarrier
+% \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-\subsection{Connected sites}
 
 
+\section{Two types of vacancies}
+There are two inequivalent sites to place an adatom in AB-stacked bilayer graphene shown in \fref{fig:hollow-connected}a) and d). Depending on where the $sp^3$ defect is placed we will refer them as being in a ``hollow'' or a ``connected'' site. The physics of the connected sites is explored elsewhere\cite{Castro2010} and we will not study it any further than analyze the spectrum 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-As it is expected, in such a system the confinement gap decreases linearly with the area of the island (quadratically with the side), as shown in \fref{confinement}a). This model will break down when the scale of the electric field becomes comparable to the confinement gap. We shall, then, stay clear of the small electric field regime in order to avoid finite size effects.
+As it is expected, in such a system the confinement gap decreases linearly with the area of the island (quadratically with the side), as shown in \fref{confinement}a). It is worth noting that this model is doomed to break down when the scale of the electric field is comparable to the confinement gap. We shall, then, stay clear of the small electric field regime in order to avoid finite size effects.
 %Depending on the calculation different sizes for the island can be chosen with no major consequences.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[!ht!]
@@ -260,6 +238,8 @@ As it is expected, in such a system the confinement gap decreases linearly with 
 \end{figure}
 % \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+In order to calculate
 
 We can calculate the spectrum of the system with and without a vacancy in order to compare both of them. Of course the full diagonalization of a $131772\times131772$ Hamiltonian is, at the very least, challenging for any standard computer, so we will use Lanczos diagonalization\cite{Lanczos1950, Ojalvo1970, Arnoldi1951} to obtain only the 9 eigenvalues closest to the Fermi energy.
 
@@ -284,17 +264,19 @@ When an electric field is applied to bilayer graphene with a vacancy, the in-gap
 % \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 In \fref{spectrum} we see the evolution of different properties with the electric field. Panel $a)$ shows the deformation of the spectrum of the island with the electric field. The in-gap state appears consistently in the middle of the gap but its position does not change monotonously. There is an interplay between the charge polarization and the external electric field.
-As the electric fields becomes stronger, we can see that the in-gap state looses its initial polarization, \fref{spectrum}b), reaching a stable distribution of between both layers and sublattices. Another effect introduced by the electric field is the localization of the state. \fref{spectrum}c) shows the strong reduction of the confinement length, $L_c$, defined as:
+As the electric fields becomes stronger, we can see that the in-gap state looses its initial polarization, \fref{spectrum}b), reaching a stable distribution between both layers and sublattices.
+
+Another effect introduced by the electric field is the localization of the state. \fref{spectrum}c) shows the strong reduction of the confinement length, $L_c$, defined as:
 \begin{equation}
   0.98 = \int_{r_0}^{L_C} \Psi_0(r) dr   %XXX arreglar!!!
 \end{equation}
-This non-standard definition gives an intuitive idea of how far from the vacancy (placed at $r_0$) is most of the state (over $90\%$ of it).
+This non-standard definition gives an intuitive idea of how far from the vacancy (placed at $r_0$) is most of the state (over $98\%$ of it).
 It is interesting to notice that the inverse participation ratio, IPR, defined as:
 \begin{equation}
   \ket{\Psi_0} = \sum_\beta c_\alpha\ket{\phi_\alpha}\quad\quad;\quad\quad
   \text{IPR} = \sum_\alpha |c_\alpha|^4
 \end{equation}
-behaves quite differently for the top and bottom layer. Let us keep in mind that the smaller the IPR, the more spread the state is, in the limit case in which a given state is spread over all the $N$ available atoms, the IPR would be $\text{IPR}=1/N$, while for a state localized in a single atom, it would be $\text{IPR}=1$.
+behaves quite differently for the top and bottom layer. Let us keep in mind that the smaller the IPR, the more spread the state is, in the limit case in which a given state is equally spread over all the $N$ available atoms, the IPR would be $\text{IPR}=1/N$, while for a state localized in a single atom, it would be $\text{IPR}=1$.
 For the bottom layer, the IPR is very small and it barely changes with the electric field. This shows an extended state no matter the applied electric field. That is not the case for the top layer. In the top layer the $\text{IPR}\sim0$ for very small electric fields, but it increases rapidly with the electric field, showing that the state gets quickly localized. This is also confirmed by looking at the confinement length (green line in \fref{spectrum}c) which begins at a huge value, comparable to the size of the island, and decreases to a few nanometers.
 
 

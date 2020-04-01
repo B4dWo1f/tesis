@@ -1,0 +1,3 @@
+Our manuscript proposes a new platform for the creation of artificial quantum matter that can lead to emergent quantum phases.   The platform meets three criteria that none of the existing strategies to create artificial lattices that confine fermions (cold atoms lattices, quantum dot arrays, on-surface adatom arrays,   P donors in Silicon) meet simultaneously:  temperatures below the interaction energy scales, large number of sites, tunability  of parameters. 
+
+Our work sets the foundations for the creation of an entire new area of research that should permit dramatic discoveries in interacting quantum matter. 

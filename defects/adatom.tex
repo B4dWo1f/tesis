@@ -1,19 +1,21 @@
 \chapter{Anomalous magnetism of $sp^3$ defects on graphene}
-% \chapter{$sp^3$ Defects}
 \label{ch:vacancy}
 This chapter follows our paper on the Anomalous magnetism in hydrogenated graphene\cite{Garcia-Martinez2015}
 We turn now to the introduction of defects on graphene, in particular chemisorbed adatoms.
-We will focus on defects which bond strongly with one of the $p_z$ orbital. This kind of defects effectively remove one of the $p_z$ sites acting as if a vacancy was introduced in the system. This effective system of a honeycomb lattice with a vacancy that has no other effect than the removal of a site is widely accepted and experimentally supported.\cite{}
+We will focus on defects which bond strongly with one of the $p_z$ orbital. This kind of defects effectively remove one of the $p_z$ sites acting as if a vacancy was introduced in the system. This effective system of a honeycomb lattice with a vacancy that has no other effect than the removal of a site is widely accepted and experimentally supported.\cite{Pereira2006, Kumazaki2007, Wehling2007, Pereira2008, Palacios2008}
 For the first sections of this chapter we will remain in this approximation and later on we will discuss its implementation in a \ac{sk} framework.
 
 In general chemisorbed adatoms on graphene induce a $sp^3$ deformation in the lattice, which breaks mirror symmetry and mixes the $p_z$ orbitals with all the other orbitals. This deformation is quite interesting by itself\cite{CastroNeto2009} and it is believed to increase significantly (and locally) the effect of the \ac{soc}. Nevertheless that is only one of the effects of this kind of defects.
 
-One of the most interesting effect (in my opinion) of the chemical functionalization of graphene is the appearance of a zero energy state bounded around the defect. This state has very interesting properties and has been quite studied.\cite{Duplock2004} % , yazyev2007, Boukhvalov2008, Palacios2008, Yazyev2010, santos2012, Soriano2010, Leconte2011, Soriano2011}
-The very nature of this kind of defects makes them difficult to study. On one hand if we want to study a single, well isolated defect we would need huge unit cells and even in this case the interaction among them would not vanish completely. On the other hand, if we consider a finite system, as big as our computer can manage, we would still face problems since the finite nature of such a system would introduce a confinement gap in the spectrum, strongly modifying the extended nature of the state.
+One of the most interesting effect (in my opinion) of the chemical functionalization of graphene is the appearance of a zero energy state bounded around the defect. This state has very interesting properties and has been quite studied.\cite{Duplock2004} % , yazyev2007, Boukhvalov2008, Palacios2008, Yazyev2010, Santos2012, Soriano2010, Leconte2011, Soriano2011}
+The very nature of this kind of defects makes them difficult to study. On one hand if we want to study a single well isolated defect we would need huge unit cells and even in this case the interaction among them would not vanish completely. On the other hand, if we consider a big, finite system (as big as our computer can manage) we would still face problems since the finite nature of such a system would introduce a confinement gap in the spectrum, strongly modifying the extended nature of the state.
+\smallskip
+
 With these technical difficulties its electronic properties, for instance its magnetic moment, is not without controversy.
+
 In this chapter we study this system and introduce a method that allows us to compute the Green's function of a defective region coupled with an infinite sheet of pristine graphene, providing a deeper insight in this system.
 
-Before getting into a deeper description, it is interesting to remind ourselves the system at hand. The introduction of a single Hydrogen atom in graphene locates a single electron around itself. This means that, naively, we have a system with a single electronic spin $S=1/2$ very close to a single nuclear spin, $I=1/2$, that of the H adatom. Such a system has a strong resemblance to a number of systems used as qubits\cite{}, and certainly it is a problem worth looking into. But more on that later.
+% Before getting into a deeper description, it is interesting to remind ourselves the system at hand. The introduction of a single Hydrogen atom in graphene locates a single electron around itself. This means that, naively, we have a system with a single electronic spin $S=1/2$ very close to a single nuclear spin, $I=1/2$, that of the H adatom. Such a system has a strong resemblance to a number of systems used as qubits\cite{}, and certainly it is a problem worth looking into. But more on that later.
 
 \section{Introduction}
 Whether or not the addition of an impurity atom into an otherwise non-magnetic crystal results in the formation of local moments is one of the central problems in condensed matter physics.\cite{Anderson1961}
@@ -22,14 +24,14 @@ In the former case, the formation of a local moment is controlled by the competi
 In contrast, when the impurity level lies inside a gap, as it happens for donors in semiconductors, the unpaired electronic spin behaves like a paramagnetic center with $S=1/2$.\cite{Slichter1955}
 
 
-The hydrogenation of graphene has attracted interest for various reasons. In the dense limit, it leads to the opening of a large band-gap.\cite{elias2009,Sofo2007} In the dilute limit, chemisorbed hydrogen was predicted to create a $S=1/2$ local moment\cite{Duplock2004, yazyev2007, Boukhvalov2008, Palacios2008, Yazyev2010, santos2012} associated with the formation of an $E=0$, or mid-gap, state that hosts an unpaired electron.
+The hydrogenation of graphene has attracted interest for various reasons. In the dense limit, it leads to the opening of a large band-gap.\cite{elias2009,Sofo2007} In the dilute limit, chemisorbed hydrogen was predicted to create a $S=1/2$ local moment\cite{Duplock2004a, Yazyev2007, Boukhvalov2008, Palacios2008, Yazyev2010, Santos2012} associated with the formation of an $E=0$, or mid-gap, state that hosts an unpaired electron.
 This led early on to propose hydrogenated graphene as a magnetic material with spin-dependent transport properties\cite{Soriano2010, Leconte2011, Soriano2011} apt for spintronics in graphene.\cite{han2014graphene}
 Recent \ac{stm} experiments\cite{Brihuega2016} match the computed theoretical density of states as a function of both energy and position, that shows a split resonance close to the Dirac point, providing thereby indirect evidence for local moment formation. %Experiments on hydrogenated
 It also has been proposed that the small local lattice distortion induced by the $sp^3$ hybridization enhances the effect of spin-orbit interaction.\cite{Castro2009a,Gmitra2013} This has been proposed as the explanation for the observation of large spin Hall angles in hydrogenated graphene.\cite{Balakrishnan2013} Resonant scattering with the zero mode resonance has also been considered as a source of enhanced quasi-particle spin relaxation in graphene.\cite{Wojtaszek2013, Kochan2014, soriano2015}
 
 Chemisorption of atomic hydrogen in graphene structures entails the formation of a strong covalent bond between the carbon $\pi$ orbital and the hydrogen $s$ orbital.
 The pair of bonding-antibonding states lies far from the Fermi energy.
-This picture is valid not only for chemisorption of atomic hydrogen, but for a large variety of other  $sp^3$ adsorbates. \cite{santos2012}
+This picture is valid not only for chemisorption of atomic hydrogen, but for a large variety of other  $sp^3$ adsorbates. \cite{Santos2012}
 Effectively, the result of this  hybridization is to remove both one electron and one state from the $\pi$ cloud, which justifies modeling $sp^3$ functionalization with the one orbital tight-binding model with the removal of one atomic site, and 1 electron, in the honeycomb lattice\footnote{This vacancy in the effective model is different from a real vacancy in graphene, which entails the formation dangling bonds from the $sp^2$ orbitals, in addition to the removal of the $\pi$ orbital as well}.
 The removal of a site in the honeycomb lattice breaks sub-lattice symmetry and produces a zero energy state.\cite{Pereira2006, Kumazaki2007, Wehling2007, Pereira2008, Palacios2008}
 

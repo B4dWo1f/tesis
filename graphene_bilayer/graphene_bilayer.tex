@@ -130,24 +130,34 @@ The application of an electric field has several effects in the electronic struc
 
 The most obvious effect is the different shift of the on-site energies for each layer. This effect breaks the bipartite-ness of the system and results in a tunable band gap as reported by many experiments.
 
-Another effect is the possible doping of the system. By simply gating bilayer graphene we would be introducing a lot of carriers resulting in huge filling factors. This problem/feature can be address and, in fact used to our advantage by using dual-gating rather than a single gate as we will see in the following sections.
+Another effect is the possible doping of the system. By simply gating bilayer graphene we would be introducing a lot of carriers resulting in huge filling factors. This problem/feature can be address and, in fact, used to our advantage by using dual-gating rather than a single gate as we will see in the following sections.
 
 Finally, the last effect is the appearance of a Rashba-like term due to the deformation of the atomic orbitals which could open both $s-p_z$ hoppings and a spin flip channel (when combined with the \ac{soc}).
 
 
 \subsection{Gap opening}
-The effect of an electric field in the electronic structure is just a layer dependent shift of the on-site energies of the atomic orbitals. In particular, in the basis \eqref{basis_bi}, it can be written as
+The effect of an electric field in the electronic structure is just a layer-dependent shift of the on-site energies of the atomic orbitals. In particular, in the basis \eqref{basis_bi}, the Hamiltonian at $\vec{k}=K$ can be written as
 \begin{equation}
-   H_\mathcal{E} = \mathcal{E}\Lambda = \left(
+   % H_\mathcal{E} = \mathcal{E}\Lambda = \left(
+   % \begin{array}{cc|cc}
+   %   \mathcal{E} & 0 & 0 & 0\\
+   %   0 & \mathcal{E} & 0 & 0\\ \hline
+   %   0 & 0 & -\mathcal{E} & 0\\
+   %   0 & 0 & 0 & -\mathcal{E}\\
+   % \end{array}\right) \Rightarrow
+   H(K) = H^{AB}(K)+\mathcal{E}\Lambda = \left(
    \begin{array}{cc|cc}
      \mathcal{E} & 0 & 0 & 0\\
-     0 & \mathcal{E} & 0 & 0\\ \hline
-     0 & 0 & -\mathcal{E} & 0\\
+     0 & \mathcal{E} & t' & 0\\ \hline
+     0 & t' & -\mathcal{E} & 0\\
      0 & 0 & 0 & -\mathcal{E}\\
    \end{array}\right)
 \label{Helec}
 \end{equation}
-where $\Lambda$ is the layer operator and $\mathcal{E}$ the strength of the electric field.
+where $\Lambda$ is the layer operator and $\mathcal{E}$ the strength of the electric field. From this equation it is clear that at the Dirac points there will be two states at $E=\pm\mathcal{E}$ and two other states at $E=\pm\sqrt{\mathcal{E}^2+t'^{2}}$, resulting in a gap $\Delta = 2\mathcal{E}$. Nonetheless the actual gap of the system occur not exactly at $K$($K'$) but in its vicinity, although the value is quite close to $\Delta$ and its dependence with $\mathcal{E}$ is the same.
+
+This is a trivial gap although it is known that there is a finite Berry curvature of opposite sign in each of the valleys, and one could even define a valley-dependent Chern number\cite{Martin2008,San-Jose2009} $\mathcal{C}=K\sign{\mathcal{E}}$ being $K=\pm1$ the valley number. For this reason bilayer graphene is known as a weak topological insulator although, in fact, the spectrum is always gaped.
+
 
 In particular, a band gap is open at the Dirac points as shown in \fref{Gbi_summary}{c)}. Along with this effect, there are other processes not captured by the model, for instance a strong redistribution of the charge will take place in the system, polarizing the two layers in opposition to the applied electric field. This screening process has be addressed in the literature showing that its main effect is a Hartree renormalization of the gap\cite{McCann2006,Wang2016a}. While this effects are certainly not negligible we can adopt an empirical approach based on the experimental observation\cite{Zhang2009, Taychatanapat2010} of a gap up to $\Delta=\SI{250}{\meV}$, regardless of the real voltage required to achieve it.
 
@@ -199,19 +209,19 @@ Equations \eqref{doping} and \eqref{potential} show that by choosing the        
 
 
 
-\subsection{Rashba}
-Another effect is the mixing of the $p_z$ with the other orbitals. The presence of the electric field deforms the atomic orbitals breaking the symmetries present in the purely hydrogenic orbitals. In particular a new intra-atomic hopping $p_z$ and the $p_{x/y}$ orbitals appear. The application of an electric field leads to the appearance of an intrinsic Rashba and \ac{soc} similar to the terms proposed by Kane and Mele\cite{Kane2005}.
-Following the calculations in %\citef{Min2006}
-\cite{Min2006} we can see that the relation between the applied electric field and the effective intra-atomic Rashba follow the equation:
-\begin{equation}
-   \lambda_R=\frac{e\mathcal{E}z_0}{3V_{sp\sigma}}\xi \qquad;\qquad
-   \lambda_{SOC}=\frac{|E_{s}|}{18V^2_{sp\sigma}}\xi^2
-\label{rashba}
-\end{equation}
-where $\xi\sim\SI{6}{\meV}$ is the atomic carbon spin-orbit coupling strength
-which for a typical electric field of $\mathcal{E}\sim\SI{50}{\V}/\SI{300}{\nm}$ result in an effective Rashba coupling $\lambda_R\sim\SI{0.011}{\meV}$ and the \ac{soc} $\lambda_{SOC}\sim\SI{0.0011}{\meV}$.
+% \subsection{Rashba}
+% Another effect is the mixing of the $p_z$ with the other orbitals. The presence of the electric field deforms the atomic orbitals breaking the symmetries present in the purely hydrogenic orbitals. In particular a new intra-atomic hopping $p_z$ and the $p_{x/y}$ orbitals appear. The application of an electric field leads to the appearance of an intrinsic Rashba and \ac{soc} similar to the terms proposed by Kane and Mele\cite{Kane2005}.
+% Following the calculations in %\citef{Min2006}
+% \cite{Min2006} we can see that the relation between the applied electric field and the effective intra-atomic Rashba follow the equation:
+% \begin{equation}
+%    \lambda_R=\frac{e\mathcal{E}z_0}{3V_{sp\sigma}}\xi \qquad;\qquad
+%    \lambda_{SOC}=\frac{|E_{s}|}{18V^2_{sp\sigma}}\xi^2
+% \label{rashba}
+% \end{equation}
+% where $\xi\sim\SI{6}{\meV}$ is the atomic carbon spin-orbit coupling strength
+% which for a typical electric field of $\mathcal{E}\sim\SI{50}{\V}/\SI{300}{\nm}$ result in an effective Rashba coupling $\lambda_R\sim\SI{0.011}{\meV}$ and the \ac{soc} $\lambda_{SOC}\sim\SI{0.0011}{\meV}$.
 
-These terms, are in the scale of $\SI{e-2}{\meV}$ while the gap open can reach up to $\SI{2.5e2}{\meV}$ so we will neglect these interactions from now on.
+% These terms, are in the scale of $\SI{e-2}{\meV}$ while the gap open can reach up to $\SI{2.5e2}{\meV}$ so we will neglect these interactions from now on.
 
 
 \section{Topology and kink states}
@@ -220,7 +230,7 @@ Similar to the monolayer case, in bilayer graphene the \ac{soc} opens a gap in t
 
 
 There are other interesting scenarios leading to ``edge'' states in this system, though.
-The electric field, $\mathcal{E}$, is known to induce a valley-dependent Chern number $C=Ksgn(\mathcal{E})$, where $K=\pm1$ labels the valleys\cite{Martin2008,San-Jose2009} so when an electric field of different sign is applied in different regions of the system\cite{Martin2008,Jung2011,Yin2016,Li2016,Li2018b}, the interface becomes the frontier of two regions with a different value for their topological invariant. Transition from one to another is only possible by closing the gap, which is exactly what the edge-states do.
+The electric field, $\mathcal{E}$, is known to induce a valley-dependent Chern number $C=K\sign{\mathcal{E}}$, where $K=\pm1$ labels the valleys\cite{Martin2008,San-Jose2009} so when an electric field of different sign is applied in different regions of the system\cite{Martin2008,Jung2011,Yin2016,Li2016,Li2018b}, the interface becomes the frontier of two regions with a different value for their topological invariant. Transition from one to another is only possible by closing the gap, which is exactly what the edge-states do.
 This phenomenon has been experimentally observed\cite{Li2016}, and the calculation is not complex to make as we show in the following lines.
 
 We consider a \ac{2d} sheet of bilayer graphene and apply an electric field $\mathcal{E}>0$ for atomic positions with $x>0$ and $\mathcal{E}<0$ otherwise as depicted in \fref{k_parallel}a). Equivalently we can consider the following Hamiltonian term:
@@ -283,26 +293,13 @@ This section is a brief summary of our publication [\citen{Cardoso2018}] were we
 
 This system shows a very different low energy  spectrum depending on the relative orientation of the magnetic layers. In particular, in the AF configuration the bilayer graphene develops a gap becoming an insulator while for the FM configuration there is a Fermi surface and the conductance remains finite. This mechanism acts as an effective valve which can allow or prevent the flow of spin current.
 
-%% ~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~ %
-%\begin{figure}[h!]
-%\centering
-%  \subfloat{\includegraphics[width=0.54\textwidth]{graphene_bilayer/figures/cri3.pdf}}
-%  \qquad
-%  \subfloat{\includegraphics[width=0.34\textwidth]{graphene_bilayer/figures/cri3_bands.pdf}}
-%\vspace{-5pt}
-%\caption{a) diagram of the two considered configurations. b) band structure for the ferro and antiferromagnetic configurations.}
-%\label{cri3}
-%\end{figure}
-%%\FloatBarrier
-%% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
-
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
 \includegraphics{graphene_bilayer/figures/cri3_valve.pdf}
 % \includegraphics{graphene_bilayer/figures/cri3_full.pdf}
 \vspace{-5pt}
-\caption{a) antiparallel (AF) and parallel (FM) configurations}
+\caption{a) Scheme of the proposed system in the two possible configurations: antiparallel (AF) when the upper and lower $\ce{CrI_3}$ layers are antiferromagnetically aligned and parallel (FM). In the FM configuration there would be conduction through the bilayer graphene. In the AF configuration there is a gap in the spectrum. b) Band structure of the toy model for the system, the color denotes the spin, in the AF case the size of the dots is proportional to the layer polarization (the states are very layer and spin polarized in the top and bottom of the valence and conduction bands).}
 \label{cri3}
 \end{figure}
 % \FloatBarrier
@@ -319,32 +316,49 @@ For simplicity rather than duplicating the size of the Hamiltonian we will keep 
 \eta\sigma \frac{\Delta}{2} & tf(\vec{k}) & 0& 0 \\
 tf^*(\vec{k}) & \eta\sigma \frac{\Delta}{2} & t' & 0 \\
 0 & t'  &  \sigma \frac{\Delta}{2} &  tf(\vec{k})\\
- 0 & 0 &  tf(\vec{k})^* & \sigma \frac{\Delta}{2}
+ 0 & 0 &  tf^*(\vec{k}) & \sigma \frac{\Delta}{2}
 \end{array}
 \right)
 \label{hmodel}
 \end{eqnarray}
-where $\Delta$ is the strength of the magnetization of the nearby $\ce{CrI_3}$ layer, $\sigma$ is the spin and $\eta$ is a parameter to define the FM ($\eta=1$) and AF ($\eta=-1$) configurations.
+where $\Delta$ is the effective strength of the magnetization of the nearby $\ce{CrI_3}$ layer, $\sigma$ is the spin and $\eta$ is a parameter to switch between the FM ($\eta=1$) and AF ($\eta=-1$) configurations.
 
-The resulting bands for this Hamiltonian are shown in \fref{cri3}b) with the color representing the spin of the electrons. For the sake of readability, in the AF case, band structure of each layer has been separated and the size of the points has been made proportional to the layer polarization, showing that the top of the valence band and bottom of the conduction band are spin polarized in each of the layers.
+The resulting bands for this Hamiltonian are shown in \fref{cri3}b) with the color representing the spin of the electrons. For the sake of readability, in the AF case, band structure of each layer has been separated and the size of the points has been made proportional to the layer polarization, showing that the top of the valence band and bottom of the conduction band are both spin and layer polarized in each of the layers.
+
+The nature of the gap open by the proximity of the $\ce{CrI_3}$ layers is very similar to the case of the electric field.
 
 The spin-valve function of this system becomes apparent when considering the possibility of pinning down the magnetization of one of the $\ce{CrI_3}$ layers (for instance, as shown in \fref{cri3}a), by proximizing it with another $\ce{CrI_3}$ layer) and flipping the other with an external magnetic field.
 By flipping one of the $\ce{CrI_3}$ layers we could transition from the conducting FM band structure to the insulating AF one.
 
+
+
+Analogously to previous section we can think of a scenario in which there is a domain wall between two AF regions with opposite magnetizations.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
 \includegraphics{graphene_bilayer/figures/cri3_kink.pdf}
 % \includegraphics{graphene_bilayer/figures/cri3_full.pdf}
 \vspace{-5pt}
-\caption{a) antiparallel (AF) and parallel (FM) configurations}
-\label{cri3}
+\caption{a) Up and down channels for the kink states. Since the interface presents a zigzag edge both Dirac cones lie on top one another, the separation by spin helps distinguish both channels. b) Sketch of the system.}
+\label{cri3kink}
 \end{figure}
 % \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
 
 
+\red{Extracted from paper ---------------------------------------------}
+
+In the case of the spin valve in the AF state, this leads to Chern numbers that are both spin and valley dependent:
+\begin{equation}
+C=K\sigma
+\label{chern_kink}
+\end{equation}
+Based on \eqref{chern_kink} we can anticipate\cite{Martin2008,San-Jose2009} the emergence of one-dimensional spin-dependent chiral in-gap states in domain walls separating two antiferromagnetic domains with opposite magnetizations [\fref{cri3kink}b)]. In order to verify this, we compute the momentum resolved density of states of a domain wall along the zigzag direction as illustrated in \fref{cri3kink}b)
+
+The domain wall is assumed to be abrupt, preserving spin collinearity. The calculation is done for a system with translational invariance along the wall direction, and embedded between two semi-infinite gaped graphene bilayer planes, using a Green’s function technique\cite{Lado2015}. Both domains are insulating, but at each valley the Chern number is opposite for a given spin direction. Thus, a domain wall along the zigzag direction, that preserves the valley, features two chiral 1D in-gap states per valley and per spin [see \fref{cri3kink}a)]. It is interesting to note that, for a given valley, the states are spin chiral and therefore back- scattering requires either spin mixing, or intervalley scattering. A non-collinear domain wall might result in spin mixing
+
+\red{Until here ---------------------------------------------}
 
 
 
