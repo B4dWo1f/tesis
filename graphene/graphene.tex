@@ -14,7 +14,7 @@
 %   -  Graphene monolayer + Bilayer
 %   - Topological phases (Z2, edge states, Kane Mele model)
 
-Graphene is one of the most studied materials in history\cite{KatsnelsonBook, Geim2007, Murakami2009, CastroNeto2009a, Mas-Balleste2011, Konschuh2011a, Cooper2012, Han2014, Sadurni2014, Rozhkov2016}.
+This chapter aims to provide a self-contained introduction to the methods we use to model graphene as well as some of its most interesting/relevant properties. Specifically, I present the tight binding models that are used throughout the thesis. A more extended description of these methods and properties can be found in several reviews since graphene is one of the most studied materials in history\cite{KatsnelsonBook, Geim2007, Murakami2009, CastroNeto2009a, Mas-Balleste2011, Konschuh2011a, Cooper2012, Han2014, Sadurni2014, Rozhkov2016}.
 Even before its experimental discovery, extensive research was devoted to it\cite{Novoselov2004, Novoselov2005,Wallace1947, VanBommel1975, Semenoff1984, Haldane1988, Forbeaux1998, Oshima2000}.
 All the basic properties have been discussed profusely, yet, for the sake of completeness, I will make a brief recap of all the properties relevant for the rest of this thesis.
 \medskip
@@ -46,22 +46,24 @@ like the one shown in \fref{graphene_summary}(a,b).
 
 It has a peculiar band structure featuring two pairs of opposing cones touching exactly at the Fermi level. There are two main characteristics to highlight from this configuration, first, that the pairs of cones meet in a single point at the Fermi energy, and second, that the dispersion of the band structure is exactly linear for low energies.
 
-This band structure is very unusual since it has available states for conduction infinitesimally close to the Fermi level (like a metal) but it has no Fermi surface (like a semiconductor or insulator). For this reason it is usually defined as a zero-gap semiconductor.
+This band structure is very unusual since its is different from both conductors and instulators. On the one hand it has available states for conduction infinitesimally close to the Fermi level (like a metal) but, on the other hand, it has no Fermi surface (like a semiconductor or an insulator). For this reason it is usually defined as a zero-gap semiconductor.
 
 The linear dispersion of the band structure is responsible for the strong modulation of the electric conductivity upon the application of an electric field. This phenomenon, usually known as field effect, is due to the strong doping induced via electric gating, which moves the Fermi level across the cones resulting in an important increase of the carriers density available for conduction which can be either electrons or holes since the band structure is symmetric around the Fermi Energy (electron-hole symmetry).
 \medskip
 
-The linear dispersion is of special interest not only for the condensed matter community but also for the high energy. The electrons  subjected to this linear dispersion are mathematically equivalent to having massless spin $1/2$ particles obeying the Dirac's equation. This equivalency is quite straight forward from the analytical calculation of the tight-binding and is explored in detail later on.
+The linear dispersion is of special interest not only for the condensed matter community but also for the high energy. The electrons  subjected to this linear dispersion are mathematically equivalent to having massless spin $1/2$ particles obeying the Dirac's equation. This equivalency is quite straightforward from the analytical calculation of the tight-binding and is explored in detail later on.
 \medskip
 
-Another consequence of the band structure is the observed \ac{qhe}\cite{Zheng2002,Zhang2005,Gusynin2005,Peres2006a,Brey2006,Fertig2007,Ostrovsky2008,Fujita2016}. Graphene presents a half integer \ac{qhe} due to the topological nature of its band structure, which arises from a non-trivial Berry phase.
 
-Although not measured experimentally, graphene is expected to be a \ac{ti}, meaning that when all the interactions are taken into account, particularly the \ac{soc}, the described linear dispersion is supposed to open a small gap, in the order of a few $\si{\micro\eV}$ %XXX check
-which would be impossible to see due to temperature smearing and device precision.
-This gap nonetheless is not a standard insulating band gap. In finite samples the band structure would appear gapped everywhere, but two conducting channels would appear on the edges of the sample.
+Another consequence of the band structure is that the observed \ac{qhe}\cite{Zheng2002,Zhang2005,Gusynin2005,Peres2006a,Brey2006,Fertig2007,Ostrovsky2008,Fujita2016} is different from the one in conventional semiconductors on 3  counts: first, it shows symmetric \ac{ll} for electrons and holes; second , it has a "zero" \ac{ll}, third, the quantization pattern has an extra 1/2 that arises from the non-trivial Berry phase of Dirac electrons
+% Graphene presents a half integer \ac{qhe} due to the topological nature of its band structure, which arises from a non-trivial Berry phase.
+
+Graphene is expected to be a \ac{ti}\cite{Blick2019}, meaning that when all the interactions are taken into account, particularly the \ac{soc}, the described linear dispersion is supposed to open a small gap, in the order of a few $\si{\micro\eV}$ %XXX check
+although not measured experimentally, possibly due to temperature smearing and device precision.
+This gap nonetheless is not a standard insulating band gap. In finite samples the band structure would appear gaped everywhere, but two conducting channels would appear on the edges of the sample.
 This conducting states, spatially bounded to the edge of the system, are the so-called topological edge states and are known to be robust against any perturbation (that does not close the gap by breaking time-reversal symmetry).  %XXX check
 
-Appendices \ref{ch:QSH} and \ref{ch:ANN} are two published papers which expand on these topics. The former explores the topological character of few-layer-graphene exploring the proximity effect of different materials. The later explores the bulk-edge correspondence\cite{Hasan2010} using neural networks to estimate the topological phase of some systems based only on a subset of the density matrix corresponding to the bulk region.
+Appendices \ref{ch:QSH} and \ref{ch:ANN} are two of my published papers which expand on these topics. The first explores the topological character of few-layer-graphene exploring the proximity effect of different materials. The second explores the bulk-edge correspondence\cite{Hasan2010} using neural networks to estimate the topological phase of some systems based only on a subset of the density matrix corresponding to the bulk region.
 
 
 
@@ -84,8 +86,8 @@ Naturally there are infinite possibilities to do so, but the simplest one is tha
 %The simplest unit cell and  Bravais lattice with which we can describe graphene is the one depicted in \fref{graphene_summary}a).
 It consists of two atoms per unit cell and a triangular lattice. We will consider the following atomic positions:
 \begin{equation}
-\vec{r}_0 = \tfrac{a}{2}(-1,0,0) \quad;\quad
-\vec{r}_1 = \tfrac{a}{2}(1,0,0),
+\vec{r}_a = \tfrac{a}{2}(-1,0,0) \quad;\quad
+\vec{r}_b = \tfrac{a}{2}(1,0,0),
 \label{at_pos}
 \end{equation}
 The lattice vectors that define the triangular Bravais lattice are, then:
@@ -152,9 +154,14 @@ As a system grows complex, more and more parameters are needed to describe it. I
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 The \ac{sk} approximation\cite{Slater1954} takes into account the symmetry of the atomic orbitals to reduce the number of parameters needed since some of them are related by rotations or other symmetry operations.
 
-The \ac{sk} model encodes the two-center hopping integrals\cite{Ashcroft1976, Grosso2000} 
+In the \ac{tb} approximation the two-center hopping integrals\cite{Ashcroft1976, Grosso2000},
 $$t_{\phi_1-\phi_2} = \bra{\phi_1(\vec{r})}H'(\vec{r},\vec{r}')\ket{\phi_2(\vec{r'})}$$
-along high symmetry directions in a set of constants: $V_{\alpha\alpha'm}$, where $\alpha$ and $\alpha'$ label the orbitals and m refer to the component of angular momentum along the line between the center of the two orbitals. Two examples of these constants, $V_{sp\pi}$ and $V_{sp\sigma}$\footnote{Notice that in graphene $V_{sp\pi}$ automatically vanishes because of the symmetry of the orbitals.}, are shown in \fref{fig:SK}a).
+express the probability of an electron to transition between two orbitals, due to the inter-atomic interactions contained in $H'$. In the \ac{sk} approcimation these integrals are encoded in a set of constants:
+% where $H'$ encodes all the (interacting) terms outside of the atomic Hamiltonian, are encoded in the \ac{sk} approximation as a set of constants:
+% The \ac{sk} model encodes the two-center hopping integrals\cite{Ashcroft1976, Grosso2000} 
+% $$t_{\phi_1-\phi_2} = \bra{\phi_1(\vec{r})}H'(\vec{r},\vec{r}')\ket{\phi_2(\vec{r'})}$$
+% along high symmetry directions in a set of constants:
+$V_{\alpha\alpha'm}$, where $\alpha$ and $\alpha'$ label the orbitals and m refer to the component of angular momentum along the line between the center of the two orbitals. Two examples of these constants, $V_{sp\pi}$ and $V_{sp\sigma}$\footnote{Notice that in graphene $V_{sp\pi}$ automatically vanishes because of the symmetry of the orbitals.}, are shown in \fref{fig:SK}a).
 
 It is important to notice that the radial information, \ie the distance between atoms, is enclosed in the \ac{sk} parameters $V_{\alpha\alpha'm}$, while the angular dependence, \ie the atomic positions, provide the functional dependencies in the \ac{sk} model. For instance, if we focus on the hopping between two $p_x$ orbitals\cite{Slater1954} separated by a distance $\vec{r}=|\vec{r}|(l,m,n)$:
 \begin{equation}
@@ -348,8 +355,8 @@ yet in graphene these parameters vanish: $\varepsilon_{A}=\varepsilon_{B}=\varep
 %
 %
 
-\medbreak
-Graphene has been used as a toy model to describe many other materials since their Hamiltonian can be obtained as some modification of that of graphene. Here we explore some of the most commonly used Hamiltonian terms.
+\section{Other Hamiltonian terms}
+The Hamiltonian of graphene has been used as a toy model to describe many other materials since their Hamiltonian can be obtained as some modification of that of graphene. Here we explore some of the most commonly used Hamiltonian terms.
 
 \subsection{Mass}
 If we were to consider not graphene but some other material with the same structure but different on-site energies for each sublattice, a so-called ``mass'' term would have to be introduced. This term appears in the description of $h-BN$ and even can be included in the proper description of graphene to account for some proximity effect.
@@ -408,7 +415,7 @@ just by taking into account the relations
 
 This term is responsible for the opening of a band gap at the $K$ points turning graphene into a \ac{ti}. %TODO cite
 This term is known to be equivalent to having a second neighbor imaginary hopping in the $p_z$ manifold\cite{Haldane1988,Kane2005,Kane2005a}. This term induces a non-trivial Berry phase which gives rise to its topological behavior.
-This term is at the core of the \ac{qsh} effect observed in experiment.
+This term is at the core of the \ac{qsh} effect. % observed in experiment.
 
 
 \subsection{Electric field and Rashba}  %XXX REVIEW
