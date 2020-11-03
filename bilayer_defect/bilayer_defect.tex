@@ -178,36 +178,59 @@
 %This calculation is not exactly accurate with the experimental results\cite{Zhang2009} since it does not consider any self-consistent or screening effect at all, nevertheless it contains the necessary ingredients to describe the relevant physics of the problem, so for the sake of simplicity we will remain at this level of description.
 
 
+Pristine, infinite, bilayer graphene does not present a band gap. Its states around the Fermi energy are completely delocalized among the $p_z$-manifold of the two graphene layers it is made of. Nevertheless, it presents a unique property: It has an electrically tunable band gap.
 
-When a single vacancy is placed in graphene bilayer (or graphene, for that matter), the translational invariance is broken, so its description in terms of Bloch functions is not possible. The previously introduced embedding technique (see \ref{sec:GF}) provides a workaround in which we consider the defective part of the system to be restricted to a limited region while the rest of the system remains pristine.
-This approach is quite computationally expensive and while it provides a way to calculate the Green's function, it is not possible to obtain the wave function which will be necessary later on.
+An external perpendicular electric field can turn the usual conducting bilayer graphene into an insulator by opening a band gap around $\SI{250}{\meV}$ wide\cite{McCann2006, Castro2007, Oostinga2007, Zhang2009, Taychatanapat2010, Castro2010a, Ponomarenko2011, Allen2012, Sui2015}.
+It is no surprise that such a phenomena has a huge impact on the low energy states around the Fermi energy. In particular it crucially affects the localization and extension of these states.
 
-In order to retain the wave function information we are going to consider a finite hexagonal island with armchair edges. We will consider a big enough island so we can neglect the edge effects. The largest island will be $\SI{50.6}{\nm}$ in diameter, containing 131772 atoms.  % limit RAM-patience
-Such a system will be our playground to explore the behavior of a single vacancy when an external electric field is applied.
+The electrically controllable band gap, in addition to the capability of the $sp^3$-defects to localize electronic states will be the cornerstone of our proposal for several applications for biased bilayer graphene.
+\medskip
 
-\section{A note on the geometry}
-%All the vacancies considered will always be chosen on a hollow position (see fig~\ref{geo_sketch} $c)$) even if it not specified in the text. The behavior of vacancies in connected sites is studied somewhere else\cite{Castro2010}.
 
-When only one vacancy is considered, it will be placed at the (hollow) atomic position closest to the center of the island in order to maximize the distance to the edges.
+In the previous chapter we studied the effect of a single $sp^3$ defect in graphene which main effect was the appearance of a resonant state at the Fermi Energy, mainly localized around the defect, but extended all over the system.
+\smallskip
 
-When two vacancies are considered, they will be placed as separated as possible from the edges, as shown in \fref{geo_sketch}b). This configuration (rather than placing one in the center, for instance) allows the study of a wider range of the angle, $\alpha$ and distance $d$.
-When more than two vacancies are considered, they will be placed in the vertices of a regular polygon centered in the island.
+Naively we could think that something similar happens in bilayer graphene. Indeed the presence of $sp^3$-defects quasi-localizes electrons around them, but their properties depend strongly on where the defect is placed.
 
-% XXX For later, when talking about the angle
-% Note that as long as the border effects are negligible, and due to the $C_3$ symmetry of the in-gap states in graphene, we only need to explore the range of angles between vacancies of $\alpha\in\left[0,60\right]$.
 
-%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\textwidth]{artlat/fig/vacs_sketch.pdf}
-\vspace{-10pt}
-\caption{$a)$ and $b)$ show sketches of the position of the vacancies and relevant geometric information. In the upper left corner the real atomic structure is shown using blue for the lower layer and red for the upper one. The length $L_C$ is the typical size of the in-gap state.} % $c$ atomic structure showing the ``connected'' and ``hollow'' sites in the upper layer as well as the $A/B$ sublattices (in red/blue).}
-\label{geo_sketch}
-\end{figure}
-% \FloatBarrier
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-In the case of graphene monolayer, every atomic position is equivalent, so regardless of the position in which the adatom is introduced, the physical effect will be the same.
-This is not the case for $AB$-stacked bilayer graphene. In each layer one of the sublattices is connected to atoms of the other layer, while the other sublattice lays on hollow spaces.
+
+This dependence is due to the asymmetric role of each sublattice in each of the layers. Namely in each of the layers one of the sublattices is connected to the other layer.
+Since deposition of atomic \ce{H} has been demonstrated with atomic precision\cite{Brihuega2016}, we can afford the luxury of restraining ourselves to a particular kind of defect.
+
+what is more or less truth, but the key difference is the effect of an external electric field, which opens a whole new venue of possibilities since it presents an electrically tunable gap.
+
+
+
+%%% XXX
+%%%   \section{A note on the geometry}
+%%%   %All the vacancies considered will always be chosen on a hollow position (see fig~\ref{geo_sketch} $c)$) even if it not specified in the text. The behavior of vacancies in connected sites is studied somewhere else\cite{Castro2010}.
+%%%   
+%%%   When only one vacancy is considered, it will be placed at the hollow atomic position closest to the center of the island in order to maximize the distance to the edges.
+%%%   
+%%%   When two vacancies are considered, they will be placed as separated as possible from the edges, as shown in \fref{geo_sketch}b). This configuration (rather than placing one in the center, for instance) allows the study of a wider range for both, the angle $\alpha$ and distance $d$.
+%%%   % When more than two vacancies are considered, they will be placed in the vertices of a regular polygon centered in the island.
+%%%   
+%%%   % XXX For later, when talking about the angle
+%%%   % Note that as long as the border effects are negligible, and due to the $C_3$ symmetry of the in-gap states in graphene, we only need to explore the range of angles between vacancies of $\alpha\in\left[0,60\right]$.
+%%%   
+%%%   %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+%%%   \begin{figure}[h!]
+%%%   \centering
+%%%   \includegraphics[width=0.7\textwidth]{artlat/fig/vacs_sketch.pdf}
+%%%   \vspace{-10pt}
+%%%   \caption{$a)$ and $b)$ show sketches of the position of the vacancies and relevant geometric information. In the upper left corner the real atomic structure is shown using blue for the lower layer and red for the upper one. The length $L_C$, defined later in the text, is the typical size of the in-gap state.} % $c$ atomic structure showing the ``connected'' and ``hollow'' sites in the upper layer as well as the $A/B$ sublattices (in red/blue).}
+%%%   \label{geo_sketch}
+%%%   \end{figure}
+%%%   % \FloatBarrier
+%%%   %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%%%   
+%%%   % In the case of graphene monolayer, every atomic position is equivalent, so regardless of the position in which the adatom is introduced, the physical effect will be the same.
+%%%   % This is not the case for $AB$-stacked bilayer graphene. In each layer one of the sublattices is connected to atoms of the other layer, while the other sublattice lays on hollow spaces.
+
+
+There are two inequivalent sites to place an adatom in AB-stacked bilayer graphene.
+% shown in \fref{fig:hollow-connected}a) and d). 
+Depending on where the $sp^3$ defect is placed, we will refer to them as being in a ``hollow'' (\fref{fig:hollow-connected}a)) or a ``connected'' site (\fref{fig:hollow-connected}b)). The physics of the connected sites is explored elsewhere\cite{Castro2010} and we will not study it in depth.
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
@@ -220,13 +243,19 @@ This is not the case for $AB$-stacked bilayer graphene. In each layer one of the
 % \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
+When a single vacancy is placed in graphene bilayer (or graphene, for that matter), the translational invariance is broken, so its description in terms of Bloch functions is not possible. In the previous chapter we introduced an embedding technique (see \ref{sec:GF}) that provides a workaround in which we consider the defective part of the system to be restricted to a limited region while the rest of the system remains pristine.
+This approach is quite computationally expensive and, while it provides a way to calculate the Green's function, it is not possible to obtain the wave function which will be necessary later on.
+
+In order to retain the wave function information we are going to consider a huge but finite hexagonal island with armchair edges. We chose the island to have armchair edges in order to avoid the edge states at the Dirac point present in systems with zig-zag edges.\cite{Nakada1996}
+We will consider a big enough island so we can neglect the edge effects. The largest island will be $\SI{50.6}{\nm}$ in diameter, containing 131772 atoms\footnote{This limit is based solely upon RAM and patience, it would be feasible to keep increasing it.}.  % limit RAM-patience
 
 
-\section{Two types of vacancies}
-There are two inequivalent sites to place an adatom in AB-stacked bilayer graphene shown in \fref{fig:hollow-connected}a) and d). Depending on where the $sp^3$ defect is placed we will refer them as being in a ``hollow'' or a ``connected'' site. The physics of the connected sites is explored elsewhere\cite{Castro2010} and we will not study it any further than analyze the spectrum 
+Such a system will be our playground to explore the behavior of a single vacancy when an external electric field is applied. Since we are dealing with a finite system, it is expected to present a confinement gap.
+This gap decreases linearly with the area of the island (quadratically with the side) as shown in \fref{confinement}a).
+\smallskip
 
-
-As it is expected, in such a system the confinement gap decreases linearly with the area of the island (quadratically with the side), as shown in \fref{confinement}a). It is worth noting that this model is doomed to break down when the scale of the electric field is comparable to the confinement gap. We shall, then, stay clear of the small electric field regime in order to avoid finite size effects.
+It is worth noting that this model is doomed to break down when the scale of the electric field is comparable to the confinement gap. In the limit of zero electric field $\mathcal{E}=0$, ideally we would like to recover completely delocalized states on the $p_z$-manifold, but the finite size of the system do not allow that, so the edges become really important for the description of the system.
+Since our goal is to study defects in bilayer graphene, we shall stay clear of the small electric field regime in order to avoid finite size effects.
 %Depending on the calculation different sizes for the island can be chosen with no major consequences.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[!ht!]
@@ -239,9 +268,9 @@ As it is expected, in such a system the confinement gap decreases linearly with 
 % \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-In order to calculate
 
-We can calculate the spectrum of the system with and without a vacancy in order to compare both of them. Of course the full diagonalization of a $131772\times131772$ Hamiltonian is, at the very least, challenging for any standard computer, so we will use Lanczos diagonalization\cite{Lanczos1950, Ojalvo1970, Arnoldi1951} to obtain only the 9 eigenvalues closest to the Fermi energy.
+\section{The finite system}
+We can calculate the spectrum of the system with and without a vacancy in order to compare both of them. Of course the full diagonalization of a $131772\times131772$ Hamiltonian is, at the very least, challenging for any standard computer, so we will use Lanczos diagonalization\cite{Lanczos1950, Ojalvo1970, Arnoldi1951} to obtain only the 9 eigenvalues closest to the Fermi energy\footnote{The number of eigenvalues to obtain is arbitrary although Lanczos diagonalization is better suited, and efficient, for a small number of them}.
 
 As shown in \fref{confinement}b) the main difference when the vacancy is introduced is that a state appears in the middle of the (confinement) gap. As a matter of fact there will appear as many in-gap states as vacancies are introduced.
 

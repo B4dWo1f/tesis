@@ -1,5 +1,6 @@
-\chapter{Graphene Bilayer}
+\chapter{Bilayer Graphene}
 \label{ch:bilayer}
+In this chapter I present a summary of the main electronic properties of graphene bilayers, as described with tight-binding models introduced in the previous chapter.
 Graphite is made out of weakly bounded graphene layers which, incidentally, is the main reason why it is such an exfoliable material. When graphene is obtained by exfoliation it is very common to find regions where not one but two or more layers are extracted. We will focus now in the cases in which just two layers are isolated.
 %\bigskip
 
@@ -125,7 +126,7 @@ While it is true that the symmetry protecting the $p_z$ manifold is broken in th
 
 
 \section{electric field}
-It is well known that the band structure of bilayer graphene changes dramatically in the presence of an external electric field\cite{McCann2006, Castro2007, Oostinga2007, Zhang2009, Taychatanapat2010, Castro2010a, Ponomarenko2011, Allen2012, Sui2015}.
+It was early on discovered that the band structure of bilayer graphene changes dramatically in the presence of an external electric field\cite{McCann2006, Castro2007, Oostinga2007, Zhang2009, Taychatanapat2010, Castro2010a, Ponomarenko2011, Allen2012, Sui2015}.
 The application of an electric field has several effects in the electronic structure of the system.
 
 The most obvious effect is the different shift of the on-site energies for each layer. This effect breaks the bipartite-ness of the system and results in a tunable band gap as reported by many experiments.
@@ -154,16 +155,25 @@ The effect of an electric field in the electronic structure is just a layer-depe
    \end{array}\right)
 \label{Helec}
 \end{equation}
-where $\Lambda$ is the layer operator and $\mathcal{E}$ the strength of the electric field. From this equation it is clear that at the Dirac points there will be two states at $E=\pm\mathcal{E}$ and two other states at $E=\pm\sqrt{\mathcal{E}^2+t'^{2}}$, resulting in a gap $\Delta = 2\mathcal{E}$. Nonetheless the actual gap of the system occur not exactly at $K$($K'$) but in its vicinity, although the value is quite close to $\Delta$ and its dependence with $\mathcal{E}$ is the same.
+where $\Lambda$ is the layer operator and $\mathcal{E}$ the strength of the electric field. From this equation it is clear that at the Dirac points there will be two states at $E=\pm\mathcal{E}$ and two other states at $E=\pm\sqrt{\mathcal{E}^2+t'^{2}}$. In the $K$ point, at low energy with $\mathcal{E}=0$, there will be four states, two degenerate states at $E=0$, formed strictly by $p_z$ orbitals, and two other states at $E=\pm t'$.
+For $\mathcal{E}\neq 0$ the two degenerate states at $E=0$ will split linearly with with the electric field, $\mathcal{E}$, resulting in a gap $\Delta = 2|\mathcal{E}|$.
+Naturally, this low energy approximation has some limitations, and in fact when the states from $E=0$ approach those from $E=\pm t'$ the linear dispersion no longer holds.
+In addition, the actual gap of the system occur not exactly at $K$($K'$) but in its vicinity (see \fref{Gbi_summary}{c)}), although the value is quite close to $\Delta$ and its dependence with $\mathcal{E}$ is the same.
+
+
+% Maybe here a plot of the gap as a function of the electric field
+
 
 This is a trivial gap although it is known that there is a finite Berry curvature of opposite sign in each of the valleys, and one could even define a valley-dependent Chern number\cite{Martin2008,San-Jose2009} $\mathcal{C}=K\sign{\mathcal{E}}$ being $K=\pm1$ the valley number. For this reason bilayer graphene is known as a weak topological insulator although, in fact, the spectrum is always gaped.
+
+%XXX
 
 
 In particular, a band gap is open at the Dirac points as shown in \fref{Gbi_summary}{c)}. Along with this effect, there are other processes not captured by the model, for instance a strong redistribution of the charge will take place in the system, polarizing the two layers in opposition to the applied electric field. This screening process has be addressed in the literature showing that its main effect is a Hartree renormalization of the gap\cite{McCann2006,Wang2016a}. While this effects are certainly not negligible we can adopt an empirical approach based on the experimental observation\cite{Zhang2009, Taychatanapat2010} of a gap up to $\Delta=\SI{250}{\meV}$, regardless of the real voltage required to achieve it.
 
 
 
-\subsection{Doping}
+\subsection{Electric control of the charge density}
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
@@ -174,14 +184,15 @@ In particular, a band gap is open at the Dirac points as shown in \fref{Gbi_summ
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-The doping (extra charge absorbed into the system) in the graphene bilayer can  be estimated simply by applying Gauss' law:
+The application of external fields  will result, in general, in a modification of the charge density of graphene, governed by the Gauss' law:
+% The doping (extra charge absorbed into the system) in the graphene bilayer can  be estimated simply by applying Gauss' law:
 \begin{equation}
    \diver{D} = \rho-\rho_0 = \rho_f
 \label{gauss}
 \end{equation}
-where $\rho$ is total charge density, $\rho_0$ is the bounded charge density so that $\rho_f$ is the free charge density.
+where $D=E/\epsilon$, where $E$ is the electric field and $\rho$ is total charge density, $\rho_0$ is the bounded charge density so that $\rho_f$ is the free charge density.
 
-The dual-gating setup can be considered as an infinite capacitor, hence, the electric field only has $z$ component, hence the divergence of the displacement results in a derivative which can be discretized:
+The dual-gating setup can be considered as an infinite parallel plate capacitor, hence, the electric field only has $z$ component, hence the divergence of the displacement results in a derivative which can be discretized:
 \begin{equation}
    \diver{D}=\frac{\partial D}{\partial z} =\frac{D_t-D_b}{dz} = \rho_f =
    e\frac{N}{V} \Rightarrow D_t-D_b = e\delta n
@@ -203,7 +214,7 @@ where $\Delta z$ is width of the graphene bilayer and $\varepsilon_t$ and       
 \end{equation}
 where $V^0_{t/b}$ are the off-set potential required to have charge neutrality, usually referred to as \ac{cnp}.
 
-Equations \eqref{doping} and \eqref{potential} show that by choosing the        appropriates $V_t$ and $V_b$ we can independently change the doping of the      system and the gap opened in the band structure.
+Equations \eqref{doping} and \eqref{potential} show that by choosing the        appropriates $V_t$ and $V_b$ we can independently change the carrier density of the system and the gap opened in the band structure\cite{Taychatanapat2010}.
 
 
 
@@ -225,15 +236,15 @@ Equations \eqref{doping} and \eqref{potential} show that by choosing the        
 
 
 \section{Topology and kink states}
-Similar to the monolayer case, in bilayer graphene the \ac{soc} opens a gap in the band structure at the $K$($K'$) points. This gap, in principle, could also have the same topological nature and in deed each of the layers present edge states, but these edge states are susceptible to gap opening under spin-mixing perturbations\cite{Prada2011} giving them a ``weaker'' topological character. In particular, since the edge states are not Kramers-protected against backscattering, any hopping process involving the \ac{soc} once and inter-layer $p_z$-$s$ hopping twice is guaranteed to open a gap. This topic is discussed in appendix \ref{ch:QSH}.
+Similar to the monolayer case, in bilayer graphene the \ac{soc} opens a gap in the band structure at the $K$($K'$) points. This gap, in principle, could also have the same topological nature and indeed each of the layers present edge states, but these edge states are susceptible to gap opening under spin-mixing perturbations\cite{Prada2011} giving them a ``weaker'' topological character. This means that the Chern number of the whole system is $\mathcal{C}=0$ but one could define a topological invariant for each layer. In particular, since the edge states are not Kramers-protected against backscattering, any hopping process involving the \ac{soc} once and inter-layer $p_z$-$s$ hopping twice is guaranteed to open a gap. This topic is discussed in appendix \ref{ch:QSH}.
 \smallskip
 
 
 There are other interesting scenarios leading to ``edge'' states in this system, though.
-The electric field, $\mathcal{E}$, is known to induce a valley-dependent Chern number $C=K\sign{\mathcal{E}}$, where $K=\pm1$ labels the valleys\cite{Martin2008,San-Jose2009} so when an electric field of different sign is applied in different regions of the system\cite{Martin2008,Jung2011,Yin2016,Li2016,Li2018b}, the interface becomes the frontier of two regions with a different value for their topological invariant. Transition from one to another is only possible by closing the gap, which is exactly what the edge-states do.
+An external perpendicular electric field, $\mathcal{E}$, is known to induce a valley-dependent Chern number $C=K\sign{\mathcal{E}}$, where $K=\pm1$ labels the valleys\cite{Martin2008,San-Jose2009} so when an electric field of different sign is applied in different regions of the system\cite{Martin2008,Jung2011,Yin2016,Li2016,Li2018b}, the interface becomes the frontier of two regions with a different value for their topological invariant. Transition from one to another is only possible by closing the gap, which is exactly what the edge-states do.
 This phenomenon has been experimentally observed\cite{Li2016}, and the calculation is not complex to make as we show in the following lines.
 
-We consider a \ac{2d} sheet of bilayer graphene and apply an electric field $\mathcal{E}>0$ for atomic positions with $x>0$ and $\mathcal{E}<0$ otherwise as depicted in \fref{k_parallel}a). Equivalently we can consider the following Hamiltonian term:
+We consider a \ac{2d} sheet of bilayer graphene and apply an electric field $\mathcal{E}>0$ for atomic positions with $x>0$ and $\mathcal{E}<0$ otherwise as depicted in \fref{fig:kink_states}a). Equivalently we can consider the following Hamiltonian term (in the basis \eqref{basis_bi}):
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
@@ -258,9 +269,9 @@ We consider a \ac{2d} sheet of bilayer graphene and apply an electric field $\ma
    0 & 0 & 0 & \mathcal{E}
    \end{array}\right)
 \end{equation}
-Naturally, the wave functions of the conduction/valence states will be opposed in the two asymptotic limits of $x\to\pm\infty$, and when they approach $x=0$ they should somehow reverse so both ends and meet smoothly in the middle.
+Naturally, the wave functions of the conduction/valence states will be opposed in the two asymptotic limits of $x\to\pm\infty$, and when they approach $x=0$ they should somehow reverse so both ends meet smoothly in the middle.
 
-We will consider this \ac{2d} system as an infinite collection of \ac{1d} systems coupled by some hopping. Each of this \ac{1d} systems is infinite itself and it can be defined a $k$-moment along its axis: $k_\parallel$, and the hopping between these \ac{1D} systems will also be $k_\parallel$-dependent.
+We  can calculate this by considering a \ac{2d} system as an infinite collection of \ac{1d} systems coupled by some hopping. Each of this \ac{1d} systems is infinite itself and it can be defined a $k$-moment along its axis: $k_\parallel$, and the hopping between these \ac{1d} systems will also be $k_\parallel$-dependent.
 
 With such a system we can write the Green's function for the interface:
 \begin{equation}
@@ -287,9 +298,11 @@ The anticipated result is clearly seen in \fref{fig:kink_states}b), where we can
 
 
 \section{Spin proximity}
+This section is based on our work on the ``Van der Waals Spin Valves'' \onlinecite{Cardoso2018}.
 Ever since the synthesis of graphene there has been a race to be able produce \ac{2d} materials with different properties. A major milestone has been the synthesis of $\ce{CrI_3}$, a two dimensional ferromagnetic insulating material\cite{Klein2018,Song2018,Wang2018}. %,Jiang2018,Huang2018,Jiang2018b}
 
-This section is a brief summary of our publication [\citen{Cardoso2018}] were we consider the proximity effect of $\ce{CrI_3}$ on bilayer graphene. In particular we consider bilayer graphene sandwiched by two layers of $\ce{CrI_3}$ as shown in \fref{cri3}a), with the possibility of having the upper and lower $\ce{CrI_3}$ layers in a parallel (FM) or antiparallel configuration (AM).
+% This section is a brief summary of our publication [\citen{Cardoso2018}] were we consider the proximity effect of $\ce{CrI_3}$ on bilayer graphene. In particular
+We consider bilayer graphene sandwiched by two layers of $\ce{CrI_3}$ as shown in \fref{cri3}a), with the possibility of having the upper and lower $\ce{CrI_3}$ layers in a parallel (FM) or antiparallel configuration (AM).
 
 This system shows a very different low energy  spectrum depending on the relative orientation of the magnetic layers. In particular, in the AF configuration the bilayer graphene develops a gap becoming an insulator while for the FM configuration there is a Fermi surface and the conductance remains finite. This mechanism acts as an effective valve which can allow or prevent the flow of spin current.
 
@@ -325,7 +338,6 @@ where $\Delta$ is the effective strength of the magnetization of the nearby $\ce
 
 The resulting bands for this Hamiltonian are shown in \fref{cri3}b) with the color representing the spin of the electrons. For the sake of readability, in the AF case, band structure of each layer has been separated and the size of the points has been made proportional to the layer polarization, showing that the top of the valence band and bottom of the conduction band are both spin and layer polarized in each of the layers.
 
-The nature of the gap open by the proximity of the $\ce{CrI_3}$ layers is very similar to the case of the electric field.
 
 The spin-valve function of this system becomes apparent when considering the possibility of pinning down the magnetization of one of the $\ce{CrI_3}$ layers (for instance, as shown in \fref{cri3}a), by proximizing it with another $\ce{CrI_3}$ layer) and flipping the other with an external magnetic field.
 By flipping one of the $\ce{CrI_3}$ layers we could transition from the conducting FM band structure to the insulating AF one.
@@ -346,6 +358,9 @@ Analogously to previous section we can think of a scenario in which there is a d
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
 
+
+%XXX
+The nature of the gap open by the proximity of the $\ce{CrI_3}$ layers is very similar to the case of the electric field. In this case we could see the effect of the spin proximity as a spin-dependent electric field for each layer.
 
 \red{Extracted from paper ---------------------------------------------}
 

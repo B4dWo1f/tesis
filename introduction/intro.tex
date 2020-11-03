@@ -8,10 +8,10 @@
 % Qsimulator
 
 The initial goal of this thesis was the exploration of graphene based nuclear spin qubits, very much inspired in the proposal for nuclear spin qubits in Silicon by B. E. Kane\cite{Kane1988}, in 1988.
-In the original paper the proposed system consists of $\ce{P}$ donors on a $\ce{Si}$ matrix. The $\ce{P}$ donors have a nuclear spin $I=1/2$
-The control between the electronic and nuclear spin (for each $\ce{P}$ donor) was proposed via electric gating and a combination of external microwave and radio frequency pulses.
+In the original paper the proposed system consists of $\ce{P}$ donors on a $\ce{Si}$ matrix. The $\ce{P}$ donors have a nuclear spin $I=1/2$ and the electronic states induced around them have an electric spin $S=1/2$.
+The control between these spins was proposed via electric gating and a combination of external microwave and radio frequency pulses.
 Our plan was to explore an implementation of a similar system in a completely different material: hydrogenated bilayer graphene.
-Nevertheless, in the process of studying the spin interactions among qubits we thought of another application for this platform, namely, analog quantum simulation of fermionic lattice models that allows the study a broad class of emergent electronic properties and has the promise for not-so-long-term applications.
+Nevertheless, in the process of studying the spin interactions among qubits we thought of another application for this platform, namely, the analog quantum simulation of fermionic lattice models that allows the study a broad class of emergent electronic properties and has the promise for not-so-long-term applications.
 \medskip
 
 % The quantum information would be stored in the nuclear spin of $\ce{H}$ adatoms chemisorbed on top of bilayer graphene and in order to interact with it we propose the use of electric gating which it is known to control the band gap of the system and, with it, the hyperfine interaction as well as the exchange interaction among adatoms.
@@ -47,7 +47,7 @@ The interaction between different qubits could be switched on and off using elec
 Another big challenge is the detection of the spin state at any given time of any of the components. Although there is not an ultimate answer for this problem, there are many ideas to work around it. The simplest option could be the use of a number of qubits all in parallel so the macroscopic magnetization could be measured. Also, if the nuclear spins are incorporated into an electronic device it is possible to infer the nuclear spin based on the electronic properties.\cite{Kane1992,Wald1994,Stich1996,Dixon1997,Dobers1988,Stegner2006}. The most state-of-the-art implementation of this system has proven able to (destructively) read a single electronic spin state as well as read and manipulate single and double qubit systems\cite{Morello2010,Pla2012,Dehollain2014}.
 
 \section{A nuclear spin based graphene quantum bit}
-Our proposal replaces the $\ce{P}$ dopants in $\ce{Si}$ by $\ce{H}$ adatoms on bilayer graphene.
+Our proposal replaces the \textbf{$\ce{P}$ dopants in $\ce{Si}$} by \textbf{$\ce{H}$ adatoms on bilayer graphene}.
 This system provides the same ingredients: a host with virtually no nuclear spin impurities,\footnote{The abundance of Carbon isotopes with nuclear spin $I=0$ is $\sim98.9\%$ (which could still be problematic, although that number for Silicon is $\sim92.2\%$) but, in principle, it should be possible to get isotopically pure Carbon.} a dopant with nuclear spin $I=1/2$ and a surrounding electronic spin $S=1/2$ spatially bounded to them.
 
 
@@ -98,12 +98,9 @@ It is probably too soon to tell but the introduction of superconductivity in the
 
 \section{Scope of this thesis}
 Condensed Matter Physics is an immensely broad branch of Physics. It encompasses many different systems at different scales and with many different approaches.
-The same phenomenon can bridge the gape 
+It covers from the most applied ideas of metrology to the deep mathematical concepts underlying the Hall Effect, key to the 2016 Nobel prize.
 
-It covers from the most applied ideas of metrology 
-From deeply mathematical and theoreical ideas bridging the 
-
-This thesis sits on the theoretical side and is mainly computational.
+This thesis sits on the theoretical side and it is mainly computational.
 %, nonetheless it might have the flavor of Applied Physics or even Material Science. Naturally many other paths could have been followed, experiments pursued, theoretical models deepened and many topics could be further studied, but the line has to be drawn at some point.
 It approaches mostly graphene-based systems from a theoretical point of view, most often using numerical methods.
 Through out the whole thesis the driving force has been sometimes the possibility of interesting results, regardless their ``immediate'' utility, and some times the possibility of real world application in the near/mid future.
@@ -118,6 +115,8 @@ This approach, midway between fundamental research and real world applications, 
 This thesis revolves around graphene and graphene-based systems, with a special focus on the applications of a particular case: bilayer graphene.
 %One can find a number of reasons for choosing graphene: it is (was) a relatively new material, it has many physically interesting properties and the potential for plenty of applications, it draws a lot of attention form the research community...
 One could say that the scientific community may have gone through an ``interest bubble'' involving graphene and, as a consequence, it has been advertised as a miraculous material with the potential to change the world as we know it. I will not address the controversy of the almighty properties of graphene but I would like to briefly address the graphene hype within the scientific community.
+\smallskip
+
 In order to have a somewhat quantitative description of the graphene hype I have analyzed the book of abstracts of the APS March Meeting since 2005 until 2019.\footnote{notice that 2018 is missing since I could not find the pdf for the full book of abstracts. Also, 2020 edition was canceled, but the book of abstracts was available in advance.}
 The analysis counts the number of abstracts containing a given term (or groups of terms) and normalizes the count to the total number of abstracts that year.
 This quantity is a very rough estimate, of course, but the resulting count is arguably related to the interest of the condensed matter community on a certain topic.
@@ -133,15 +132,15 @@ This quantity is a very rough estimate, of course, but the resulting count is ar
 %\FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-The case of graphene, first block of bars in \fref{topics}, is very interesting, since one can see its raise since (almost) its discovery and the beginning of its decay. This trend is a strong indicator of a possible interest bubble, but I would like to point out the trend over the years of the terms next to it in \fref{topics}: topolog\textcolor{gray}{[y,ical]}, 2d, dirac, \textcolor{gray}{quantum-,spin-,anomalous-}hall, dichal\textcolor{gray}{cogenides, $\ce{MoS2}$, $\ce{WS2}$, $\ce{WSe2}$}\footnote{the terms in grey are grouped during the counting process}.
-All of these terms are undoubtedly related to graphene an clearly they show a steadily growing trend.
+In the case of graphene, first block of bars in \fref{topics}, one can see its raise since (almost) its discovery and the beginning of its decay. This trend is a strong indicator of a possible interest bubble, but I would like to point out the trend over the years of the terms next to it in \fref{topics}: topolog\textcolor{gray}{[y,ical]}, 2d, dirac, \textcolor{gray}{quantum-,spin-,anomalous-}hall, dichal\textcolor{gray}{cogenides, $\ce{MoS2}$, $\ce{WS2}$, $\ce{WSe2}$}\footnote{the terms in grey are grouped during the counting process}.
+All of these terms are undoubtedly related to graphene and clearly they show a steadily growing trend.
 \medskip
 
 Graphene itself is very interesting and it probably deserves all the fame and attention that it gets, but I would argue that the importance of graphene lies in the fact that it has become the gateway for many other materials and even research branches.
 
 The understanding of graphene has been the spark to start the race of two dimensional materials research. \ac{2dm} are a very interesting family of materials both form an applied point of view and from the perspective of fundamental research.
-On one hand, any industry-related property (conductance tunability, magnetism...) becomes instantly interesting just because its 2D nature ensures smaller sizes and possibly cheaper products.
-On the other hand their 2D nature place them right in the frontier between the classical and quantum regime: they are macroscopic (sometimes reaching millimeters) but being one atom thick there are non negligible quantum effects all over the place, what makes the fascinating from the fundamental physics point of view.
+On one hand, any potentially functional property, such as tunable conductivity or magnetic order, becomes instantly interesting just because its 2D nature ensures smaller sizes and possibly cheaper products.
+On the other hand their 2D nature place them right in the frontier between the classical and quantum regime: they are macroscopic (sometimes reaching millimeters) but being one atom thick there are non negligible quantum effects all over the place, what makes them fascinating from the fundamental physics point of view.
 Since the discovery of graphene many other bidimensional materials have been synthesized: $\ce{MoS2}$, $\ce{WSe2}$, $\ce{MoTe2}$, $\ce{BN}$, $\ce{CrI3}$, $\ce{NbSe2}$, $\ce{TaS2}$, $\ce{MnBi2Te4}$... each with their unique set of properties and its list of possible applications in the rapidly growing field of Quantum Technologies. % Footnote to the flagship?
 %But everything started with graphene.
 Some of these materials will be mentioned during the thesis, but graphene will be the common thread. %through out the thesis.
@@ -172,7 +171,7 @@ Some of these materials will be mentioned during the thesis, but graphene will b
 \bigskip
 The rest of this thesis is structured as follows. \chref{ch:graphene} and \chref{ch:bilayer} review the basic properties of graphene and bilayer graphene respectively, as well as most of the methods of calculation used along the thesis.
 
-\chref{ch:vacancy} is based on the publication [\cite{Garcia-Martinez2017}] and it explores a number of properties of $sp^3$ defects on graphene.
+\chref{ch:vacancy} is based on the publication \onlinecite{Garcia-Martinez2017} and it explores a number of properties of $sp^3$ defects on graphene.
 
 \chref{ch:vacancy_bilayer} expands onto the effects of $sp^3$ defects on bilayer graphene.
 
