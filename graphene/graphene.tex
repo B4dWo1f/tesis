@@ -58,11 +58,11 @@ The linear dispersion is of special interest not only for the condensed matter c
 Another consequence of the band structure is that the observed \ac{qhe}\cite{Zheng2002,Zhang2005,Gusynin2005,Peres2006a,Brey2006,Fertig2007,Ostrovsky2008,Fujita2016} is different from the one in conventional semiconductors on 3  counts: first, it shows symmetric \ac{ll} for electrons and holes; second , it has a "zero" \ac{ll}, third, the quantization pattern has an extra 1/2 that arises from the non-trivial Berry phase of Dirac electrons
 % Graphene presents a half integer \ac{qhe} due to the topological nature of its band structure, which arises from a non-trivial Berry phase.
 
-Graphene is expected to be a \ac{ti}\cite{Blick2019}, meaning that when all the interactions are taken into account, particularly the \ac{soc}, the described linear dispersion is supposed to open a small gap, in the order of a few $\si{\micro\eV}$ %XXX check
-although not measured experimentally, possibly due to temperature smearing and device precision.
+Graphene is expected to be a \ac{ti}\cite{Blick2019}, meaning that when all the interactions are taken into account, particularly the \ac{soc}, a very small band gap is predicted to open at the Dirac point, in the order of a few $\si{\micro\eV}$ although not measured experimentally, possibly due to temperature smearing and device precision.\cite{Kane2005,Min2006}
 This gap nonetheless is not a standard insulating band gap. In finite samples the band structure would appear gaped everywhere, but two conducting channels would appear on the edges of the sample.
 This conducting states, spatially bounded to the edge of the system, are the so-called topological edge states and are known to be robust against any perturbation (that does not close the gap by breaking time-reversal symmetry).  %XXX check
 
+% XXX to chapter 1
 Appendices \ref{ch:QSH} and \ref{ch:ANN} are two of my published papers which expand on these topics. The first explores the topological character of few-layer-graphene exploring the proximity effect of different materials. The second explores the bulk-edge correspondence\cite{Hasan2010} using neural networks to estimate the topological phase of some systems based only on a subset of the density matrix corresponding to the bulk region.
 
 
@@ -169,7 +169,7 @@ It is important to notice that the radial information, \ie the distance between 
 \end{equation}
 The radial information (distance between atoms) will be encoded in the numerical values of $V_{pp\sigma}$ and $V_{pp\pi}$ while the geometrical information of the lattice will be contained in the factors $l^2$ and $(1-l^2)$
 
-Most of the time the distance dependence of the parameters can be ignored, but as a rule of thumb one can consider that the \ac{sk} parameters will decrease as the distance between the orbitals increases.
+Since we are neglecting lattice vibrations the distance dependence of the parameters can be safely ignored but, as a rule of thumb, one can consider that the \ac{sk} parameters will decrease as the distance between the orbitals increases.
 The exact ratio depends on the orbitals and the crystalline structure, and different approximations can be found in the literature\cite{Harrison1930}, but $V_{\alpha,\alpha'm}(r)\sim1/r^5$ is a standard estimation.
 \bigbreak
 
@@ -236,7 +236,7 @@ In order to describe \textbf{graphene}, different sets of parameters can be foun
 where the hoppings with a hypothetical $\ce{H}$ atom have been included for later convenience.
 \medbreak
 
-The description of $\pmb{h-\ce{BN}}$ is quite similar to that of graphene, it suffices to add a different on-site energy for the $\ce{B}$ and $\ce{N}$ atoms ($E_{\ce{B}} = -E_{\ce{N}} =\SI{2.5}{\eV}$) while keeping the inter-atomic hoppings similar to those of graphene.
+The description of $\pmb{h-\ce{BN}}$ is quite similar to that of graphene, it suffices to add a different on-site energy for the $\ce{B}$ and $\ce{N}$ atoms ($E_{\ce{B}} = -E_{\ce{N}}\sim\SI{3}{\eV}$) while keeping the inter-atomic hoppings similar to those of graphene\cite{Watanabe2004}.
 \medbreak
 
 \textbf{Bismuth} is a little bit more complex since an accurate description requires up to third neighbor hoppings (and spin-orbit coupling as well, which we will neglect for the moment). The \ac{sk} parameters, taken from~[\citen{Liu1995}] are:
@@ -355,21 +355,25 @@ yet in graphene these parameters vanish: $\varepsilon_{A}=\varepsilon_{B}=\varep
 %
 %
 
-\section{Other Hamiltonian terms}
+\section{Other Terms in the Hamiltonian}
 The Hamiltonian of graphene has been used as a toy model to describe many other materials since their Hamiltonian can be obtained as some modification of that of graphene. Here we explore some of the most commonly used Hamiltonian terms.
 
-\subsection{Mass}
+\subsection{Sublattice Imbalance}
 If we were to consider not graphene but some other material with the same structure but different on-site energies for each sublattice, a so-called ``mass'' term would have to be introduced. This term appears in the description of $h-BN$ and even can be included in the proper description of graphene to account for some proximity effect.
 
 The main effect of such a term is to open a trivial gap at the Dirac points as it was shown in the $h-BN$ bands \fref{SKbands}b).
 
 \subsection{Zeeman}
-The application of an external magnetic field usually has several effects in a material. While a lot of interesting Physics is developed around the formation of Landau levels\cite{}, %TODO
- we will restrict our study to the simpler case of the Zeeman splitting of the energy levels. This effect consists of a symmetric splitting of up ($\uaw$) and down ($\daw$) spins, resulting in a vertical shift the bands for each spin flavor. %TODO figure
+Magntic field, $\vec{B}$, couples to both the spin and orbital degrees of freedom. Whereas orbital coupling leads to the formation of \ac{ll} when the field is perpendicular to the 2D material, in this thesis we do not address that situation, and only focus on the coupling ot the $\vec{B}$ field to the spin degree of freedom, the so called Zeeman interaction.
+
+% The application of an external magnetic field usually has several effects in a material. While a lot of interesting Physics is developed around the formation of Landau levels\cite{}, %TODO
+% We will restrict our study to the simpler case of the Zeeman splitting of the energy levels.
+ 
+This effect consists of a symmetric splitting of up ($\uaw$) and down ($\daw$) spins, resulting in a opposed energy shift of the bands for each spin flavor. %TODO figure
 
 \subsection{Spin-Orbit coupling}
 \label{sec:soc}
-The \acf{soc} is a relativistic interaction that can be interpreted in classical terms (allowing the existence of spin in classical physics) as the interaction between the spin of the electron and the electrostatic potential of the nucleus.
+The \acf{soc} is a relativistic effect that can be interpreted in classical terms (allowing the existence of spin in classical physics) as the interaction between the spin of the electron and the electrostatic potential of the nucleus.
 
 In most of this section we are going to use the four orbital basis \eqref{basis4} with the geometry of \fref{graphene_summary}b), also described in the first section of the chapter.
 In this basis there are two atoms per unit cell and four orbitals per atom, so our Hamiltonian would be a $8\times8$ matrix. When interactions concerning the spin are taken into account, the basis needs to be doubled and we choose the following order to do so:
@@ -390,7 +394,7 @@ In this basis there are two atoms per unit cell and four orbitals per atom, so o
 
 So the \ac{soc} Hamiltonian term can be written as follows:
 \begin{equation}
-   H_{SO}= \lambda_{SO}\vec{L}\vec{S} =
+   H_{SO}= \lambda_{SO}\vec{L}\cdot\vec{S} =
    \lambda_{SO}\left[L_xS_x + L_yS_y + L_zS_z \right] =
    \lambda_{SO}\left[L_zS_z+
    \frac{1}{2}\left(L^{+}S^{-}+L^{-}S^{+}\right)\right]

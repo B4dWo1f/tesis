@@ -197,7 +197,7 @@ Naively we could think that something similar happens in bilayer graphene. Indee
 This dependence is due to the asymmetric role of each sublattice in each of the layers. Namely in each of the layers one of the sublattices is connected to the other layer.
 Since deposition of atomic \ce{H} has been demonstrated with atomic precision\cite{Brihuega2016}, we can afford the luxury of restraining ourselves to a particular kind of defect.
 
-what is more or less truth, but the key difference is the effect of an external electric field, which opens a whole new venue of possibilities since it presents an electrically tunable gap.
+% what is more or less truth, but the key difference is the effect of an external electric field, which opens a whole new venue of possibilities since it presents an electrically tunable gap.
 
 
 
@@ -275,7 +275,7 @@ We can calculate the spectrum of the system with and without a vacancy in order 
 As shown in \fref{confinement}b) the main difference when the vacancy is introduced is that a state appears in the middle of the (confinement) gap. As a matter of fact there will appear as many in-gap states as vacancies are introduced.
 
 When we analyze the in-gap state we see that it is $100\%$ sublattice polarized, as predicted by the Lieb's theorem\cite{Lieb1989}. Regarding the layer distribution, it is distributed in both layers but not equitably. Interestingly, the in-gap state has more spectral weight in \textbf{the layer that does not host the vacancy} and the bigger the island, the stronger this polarization is as shown in \fref{confinement}d).
-We can check the spatial distribution of this state (see \fref{confinement}c)) to see that it is actually quite localized in the top layer (red dots), but completely spread over the bottom layer (blue dots). The particular shape of the distribution of the bottom layer is strongly affected by the edges so it is not to be considered as a reliable result, nevertheless its spreading (calculated via IPR later) is consistent through different shapes and island sizes, and in accordance to the literature\cite{Castro2010}.
+We can check the spatial distribution of this state (see \fref{confinement}c)) to see that it is actually quite localized in the top layer (red dots), but completely spread over the bottom layer (blue dots). The particular shape of the distribution of the bottom layer is strongly affected by the edges so it is not to be considered as a reliable result, nevertheless its spreading (calculated via \ac{ipr} later) is consistent through different shapes and island sizes, and in accordance to the literature\cite{Castro2010}.
 
 %TODO discuss <S> with size
 
@@ -287,7 +287,7 @@ When an electric field is applied to bilayer graphene with a vacancy, the in-gap
 \centering
 \includegraphics{artlat/fig/spectrum.pdf}
 \vspace{-20pt}
-\caption{$a)$ Evolution of the spectrum of an armchair island with the electric field. $b)$ Sublattice and Layer polarization as a function of the electric field. $c)$ Evolution of the IPR for the top (blue) and bottom layer (orange) and confinement length (green) with the electric field. Notice that the IPR for the bottom layer is very close to zero ($\text{IPR}_b\sim10^{-11}$) while the for the top layer it changes five orders of magnitude with the electric field, showing how much the in-gap state can be confined. Analogously the confinement length shows (right axis) that the state is spread all over the island for $V=\SI{0}{\eV}$ but it can be confined to $\sim\SI{50}{\angstrom}$. The vertical gray strip in all panels shows the region where $|V|\leqslant\Delta_0$, where the edge effects can play a role.}
+\caption{$a)$ Evolution of the 9 closest eigenstates of the spectrum of an armchair island with the electric field. $b)$ Sublattice and Layer polarization as a function of the electric field. $c)$ Evolution of the IPR for the top (blue) and bottom layer (orange) and confinement length (green) with the electric field. Notice that the IPR for the bottom layer is very close to zero ($\text{IPR}_b\sim10^{-11}$) while the for the top layer it changes five orders of magnitude with the electric field, showing how much the in-gap state can be confined. Analogously the confinement length shows (right axis) that the state is spread all over the island for $V=\SI{0}{\eV}$ but it can be confined to $\sim\SI{50}{\angstrom}$. The vertical gray strip in all panels shows the region where $|V|\leqslant\Delta_0$, where the edge effects can play a role.}
 \label{spectrum}
 \end{figure}
 % \FloatBarrier
@@ -300,7 +300,7 @@ Another effect introduced by the electric field is the localization of the state
   0.98 = \int_{r_0}^{L_C} \Psi_0(r) dr   %XXX arreglar!!!
 \end{equation}
 This non-standard definition gives an intuitive idea of how far from the vacancy (placed at $r_0$) is most of the state (over $98\%$ of it).
-It is interesting to notice that the inverse participation ratio, IPR, defined as:
+It is interesting to notice that the \acf{ipr} defined as:
 \begin{equation}
   \ket{\Psi_0} = \sum_\beta c_\alpha\ket{\phi_\alpha}\quad\quad;\quad\quad
   \text{IPR} = \sum_\alpha |c_\alpha|^4
@@ -364,7 +364,8 @@ If we artificially increase the value of the interlayer coupling we can that the
 
 This behavior might be understood keeping in mind the behavior of a single vacancy in graphene. It is known that for a vacancy in graphene, the in-gap state is mostly concentrated in the three closest atoms. In graphene bilayer it happens that these three closest atoms are connected to the other graphene layer, so the stronger the interlayer coupling, the easier will be for the in-gap state to spread to the other layer.
 
-What I do not understand is that the 3 atoms closest to the vacancy (containing most of the state at $\eta=0$) are connected to atoms of the opposite sublattice in the other layer, yet, the sublattice polarization seems to keep its expected flavor even when the interlayer coupling is heavily increased.
+% XXX
+% What I do not understand is that the 3 atoms closest to the vacancy (containing most of the state at $\eta=0$) are connected to atoms of the opposite sublattice in the other layer, yet, the sublattice polarization seems to keep its expected flavor even when the interlayer coupling is heavily increased.
 
 
 
@@ -482,13 +483,13 @@ What I do not understand is that the 3 atoms closest to the vacancy (containing 
 % % \FloatBarrier
 % % %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-\begin{figure}[h!]
-\centering
-\includegraphics{artlat/fig/hyperfine.pdf}
-\vspace{-20pt}
-\caption{Change in the hyperfine coupling with the electric field.}
-\label{latt_hyper}
-\end{figure}
-\FloatBarrier
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+%\begin{figure}[h!]
+%\centering
+%\includegraphics{artlat/fig/hyperfine.pdf}
+%\vspace{-20pt}
+%\caption{Change in the hyperfine coupling with the electric field.}
+%\label{latt_hyper}
+%\end{figure}
+%\FloatBarrier
+%%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
