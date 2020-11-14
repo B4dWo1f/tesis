@@ -71,6 +71,15 @@
   }}
 \makeatother
 
+\usepackage{afterpage}
+
+%~~~~ Empty page
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
 %~~~~ Units
 \usepackage{siunitx}
 \sisetup{
@@ -145,17 +154,18 @@
 %~~~~~~~~ Agradecimientos ~~~~~~~~
 % \input{covers/agradecimientos.tex}
 
+%~~~~~~~~ Acronyms ~~~~~~~~
+\thispagestyle{empty}
+\afterpage{\blankpage}
+\chapter*{Acronyms}
+\pagenumbering{gobble}
+\input{acro_list}
+\clearpage
+
 %~~~~~~~~ Index ~~~~~~~~
 \thispagestyle{empty}
 \pagenumbering{gobble}
 \tableofcontents
-\clearpage
-
-%~~~~~~~~ Acronyms ~~~~~~~~
-\thispagestyle{empty}
-\chapter*{Acronyms}
-\pagenumbering{gobble}
-\input{acro_list}
 \clearpage
 
 %~~~~~~~~ Start page counting
@@ -239,9 +249,9 @@
 %%%%\input{appendix/A.tex}
 % Units
 \input{appendix/B.tex}
-%%%%% Effective exchange interaction
+% Effective exchange interaction
+\input{appendix/blue_hamiltonian.tex}
 %%%%\input{appendix/C.tex}
-\input{appendix/publications.tex}
 
 
 

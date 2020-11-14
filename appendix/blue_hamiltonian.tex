@@ -1,0 +1,302 @@
+\chapter{Spin Exchange Interactions} %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+Starting from the notes on the effective exchange, equations 9 and 10. I focus for now on the effective coupling $J$.
+
+Let's remember that for getting to that formula we start from two in-gap states that should be associated to each of the vacancies.
+In our case, the in-gap states, $\psi_0$ and $\psi_1$, take the form of bonding-antibonding states, hence we can define a left $\psi_L$ and right $\psi_R$ states as:
+\begin{equation}
+  \psi_L = \frac{1}{2}\left(\psi_0 \pm \psi_1\right) \quad\quad;\quad\quad
+  \psi_R = \frac{1}{2}\left(\psi_0 \mp \psi_1\right)
+\end{equation}
+The sign of this definition may depend on the numerical diagonalization, and it will be decided such that:
+\begin{equation*}
+  \bra{\psi_L}X\ket{\psi_L} < \bra{\psi_R}X\ket{\psi_R}
+\end{equation*}
+where $X$ is the position (in the $X$-axis) operator.
+
+
+\subsection{Anti-ferromagnetic coupling}
+The in-gap states can form a bonding-antibonding pair resulting in a splitting of the levels, $\Delta_0$. The Anti-ferromagnetic coupling is defined as
+\begin{equation}
+  J_{AF} \propto \Delta^2_0     %\frac{\Delta^2_0}{U_{Eff}}
+\end{equation}
+
+
+\subsection{Ferromagnetic coupling}
+The operator that creates an electron at the atom i with spin $\sigma$ can be written as:
+\begin{equation}
+  \crea{c}{i\sigma} = \sum_v\psi_v(i)\crea{a}{v_\sigma}+
+                      \sum_c\psi_c(i)\crea{a}{c_\sigma}+
+                      L^*(i)\crea{a}{L\sigma} + R^*(i)\crea{a}{R\sigma}
+\label{creation}
+\end{equation}
+But we will restrict to the in-gap states manifold, hence we define the creation and destruction operator for an electron with spin $\sigma$:
+\begin{equation}
+  \crea{c}{i\sigma} = L^*(i)\crea{a}{L\sigma} + R^*(i)\crea{a}{R\sigma}
+  \quad\quad;\quad\quad
+  \des{c}{i\sigma} = L(i)\des{a}{L\sigma} + R(i)\des{a}{R\sigma}
+\end{equation}
+With this approximation the density operator $n_{i\sigma} = \crea{c}{i\sigma}\des{c}{i\sigma}$  reads:
+\begin{equation}
+  \begin{split}
+  n_{i\sigma} &= (L^*(i)\crea{a}{L\sigma} + R^*(i)\crea{a}{R\sigma})
+                 (L(i)\des{a}{L\sigma} + R(i)\des{a}{R\sigma}) =\\
+              &= |L(i)|^2 \crea{a}{L\sigma}\des{a}{L\sigma}+
+                 |R(i)|^2 \crea{a}{R\sigma}\des{a}{R\sigma}+
+                 L^*(i)R(i)\crea{a}{L\sigma}\des{a}{R\sigma}+
+                 R^*(i)L(i)\crea{a}{R\sigma}\des{a}{L\sigma}
+  \end{split}
+\end{equation}
+
+Now we expand the Hubbard operator,
+\begin{equation*}
+  H_U = U\sum_i n_{i\uaw}n_{i\daw}
+\end{equation*}
+dropping the $i$ label
+\begin{equation}
+  \begin{split}
+    n_\uaw n_\daw= &\left[
+    |L|^2 \crea{a}{L\uaw}\des{a}{L\uaw}+
+    |R|^2 \crea{a}{R\uaw}\des{a}{R\uaw}+
+    L^*R\crea{a}{L\uaw}\des{a}{R\uaw}+
+    R^*L\crea{a}{R\uaw}\des{a}{L\uaw}
+    \right]\cdot\\
+    &\left[
+    |L|^2 \crea{a}{L\daw}\des{a}{L\daw}+
+    |R|^2 \crea{a}{R\daw}\des{a}{R\daw}+
+    L^*R\crea{a}{L\daw}\des{a}{R\daw}+
+    R^*L\crea{a}{R\daw}\des{a}{L\daw}
+  \right]=\\
+    =& |L|^4 \crea{a}{L\uaw}\des{a}{L\uaw}\crea{a}{L\daw}\des{a}{L\daw}+
+     |R|^4 \crea{a}{R\uaw}\des{a}{R\uaw}\crea{a}{R\daw}\des{a}{R\daw}+
+     (L^*R)^2\crea{a}{L\uaw}\des{a}{R\uaw}\crea{a}{L\daw}\des{a}{R\daw}+
+     (R^*L)^2\crea{a}{R\uaw}\des{a}{L\uaw}\crea{a}{R\daw}\des{a}{L\daw}+\\
+  &+|L|^2|R|^2\crea{a}{L\uaw}\des{a}{L\uaw}\crea{a}{R\daw}\des{a}{R\daw}+
+    |L|^2L^*R \crea{a}{L\uaw}\des{a}{L\uaw}\crea{a}{L\daw}\des{a}{R\daw}+
+    |L|^2R^*L \crea{a}{L\uaw}\des{a}{L\uaw}\crea{a}{R\daw}\des{a}{L\daw}+\\
+  &+|R|^2|L|^2 \crea{a}{R\uaw}\des{a}{R\uaw}\crea{a}{L\daw}\des{a}{L\daw}+
+    |R|^2L^*R \crea{a}{R\uaw}\des{a}{R\uaw}\crea{a}{L\daw}\des{a}{R\daw}+
+    |R|^2R^*L \crea{a}{R\uaw}\des{a}{R\uaw}\crea{a}{R\daw}\des{a}{L\daw}+\\
+  &+L^*R|L|^2\crea{a}{L\uaw}\des{a}{R\uaw}\crea{a}{L\daw}\des{a}{L\daw}+
+    L^*R|R|^2\crea{a}{L\uaw}\des{a}{R\uaw}\crea{a}{R\daw}\des{a}{R\daw}+
+    L^*RR^*L\crea{a}{L\uaw}\des{a}{R\uaw}\crea{a}{R\daw}\des{a}{L\daw}+\\
+  &+R^*L|L|^2\crea{a}{R\uaw}\des{a}{L\uaw}\crea{a}{L\daw}\des{a}{L\daw}+
+    R^*L|R|^2\crea{a}{R\uaw}\des{a}{L\uaw}\crea{a}{R\daw}\des{a}{R\daw}+
+    R^*LL^*R\crea{a}{R\uaw}\des{a}{L\uaw}\crea{a}{L\daw}\des{a}{R\daw}
+  \end{split}
+\end{equation}
+Using that $n_{L\uaw} = \crea{a}{L\uaw}\des{a}{L\uaw}$ and analogously for $n_{R\uaw}$ and also that $L^*L=|L|^2$ we can rewrite
+\begin{equation}
+  \begin{split}
+    n_\uaw n_\daw =& |L|^4 n_{L\uaw}n_{L\daw}+
+     |R|^4 n_{R\uaw}n_{R\daw}+
+     (L^*R)^2\crea{a}{L\uaw}\des{a}{R\uaw}\crea{a}{L\daw}\des{a}{R\daw}+
+     (R^*L)^2\crea{a}{R\uaw}\des{a}{L\uaw}\crea{a}{R\daw}\des{a}{L\daw}+\\
+  &+|L|^2|R|^2 n_{L\uaw}n_{R\daw}+
+    |L|^2L^*R n_{L\uaw}\crea{a}{L\daw}\des{a}{R\daw}+
+    |L|^2R^*L n_{L\uaw}\crea{a}{R\daw}\des{a}{L\daw}+\\
+  &+|L|^2|R|^2 n_{R\uaw}n_{L\daw}+
+    |R|^2L^*R n_{R\uaw}\crea{a}{L\daw}\des{a}{R\daw}+
+    |R|^2R^*L n_{R\uaw}\crea{a}{R\daw}\des{a}{L\daw}+\\
+  &+L^*R|L|^2\crea{a}{L\uaw}\des{a}{R\uaw}n_{L\daw}+
+    L^*R|R|^2\crea{a}{L\uaw}\des{a}{R\uaw}n_{R\daw}+
+    |L|^2|R|^2\crea{a}{L\uaw}\des{a}{R\uaw}\crea{a}{R\daw}\des{a}{L\daw}+\\
+  &+R^*L|L|^2\crea{a}{R\uaw}\des{a}{L\uaw}n_{L\daw}+
+    R^*L|R|^2\crea{a}{R\uaw}\des{a}{L\uaw}n_{R\daw}+
+    |L|^2|R|^2\crea{a}{R\uaw}\des{a}{L\uaw}\crea{a}{L\daw}\des{a}{R\daw}
+  \end{split}
+\end{equation}
+These 16 terms can be rewritten and grouped as
+\begin{equation}
+  \begin{split}
+    n_\uaw n_\daw&= |L|^4 n_{L\uaw}n_{L\daw}+ |R|^4 n_{R\uaw}n_{R\daw}+\\
+  &+|L|^2|R|^2\left(n_{L\uaw}n_{R\daw} + n_{R\uaw}n_{L\daw}+
+                    \crea{a}{L\uaw}\des{a}{R\uaw}\crea{a}{R\daw}\des{a}{L\daw}+
+                    \crea{a}{R\uaw}\des{a}{L\uaw}\crea{a}{L\daw}\des{a}{R\daw}
+              \right)+\\
+  &+(L^*R)^2\crea{a}{L\uaw}\des{a}{R\uaw}\crea{a}{L\daw}\des{a}{R\daw}+
+     (R^*L)^2\crea{a}{R\uaw}\des{a}{L\uaw}\crea{a}{R\daw}\des{a}{L\daw}+\\
+  &+|L|^2L^*R \left(n_{L\uaw}\crea{a}{L\daw}\des{a}{R\daw}+
+                   \crea{a}{L\uaw}\des{a}{R\uaw}n_{L\daw}\right)+
+    |L|^2R^*L \left(n_{L\uaw}\crea{a}{R\daw}\des{a}{L\daw}+
+                   \crea{a}{R\uaw}\des{a}{L\uaw}n_{L\daw}\right)+\\
+  &+|R|^2L^*R \left(n_{R\uaw}\crea{a}{L\daw}\des{a}{R\daw}+
+                   \crea{a}{L\uaw}\des{a}{R\uaw}n_{R\daw}\right)+
+    |R|^2R^*L \left(n_{R\uaw}\crea{a}{R\daw}\des{a}{L\daw}+
+                   \crea{a}{R\uaw}\des{a}{L\uaw}n_{R\daw}\right)
+  \end{split}
+\end{equation}
+
+We can rename the couplings of these terms for an easier interpretation\footnote{the deduction was made for $n_\uaw n_\daw$, but the Hubbard term actually reads $H_U = U\sum_i n_{i\uaw}n_{i\daw}$}:
+\begin{equation}
+  \begin{split}
+    \tilde{U}_L &= U\sum_i |L(i)|^4\\
+    \tilde{U}_R &= U\sum_i  |R(i)|^4\\
+    \frac{J}{2} &= U\sum_i  |L(i)|^2|R(i)|^2\\
+    \Delta &= U\sum_i  (L^*(i)R(i))^2\\
+    t_{LR} &= U\sum_i  |L(i)|^2L^*(i)R(i)\\
+    t_{RL} &= U\sum_i  |R(i)|^2R^*(i)L(i)
+  \end{split}
+\label{rename}
+\end{equation}
+Finally, rearranging the creation and destruction operators and noticing that $\crea{a}{L\uaw}\des{a}{L\daw} = S^+_L$, the Hubbard term can be expressed as the addition of 5 terms
+\begin{equation*}
+  H_U = H_{\tilde{U}} + H_J + H_{pair} + H_{LR} + H_{RL}
+\end{equation*}
+with
+\begin{equation}
+  H_{\tilde{U}} = \tilde{U}_L n_{L\uaw}n_{L\daw}+
+                  \tilde{U}_R n_{R\uaw}n_{R\daw}
+\end{equation}
+\begin{equation}
+  H_{J} =\frac{J}{2}\left(n_{L\uaw}n_{R\daw} + n_{R\uaw}n_{L\daw}-
+              S^+_LS^-_R - S^+_RS^-_L \right)
+\label{Jraw}
+\end{equation}
+\begin{equation}
+  H_{pair} = \Delta \crea{a}{L\uaw}\crea{a}{L\daw}\des{a}{R\uaw}\des{a}{R\daw}+
+             \Delta^* \crea{a}{R\uaw}\crea{a}{R\daw}\des{a}{L\uaw}\des{a}{L\daw}
+\end{equation}
+\begin{equation}
+  H_{LR} = t_{LR} \left(n_{L\uaw}\crea{a}{L\daw}\des{a}{R\daw}+
+                   \crea{a}{L\uaw}\des{a}{R\uaw}n_{L\daw}\right)+
+           t^*_{LR} \left(n_{L\uaw}\crea{a}{R\daw}\des{a}{L\daw}+
+                   \crea{a}{R\uaw}\des{a}{L\uaw}n_{L\daw}\right)
+\end{equation}
+\begin{equation}
+  H_{LR} = t_{RL} \left(n_{R\uaw}\crea{a}{L\daw}\des{a}{R\daw}+
+                   \crea{a}{L\uaw}\des{a}{R\uaw}n_{R\daw}\right)+
+           t^*_{RL} \left(n_{R\uaw}\crea{a}{R\daw}\des{a}{L\daw}+
+                   \crea{a}{R\uaw}\des{a}{L\uaw}n_{R\daw}\right)
+\end{equation}
+
+\subsubsection{Heisenberg coupling}
+In order to try to make apparent the effective Heisenberg term we first expand the standard Heisengberg Hamiltonian in terms of the density operators.
+\begin{equation}
+  \mathcal{H}_J = -J\vec{S}_L\cdot\vec{S}_R =
+  -J \left[S^z_LS^z_R+\frac{1}{2}\left(S^+_LS^-_R+S^-_LS^+_R\right)\right]
+\end{equation}
+The Ising contribution, can be written in terms of the density operators by taking into account that $S^z_\alpha = (n_\alpha\uaw-n_\alpha\daw)/2$,
+
+\begin{equation}
+  \mathcal{H}_{Ising} = -J S^z_LS^z_R = -\frac{J}{4}
+      \left(n_{L\uaw}n_{R\uaw}+n_{L\daw}n_{R\daw}-
+            n_{L\daw}n_{R\uaw}-n_{L\uaw}n_{R\daw}\right)
+\label{Ising_goal}
+\end{equation}
+Hence, the Heisenberg Hamiltonian can be written as
+\begin{equation}
+  \mathcal{H}_J = -J\vec{S}_L\cdot\vec{S}_R =
+  -\frac{J}{4}\left(n_{L\uaw}n_{R\uaw}+n_{L\daw}n_{R\daw}-
+                    n_{L\daw}n_{R\uaw}-n_{L\uaw}n_{R\daw}\right)
+  -\frac{J}{2}\left(S^+_LS^-_R+S^-_LS^+_R\right)
+\label{heisenberg_goal}
+\end{equation}
+Now we make explicit the Heisenberg contribution arising from the effective Hamiltonian~\eqref{Jraw}. To do so we need to take into account the following constrain:
+\begin{equation}
+  2 = n_{L\uaw} + n_{L\daw} + n_{R\uaw} + n_{R\daw} \quad\quad\Leftrightarrow \quad\quad
+  4 = n_Ln_L + n_Rn_R + n_Ln_R + n_Rn_L
+\label{constrain}
+\end{equation}
+where
+\begin{equation}
+  \begin{split}
+    n_Ln_L &= n_{L\uaw}n_{L\uaw} + n_{L\daw}n_{L\daw} +
+              n_{L\uaw}n_{L\daw} + n_{L\daw}n_{L\uaw}\\
+    n_Rn_R &= n_{R\uaw}n_{R\uaw} + n_{R\daw}n_{R\daw} +
+              n_{R\uaw}n_{R\daw} + n_{R\daw}n_{R\uaw}\\
+    n_Ln_R &= n_{L\uaw}n_{R\uaw} + n_{L\daw}n_{R\daw} +
+              n_{L\uaw}n_{R\daw} + n_{L\daw}n_{R\uaw}\\
+    n_Rn_L &= n_{R\uaw}n_{L\uaw} + n_{R\daw}n_{L\daw} +
+              n_{R\uaw}n_{L\daw} + n_{R\daw}n_{L\uaw}
+  \end{split}
+\label{rename_nl_nr}
+\end{equation}
+The constrain~\eqref{constrain} can actually be rewritten as:
+\begin{equation}
+  4 = n_Ln_L + n_Rn_R + n_Ln_R + n_Rn_L \quad\quad\Leftrightarrow \quad\quad
+  0 = 1-\frac{1}{4}\left(n_Ln_L + n_Rn_R + 2n_Ln_R\right)
+\label{constrain2}
+\end{equation}
+We can safely add to the Hamiltonian term~\eqref{Jraw} a term like the following
+\begin{equation*}
+  0 = \frac{J}{2}\left[1-\frac{1}{4}\left(n_Ln_L + n_Rn_R + 2n_Ln_R\right)\right]
+\end{equation*}
+Resulting:
+\begin{equation}
+  H_{J} =\frac{J}{2}\left(n_{L\uaw}n_{R\daw} + n_{R\uaw}n_{L\daw}-
+         S^+_LS^-_R - S^+_RS^-_L \right)+
+         \frac{J}{2}\left[1-\frac{1}{4}\left(n_Ln_L + n_Rn_R + 2n_Ln_R\right)\right]
+\label{Heff}
+\end{equation}
+The terms containing $S^\pm_{L/R}$ are already present, and for the sake of simplicity will be grouped in the term $H^\pm = -J/2(S^+_LS^-_R + S^+_RS^-_L)$. Comparing eq~\eqref{heisenberg_goal} to eq~\eqref{Heff} we can see that the missing terms are $ n_{L\uaw}n_{R\uaw}+n_{L\daw}n_{R\daw} $, which are present in the $n_Ln_R$ term. The effective Hamiltonian $H_J$ can, then, be expressed as:
+\begin{equation}
+  H_{J} = H^\pm + \frac{J}{2} - \frac{J}{8}\left(n_Ln_L + n_Rn_R\right)+
+    \frac{J}{2}\left(n_{L\uaw}n_{R\daw} + n_{R\uaw}n_{L\daw}\right)-
+    \frac{J}{4}\left(n_Ln_R\right)
+\end{equation}
+taking into account the definitions~\eqref{rename_nl_nr} this can be simplified as
+\begin{equation*}
+  \begin{split}
+      H_{J} &= H^\pm + \frac{J}{2} - \frac{J}{8}\left(n_Ln_L + n_Rn_R\right)+
+      \frac{2J}{4}\left(n_{L\uaw}n_{R\daw} + n_{R\uaw}n_{L\daw}\right)-
+      \frac{J}{4}\left(n_{L\uaw}n_{R\uaw} + n_{L\daw}n_{R\daw} +
+      n_{L\uaw}n_{R\daw} + n_{L\daw}n_{R\uaw}\right)\\
+      H_{J} &= H^\pm + \frac{J}{2} - \frac{J}{8}\left(n_Ln_L + n_Rn_R\right)-
+      \frac{J}{4}\left(n_{L\uaw}n_{R\uaw}+n_{L\daw}n_{R\daw}-
+                        n_{L\daw}n_{R\uaw}-n_{L\uaw}n_{R\daw}\right)
+    \end{split}
+\end{equation*}
+At this point we already have all the terms in eq~\eqref{heisenberg_goal}, we just need some rearranging
+\begin{equation}
+  H_J = \underbrace{-\frac{J}{4}\left(n_{L\uaw}n_{R\uaw}+n_{L\daw}n_{R\daw}-
+    n_{L\daw}n_{R\uaw}-n_{L\uaw}n_{R\daw}\right)
+    -\frac{J}{2}\left(S^+_LS^-_R + S^+_RS^-_L\right)}_{-J\vec{S}_L\vec{S}_R}+
+        \frac{J}{2}\left[1 - \frac{1}{4}\left(n_Ln_L + n_Rn_R\right)\right]
+\end{equation}
+Finnally the Effective $H_J$ term:
+\begin{equation}
+  H_J = -J\vec{S}_L\vec{S}_R +
+      \frac{J}{2}\left[1 - \frac{1}{4}\left(n_Ln_L + n_Rn_R\right)\right]
+\end{equation}
+Some extra simplification can be made by absorbing the terms $n_{L/R\uaw}n_{L/R\daw}$ in the Hamiltonian term $H_{\tilde{U}}$, to do so we just need to expand the term $n_Ln_L + n_Rn_R$ and consider again the constrain~\eqref{constrain}:
+\begin{equation}
+  n_Ln_L + n_Rn_R =
+  \underbrace{n_{L\uaw}n_{L\uaw} + n_{L\daw}n_{L\daw} + n_{R\uaw}n_{R\uaw} +
+   n_{R\daw}n_{R\daw}}_{n_{L\uaw}+n_{L\daw}+n_{R\uaw}+n_{R\daw} = 2} +
+  \underbrace{2\left(n_{L\uaw}n_{L\daw}+
+   n_{R\uaw}n_{R\daw}\right)}_{\text{absorbed in }H_{\tilde{U}}}
+\end{equation}
+The final form of the effective Hamiltonian is:
+\begin{equation}
+   \color{blue}
+  H_U = \frac{J}{4} + H_{\tilde{U}} + H_J + H_{pair} + H_{LR} + H_{RL}
+\label{effective_ham}
+\end{equation}
+where each of these terms are:
+\begin{equation}
+  H_{\tilde{U}} =
+  \left(\tilde{U}_L-\frac{J}{4}\right) n_{L\uaw}n_{L\daw} +
+  \left(\tilde{U}_R-\frac{J}{4}\right) n_{R\uaw}n_{R\daw}
+\end{equation}
+\begin{equation}
+  H_J = -J\vec{S}_L\vec{S}_R
+\end{equation}
+  % \frac{J}{2}\left[1-\frac{1}{4}\left(n_{L\uaw}n_{L\uaw} + n_{L\daw}n_{L\daw}+
+  % n_{R\uaw}n_{R\uaw} + n_{R\daw}n_{R\daw}\right) \right]
+\begin{equation}
+  H_{pair} = \Delta \crea{a}{L\uaw}\crea{a}{L\daw}\des{a}{R\uaw}\des{a}{R\daw}+
+             \Delta^* \crea{a}{R\uaw}\crea{a}{R\daw}\des{a}{L\uaw}\des{a}{L\daw}
+\end{equation}
+\begin{equation}
+  H_{LR} = t_{LR} \left(n_{L\uaw}\crea{a}{L\daw}\des{a}{R\daw}+
+                   \crea{a}{L\uaw}\des{a}{R\uaw}n_{L\daw}\right)+
+           t^*_{LR} \left(n_{L\uaw}\crea{a}{R\daw}\des{a}{L\daw}+
+                   \crea{a}{R\uaw}\des{a}{L\uaw}n_{L\daw}\right)
+\end{equation}
+\begin{equation}
+  H_{LR} = t_{RL} \left(n_{R\uaw}\crea{a}{L\daw}\des{a}{R\daw}+
+                   \crea{a}{L\uaw}\des{a}{R\uaw}n_{R\daw}\right)+
+           t^*_{RL} \left(n_{R\uaw}\crea{a}{R\daw}\des{a}{L\daw}+
+                   \crea{a}{R\uaw}\des{a}{L\uaw}n_{R\daw}\right)
+\end{equation}
+

@@ -1,5 +1,13 @@
 \chapter{Hyperfine coupling}
 \label{ch:hyperfine}
+The localization length of the in-gap state due to a $sp^3$ defect in graphene bilayer changes dramatically with an external electric field. In particular in the absence of gating, $\epsilon=0$, the in-gap state is quasi-localized in one layer and completely delocalized in the other.
+
+As the electric field is increased, the in-gap state becomes more and more localized around the defect. This description, based in the 1-orbital picture remains valid when we consider the full description of the 4-orbitals. In addition the 4-orbital model will allow us to explore the behaviour of each of the orbitals.
+
+The idea of using the nuclear spin of \ce{H} atoms on graphene requires a certain capability to tune its interaction with the electronic spin. The hyperfine interaction. In order to do so, we will pay special attention to the occupation of the $s$ orbital of the \ce{H} atom. Remember that the hyperfine coupling vanishes for any other orbital.
+
+
+
 \section{Adatom in the SK-approximation}
 While the model of an effective vacancy in the $p_z$ manifold is very simple and useful, it lacks some ingredients that can also provide interesting physical effects.
 
@@ -67,14 +75,12 @@ The energy of the in-gap state as a function of both parameters is shown in \fre
 It is clear that in order to recover the 1-orbital intuition (in-gap state at $E=0$) and the experimental observations\cite{Sofo2012,Brihuega2016}, we require the limit $V_{sp\sigma}\to\infty$. The position of the in-gap state is the most obvious effect, but the composition of its wave-function can change other properties that we discuss in the next sections.
 
 
-The experimental value for these parameters is difficult to infer\cite{}, and even \ac{dft} calculations depend strongly on the system at hand, so we will consider a wide range of values and explore the resulting physics.
+The experimental value for these parameters is difficult to infer\cite{}, and even \ac{dft} calculations depend strongly on the system at hand (super cell size, and other hyperparameters), so we will consider a wide range of values and explore the resulting physics.
 
 
 
 \section{Hyperfine Interaction}
 \label{sec:hyperfine}
-Functionalized graphene has many interesting properties. 
-
 There is an electronic spin $S=1/2$, and a nuclear spin $I=1/2$ very close in space. A natural question is how big is the interaction between them. In particular, if this interaction were \emph{big enough} and \emph{tunable enough}, the system would have all the necessary ingredients to behave as a single qubit.
 This idea follows very closely the Kane's proposal for a silicon based nuclear spin qubit\cite{Kane1988}. In this proposal Kane suggests that it would be possible to use the nuclear spin of Phosphorus dopants ($\leftidx{^{31}}P$) embedded in Silicon as qubits. The interaction with the qubits would be mediated by the electronic states bounded to the impurity and it could be tuned via an external electric gate which would shift and deform the electronic cloud around the $\leftidx{^{31}}P$ to increase/decrease the hyperfine interaction, effectively switching on and off the interaction of the nuclear spin with the rest of the world.
 Similarly using an electric gate between two dopants it would be possible to tune the inter-qubit interactions.
@@ -99,7 +105,7 @@ where $\vec{L}$ is the orbital momentum of the electron, $\vec{m}_{e}$ is the ma
 
 The first term in equation~\eqref{full_HF} represents the interaction of the nuclear magnetic moment with the magnetic field created at the proton by the rotation of the electronic charge. If we are considering $s$ orbitals this term will vanish since all the terms would include a factor like $\bra{n,0,0}L\ket{n,0,0} = 0$, so we will drop this term from the discussion.
 
-The second term represents the dipole-dipole interaction between the nuclear and electronic magnetic moments. Again for a \textit{pure} $s$ orbital this term would vanish as a consequence of the spherical symmetry of the orbital. Nevertheless, because of perturbations (from the crystal or external fields) a contribution from this term may become relevant. \red{review, and check the possible modification of $\mathcal{A}$ due to this geometric deformation}
+The second term represents the dipole-dipole interaction between the nuclear and electronic magnetic moments. Again for a \textit{pure} $s$ orbital this term would vanish as a consequence of the spherical symmetry of the orbital. Nevertheless, because of perturbations (from the crystal or external fields) a contribution from this term may become relevant. %XXX \red{review, and check the possible modification of $\mathcal{A}$ due to this geometric deformation}
 
 The third term is the so-called ``contact term'', and it arises from the singularity at $\vec{R}=\vec{0}$ of the field created by the magnetic moment of the proton.
 This contact term describes the interaction of the magnetic moment of the electron spin with the magnetic field inside the proton (considered as punctual). Notice that because of the presence of the delta function in this term, it will be proportional to the overlap of the wave function of the electron and the proton. This term will be the main contribution to the hyperfine interaction.\\
@@ -159,12 +165,14 @@ Since we do not have a reliable estimation of the \ac{sk} parameters of the adat
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-While the position of the in-gap state does not change a lot with the $V_{ss\sigma}$, the hyperfine coupling does present a significant variance with this parameter. This behavior is expected since the increasing the $s-s$ hybridization would reduce the available $H_s$ weight for the in-gap wave function.
+While the position of the in-gap state does not change a lot with the $V_{ss\sigma}$, the hyperfine coupling does present a significant variance with this parameter. This behavior is expected since the increasing the $s-p$ hybridization would reduce the available $H_s$ weight for the in-gap wave function.
 
 %Without a thorough study of these parameters (out of the scope of this work) it is worth noting that there is a range of parameters in which the hyperfine coupling is 
 
 %This numbers for the hyperfine coupling are not as big as for the $Si:\leftidx{^{31}}P$, nonetheless the tunability of this quantity almost a
-The interesting
+It is not clear what the experimental value for this parameter will be, but is is feasible, at the very least, to have a reasonable value for the hyperfine coupling.
+
+The occupation of the $s$ orbital will depend heavily on the extension of the in-gap state, which is governed by the electric field.
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
@@ -172,13 +180,14 @@ The interesting
 \includegraphics{defects/fig/hyperfine.pdf}
 \vspace{-5pt}
 \caption{Hyperfine coupling as a function of SK parameter and electric field}
-\label{Label}
+\label{hyperfine_elec}
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
+It is only logical that there might be a big change between the situation where the electronic state is allowed to spread all over the system, and the situation where it is confined around the defect.
 
-
+\fref{hyperfine_elec} summarizes the potential for the manipulation of the hyperfine coupling with the external electric field. Panel a) (discussed before and repeated here for completeness during the discussion of the result) shows
 
 
 \section{A Qubit Idea}
@@ -290,7 +299,7 @@ For now we will neglect the contribution of the proton and check the behavior of
 \includegraphics[width=0.9\textwidth]{chapter03/figures/spectrum.png}
 \vspace{-5pt}
 \caption{Evolution of the eigenvalues of the Hamiltonian \eqref{1qubit} with the magnetic field, $B$, and the hyperfine interaction, $\mathcal{A}$. The dashed line is used to indicate the magnetic field in the second figure}
-\label{spectrum}
+% \label{spectrum}
 \end{figure}
 \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
