@@ -444,9 +444,53 @@ These terms, are in the scale of $\SI{e-2}{\meV}$ while the gap open can reach u
 
 If we consider bilayer graphene, the application of an electric field has another important effect. It shifts the on-site energy of each layer which results in an opening of a gap in the band structure. This results in a very useful feature that will be exploited throughout the thesis.
 
+\subsection{Coulomb interaction}
+The electron-electron interactions are safely neglected most of the time. However for chapters \ref{ch:vacancy} and \ref{ch:designer} we will need to take them into account in order to describe the magnetic properties of the system and the effective interactions between spins giving rise to controlled designed Hamiltonians.
+The many-body Coulomb Hamiltonian is not exactly solvable in most scenarios. If it were, condensed matter physics would %not exist anymore, or at least it would
+look completely different today.
+The complete Coulomb interaction can be expressed as:
+\begin{equation}
+   V{ijkl} = \bra{\psi_i\psi_j}\frac{e^2}{|\vec{r}-\vec{r}'|}\ket{\psi_k\psi_l}=
+   \int\psi^*_i(\vec{r}) \psi^*_j(\vec{r}')
+   \frac{e^2}{|\vec{r}-\vec{r}'|}
+   \psi_k(\vec{r})\psi_l(\vec{r}')
+\end{equation}
+Such a term would require the calculation of $N^4$ integrals, with $N$ the number of single particle atomic orbitals. The number of Coulomb integrals is too large to tackle realistically (in \chref{ch:vacancy_bilayer} we use a system with $N\sim10^5$ sites). For this reason it is common practice to make the very drastic approximation of neglecting all terms but the diagonal ones where $i=j=k=l$.
+This single Coulomb integral is the so-called Hubbard term $U$. In second quantization it takes the following form:
 
+%The Coulomb term can be broken down to different terms depending on the conservation of momentum, spin, etc.
+%in second quantization takes the following form
+%\begin{equation}
+%   H_{\text{e-e}}=\sum_l \varepsilon_l\crea{c}{l}\des{c}{l}+
+%   \frac{1}{2}\sum_{l_1,l_2,l_3,l_4} V^{l_1,l_2}_{l_3,l_4}
+%   \crea{c}{l_1}\crea{c}{l_2}\des{c}{l_3}\des{c}{l_4}
+%\end{equation}
+% where $l$ labels all the necessary quantum numbers: momentum $k$, spin and state
 
+\begin{equation}
+   H_U = U\sum_i \hat{n}_{i\uaw}\hat{n}_{i\daw}
+\label{hubbard}
+\end{equation}
+where each of the $\hat{n}_{i\sigma}=\crea{c}{i\sigma}\des{c}{i\sigma}$ represents the density operator for the atom $i$ and spin $\sigma$.
 
+Even this crude approximation does not have an exact solution. In fact it is not solvable in general, with the exception of very particular cases, namely 1-D systems and small systems using numerical diagonalization.
+
+Still the Hubbard approximation can provide useful information about the systems at hand. In this thesis we will use it in two main ways:
+
+\begin{itemize}
+   \item Lieb's Theorems.\cite{Lieb1989} In 1989 Lieb provided ``\emph{Two Theorems on the Hubbard Model}'', the first one states that the spin of the ground state of a bipartite system with a half filled band is $S=\frac{1}{2}|N_B-N_A|$ where $N_{A/B}$ are the number of sites for each sublattice. The second theorem, not used in this thesis, studies itinerant-electron ferromagnetism in bipartite systems among other things.
+   \item \acf{mf} approximation. This is the simplest way to find a solution for \eqref{hubbard}. In this approximation one replaces the electron-electron interactions by an average field like so:
+\end{itemize}
+
+\begin{equation}
+   H_U = U\sum_i \hat{n}_{i\uaw}\hat{n}_{i\daw} \rightarrow H^{(MF)}_U
+   U\sum_i \hat{n}_{i\uaw}\langle\hat{n}_{i\daw}\rangle + 
+   U\sum_i \langle\hat{n}_{i\uaw}\rangle\hat{n}_{i\daw} -
+   U\sum_i \langle\hat{n}_{i\uaw}\rangle\langle\hat{n}_{i\daw}\rangle
+\end{equation}
+This Hamiltonian term has to be calculated self-consistently and usually translates into a spin-dependent renormalization of the on-site energies in the Hamiltonian: $E \to E_\sigma + U\langle n_{\bar{\sigma}}\rangle$.
+
+It is important to notice the agreement between \acf{dft} and \acf{mf} in graphene based systems such as triangulenes or ribbons\cite{Ortiz2019,Fernandez-Rossier2007,Fernandez-Rossier2008}, justifying the use of the \ac{mf} approximation to describe local magnetic moments in this kind of systems.
 
 %\section{Graphene Bilayer}
 %\label{ch:bilayer}

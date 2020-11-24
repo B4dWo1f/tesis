@@ -1,11 +1,11 @@
 \chapter{Hyperfine coupling}
 \label{ch:hyperfine}
-The localization length of the in-gap state due to a $sp^3$ defect in graphene bilayer changes dramatically with an external electric field. In particular in the absence of gating, $\epsilon=0$, the in-gap state is quasi-localized in one layer and completely delocalized in the other.
+In the previous chapter we have seen that the in-gap state associated to a $sp^3$-defect can be localized to an area of radius $\sim\SI{50}{\angstrom}$. In this chapter we delve into the physics of a single defect and explore how the electric field may change its intrinsic interactions.
 
-As the electric field is increased, the in-gap state becomes more and more localized around the defect. This description, based in the 1-orbital picture remains valid when we consider the full description of the 4-orbitals. In addition the 4-orbital model will allow us to explore the behaviour of each of the orbitals.
+For the entirety of this chapter we are going to focus on the deposition of a single \ce{H} atom as $sp^3$-defect. In order to be able to describe its response to the electric field we will abandon the 1-orbit description that we have been using and use a 4-orbit \ac{tb} model in the \ac{sk} approximation. The basis $\mathcal{B}_4$, will be the natural expansion of basis \eqref{basis4} to two layers (doubling the basis for the second layer).
 
-The idea of using the nuclear spin of \ce{H} atoms on graphene requires a certain capability to tune its interaction with the electronic spin. The hyperfine interaction. In order to do so, we will pay special attention to the occupation of the $s$ orbital of the \ce{H} atom. Remember that the hyperfine coupling vanishes for any other orbital.
 
+The idea of using the nuclear spin of \ce{H} atoms on graphene requires a certain capability to tune its interaction with the electronic spin. This interaction is governed by the hyperfine coupling.
 
 
 \section{Adatom in the SK-approximation}
@@ -17,7 +17,9 @@ We are going to discuss briefly here the implementation of this system in a \ac{
 The most naive approach would be to use the \ac{sk} parameters detailed in previous chapters (see table~\ref{G_SK_params}). These parameters were calculated for $H$ atoms passivating the edges of graphene nanoribbons\cite{Gosalbez-Martinez2011} where the main hybridization occurs with the $\sigma$ orbitals of graphene. There is no good reason why these hoppings parameters should hold for an adatom on top of flat graphene. For the sake of the argument we will start with those values in order to spot the difference with the idealized one-orbital model, and then proceed to consider the hopping parameters as somehow free parameters that we can tune.
 
 
-In a first approach we are going to neglect the well known $sp^3$ deformation of the lattice\cite{} and consider simply that the $H$ atom has some hoppings to the $C$ orbitals. Due to the symmetry of the problem, both the $s$ and $p_z$ orbitals will have a finite hopping with the $s$ orbital while de $p_{x/y}$ will not. In the \ac{sk} approximation, the effective hoppings will be governed by the parameters $V_{ss\sigma}$ and $V_{sp\sigma}$.
+In a first approach we are going to neglect the well known $sp^3$ deformation of the lattice\cite{} and consider simply that the $H$ atom has some hoppings to the $C$ orbitals. Due to the symmetry of the problem, both the $s$ and $p_z$ orbitals will have a finite hopping with the $s$ orbital of the \ce{H} while the $p_{x/y}$ will not.
+
+In the \ac{sk} approximation, the effective hoppings will be governed by the parameters $V_{ss\sigma}$ and $V_{sp\sigma}$.
 
 
 %
@@ -49,17 +51,18 @@ In a first approach we are going to neglect the well known $sp^3$ deformation of
 %\red{XXX}
 
 
-When only one orbital per site is considered, graphene is a bipartite lattice. The effective removal of one of the sites results in the appearance of a zero energy state. In fact, Lieb's Theorem\cite{Lieb1989} determines that the imbalance in the number of sites of each sublattice equals the number of zero-energy states: $N_Z=|N_A-N_B|$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   When only one orbital per site is considered, graphene is a bipartite lattice. The effective removal of one of the sites results in the appearance of a zero energy state. In fact, Lieb's Theorem\cite{Lieb1989} determines that the imbalance in the number of sites of each sublattice equals the number of zero-energy states: $N_Z=|N_A-N_B|$.
 
-The introduction of more orbitals in the description breaks the bipartite character of the lattice since the on-site energy of $s$ and $p$ orbitals is not the same. Even when, strictly speaking, Lieb's Theorem does not apply, the actual behavior does not change drastically.
-Usually, the introduction of an adatom will open a small gap and the states that appear are usually not at zero energy, but they do appear inside the gap. The confinement properties described in~\ref{ch:vacancy} do hold.
+%   The introduction of more orbitals in the description breaks the bipartite character of the lattice since the on-site energy of $s$ and $p$ orbitals is not the same. Even when, strictly speaking, Lieb's Theorem does not apply, the actual behavior does not change drastically.
+%   Usually, the introduction of an adatom will open a small gap and the states that appear are usually not at zero energy, but they do appear inside the gap. The confinement properties described in~\ref{ch:vacancy} do hold.
 
 
 \section{Dependence on the parameters}
 In~\fref{ingap}a) we show the differences in the spectrum when considering 1 and 4 orbitals per atom. The calculations were carried out by considering a big hexagonal island ($N_C>100000$) with armchair edges (passivated by $H$ atoms when 4 orbitals are considered) and a single $H$ adatom placed in its center.
 The main difference is the energy at which the in-gap state appears.
 Due to the symmetry of the orbitals and the symmetrical position of the adatom, there are only two finite hoppings, $V_{ss\sigma}$ and $V_{sp\sigma}$, shown in~\fref{ingap}b).
-The energy of the in-gap state as a function of both parameters is shown in \fref{ingap}. Notice the strong dependence with the $V_{sp\sigma}$ parameter.
+The energy of the in-gap state as a function of both parameters is shown in \fref{ingap}c). Notice the strong dependence with the $V_{sp\sigma}$ parameter.
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
@@ -72,10 +75,10 @@ The energy of the in-gap state as a function of both parameters is shown in \fre
 %\FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-It is clear that in order to recover the 1-orbital intuition (in-gap state at $E=0$) and the experimental observations\cite{Sofo2012,Brihuega2016}, we require the limit $V_{sp\sigma}\to\infty$. The position of the in-gap state is the most obvious effect, but the composition of its wave-function can change other properties that we discuss in the next sections.
+It is clear that in order to recover the 1-orbital intuition (in-gap state at $E=0$) and the experimental observations\cite{Sofo2012,Brihuega2016}, we require the limit $V_{sp\sigma}\to\infty$. The position of the in-gap state is the most obvious effect, but the composition of its wave-function can change other properties as we will discuss in the next sections.
 
 
-The experimental value for these parameters is difficult to infer\cite{}, and even \ac{dft} calculations depend strongly on the system at hand (super cell size, and other hyperparameters), so we will consider a wide range of values and explore the resulting physics.
+The experimental value for these parameters is difficult to infer\cite{}, and even \ac{dft} calculations depend strongly on the system details (super cell size, and other hyperparameters), so we will consider a wide range of values and explore the resulting physics.
 
 
 
@@ -121,7 +124,7 @@ H^{contact}_{hf} =
 \mathcal{A}_{0}\vec{\sigma}_e\vec{\sigma}_p
 \label{HF_contact}
 \end{equation}
-where the notation for the kets is $\ket{n,l,m_{l}}$, with $n$ the so-called principal quantum number, $l$ the orbital angular momentum and $m $the third component of said angular momentum. The hyperfine coupling, $\mathcal{A}_{0}$, takes the value:
+where the notation for the kets is $\ket{n,l,m_{l}}$, with $n$ the so-called principal quantum number, $l$ the orbital angular momentum and $m$ the third component of said angular momentum. The hyperfine coupling, $\mathcal{A}_{0}$, takes the value:
 %\begin{equation}
 %\frac{\mathcal{A}_{0}\hbar}{2\pi} \simeq \SI{1420}{\MHz}
 %\end{equation}
@@ -138,9 +141,9 @@ Even when the hyperfine interaction appears with energy units in \eqref{HF_conta
 
 Notice that the contribution to the hyperfine contact term for $p$ (or higher $l$) orbitals vanishes since the wave functions of such orbitals vanish at the nucleus position, so the factor $\bra{n,l,m_{l}}\delta(\vec{R})\ket{n,l,m_{l}}$ will always be zero.\\
 
-In our case of interest, $H$ adatoms, the hyperfine coupling will be quenched by the occupation of the $s$ orbital of the $H$,
+In our case of interest, $H$ adatoms on top of graphene, the hyperfine coupling will be quenched by the occupation of the $s$ orbital of the $H$,
 \begin{equation}
-  \mathcal{A} = A_0|\braket{\phi_s}{\psi}|^2
+  \mathcal{A} = A_0|\braket{\phi_s}{\psi_0}|^2
 \end{equation}
 where $\ket{\psi}$ is any of the eigenstates of the Hamiltonian and $\ket{\phi_s}$ is the Hydrogen $s$ orbital.
 
@@ -194,8 +197,8 @@ It is only logical that there might be a big change between the situation where 
 
 In this system we have all the ingredients from the Kane's proposal, so we can write the complete Hamiltonian for our nuclear qubit as a combination of the previous ones:
 \begin{equation}
-  H = -g_e\mu_e\frac{1}{2}\vec{B}\vec{\sigma}^e
-      -g_p\mu_p\frac{1}{2}\vec{B}\vec{\sigma}^p
+  H = -g_e\mu_e\frac{1}{2}\vec{B}\cdot\vec{\sigma}^e
+      -g_p\mu_p\frac{1}{2}\vec{B}\cdot\vec{\sigma}^p
       +A\vec{\sigma}^e\cdot\vec{\sigma}^p
 \label{1qubit}
 \end{equation}
