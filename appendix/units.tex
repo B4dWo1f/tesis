@@ -1,4 +1,5 @@
 \chapter{About the units}
+\label{ch:units}
 \section{Magnetic moment}
 The magnetic moment of any particle is defined as follows:
 \begin{equation}
@@ -7,7 +8,7 @@ The magnetic moment of any particle is defined as follows:
   \vec{m} = \frac{1}{2}g\mu\vec{\sigma}
 \label{mag_mom}
 \end{equation}
-where $q$ and $m$ are the carge and mass of particle respectively, $g$ is the so-called g-factor\footnote{The g-factor for the electron and proton are: $g_e=-2.0023\dots$ and $g_p=5.5857\dots$}, a dimensionless constant and $\vec{\sigma}$ are the Pauli matrices.
+where $q$ and $m$ are the carge and mass of the particle respectively, $g$ is the so-called g-factor\footnote{The g-factor for the electron and proton are: $g_e=-2.0023\dots$ and $g_p=5.5857\dots$}, a dimensionless constant and $\vec{\sigma}$ are the Pauli matrices.
 \begin{equation}
   \sigma_x=\left(\begin{array}{cc}
     0 & 1 \\
@@ -27,7 +28,7 @@ Note that in eq~\eqref{mag_mom} we have grouped the charge/mass ratio in the mag
 \begin{equation}
   \mu = \frac{q\hbar}{2m}
 \end{equation}
-In the case of the the magnetic moment of the electron $\mu$ is the Bohr magneton.
+In the case of the magnetic moment of the electron $\mu$ is the Bohr magneton.
 
 Magnetic moments have units of $[\vec{m}]=\si{\eV/\tesla}$. This can be seen starting from the right most equation of~\eqref{mag_mom}
 \begin{equation*}
@@ -53,6 +54,7 @@ where we have used
  J=J_H\frac{\hbar}{2}\frac{\hbar}{2}\qquad\qquad\text{where}\qquad [J]=\si{\eV}
 \end{equation}
 
+While this should be the proper notation, it is standard practice to take the spin $\vec{S}_{1/2}$ to be adimensional. In any case the units can be recovered simply by adding the factors detailed here.
 
 \section{Hyperfine coupling}
 \label{units_A}
@@ -93,12 +95,18 @@ It is common practice to express the hyperfine coupling in $\si{\MHz}$. To conve
 \end{equation}
 
 
-\section{Electric Field Hamiltonian}
-The energy of an electron in a constant electric field can be written as~\cite{Castro2010a}
-\begin{equation}
-  H_e = q_e \vec{d} \vec{E} \qquad;\qquad E = \frac{Q}{4\pi\varepsilon} \qquad;\qquad
-  \varepsilon = \varepsilon_r\varepsilon_0
-\end{equation}
-where $q_e$ is the charge of the electron, $\vec{d}$ is the position in the electric field and $\vec{E}$ is the electric field. The constant $\varepsilon_0 = \SI{8.85e-4}{\coulomb\per\volt\per\metre}$ is the vacuum permittivity and $\varepsilon_r$ is a dimensionless constant related to the electronic screening of the material as discussed elsewhere in the standard literature\cite{Castro2010a,Yamashiro2012}
-
-% \varepsilon = 180meV/(q interdisntace 4V/nm)
+%%  \section{Electric Field Hamiltonian}
+%%  The energy of an electron in a constant electric field can be written as~\cite{Castro2010a}
+%%  \begin{equation}
+%%    H_e = q_e \vec{d} \vec{E} \qquad;\qquad E = \frac{Q}{4\pi\varepsilon} \qquad;\qquad
+%%    \varepsilon = \varepsilon_r\varepsilon_0
+%%  \end{equation}
+%%  where $q_e$ is the charge of the electron, $\vec{d}$ is the position in the electric field and $\vec{E}$ is the electric field. The constant $\varepsilon_0 = \SI{8.85e-4}{\coulomb\per\volt\per\metre}$ is the vacuum permittivity and $\varepsilon_r$ is a dimensionless constant related to the electronic screening of the material as discussed elsewhere in the standard literature\cite{Castro2010a,Yamashiro2012}
+%%  
+%%  In this thesis the electric field is treated in $\si{\eV}$ at all times and is usually introduced as
+%%  \begin{equation}
+%%     H_{\tex{elec}} = \mathcal{E}\Lambda
+%%  \end{equation}
+%%  where $\Lambda$ is the layer operator and \mathcal{E} is the strength of the electric field. The relation between the electric field $\vec{E}$ 
+%%  
+%%  % \varepsilon = 180meV/(q interdisntace 4V/nm)
