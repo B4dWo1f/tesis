@@ -1,11 +1,14 @@
 \chapter{Designer Fermion Lattices}
 \label{ch:designer}
-So far we have explored the physical changes that the electronic states induced by $sp^3$-defects in bilayer graphene undergo in the presence of an electric field. The possibility of confining the electronic states to a few Ångström opens the gate to control the interaction between different electronic (and spin) states.
+So far we have explored the physical changes that the electronic states induced by $sp^3$-defects in bilayer graphene undergo in the presence of an electric field. The possibility of confining the electronic states to a few Ångström opens the gate to control the interactions between different electronic (and spin) states.
 
-In this chapter we cover the idea of building lattices of these $sp^3$-defects and explore the interactions among them. State of the art \ac{stm} techniques allow us to conceive large arrays of adatoms placed at will and atomic precision
+In this chapter we cover the idea of building lattices of these $sp^3$-defects and explore the interactions among them. State of the art \ac{stm} techniques allow us to conceive large arrays of adatoms placed at will and atomic precision. The electric gating is the control parameter that would allow us to tune the parameters so they can replicate any desired Hamiltonian.
+
+This chapter follows our publication on ``Designer fermion models in functionalized graphene bilayers'' \onlinecite{Garcia-Martinez2019}.
+\smallskip
 
 %Introduction
-The amazingly rich panoply of electronic phases that occur in solid state matter emerges from the interplay of kinetic energy of the electrons and the Coulomb interaction, both electron-electron and electron-ion. These energy scales are defined by the chemical composition and the crystal structure of each material. Physicists have been looking for strategies to create artificial lattices to confine fermions where the geometry and the energy scales can be tuned independently in order to explore emergent electronic phases escaping the dictatorship of chemistry.
+Condensed matter physics study an immensely broad spectrum of electronic phases which emerge from the interplay of the kinetic energy of the electrons and the Coulomb interaction, both electron-electron and electron-ion. These energy scales are defined by the chemical composition and the crystal structure of each material. Physicists have been looking for strategies to create artificial lattices to confine fermions where the geometry and the energy scales can be tuned independently in order to explore emergent electronic phases escaping the dictatorship of chemistry.
 Examples of artificial lattices include optical traps for cold atoms\cite{Cocchi2016}, arrays of quantum dots\cite{mortemousque2018,dehollain2019}, and surface adatoms\cite{gomes2012,drost2017,girovsky2017,khajetoorians2019}. 
 
 
@@ -14,40 +17,40 @@ Optical traps can create artificial lattices with one fermion per site, but the 
 Gate defined quantum dot arrays can definitely avoid that problem\cite{dehollain2019}, but the largest quantum dot array reported so far has only 9 quantum dots\cite{mortemousque2018}.
 \emph{Scanning Tunnelling Microscope} (STM) has been used to arrange hundreds of carbon monoxide molecules\cite{gomes2012} and thousands of chlorine atoms\cite{Kalff2016} on a copper surface, defining artificial lattices for electrons in surface states. However, this approach does not allow further electrical control of the carrier density and the electronic states have finite lifetimes on account of their coupling to the substrate. 
 
-Here we propose functionalized graphene bilayer with an electrically controlled band gap as a flexible and tunable platform to define both fermion and spin model Hamiltonians with a variety of 1D and 2D lattices with a highly tunable energy scales and filling factors.
-The building block of the model Hamiltonians are in-gap localized states, produced by sp$^3$ functionalization of carbon atoms in hollow sites (see Fig~\ref{figure1} a)). This can be achieved by atomic hydrogen chemisorption\cite{Brihuega2016}, but there are many other molecules that produce the same effect\cite{Santos2012a}.
+Bilayer graphene, with an electrically controlled band gap, is a flexible and tunable platform in which it is possible to define both fermion and spin model Hamiltonians with a variety of 1D and 2D lattices with highly tunable energy scales and filling factors.
+The building block of the model Hamiltonians are the in-gap localized states, produced by sp$^3$ functionalization of carbon atoms in hollow sites (as discussed in the precious chapters and depicted in \fref{figure1}a)). This can be achieved by atomic hydrogen chemisorption\cite{Brihuega2016}, but there are many other molecules that produce the same effect\cite{Santos2012a}.
 Arrays of these point defects can be created with state of the art STM manipulation,\cite{Brihuega2016} but self-assembly of sp$^3$ molecular centers could be envisioned.
 Our calculations show that this platform permits to emulate a number of emblematic lattices (triangular, honeycomb, Kagome, rectangular)
 %with tunable band width,
 with tunable exchange and Coulomb energies, that implement Hubbard and Heisenberg interactions. %XXX mention here also the doping?
 We show that artificial lattices which realize model Hamiltonians can be created in graphene bilayer which allows the exploration of regimes that lead to the emergence of 2D spin-liquid phases, Mott transitions, quantized anomalous Hall phases, and fractionalized Haldane spin chains and correlated superconductivity. 
  
-Different aspects of our proposal have been independently verified experimentally. First, several experiments have demonstrated that an electric field opens up a gap as large as $\SI{250}{meV}$ in graphene bilayer\cite{Castro2007, Zhang2009, Taychatanapat2010}. Second, the generation of localized zero modes by sp$^3$ functionalization has been demonstrated by hydrogen chemisorption in graphene\cite{Brihuega2016}, together with the lateral manipulation of the hydrogen atoms, with atomic scale resolution\cite{Ugeda2011,Brihuega2016}. Last, but not least, the observation of correlated electronic phases in twisted graphene bilayer\cite{Cao2018a, Cao2018b}, %,others}
+Different aspects of this idea have been independently verified experimentally. First, several experiments have demonstrated that an electric field opens up a gap as large as $\SI{250}{meV}$ in graphene bilayer\cite{Castro2007, Zhang2009, Taychatanapat2010}. Second, the generation of localized zero modes by sp$^3$ functionalization has been demonstrated by hydrogen chemisorption in graphene\cite{Brihuega2016}, together with the lateral manipulation of the hydrogen atoms, with atomic scale resolution\cite{Ugeda2011,Brihuega2016}. Last, but not least, the observation of correlated electronic phases in twisted graphene bilayer\cite{Cao2018a, Cao2018b}, %,others}
 that is believed to be associated to the formation of arrays of localized states in a moiré pattern\cite{}, shows that graphene bilayers can indeed host strongly correlated phases.
 Here we propose to induce an array of states by chemical functionalization, which would permit to control the location of the bounded states. 
  
 \section{Methods}
-We consider Bernal stacked graphene bilayers, shown in Fig.~\ref{figure1} a). We use the standard single orbital tight binding model\cite{McCann2012} and consider first neighbour intralayer hopping $t=\SI{-2.7}{\eV}$ and first neighbour interlayer hopping $\gamma=\SI{0.4}{\eV}$ in accordance with the literature\cite{KatsnelsonBook}.
+For these calculations we consider Bernal stacked graphene bilayers, shown in \fref{figure1}a). We use the standard single orbital tight binding model\cite{McCann2012} and consider first neighbour intralayer hopping $t=\SI{-2.7}{\eV}$ and first neighbour interlayer hopping $\gamma=\SI{0.4}{\eV}$ in accordance with the literature\cite{KatsnelsonBook}.
 
-The effect of sp$^3$ functionalization is included by removal of a site in the lattice\cite{}: the $p_z$ orbital of the carbon atom forms a strong covalent bond with the functional group and is effectively removed from the $p_z$ lattice\cite{}. We revisit first the problem of a single sp$^3$ defect in graphene bilayer\cite{Castro2010}, focusing on the influence of an off-plane electric potential difference, denoted $\mathcal{E}$, which has been considered already in the literature\cite{Nilsson2007}.
+The effect of sp$^3$ functionalization is included by removal of a site in the lattice as discussed in \chref{ch:vacancy}: the $p_z$ orbital of the carbon atom forms a strong covalent bond with the functional group and is effectively removed from the $p_z$ lattice\cite{}. We revisit first the problem of a single sp$^3$ defect in graphene bilayer\cite{Castro2010}, focusing on the influence of an off-plane electric potential difference, denoted $\mathcal{E}$, which has been considered already in the literature\cite{Nilsson2007}.
 In the upper layer of Bernal stacked bilayer graphene one of the sublattices is connected to the lower layer while the other sublattice lay on \emph{hollow} positions. We will consider only functionalization of atoms in hollow sites (see Fig~\ref{figure1} a)). 
 
 At zero electric field, $\mathcal{E}=0$, pristine graphene bilayer is a zero gap semiconductor, with a degenerate conduction and valence band at the $K$ and $K'$ points of the Brillouin zone\cite{McCann2012}. The sp$^3$ functionalization creates a zero mode resonance \cite{Nilsson2007,Castro2010}, as expected in any bipartite lattice with a gapless spectrum and with a missing site.\cite{Lieb1989} %The addition of a single sp$^3$ 
 The application of an electric field opens up a gap in the pristine bilayer spectrum and, as we show below, the zero energy resonance becomes a bound state.
 
 In order to study the single particle spectra of graphene bilayer with sp$^3$ functionalizations we resort to Lanczos diagonalization\cite{Lanczos1950, Arnoldi1951} of the single-particle tight-binding model, due to the very large number of carbon sites. For instance, the island used in the calculations of Fig.~\ref{figure1} has $N=131772$ sites and a corresponding quantum confinement gap of $\sim\SI{7}{\meV}$ which becomes irrelevant when the gap induced by the electric field is much larger. 
-The results of Fig.~\ref{figure1} c) show the evolution of the in-gap state as well as a few conduction and valence states as a function of the off-plane electric field. It is apparent that as the field is increased, a gap opens and the zero mode resonance stays inside the gap, becoming a bound state with a normalized wave function.
+The results of \fref{figure1}c) show the evolution of the in-gap state as well as a few conduction and valence states as a function of the off-plane electric field. It is apparent that as the field is increased, a gap opens and the zero mode resonance stays inside the gap, becoming a bound state with a normalized wave function.
 
 %\bluemark{Notice the non-monotonous evolution of the in-gap sate. It is due to the interplay between the charge polarization and the electric field. At zero field the in-gap state is completely sublattice polarized\cite{} but only $\sim87\%$ layer polarized. The change in the slope of the in-gap state corresponds to the electric field at which the layer polarization flips sign.}
 
-Importantly, the extension of the in-gap bound state induced by the sp$^3$ functionalization can be electrically tuned. In Fig.~\ref{figure1} d) we show the confinement length of the in-gap state as a function of the electric field calculated as the minimal radius which contains $> 98\%$ of the in-gap wave function.
-The extension of the in-gap state is controlled by the size of the energy gap, as shown in the inset of Fig.~\ref{figure1} d). This result that can be obtained analytically as well\cite{Nilsson2007}. This is an important resource in order to control the extension of the in-gap states, and hence the overlap among defects. This will be one of the key ingredients to control the energy bandwidth in artificial lattices and the effective Hubbard repulsion.
+Importantly, the extension of the in-gap bound state induced by the sp$^3$ functionalization can be electrically tuned. In \fref{figure1}d) we show the confinement length of the in-gap state as a function of the electric field calculated as the minimal radius which contains $> 90\%$ of the in-gap wave function.
+The extension of the in-gap state is controlled by the size of the energy gap, as shown in the inset of \fref{figure1}d). This result can be obtained analytically as well\cite{Nilsson2007} and is an important resource in order to control the extension of the in-gap states, and hence the overlap among defects. This will be one of the key ingredients to control the energy bandwidth in artificial lattices and the effective Hubbard repulsion.
 
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
-\includegraphics{designer/figures/fig1.pdf}
+\includegraphics[width=0.7\textwidth]{designer/figures/fig1.pdf}
 \vspace{-5pt}
 \caption{a) A bilayer graphene flake with armchair edges and a chemisorbed H adatom in the presence of an electric field is suggested as a platform to realize a number of fermionic models. The building blocks of these models are the electronic states localized around the sp$^3$ as shown in the 3-D simulation of the local density of states. b) Spatial distribution of the in-gap state created by a $sp^3$ defect in bilayer graphene in the presence of an electric field $\mathcal{E}=\SI{-0.2}{\eV}$. The two dashed lines show the confinement length for two values of the electric potential difference. c) Evolution of the 12 eigenenergies closest to $E=0$ with the electric field. d) Confinement length $L_C$ as a function of the electric field for different size islands. The dashed horizontal lines mark the maximal $L_C$ as given by the island size.}
 %XXX The dashed lines are actually the radius of the circumscribed circumference for each island size, which is almost the same as "the maximal $L_C$"
@@ -57,13 +60,13 @@ The extension of the in-gap state is controlled by the size of the energy gap, a
 
 
 \section{One-body results}
-We now study the single particle states of artificial arrays of sp$^3$ functionalization. We have considered two geometries: triangular and honeycomb, although many other structures, such as Kagome and rectangular, are possible by functionalization of the hollow sublattice of the top layer. The calculation is carried out using a supercell
+We now study the single particle states of artificial arrays of sp$^3$ functionalization. We have considered two geometries: triangular and honeycomb, although many other structures, such as Kagome and rectangular, are possible by functionalization the proper sites of the hollow sublattice of the top (bottom) layer. The calculation is carried out using a supercell
 %($N=17424$ carbon atoms) repeated
-with one (triangular) or two (honeycomb) sp$^3$ defects. As expected, we obtain as many in-gap bands as sp$^3$ defects in the unit cell. The corresponding in-gap energy bands for triangular and honeycomb artificial lattices with different electric fields are shown in Fig.~\ref{figure2}, for two different values of the off-plane electric field.
+with one (triangular) or two (honeycomb) sp$^3$ defects. As expected, we obtain as many in-gap bands as sp$^3$ defects are there in the unit cell. The corresponding in-gap energy bands for triangular and honeycomb artificial lattices with different electric fields are shown in \fref{figure2}, for two different values of the off-plane electric field $\mathcal{E}$.
 
 The in-gap bands can be perfectly fitted to tight-binding models for the triangular and honeycomb lattice with hopping up to third neighbours. These energy bands arise because, in the presence of an electric field, the sp$^3$ in-gap states are no longer sublattice polarized. Therefore, adjacent in-gap states can hybridize, leading to the formation of in-gap bands. 
 The size of the unit cell determines the distance between the point defects and the electric field determines the extension of the bound states.
-Thus, both the density of defects and the electric field determine the bandwidth which is in the range of $\SI{10}{\meV}$ for the cases shown in Fig.~\ref{figure2}.
+Thus, both the density of defects and the electric field determine the bandwidth which is in the range of $\SI{10}{\meV}$ for the cases shown in \fref{figure2}.
  
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
@@ -76,22 +79,19 @@ Thus, both the density of defects and the electric field determine the bandwidth
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
 
-
-
-
-The results of Figs.~\ref{figure1} and \ref{figure2} show that functionalization of gapped graphene bilayer with ordered arrays of sp$^3$ defects lead to the formation of in-gap energy bands that can be understood in terms of a tight-binding lattice model, where every functionalization corresponds to a site and a relatively short ranged hopping matrix. 
+The results of \fref{figure1} and \fref{figure2} show that functionalization of gapped graphene bilayer with ordered arrays of sp$^3$ defects lead to the formation of in-gap energy bands that can be understood in terms of a tight-binding lattice model, where every functionalization corresponds to a site and a relatively short ranged hopping matrix. 
 Importantly, the density of carriers can be tuned independently of the size of the graphene bilayer, using dual gating\cite{Zhang2009,Taychatanapat2010}.Therefore, the Fermi energy could be moved along the bandwidth, controlling the filling factor, very much like in the case of the flat bands in the magic angle twisted bilayer\cite{Cao2018a,Cao2018b}. 
 
 \section{Many-body results}
 We now consider the effect of electron-electron interactions. For that matter, we model the Coulomb interaction for the functionalized graphene bilayer in the Hubbard approximation. Our main goal is to provide a fair estimate
 of the magnitude of the effective Coulomb repulsion for the electrons occupying the in-gap bands of the artificial lattices. We consider the exact solution for the minimal system where hybridization and Coulomb repulsion compete with each other, namely, a dimer at half filling. The energy scales of this problem are controlled by both the distance between the two sp$^3$ defects and the gap induced by the electric field.
 
-We first solve the single particle problem for two impurities, using again a bilayer island (with up to N=131772 sites) and two sp$^3$ centers. The diagonalization yields two in-gap states, with energy $\epsilon\pm \frac{\delta}{2}$, where $\delta$ is the hybridization splitting of the states. 
+We first solve the single particle problem for two impurities, using again a bilayer island (with up to $N_C=131772$ sites) and two sp$^3$ centers. The diagonalization yields two in-gap states, with energy $\epsilon\pm \frac{\delta}{2}$, where $\delta$ is the hybridization splitting of the states. 
 %The corresponding wave functions $\psi_{\pm}$ are linear combinations of states localized around the 2 sites, $\phi_1$ and $\phi_2$:
 %\begin{equation}
 %\psi_{\pm}(i) = \frac{1}{\sqrt{2}}\left(\phi_1(i) \pm \phi_2(i)\right)
 %\end{equation} 
-Two states $\phi_{1/2}$, localized states around the defects, can be built out of the two in-gap eigenstates, $\psi_\pm$:
+Two states $\phi_{1/2}$, localized around the defects, can be built out of the two in-gap eigenstates, $\psi_\pm$:
 \begin{equation}
   |\phi_{1/2}\rangle = \frac{1}{\sqrt{2}}\left(|\psi_+\rangle \pm|\psi_-\rangle\right)
   %\phi_{1/2}(i) = \frac{1}{\sqrt{2}}\left(\psi_+(i)\pm\psi_-(i)\right)
@@ -116,6 +116,8 @@ A minimal model for the Coulomb contribution is obtained using the Hubbard appro
 \end{eqnarray}
 where $n_{\eta\sigma}= c^{\dagger}_{\eta\sigma}c_{\eta\sigma}$ is the occupation operator in the basis of $\phi_{1,2}$, 
 $\vec{S}_\eta= \frac{1}{2} \sum_{\sigma,\sigma'} c^{\dagger}_{\eta\sigma}\vec{\tau}_{\sigma,\sigma'}c_{\eta\sigma'}$ are the spin operators associated to these quantum states.
+The full derivation of \eqref{HAMIL} is done in appendix \ref{ch:blue_hamiltonian}.
+
 
 Hubbard-like terms, with energy $\tilde{U}_{\eta}-\frac{J}{4}$ describe the Coulomb energy penalty of double occupation of states $\phi_1$ and $\phi_2$. The energy scales $\tilde{U}_{\eta}$ are given by 
 %\begin{equation}
@@ -150,7 +152,7 @@ and
 $$\Delta= U \sum_i (\phi_{1}(i)^*)^2 \phi_2(i)^2$$.
 Both $t_{12}$ and $\Delta$ could be complex numbers.
 
-The evolution of each of these energy scales as we vary both the applied electric field and the dimer separation is shown in Fig.~\ref{blue_params} a-c). At zero field, the site states are sublattice polarized and the only finite energy scale is the ferromagnetic exchange $J$ and the pair hopping $\Delta$. As the field is ramped up, for both polarities, the site states acquire weight on both sublattices, which permits to have finite $\tilde{t}$, $\Delta$, and $t_{1,2}$. At the same time, their extension starts to shrink. The competition between these two effects leads both to the non monotonic behaviour of $\delta$, as well as to the decay of $J$ and $\Delta$. Importantly, for a sufficiently large electric field and defect separation, the dominant energy scales are $\tilde{t}$ and $\mathcal{U}$, showing that the artificial lattice defines an effective Hubbard model with narrow energy bands. 
+The evolution of each of these energy scales as we vary both the applied electric field and the dimer separation is shown in \fref{blue_params}a-c). At zero field, the site states are sublattice polarized and the only finite energy scale is the ferromagnetic exchange $J$ and the pair hopping $\Delta$. As the field is ramped up, for both polarities, the site states acquire weight on both sublattices, which permits to have finite $\tilde{t}$, $\Delta$, and $t_{1,2}$. At the same time, their extension starts to shrink. The competition between these two effects leads both to the non monotonic behaviour of $\delta$, as well as to the decay of $J$ and $\Delta$. Importantly, for a sufficiently large electric field and defect separation, the dominant energy scales are $\tilde{t}$ and $\mathcal{U}$, showing that the artificial lattice defines an effective Hubbard model with narrow energy bands. 
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
@@ -191,5 +193,5 @@ Importantly, the number of localized states needed for emergent phases to occur
 % 
 A second important challenge will be the combination of STM manipulation and dual gating. A possible implementation would be to carry out the atomic manipulation on a graphene bilayer placed on a gated substrate and use the STM as a top gate. This would require to have electrodes on the sample to carry out in-plane transport to probe the electronic phases. 
 
-\section{Conclusions}
-In summary, we have analysed the potential of functionalized graphene bilayer to produce artificial fermion lattices where the band and Coulomb energies can be tuned by means of gate voltages and geometrical control of the defects. The system proposed here combines the advantage of electric control afforded by quantum dots arrays, and the advantage of reversible structural control given by STM atomic manipulation. The proposed platform could be used to explore a very large variety of electronic phases, including Mott-Hubbard transition, magnetically ordered phases, quantized anomalous insulators, spin liquids and superconducting phases.
+% \section{Conclusions}
+% In summary, we have analysed the potential of functionalized graphene bilayer to produce artificial fermion lattices where the band and Coulomb energies can be tuned by means of gate voltages and geometrical control of the defects. The system proposed here combines the advantage of electric control afforded by quantum dots arrays, and the advantage of reversible structural control given by STM atomic manipulation. The proposed platform could be used to explore a very large variety of electronic phases, including Mott-Hubbard transition, magnetically ordered phases, quantized anomalous insulators, spin liquids and superconducting phases.

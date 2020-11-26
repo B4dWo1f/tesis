@@ -1,5 +1,6 @@
 \chapter{Real space mapping of topological invariants using artificial neural networks}
 \label{ch:ANN}
+The research upon which this appendix is based was done as a summer project to introduce a student to the vast field of neural networks: \onlinecite{Carvalho2018}
 
 \section{Introduction}
 The study of topological electronic phases is one of the central topics %themes
@@ -153,9 +154,7 @@ output of each neuron based on the received inputs and an external parameter
 (bias). For computational convenience, $\sigma$ should be any smooth and
 differentiable function defined over $\mathbb{R}$ but with its range restricted
 to a closed interval, namely $\sigma\in[-1,1]$, as depicted in Fig.~\ref{ANN}~(e).
-Usually, these functions are either the $\tanh$ or the sigmoid function, but
-others might be used without loss of generality or functionality since these
-models are only weakly sensitive to these details.\cite{Hopfield1982}
+Classically these functions were either the $\tanh$ or the sigmoid function, but others might be used without loss of generality or functionality since these models are only weakly sensitive to these details.\cite{Hopfield1982}
 
 
 The inputs $X$ entering each neuron are weighted by the synapses $W$ and shifted

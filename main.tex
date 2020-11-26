@@ -53,7 +53,7 @@
 \usepackage{placeins}
 
 %~~~~ Index depth
-\setcounter{tocdepth}{3}  % For debugging. Later ---> \setcounter{tocdepth}{2}
+\setcounter{tocdepth}{2}  % For debugging. Later ---> \setcounter{tocdepth}{2}
 
 %~~~~~~~~ Acronyms ~~~~~~~~
 \usepackage[printonlyused]{acronym}
@@ -149,10 +149,10 @@
 \input{title.tex}
 
 %~~~~~~~~ Dedication ~~~~~~~~
-% \input{covers/dedication.tex}
+\input{covers/dedication.tex}
 
 %~~~~~~~~ Agradecimientos ~~~~~~~~
-% \input{covers/agradecimientos.tex}
+\input{covers/agradecimientos.tex}
 
 %~~~~~~~~ Acronyms ~~~~~~~~
 \thispagestyle{empty}
@@ -235,10 +235,10 @@
 \appendix
 % Slater-Koster hoppings
 \input{appendix/publications.tex}
-\input{appendix/SK.tex}
 % Topological stuff
 \input{appendix/qsh.tex}
 \input{ann/ann.tex}
+\input{appendix/SK.tex}
 %%% % Low energy regime
 %%% \input{appendix/low_energy_regime.tex}
 %%% Models

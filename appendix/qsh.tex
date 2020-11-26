@@ -1,18 +1,17 @@
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Quantum Spin Hall}
 \label{ch:QSH}
+In this appendix we follow our publication on the ``Quantum spin Hall phase in multilayer graphene'' \onlinecite{Garcia-Martinez2015}. Here we explore the topological properties of graphene and few-layer graphene systems as well as Van der Waals heterostructures.
+
 \section{Homogeneous multilayers}\label{Homogeneous}
 
 Monolayer graphene consists of a triangular lattice with two atoms per unit cell that leads, in the reciprocal space, to a hexagonal Brillouin zone that hosts Dirac cones in its corners.
-When $N$ layers are considered the crystalline structure remains the same, only there will be $2N$ atoms per unit cell. We shall only use the so called Bernal stacking, shown in  Fig.~\ref{Structure}, which is the ground state configuration, according to both \ac{dft} calculations and experimental evidence~\cite{Norimatsu2010,Charlier1994,Charlier1994a}. In Bernal stacked materials an atom from the sublattice $B$($A$) sits on top of an atom belonging to the other sublattice $A$($B$).
-For $N=2$ there is only one way to achieve this, but for $N>2$ there are different possible stacking orders. In figure~\ref{Structure} we show the different possibilities for $N\leq4$, with a self-evident notation.
+When $N$ layers are considered the crystalline structure remains the same, only there will be $2N$ atoms per unit cell. We shall only use the so called Bernal stacking, shown in \fref{Structure}, which is the ground state configuration, according to both \ac{dft} calculations and experimental evidence~\cite{Norimatsu2010,Charlier1994,Charlier1994a}. In Bernal stacked materials an atom from the sublattice $B$($A$) sits on top of an atom belonging to the other sublattice $A$($B$).
+For $N=2$ there is only one way to achieve this, but for $N>2$ there are different possible stacking orders. In \fref{Structure} we show the different possibilities for $N\leq4$, with a self-evident notation.
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
-\includegraphics{appendix/fig_qsh/structure.png}
+\includegraphics[width=0.75\textwidth]{appendix/fig_qsh/structure.png}
 \caption{$a)$ Crystal structure of bilayer graphene system with a highlighted unit cell. Different colors for each layer are used to distinguish the two layers. In the inset the first Brillouin Zone is depicted with the high symmetry points and the Time Reversal Invariant Momenta colored in red. In $b)$ Side view of the unit cells for all the different stackings studied. For the stackings with inversion symmetry the inversion center is shown at the crossing point of the dashed lines. For both figures red and blue denote sublattice.}
 \label{Structure}
 \end{figure}
@@ -25,7 +24,7 @@ We describe the multilayers with the following tight-binding Hamiltonian:
 \label{Hamil}
 \end{equation}
 where $H_{ML}$ and $H_{inter} $ account for the intralayer and interlayer  hoppings, respectively, and the last term is the intra-atomic \ac{soc}. Our tight-binding model is based on four atomic orbitals,  $s$, $p_{x}$, $p_{y}$ and $p_{z}$.
-Both the intralayer and interlayer hoppings are described within the \acf{sk} formalism~\cite{Slater1954}. The intralayer hopping parameters are taken from Ref~\cite{Gosalbez-Martinez2011}. In order to study the effect of interlayer coupling, the interlayer terms are scaled by a dimensionless parameter $\eta$. When $\eta=1$, the ratio between interlayer and intralayer $V_{pp\pi}$ in graphene is taken as~\cite{Katsnelson2012} 0.13. Unless otherwise stated, in all our calculations we have $\eta=1$.
+Both the intralayer and interlayer hoppings are described within the \acf{sk} formalism~\cite{Slater1954}. The intralayer hopping parameters are taken from Ref~\onlinecite{Gosalbez-Martinez2011}. In order to study the effect of interlayer coupling, the interlayer terms are scaled by a dimensionless parameter $\eta$. When $\eta=1$, the ratio between interlayer and intralayer $V_{pp\pi}$ in graphene is taken as~\cite{Katsnelson2012} 0.13. Unless otherwise stated, in all our calculations we have $\eta=1$.
 Within this model, the dimension of the Hilbert space for the minimal unit cell of the crystal with $N$ layers is $4\times2\times2\times N = 16N$ (4 orbitals per atom, 2 atoms per layer, plus the two possible spin orientations).
 
 Without \ac{soc}, this model reproduces the very well known band structure of graphene ($N=1$) and multilayer graphene $N>1$, that portraits these systems as zero-gap semiconductors. Within this model, \ac{soc} is known to open a gap in the monolayer~\cite{Min2006}  as well as in the bilayer~\cite{Konschuh2012,Guinea2010,Cortijo2010}. In the case of the monolayer graphene the gap is known to be topological. Within this model, the computed value of the gap $\SI{1.46}{\micro\eV}$ when we take a realistic value of the atomic \ac{soc}, $\lambda=\SI{10}{\meV}$. This gap is much smaller than the ones obtained with accurate \ac{dft} calculations~\cite{Konschuh2011a}, in the range of $\sim\SI{30}{\micro\eV}$.
@@ -53,10 +52,10 @@ The effect of \ac{soc} on the band structure of the multilayers can be summarize
 \begin{enumerate}
 \item \ac{soc}  opens up a gap for all the $N$ stacked layers considered, reproducing the existing results~\cite{Guinea2010} for the case of $N=2$.
 Notice that in the case of $ABA$ and $ABCB$ stackings, the system remains gapless until a critical value of $\lambda$.
-This peculiarity is related to the non uniform evolution of the SO splitting of the linear and non-linear bands  as shown in figure~\ref{Bilayer}.
+This peculiarity is related to the non uniform evolution of the SO splitting of the linear and non-linear bands  as shown in \fref{Bilayer}.
 
 
-\item  The scaling of the gap with $\lambda$ is very similar for monolayer and $N=2,3,4$ multilayers as it is shown in Figure~\ref{Bilayer}. Therefore, it is expected that within this model, the gap opened by the intrinsic \ac{soc} might be as small in multilayers as in monolayers.
+\item  The scaling of the gap with $\lambda$ is very similar for monolayer and $N=2,3,4$ multilayers as it is shown in \fref{Bilayer}. Therefore, it is expected that within this model, the gap opened by the intrinsic \ac{soc} might be as small in multilayers as in monolayers.
 
 \item The magnitude of the band-gap is insensitive to the interlayer coupling. This result is somewhat surprising, since together with atomic \ac{soc} the interlayer coupling opens a spin-flip channel, otherwise missing in the monolayer case.
 For the $AB$ bilayer, this can be understood considering the Hamiltonian at the Dirac point, for a given spin flavor. In the basis $\{A_{1},B_{1},A_{2},B_{2}\}$
@@ -72,7 +71,7 @@ H(K) = \left(\begin{array}{cccc}
 where $\Delta$ is the SO gap. When $\eta=0$ this Hamiltonian represents two decoupled monolayers.
 For finite $\eta$ the eigenvalues are $E^{1}_{\pm}=\pm\Delta/2$ and $E^{2}_{\pm}=\pm\sqrt{(\eta t)^{2}+(\Delta/2)^{2}}$.
 Since $\eta t\gg\Delta$ the gap is still controlled by the $E^{1}$ couple and thereby identical to that of the decoupled monolayers.
-As a result, switching on the interlayer coupling does not close the \ac{soc} gap of the monolayer as shown in Figure~\ref{Bilayer}. As a consequence,  the ground state of two decoupled ($\eta=0$) monolayers can be adiabatically connected to the ground state of the bilayer ($\eta=1$).
+As a result, switching on the interlayer coupling does not close the \ac{soc} gap of the monolayer as shown in \fref{Bilayer}. As a consequence,  the ground state of two decoupled ($\eta=0$) monolayers can be adiabatically connected to the ground state of the bilayer ($\eta=1$).
 \end{enumerate}
 
 The last observation leads to the following result: odd $N$ stacked graphene will be quantum spin Hall Insulators, whereas  even $N$ will not. More precisely, for a system of $N$ decoupled monolayers the $Z_{2}$ invariant is:
@@ -119,13 +118,13 @@ For systems without inversion symmetry, the calculation of the $Z_{2}$ invariant
 
 \subsection{Edge states}
 To confirm equation \eqref{trivial} even for systems without inversion symmetry we look for the presence of gapless edge states.
-We consider armchair-terminated  semi-infinite crystals.  Using translation invariance along the direction parallel to the edge, we block-diagonalize  the Hamiltonian of the semi-infinite 2D  crystal in terms of a collection of $k_{||}$ dependent semi-infinite 1D Hamiltonians, as indicated in figure~\ref{Mapping}. The 1D Hamiltonian describes unit cells with $4N$ atoms, where $N$ stands for the number of graphene layers.  The intra-cell terms are denoted by $H_0(k_{||})$ and the inter-cell hoppings by $V(k_{||})$.
+We consider armchair-terminated  semi-infinite crystals.  Using translation invariance along the direction parallel to the edge, we block-diagonalize  the Hamiltonian of the semi-infinite 2D  crystal in terms of a collection of $k_{||}$ dependent semi-infinite 1D Hamiltonians, as indicated in \fref{Mapping}. The 1D Hamiltonian describes unit cells with $4N$ atoms, where $N$ stands for the number of graphene layers.  The intra-cell terms are denoted by $H_0(k_{||})$ and the inter-cell hoppings by $V(k_{||})$.
 
 
 
 \begin{figure}[hbt]
  \centering
-  \includegraphics{appendix/fig_qsh/seminfinite.png}
+ \includegraphics[width=0.75\textwidth]{appendix/fig_qsh/seminfinite.png}
 \vspace{-5pt}
 \caption{Scheme of the mapping between a semi-infinite crystal and a semi-infinite chain. The coupling between each linear chain (with $k_{||}$ well defined) is introduced by means of a self energy $\Sigma_{R}$.}
 \label{Mapping}
@@ -167,7 +166,7 @@ For a given $k_{||}$ we compute the \ac{dos} using
 \end{equation}
 Using a similar  approach we can also obtain the bulk \ac{dos}  calculating the bulk Green function by recursion.
 
-In figure~\ref{DOSdyson} we show the \ac{dos} for both bulk and edge for all the stackings as a contour plot in the $k_{||},E$ plane. For each stacking the left panel shows the bulk \ac{dos}, which are gaped for all the stackings and the right panel shows the edge states.  The calculations are done for a rather large value of $\lambda=\SI{2}{\eV}$. The first thing to  notice is that, for such large values of $\lambda$, all the structures have edge states. However, only in the case of odd $N$, shown in the left column, the in-gap states are gapless.  This is a necessary condition in order to have a \ac{qshi}.  In contrast,  all systems with even $N$ have edge states with a gap. Thereby, they are definitely not in the \ac{qsh} phase, validating
+In \fref{DOSdyson} we show the \ac{dos} for both bulk and edge for all the stackings as a contour plot in the $k_{||},E$ plane. For each stacking the left panel shows the bulk \ac{dos}, which are gaped for all the stackings and the right panel shows the edge states.  The calculations are done for a rather large value of $\lambda=\SI{2}{\eV}$. The first thing to  notice is that, for such large values of $\lambda$, all the structures have edge states. However, only in the case of odd $N$, shown in the left column, the in-gap states are gapless.  This is a necessary condition in order to have a \ac{qshi}.  In contrast,  all systems with even $N$ have edge states with a gap. Thereby, they are definitely not in the \ac{qsh} phase, validating
  equation~\eqref{trivial}. Therefore, we conclude that odd  $N$ graphene stacks are \ac{qshi} and even $N$ are trivial insulators. In all cases, the gap opened by \ac{soc} is quite small.
 
 
@@ -190,7 +189,7 @@ Panels (b,c,d) show the dependence of the induced gap in graphene due to the pro
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
 Here we propose a toy model to understand the opening of a non-trivial gap due to proximity to a trivial insulator with strong \ac{soc}.
-For that matter, we take graphene encapsulated between two monolayers of a trivial semiconductor with strong \ac{soc} and broken inversion symmetry.   Specifically, the structure of  these adjacent monolayers is that of a $BN$-like crystal (see figure~\ref{induced}(a)).   The choice of the stacking is such that, globally, the structure has inversion symmetry. Otherwise,  a trivial band gap would be opened by proximity~\cite{Giovannetti2007}.
+For that matter, we take graphene encapsulated between two monolayers of a trivial semiconductor with strong \ac{soc} and broken inversion symmetry.   Specifically, the structure of  these adjacent monolayers is that of a $BN$-like crystal (see \fref{induced}(a)).   The choice of the stacking is such that, globally, the structure has inversion symmetry. Otherwise,  a trivial band gap would be opened by proximity~\cite{Giovannetti2007}.
 
 The $BN$-like crystal is described with the same interatomic \ac{sk} parameters than graphene, but very different on-site parameters. In particular we assume a large \ac{soc} $\lambda$ and a staggered potential $\pm m$ that breaks inversion symmetry of the top and bottom layers.
 Since we are interested in the proximity effect, we turn off the atomic \ac{soc} of the graphene layer.
@@ -202,7 +201,7 @@ zero \ac{soc} for the graphene layer, in order to study the proximity effect.   
 \end{equation}
 in the limit of small $\lambda$, $\eta$ and $m^{-1}$. This results implies that graphene can borrow \ac{soc} from a neighbor trivial insulator layer via interlayer coupling. Using the method of the TRIM  we have verified that this insulator has $Z_2=(-1)^{\nu}=-1$, and is therefore topologically non-trivial.
 
-The magnitude of the proximity effect away from the weak coupling limit of eq. \eqref{wcoupling} is shown in figures \ref{induced}.  We study the dependence of the proximity gap $\Delta$ as a function of both the \ac{soc} $\lambda$ and the interlayer coupling $\eta$ for two values of the encapsulating layer  staggered potential $m$. It is apparent that, taking $m=\SI{2.0}{\eV}$ (a trivial gap $\sim\SI{1.5}{\eV}$) and $\lambda \simeq \SI{0.25}{\eV}$, values in line with those of 2D \ac{tmd}, the proximity gap is in the order of
+The magnitude of the proximity effect away from the weak coupling limit of eq. \eqref{wcoupling} is shown in \fref{induced}.  We study the dependence of the proximity gap $\Delta$ as a function of both the \ac{soc} $\lambda$ and the interlayer coupling $\eta$ for two values of the encapsulating layer  staggered potential $m$. It is apparent that, taking $m=\SI{2.0}{\eV}$ (a trivial gap $\sim\SI{1.5}{\eV}$) and $\lambda \simeq \SI{0.25}{\eV}$, values in line with those of 2D \ac{tmd}, the proximity gap is in the order of
  $\sim\SI{1}{\meV}$, similar to the \ac{dft} results. Therefore, our model provides a reasonable justification of the \ac{dft} computations, which are certainly more complete.
 
 Our  toy model does not capture some probably important features of real heterogeneous multilayers.  For instance,
