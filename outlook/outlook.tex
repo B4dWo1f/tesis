@@ -2,4 +2,43 @@
 % ~~~~ Introduction ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \chapter{Conclusions and Outlook}
 \label{conclusions}
-Bye bye
+% Sp3 functionalization leads to the emergence of zero modes that host a single electron.. In the case of graphene monolayer, the lack of an energy gap makes leads to a peculiar scaling behaviour of the resulting magnetic moment.  (CHAPTER 4)
+In this thesis we have explored the physical properties of $sp^3$ functionalization of graphene-based systems, paying especial attention to the case of bilayer graphene. \chref{ch:graphene} and \chref{ch:bilayer} review the basic properties of both monolayer and bilayer graphene.
+
+In the following chapters we explored the influence of $sp^3$-defects in these systems. In \chref{ch:vacancy} we analyzed the properties of a single $sp^3$-defect on infinite otherwise pristine graphene. This kind of defect leads to the localization of a single electron in its vicinity with energy $E=0$, usually called a zero-mode. In the case of monolayer graphene, the density of states at the energy of the zero-mode vanishes, nonetheless there are available states infinitesimally close. This situation where there is no gap, but there is no density of states either, leads to a rather peculiar behavior
+In particular, the localized electronic state does not host an integer magnetic moment $m=1\mu_B$ as it was previously assumed. This statement is supported by the anomalous magnetic response of the system which include a departure from the Curie Law and a non-linear magnetic susceptibility. Our \ac{mf} calculations show that the local moment induced by the $sp^3$-defect is not quantized. Naturally, the \ac{mf} calculations are limited and further work including the many-body interactions would be necessary.
+\medskip
+
+
+% In the case of graphene bilayer with a gap due to application of an electric field, the sp3 zero modes can lead to in-gap states (depending on the absorption site) CHAPTER 5. 
+In \chref{ch:vacancy_bilayer} we extended our study to a $sp^3$-defect in bilayer graphene. In this case the system does present a finite density of states at $E=0$, where the zero-modes appear but, in the presence of an electric field, the band structure develops a gap that can be as big as $\Delta=\SI{250}{\meV}$.
+The electric field can be used as a parameter that allows us to smoothly connect or isolate the zero-modes from the rest of the spectrum.
+Since the introduction of single defects breaks the translational symmetry, we explored this system in finite but huge islands. This approach was beneficial in two ways. On one hand it allowed the calculation of only a few eigenstates and, on the other hand, it restricted our study to gaped systems, which is the regime we are interested in.
+
+In the absence of an electric field $\mathcal{E}=0$ the zero-mode lies in the middle of the confinement gap. The electric field keeps the zero-mode inside the gap but it has drastic consequences for the physical properties of the in-gap state.
+% The  properties of the in-gap states associated to sp3 functionalization can be controlled electrically. Most notably, the extension of the states can be manipulated (CHAPTER 5)
+The main effect of the electric field on the in-gap state is its capability for spatial confinement. In the absence of an electric field, the in-gap state is distributed among all the available sites in the system but in the presence of an electric field it is strongly confined to a region around the defect, regardless of the size of the system.
+This confinement length turned out to be around $L_C\sim\SI{50}{\angstrom}$ for electric fields that open an experimentally realistic gap.
+
+% This control can be used to tune spin couplings of localized electron and nuclear spins associated to sp3 defects such as chemisorbed atomic hydrogen:
+Since the electric field is able to confine the in-gap state to a certain number of atoms, it follows that the spectral weight in each atom/orbital can also be controlled this way.
+
+For the particular case of \ce{H} adatoms on bilayer graphene we have shown that interaction between the nuclear and electronic spin, the hyperfine interaction, can be tuned up to an order of magnitude via electric gating. This effect was explored in \chref{ch:hyperfine}.
+The tuning of the hyperfine coupling is one of the requirements for spin based qubits like in Kane's proposal. Naturally there are plenty of challenges for a full realization of such a system. In first place it would be interesting to have a large amount of defects (qubits) which, in itself, is not a problem with state of the art \ac{stm} manipulation but still has to be done in an efficient way. Second, it would be necessary to add individual dual electric gating to each of the defects in order to control separately the gap opened and the doping in the system. This is definitely a challenge, but the fabrication and manipulation of graphene devices has advanced incredibly fast in the last %10
+years and also multi-tip \ac{stm} could be an option.
+Third, it is not obvious which should be the technology to read the state of the qubits, whether they are the nuclear, like in Kane's proposal, or the electronic spin, like current experimental groups are using. An option could be a combination of electric field and radio/micro-wave pulses which seems to work in a similar system, $\ce{Si}:\leftidx{^{31}}{\ce{P}}$, by tuning the frequencies at which certain transitions occur. %XXX
+
+
+Rather than qubits we explored in \chref{ch:designer} the possibility of making an analog quantum simulator out of this system. Let us consider an array of $sp^3$ defects separated a certain distance.
+The interactions among them would depend primarily on the extension of each of the associated in-gap state.
+
+The ability to confine each in-gap states from \emph{virtually} infinity to $\SI{50}{\angstrom}$ means that we have control over the interactions. 
+In \chref{ch:designer} we explore the tuning of these interactions, in particular we derive the effective Hamiltonian describing the interactions between two in-gap states which results in several effective terms whose physical interpretation is transparent such an exchange term, a pairing term, effective hoppings or a renormalized Hubbard repulsion. The couplings of these emergent terms can be controlled by choosing the correct architecture (distance between defects) and the appropriate electric field.
+With these tools we can build physical systems described by Hamiltonians described at will, making this system very promising to perform as an analog quantum simulator for fermionic models.
+\medskip
+
+
+% In chapter 6 we explore the control of the hyperfine interaction. This control is one of the hardware requirements for spin based qubits in the Kane proposal
+% In chapter 7 we explore electrical control the relevant energy scales (hoppings, Hubbard) of artificial lattices of sp3 defects.  This would permit to explore the weak to strong coupling transition in artificial fermion models,  that should lead to non-trivial electronic phases
+% The Hubbard Hamiltonian for a pair of in-gap zero modes (o como quieras llamarles) can be expressed as the “blue Hamiltonian”, with several emergent terms whose physical interpretation is transparent and permits to relate to the properties of the single particle states (CHAPTER 7,  APENDICE F) 
+% The results above highlight the potential of functionalized graphene bilayer as a physical platform with great potential for spin based qubits and, more even more promising for analog quantum simulation of interacting fermionic models. 

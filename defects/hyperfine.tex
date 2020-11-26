@@ -2,7 +2,7 @@
 \label{ch:hyperfine}
 In the previous chapter we have seen that the in-gap state associated to a $sp^3$-defect can be localized to an area of radius $\sim\SI{50}{\angstrom}$. In this chapter we delve into the physics of a single defect and explore how the electric field may change its intrinsic interactions.
 
-For the entirety of this chapter we are going to focus on the deposition of a single \ce{H} atom as $sp^3$-defect. In order to be able to describe its response to the electric field we will abandon the 1-orbit description that we have been using and use a 4-orbit \ac{tb} model in the \ac{sk} approximation. The basis $\mathcal{B}_4$, will be the natural expansion of basis \eqref{basis4} to two layers (doubling the basis for the second layer).
+For the entirety of this chapter we are going to focus on the chemisorption of a single \ce{H} atom as $sp^3$-defect. In order to be able to describe its response to the electric field we will abandon the 1-orbit description that we have been using and use a 4-orbit \ac{tb} model in the \ac{sk} approximation. The basis $\mathcal{B}_4$, will be the natural expansion of basis \eqref{basis4} to two layers (doubling the basis for the second layer).
 
 
 The idea of using the nuclear spin of \ce{H} atoms on graphene requires a certain capability to tune its interaction with the electronic spin. This interaction is governed by the hyperfine coupling.
@@ -14,10 +14,10 @@ While the model of an effective vacancy in the $p_z$ manifold is very simple and
 We are going to discuss briefly here the implementation of this system in a \ac{sk} framework as described in previous chapters. This approximation will provide some insight in the physics of the other orbitals.
 
 
-The most naive approach would be to use the \ac{sk} parameters detailed in previous chapters (see table~\ref{G_SK_params}). These parameters were calculated for $H$ atoms passivating the edges of graphene nanoribbons\cite{Gosalbez-Martinez2011} where the main hybridization occurs with the $\sigma$ orbitals of graphene. There is no good reason why these hoppings parameters should hold for an adatom on top of flat graphene. For the sake of the argument we will start with those values in order to spot the difference with the idealized one-orbital model, and then proceed to consider the hopping parameters as somehow free parameters that we can tune.
+The most naive approach would be to use the \ac{sk} parameters detailed in previous chapters (see table~\ref{G_SK_params}). These parameters were calculated for $H$ atoms passivating the edges of graphene nanoribbons\cite{Gosalbez-Martinez2011} where the main hybridization occurs with the $\sigma$ orbitals in the same plane of graphene. We do not expect these hoppings parameters, to hold for an adatom on top of flat graphene. For the sake of the argument we will start with those values in order to spot the difference with the idealized one-orbital model, and then proceed to consider the hopping parameters as somehow free parameters that we can tune.
 
 
-In a first approach we are going to neglect the well known $sp^3$ deformation of the lattice\cite{} and consider simply that the $H$ atom has some hoppings to the $C$ orbitals. Due to the symmetry of the problem, both the $s$ and $p_z$ orbitals will have a finite hopping with the $s$ orbital of the \ce{H} while the $p_{x/y}$ will not.
+In a first approach we are going to neglect the well known $sp^3$ deformation of the lattice\cite{Duplock2004,Yazyev2007,Castro2009a,Gmitra2013} and consider simply that the $H$ atom has some hoppings to the $C$ orbitals. Due to the symmetry of the structure, both the $s$ and $p_z$ orbitals will have a finite hopping with the $s$ orbital of the \ce{H} while the $p_{x/y}$ will not.
 
 In the \ac{sk} approximation, the effective hoppings will be governed by the parameters $V_{ss\sigma}$ and $V_{sp\sigma}$.
 
@@ -69,7 +69,7 @@ The energy of the in-gap state as a function of both parameters is shown in \fre
   \centering
   \includegraphics{defects/fig/Vsss_Vsps.pdf}
   \vspace{-5pt}
-  \caption{a) Comparison of the spectrum (sketch) of a graphene island using the vacancy in a one orbital model and an adatom in the \ac{sk} approximation using the parameters in \ref{G_SK_params}. Notice that the in-gap state appears close to the valence band rather than in the middle of the gap. b) Scheme of the hopping processes present in this kind of defects. c) Evolution of the spectrum of an armchair island for different \ac{sk} parameters for the $sp^3$ defect. Notice the strong dependence of the in-gap energy with $V_{sp\sigma}$ especially comparing it with $V_{ss\sigma}$. The dashed lines show the value of the ``naive'' parameters in \ref{G_SK_params}}
+  \caption{a) Comparison of the spectrum (sketch) of a graphene island using the vacancy in a one orbital model and an adatom in the \ac{sk} approximation using the parameters in \ref{G_SK_params}. Notice that the in-gap state appears close to the valence band rather than in the middle of the gap. b) Scheme of the hopping processes present in this kind of defects. c) Evolution of the spectrum of an armchair island for different \ac{sk} parameters for the $sp^3$ defect. The left panels considers $V_{ss\sigma}=\SI{-6.84}{\eV}$ and the right panels uses $V_{sp\sigma}=\SI{7.81}{\eV}$. Notice the strong dependence of the in-gap energy with $V_{sp\sigma}$ especially comparing it with $V_{ss\sigma}$. The dashed lines show the value of the ``naive'' parameters in \ref{G_SK_params}}
 \label{ingap}
 \end{figure}
 %\FloatBarrier
@@ -155,47 +155,66 @@ For the case of $Si:\leftidx{^{31}}P$ the hyperfine coupling in MegaHertz is\cit
 $\frac{\mathcal{A}}{2\pi\hbar} = \SI{117}{\MHz}$
 
 
-Since we do not have a reliable estimation of the \ac{sk} parameters of the adatom, we will consider them as free parameters. In \fref{ingap} we saw the evolution of the spectrum as a function of the two \ac{sk} parameters. Here we show both the energy of the in-gap state and the hyperfine coupling as a function of the $V_{sp\sigma}$, the main contributor.
+Since we do not have a reliable estimation of the \ac{sk} parameters of the adatom, we will consider them as free parameters.
+We will consider the monolayer case looking for the limit where the in-gap state $E_0\to0$ which is both theoretically and experimentally reasonable.\cite{Soriano2010,Ao2011,Balakrishnan2013,Gmitra2013,Brihuega2016}
+%In \fref{ingap} we saw the evolution of the spectrum as a function of the two \ac{sk} parameters. Now, in \fref{hyperfine} we show both the energy of the in-gap state and the hyperfine coupling as a function of the $V_{sp\sigma}$, the main contributor.
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 \begin{figure}[h!]
 \centering
-\includegraphics{defects/fig/coupling_hyper.pdf}
+\includegraphics{defects/fig/coupling_hyper1.pdf}
 \vspace{-10pt}
-\caption{a) Dependence of the in-gap state arising from a single vacancy in graphene monolayer with the $V_{sp\sigma}$ coupling for different $V_{ss\sigma}$. b) Hyperfine coupling with the $V_{sp\sigma}$ coupling in a H adatom on top of graphene.} % c) Hyperfine coupling modulated by an external electric field in bilayer graphene calculated with the optimal parameters calculated in the monolayer case. These numbers are to be considered as an upper limit for the tunability of $\mathcal{A}$.}
+\caption{a) Dependence of the in-gap state arising from a single vacancy in monolayer graphene with the $V_{sp\sigma}$ coupling for different $V_{ss\sigma}$. b) Hyperfine coupling with the $V_{sp\sigma}$ coupling in a H adatom on top of monolayer graphene. c) Hyperfine coupling modulated by an external electric field in bilayer graphene calculated with the optimal parameters calculated in the monolayer case. These numbers are to be considered as an upper limit for the tunability of $\mathcal{A}$.}
 \label{hyperfine}
 \end{figure}
-\FloatBarrier
+% \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-While the position of the in-gap state does not change a lot with the $V_{ss\sigma}$, the hyperfine coupling does present a significant variance with this parameter. This behavior is expected since the increasing the $s-p$ hybridization would reduce the available $H_s$ weight for the in-gap wave function.
+While the position of the in-gap state does not change a lot with $V_{ss\sigma}$, the hyperfine coupling does present a significant variance with $V_{sp\sigma}$ as seen both in \fref{ingap} and \fref{hyperfine}a). This behavior is expected since the increasing of the $s-p$ hybridization would reduce the available weight in the $s$ orbital of the adatom for the in-gap wave function.
+
+In order to explore the effect of these parameters in the system we calculate first how they affect the physical properties in the monolayer case, and later we will extend it to the bilayer.
+\fref{hyperfine}a) and b) show an exaggerated range for $V_{sp\sigma}$, well beyond what is reasonable. But let us not forget that we are neglecting a number of other effects which could play a relevant role. The first effect that comes to mind is the structural $sp^3$-deformation which would certainly increase both $V_{ss\sigma}$ and $V_{sp\sigma}$ although it would also open new mixing channels, like $p_z-p_{x/y}$ hoppings.
+A realistic estimation for these parameters is challenging since it depends strongly in the geometry of the system. We are considering here systems with well over $10^5$ atoms, absolutely out of the scope of \ac{dft} calculations which could, at best, deal with $N_C\sim100$ atoms. Such small systems are heavily influenced by size effects, and do not provide a reliable estimation.
 
 %Without a thorough study of these parameters (out of the scope of this work) it is worth noting that there is a range of parameters in which the hyperfine coupling is 
 
 %This numbers for the hyperfine coupling are not as big as for the $Si:\leftidx{^{31}}P$, nonetheless the tunability of this quantity almost a
-It is not clear what the experimental value for this parameter will be, but is is feasible, at the very least, to have a reasonable value for the hyperfine coupling.
 
-The occupation of the $s$ orbital will depend heavily on the extension of the in-gap state, which is governed by the electric field.
+As expected, \fref{hyperfine}a) shows that, in order to recover the 1-orbital intuition $E_0\to 0$, we would require $V_{sp\sigma}\to\infty$, or course this parameter is going to be finite in real life, somewhere between $V_{sp\sigma}\sim\SI{8}{\eV}$ (the case for flat graphene and in-plane Hydrogen) and maybe twice as much. But that is just a guess of what is reasonable for a hopping integral.
+\fref{hyperfine}b) shows a strong maximum in the viable range for this parameter.
+In the absence of a reliable value for these parameters we will choose the values corresponding to the maximal hyperfine coupling and content ourselves with an (optimistic) upper-bound. The values chosen will be $V_{ss\sigma}\sim\SI{-2.5}{\eV}$ and $V_{sp\sigma}\sim\SI{13}{\eV}$.
+These two plots were calculated for a monolayer hexagonal island with $N=40$, $N_C=29526$ (plus 486 \ce{H} atoms for pasivation of the edges). The reason for such a small island is that we require the 4-orbital basis, so our Hamiltonian more than 4 times bigger than in the 1-orbital case, when expanding to bilayer, that was the RAM limit.
 
-%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-\begin{figure}[h!]
-\centering
-\includegraphics{defects/fig/hyperfine.pdf}
-\vspace{-5pt}
-\caption{Hyperfine coupling as a function of SK parameter and electric field}
-\label{hyperfine_elec}
-\end{figure}
-\FloatBarrier
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-It is only logical that there might be a big change between the situation where the electronic state is allowed to spread all over the system, and the situation where it is confined around the defect.
+When we consider again bilayer graphene it is expected that the hyperfine coupling, $\mathcal{A}$, is reduced. Probably a factor $1/2$ is reasonable since the in-gap state now have twice as many sites to spread. 
 
-\fref{hyperfine_elec} summarizes the potential for the manipulation of the hyperfine coupling with the external electric field. Panel a) (discussed before and repeated here for completeness during the discussion of the result) shows
+While the value of the hyperfine coupling of a single \ce{H} atom on top of bilayer graphene is interesting itself, it is more interesting to explore how this physical property changes with an external electric field.
+The main effect is the change in the extension of the in-gap state. For larger electric field the in-gap state will be confined in the vicinity of the adatom, increasing the hyperfine coupling, while decreasing the electric field would allow the in-gap state to extend over a larger number of atoms, reducing its weight everywhere and consequently reducing the hyperfine coupling
+
+%%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+%\begin{figure}[h!]
+%\centering
+%\includegraphics{defects/fig/hyperfine.pdf}
+%\vspace{-5pt}
+%\caption{Hyperfine coupling as a function of SK parameter and electric field}
+%\label{hyperfine_elec}
+%\end{figure}
+%\FloatBarrier
+%%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+\fref{hyperfine}c) summarizes the potential for manipulation of the hyperfine coupling with an external electric field. It was calculated for hexagonal armchair islands of different size to show its convergence with the \ac{sk} parameters calculated previously.
+At $\mathcal{E}=0$ the hyperfine coupling goes to zero for larger and larger islands, which is reasonable since the in-gap state has more and more atoms to spread, so the spectral weight of the $s$ orbital of the adatom is doomed to (tend to) vanish. We have discussed before that the results for small $|\mathcal{E}|\to0$ are not reliable due to finite size effects. The strong electric field, on the contrary is a robust result.
+
+In the strong electric field limit the in-gap state is located in the vicinity of the defect so the $s$ orbital will be more populated, leading to a non-negligible hyperfine coupling. Even for tiny islands (N=20) this result seems robust and opens a window for the electrical manipulation of the nuclear spin of chemisorbed \ce{H} adatoms.
+
+
 
 
 \section{A Qubit Idea}
 
-In this system we have all the ingredients from the Kane's proposal, so we can write the complete Hamiltonian for our nuclear qubit as a combination of the previous ones:
+In this system we have all the ingredients from the Kane's proposal: a nuclear spin from the proton in the \ce{H} adatom, an electronic spin in the in-gap state associated with the defect and electric means to tune their interaction.
+
+In order to split the spin channels we will consider a magnetic field $\vec{B}$ only coupled to the spin degree of freedom (no \ac{ll}). The complete Hamiltonian for both spins in this scenario is written as:
 \begin{equation}
   H = -g_e\mu_e\frac{1}{2}\vec{B}\cdot\vec{\sigma}^e
       -g_p\mu_p\frac{1}{2}\vec{B}\cdot\vec{\sigma}^p
@@ -215,12 +234,12 @@ First of all, we can make a quick estimation of the order of magnitude of each o
 We are stretching a bit the notation in the Hamiltonian \eqref{1qubit} since each of the terms is expressed in a different basis. Namely, each of the Zeeman terms act only in the electron \textbf{or} proton spin subspace but the hyperfine coupling has to be expressed in a 2-particle basis that have not been defined yet.
 To fix the notation we define the following 2-particle basis:
 \begin{equation}
-  \mathcal{B}=\left\{\ket{\up\up},\ket{\up\down},
-                     \ket{\down\up},\ket{\down\down}\right\}
+  \mathcal{B}=\left\{\ket{\uaw\Uaw},\ket{\uaw\Daw},
+                     \ket{\daw\Uaw},\ket{\daw\Daw}\right\}
 \label{basis}
 \end{equation}
-% where the simple arrows $\uaw\daw$ represent the $S_z$ eigenvectors of the electronic spin, and the double arrows $\Uaw\Daw$ represent the $S_z$ eigenvectors of the nuclear spin.
-where the first position of the ket corresponds to the electronic state and the second to the nuclear one.
+where the simple arrows $\uaw\daw$ represent the $S_z$ eigenvectors of the electronic spin, and the double arrows $\Uaw\Daw$ represent the $S_z$ eigenvectors of the nuclear spin.
+% where the first position of the ket corresponds to the electronic state and the second to the nuclear one.
 
 In this basis the Pauli matrices are expressed as follows.
 \begin{equation}
@@ -263,82 +282,90 @@ In this basis the Pauli matrices are expressed as follows.
     \end{array}\right)
   \end{split}
 \end{equation}
-Hence, our Hamiltonian for two qubits in the presence of an off-plane magnetic field, $\vec{B}=(0,0,B/2)$, can be expressed as follows:
-\begin{equation*}
-H = \underbrace{-g_e\mu_e\frac{1}{4}}_{E}B\sigma^e_z
-    \underbrace{-g_p\mu_p\frac{1}{4}}_{P}B\sigma^p_z
-    +A\vec{\sigma}^e\cdot\vec{\sigma}^p
-\end{equation*}
-\begin{equation}
-  H = \left(\begin{array}{cccc}
-  B(E+P)+A & 0 & 0 & 0 \\
-  0 & B(E-P)-A & 2A & 0 \\
-  0 & 2A & B(-E+P)+A & 0 \\
-  0 & 0 & 0 & B(-E-P)-A
-  \end{array}\right)
-\end{equation}
-
-The eigenvalues of this matrix are the following \red{irrelevant?}:
-\begin{equation}
-  \begin{split}
-    E_0 &= -A-B(P+E) \quad;\quad v_0=\left(0,0,0,1\right)\\
-    E_1 &= A+B(P+E) \quad;\quad v_1=\left(1,0,0,0\right)\\
-    E_2 &= -\sqrt{A(5A+2B(P-E)) + B^2 (P-E)^2} \\
-        &\quad\quad\quad\quad v_2 =\left(0,-\frac{A+B(P-E)+\sqrt{A(5A+2B(P-E)) + B^2 (P-E)^2}}{2 A},1,0\right)\\
-    \quad\\
-    E_3 &= \sqrt{A(5A+2B(P-E)) + B^2 (P-E)^2}\\
-        &\quad\quad\quad\quad v_3 = \left(0,-\frac{A+B(P-E)-\sqrt{A(5A+2B(P-E)) + B^2 (P-E)^2}}{2 A},1,0\right)
-  \end{split}
-\label{eig}
-\end{equation}
 
 
 
-For now we will neglect the contribution of the proton and check the behavior of the eigenenergies of the system as a function of both the external magnetic field and the hyperfine coupling.
-%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-%TODO make this picture nicer
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth]{chapter03/figures/spectrum.png}
-\vspace{-5pt}
-\caption{Evolution of the eigenvalues of the Hamiltonian \eqref{1qubit} with the magnetic field, $B$, and the hyperfine interaction, $\mathcal{A}$. The dashed line is used to indicate the magnetic field in the second figure}
-% \label{spectrum}
-\end{figure}
-\FloatBarrier
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-In figure~\ref{spectrum} we can see that the energy levels are separated in two sets split by the electronic Zeeman splitting (remember that we are neglecting the proton Zeeman coupling here). The splitting within each of these sets is governed by the hyperfine coupling.
-
-But as we said before, the hyperfine coupling and Zeeman coupling for the proton are in the same order of magnitude. When we include the proton Zeeman interaction the big picture is the same: two sets of levels split by the electronic Zeeman. But within each of these two sets there is a difference, depending on the magnitude of the magnetic field and the hyperfine coupling the ordering of the wave functions may change. \red{rephrase}
-%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth]{chapter03/figures/pro_nopro.png}
-\vspace{-5pt}
-\renewcommand{\figurename}{\footnotesize{\textsc{Figure}}}
-\caption{Comparison of the energy levels as a function of the hyperfine coupling. Panel $a)$ neglects the Zeeman term for the proton, in panel $b)$ we use the full Hamiltonian. (Both panels share the $Y$ axis)}
-\label{proton}
-\end{figure}
-\FloatBarrier
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-The level crossing that appears in figure~\ref{proton} represents nothing more than the exchange of the wave functions as it can be seen in the analytical expression~\eqref{eig}. In fact using these expressions we can get the expression for this level crossing:
-\begin{equation}
-  \mathcal{A}_{\times}=\frac{B}{2}\left(E\pm\sqrt{E^2+4EP}\right)
-\end{equation}
 
 
-To clarify the meaning of this spectrum we make a schematic representation of the eigenfunctions, shown in figure~\ref{levels1Qbit}. The left column in the table represents the wave functions neglecting the proton's Zeeman contribution. The two columns in the right do not neglect the proton's coupling, and show the cases of high magnetic field (or low hyperfine coupling) and low magnetic field (or high hyperfine coupling). It is clear that depending on the relative magnitude of the proton's Zeeman effect and the Hyperfine coupling the order of the wave functions may differ.
+%Hence, our Hamiltonian for two qubits in the presence of an off-plane magnetic field, $\vec{B}=(0,0,B/2)$, can be expressed as follows:
+%\begin{equation*}
+%H = \underbrace{-g_e\mu_e\frac{1}{4}}_{E}B\sigma^e_z
+%    \underbrace{-g_p\mu_p\frac{1}{4}}_{P}B\sigma^p_z
+%    +A\vec{\sigma}^e\cdot\vec{\sigma}^p
+%\end{equation*}
+%\begin{equation}
+%  H = \left(\begin{array}{cccc}
+%  B(E+P)+A & 0 & 0 & 0 \\
+%  0 & B(E-P)-A & 2A & 0 \\
+%  0 & 2A & B(-E+P)+A & 0 \\
+%  0 & 0 & 0 & B(-E-P)-A
+%  \end{array}\right)
+%\end{equation}
+%
+%The eigenvalues of this matrix are the following \red{irrelevant?}:
+%\begin{equation}
+%  \begin{split}
+%    E_0 &= -A-B(P+E) \quad;\quad v_0=\left(0,0,0,1\right)\\
+%    E_1 &= A+B(P+E) \quad;\quad v_1=\left(1,0,0,0\right)\\
+%    E_2 &= -\sqrt{A(5A+2B(P-E)) + B^2 (P-E)^2} \\
+%        &\quad\quad\quad\quad v_2 =\left(0,-\frac{A+B(P-E)+\sqrt{A(5A+2B(P-E)) + B^2 (P-E)^2}}{2 A},1,0\right)\\
+%    \quad\\
+%    E_3 &= \sqrt{A(5A+2B(P-E)) + B^2 (P-E)^2}\\
+%        &\quad\quad\quad\quad v_3 = \left(0,-\frac{A+B(P-E)-\sqrt{A(5A+2B(P-E)) + B^2 (P-E)^2}}{2 A},1,0\right)
+%  \end{split}
+%\label{eig}
+%\end{equation}
+%
+%
+%
+%For now we will neglect the contribution of the proton and check the behavior of the eigenenergies of the system as a function of both the external magnetic field and the hyperfine coupling.
+%%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+%%TODO make this picture nicer
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.9\textwidth]{chapter03/figures/spectrum.png}
+%\vspace{-5pt}
+%\caption{Evolution of the eigenvalues of the Hamiltonian \eqref{1qubit} with the magnetic field, $B$, and the hyperfine interaction, $\mathcal{A}$. The dashed line is used to indicate the magnetic field in the second figure}
+%% \label{spectrum}
+%\end{figure}
+%\FloatBarrier
+%%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%In figure~\ref{spectrum} we can see that the energy levels are separated in two sets split by the electronic Zeeman splitting (remember that we are neglecting the proton Zeeman coupling here). The splitting within each of these sets is governed by the hyperfine coupling.
+%
+%But as we said before, the hyperfine coupling and Zeeman coupling for the proton are in the same order of magnitude. When we include the proton Zeeman interaction the big picture is the same: two sets of levels split by the electronic Zeeman. But within each of these two sets there is a difference, depending on the magnitude of the magnetic field and the hyperfine coupling the ordering of the wave functions may change. \red{rephrase}
+%%~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.9\textwidth]{chapter03/figures/pro_nopro.png}
+%\vspace{-5pt}
+%\renewcommand{\figurename}{\footnotesize{\textsc{Figure}}}
+%\caption{Comparison of the energy levels as a function of the hyperfine coupling. Panel $a)$ neglects the Zeeman term for the proton, in panel $b)$ we use the full Hamiltonian. (Both panels share the $Y$ axis)}
+%\label{proton}
+%\end{figure}
+%\FloatBarrier
+%%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%The level crossing that appears in figure~\ref{proton} represents nothing more than the exchange of the wave functions as it can be seen in the analytical expression~\eqref{eig}. In fact using these expressions we can get the expression for this level crossing:
+%\begin{equation}
+%  \mathcal{A}_{\times}=\frac{B}{2}\left(E\pm\sqrt{E^2+4EP}\right)
+%\end{equation}
+
+
+Assuming a magnetic field in the $Z$ direction, $\vec{B}=(0,0,B)$, we can calculate the spectrum. It is schematically depicted in figure~\ref{levels1Qbit}.
+%The left column in the table represents the wave functions neglecting the proton's Zeeman contribution. The two columns in the right do not neglect the proton's coupling, and show the cases of high magnetic field (or low hyperfine coupling) and low magnetic field (or high hyperfine coupling). It is clear that depending on the relative magnitude of the proton's Zeeman effect and the Hyperfine coupling the order of the wave functions may differ.
 %~~~~~~~~~~~~~~~~~~~~~~~~~~ FIGURE ~~~~~~~~~~~~~~~~~~~~~~~~~%
 %TODO 0.004 ueV/T add "/T" in the picture. Qbit notation arrow ---> 0/1
 \begin{figure}[h!]
 \centering
-\includegraphics{chapter03/figures/levels1Qbit.pdf} %levels.png}
-\vspace{-5pt}
+\includegraphics[width=0.7\textwidth]{defects/fig/qbit_states.pdf} %levels.png}
+\vspace{-20pt}
 \caption{Sketch of the energy levels for the 1 Qubit Hamiltonian~\eqref{1qubit}. The main splitting among the different states is mainly due to the electronic Zeeman terms. The lowest energy state is determined by the competition between the nuclear Zeeman splitting and the hyperfine interaction.}
 % \caption{Schematic representation of the energy levels and its respective wave functions. The states $\ket{\daw\Uaw}$ and $\ket{\uaw\Daw}$ and in fact mixed, but it is negligible (this means that $\ket{\uaw\Daw}\simeq0.9999999\ket{\uaw\Daw}+0.0002672\ket{\daw\Uaw}$). All the possible transitions are specified by $\delta_i$.}
 \label{levels1Qbit}
 \end{figure}
-\FloatBarrier
+% \FloatBarrier
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+The spectrum is divided in two groups governed by the electronic magnetic moment. Both the magnetic field and the hyperfine coupling split each of these two levels according to the nuclear spin.
+
 % The states $\ket{\daw\Uaw}$ and $\ket{\uaw\Daw}$ do not in fact appear with weight 1, instead there is a small mixing (less than $0.001\%$).
 %
 % \red{I think the order of my states is not exactly the same as Morello's. Check}
