@@ -1,0 +1,40 @@
+%~~~~~~~~ Chapter ~~~~~~~~
+% ~~~~ Introduction ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\chapter{Conclusiones y perspectivas}
+\label{conclusions}
+% Sp3 functionalization leads to the emergence of zero modes that host a single electron.. In the case of graphene monolayer, the lack of an energy gap makes leads to a peculiar scaling behaviour of the resulting magnetic moment.  (CHAPTER 4)
+En esta tesis hemos explorado las propiedades de sistemas basados en grafeno funcionalizados con defectos $sp^3$, prestando especial atención al caso de las bicapas de grafeno. \chref{ch:graphene} y \chref{ch:bilayer} revisan las propiedades básicas tanto de las monocapas como de las bicapas de grafeno.
+
+En los siguientes capítulos hemos explorado la influencia de los defectos $sp^3$ en estos sistemas. En \chref{ch:vacancy} analizamos las propiedades de un único defecto $sp^3$ en grafeno pristino. Este tipo de defecto conlleva la localización de un único electrón en su entorno con energía $E=0$ (por lo que suele llamarse ``zero-mode''). En el caso de las monocapas de grafeno, la densidad de estados a la energía del zero-mode es cero, sin embargo hay estados electrónicos infinitesimalmente cerca. Esta situación en la que no hay gap, pero tampoco hay densidad de estados es la responsable de un comportamiento extraño.
+En concreto, los estados electrónicos localizados no contienen un momento magnético entero $m=1\mu_B$ como previamente se asumía. Este hecho es secundado por la respuesta magnética anómala del sistema que incluye una desviación de la Ley de Curie y una susceptibilidad magnética no lineal. Nuestros cálculos de campo medio (\ac{mf}) muestran que el momento magnético local inducido por los defectos $sp^3$ no están cuantizados. Naturalmente los cálculos en la aproximación de \ac{mf} son limitadas y será necesario más trabajo incluyendo las interacciones many-body.
+\medskip
+
+
+% In the case of graphene bilayer with a gap due to application of an electric field, the sp3 zero modes can lead to in-gap states (depending on the absorption site) CHAPTER 5. 
+En el \chref{ch:vacancy_bilayer} extendemos nuestro estudio a un defecto $sp^3$ en bicapas de grafeno. En este caso el sistema sí que presenta una densidad de estados finitas a $E=0$, donde aparecen los ``zero-modes'', pero en presencia de un campo eléctrico, las bandas abren un gap que puede llegar a ser de hasta $\Delta=\SI{250}{\meV}$.
+El campo eléctrico se puede usar como un parámetro que permite conectar o aislar los ``zero-modes'' con el resto de los estados del espectro.
+Puesto que la introducción de defectos rompen la simetría translacional, exploramos este sistema en islas finitas, aunque gigantes. Esta aproximación es beneficiosa en dos aspectos. En primer lugar, porque permite el cálculo de unos pocos autoestados (usando diagonalización de Lanczos), en segundo, porque esta técnica restringe naturalmente nuestro estudio a sistemas con gap, que es el regimen que nos interesa.
+
+En ausencia de campo eléctrico $\mathcal{E}=0$ el ``zero-mode'' se queda en medio del gap de confinameniento, por lo que suele denominarse ``in-gap state''. El campo eléctrico lo mantiene dentro del gap pero tiene consecuencias drásticas para sus propiedades físicas.
+
+El efecto principal del campo eléctrico en el estado in-gap es la posibilidad de confinarlo espacialmente. En ausencia de campo eléctrico el estado in-gap se esparce por todos los sitios disponibles en el sistema pero en presencia de un campo eléctrico queda fuertemente confinado a la región en torno al defecto, independientemente del tamaño del sistema.
+Esta longitud de confinamiento resulta ser de unos $L_C\sim\SI{50}{\angstrom}$ para campose eléctricos que abren un gap realista experimentalmente.
+
+Puesto que el campo eléctrico es capaz de confinar el estado in-gap a unos pocos átomos, es de esperar que el peso espectral en cada átomo/orbital pueda ser controlado de la misma forma.
+
+Hemos encontrado que para el caso concreto de adátomos de \ce{H} en bicapas de grafeno la interacción entre los spines nuclear y electrónico, la interacción hiperfina, puede ser manipulada hasta un orden de magnitud a través del campo eléctrico. Este efecto fue explorado en el \chref{ch:hyperfine}.
+
+El control del acoplo hiperfino es uno de los requisitos para los qubits basados en spin como los de la propuesta de Kane. Naturalmente hay multitud de retos para una realización experimental de este sistema. En primer lugar sería interesante tener gran cantidad de defectos (qubits) lo que, por sí mismo, no es un gran problema con las técnicas punteras de manipilación de átomos con \ac{stm}, pero aún es un proceso que tiene que ser optimizado.
+En segundo lugar haría falta poner contactos eléctricos dobles individualmente a cada defecto para poder controlar por separado el gap y el llenado del sistema. Este punto es sin duda un rato, pero la fabricación y manipulación de aparatos en grafeno ha avanzado increíblemente rápido en los últimos años y aún así tener \ac{stm} con varias puntas no deja de ser una opción razonable.
+En tercer lugar, aún no es obvia qué tecnología será necesaria para leer/escribir el estado de los qubits, tanto si se escribe en los spines nucleares, como en la propuesta de Kane, como si son spines electrónicos, como están usando los grupos experimentales actuales que siguen esta línea de investigación. Una opción podría ser la combinación de campo eléctrico y pulsos de radio/micro-ondas que parecen dar buenos resultados en un sistema similar, $\ce{Si}:\leftidx{^{31}}{\ce{P}}$, al ajustar las frecuencias a las que ciertas transiciones ocurren.
+
+
+Esquivando los detalles de los qubits, usamos el \chref{ch:designer} para explorar las posibilidades de usar este sistema como un simulador cuántico analógico. Para ello consideramos una colección de defectos $sp^3$ colocados en una determinada geometría y separados una cierta distancia.
+Las interacciones entre ellos dependen principalmente de la extensión de cada uno de los estados in-gap asociados.
+
+La habilidad para confinar cada estado in-gap desde \emph{virtualmente} el infinito a $\sim\SI{50}{\angstrom}$ significa que tenemos buen control de las interacciones del sistema.
+
+
+En el \chref{ch:designer} exploramos los ajustes de estas interacciones, en particular obtenemos el Hamiltoniano efectivo que describe las interacciones entre dos estados in-gap y que resulta en varios términos efectivos que se pueden interpretar físicamente con facilidad como un término de intercambio, de pairing, términos de hopping efectivo o un término de repulsión de Hubbard renormalizado. Los acoplos de estos términos efectivosse pueden controlar eligiendo la arquitectura correcta (distancia entre defectos y orientación relativa) y el campo eléctrico apropiado.
+
+Con estas erramientas podemos construir físicamente sistemasdescritos por los Hamiltonianos que nos convenga, convirtiendo a este sistema en una gran promesa para realizar simulaciónes cuánticas analógicas de modelos fermiónicos.

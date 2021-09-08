@@ -1,0 +1,104 @@
+\chapter{About the units}
+\section{Magnetic moment}
+The magnetic moment of any particle is defined as follows:
+\begin{equation}
+  \vec{m} = g\frac{q}{2m}\vec{S} \quad\text{with}\quad
+  \vec{S}=\frac{\hbar}{2}\vec{\sigma}\qquad\Rightarrow\qquad
+  \vec{m} = \frac{1}{2}g\mu\vec{\sigma}
+\label{mag_mom}
+\end{equation}
+where $q$ and $m$ are the carge and mass of particle respectively, $g$ is the so-called g-factor\footnote{The g-factor for the electron and proton are: $g_e=-2.0023\dots$ and $g_p=5.5857\dots$}, a dimensionless constant and $\vec{\sigma}$ are the Pauli matrices.
+\begin{equation}
+  \sigma_x=\left(\begin{array}{cc}
+    0 & 1 \\
+    1 & 0
+    \end{array}\right)\quad;\quad
+  \sigma_y=\left(\begin{array}{cc}
+    0 & -i \\
+    i & 0
+    \end{array}\right)\quad;\quad
+  \sigma_x=\left(\begin{array}{cc}
+    1 & 0 \\
+    0 & -1
+    \end{array}\right)
+\label{pauli}
+\end{equation}
+Note that in eq~\eqref{mag_mom} we have grouped the charge/mass ratio in the magneton $\mu$.
+\begin{equation}
+  \mu = \frac{q\hbar}{2m}
+\end{equation}
+In the case of the the magnetic moment of the electron $\mu$ is the Bohr magneton.
+
+Magnetic moments have units of $[\vec{m}]=\si{\eV/\tesla}$. This can be seen starting from the right most equation of~\eqref{mag_mom}
+\begin{equation*}
+  [\vec{m}] = [\mu] = \si{\coulomb\eV\s\per\kilogram} = \si{\eV\per\tesla}
+\end{equation*}
+
+
+\section{Exchange coupling}
+The Heisenberg Hamiltonian reads:
+\begin{equation}
+  H_{ex} = J_H\vec{S}_1\vec{S}_2\qquad\text{where the units of $J_H$ are}\qquad
+  [J_H]=\si{\per\eV\per\s\squared}
+\label{heis_raw}
+\end{equation}
+% Notice that the coupling $J_H$ does not have units of $\si{\eV}$ but rather $[J_H]=\si{\per\eV\per\s\squared}$
+To use the Heisenberg coupling in $\si{\eV}$ as it is often calculated from \ac{dft} or from effective Hamiltonians, it is necessary to process the hamiltonian~\eqref{heis_raw}
+\begin{equation}
+  H_{ex} = J_H\vec{S}_1\vec{S}_2 = J_H\frac{\hbar}{2}\frac{\hbar}{2}\vec{\sigma}_1\vec{\sigma}_2 =
+  J\vec{\sigma}_1\vec{\sigma}_2
+\end{equation}
+where we have used
+\begin{equation}
+ J=J_H\frac{\hbar}{2}\frac{\hbar}{2}\qquad\qquad\text{where}\qquad [J]=\si{\eV}
+\end{equation}
+
+
+\section{Hyperfine coupling}
+\label{units_A}
+In our notation, from \eqref{HF_contact}, the hyperfine term is introduced as:
+\begin{equation}
+  H_{hf} = -\mu_0\frac{2}{3} \vec{m}_e\vec{m}_p\delta(\vec{R}) = \mathcal{A}\vec{\sigma_e}\vec{\sigma_p}
+\end{equation}
+Note that, using this notation, the hyperfine coupling has units of energy $[\mathcal{A}]=\si{\eV}$. This can be easily shown by taking into account these relations
+% \begin{equation}
+%   [\mathcal{A}]=\left[\mu_0\mu_e\mu_p\delta\right] =
+%   \si{\newton\per\ampere\squared}\si{\eV\per\tesla}\si{\eV\per\tesla}\si{\per\m\cubed}
+%   % \frac{N}{A^2}\frac{eV}{T}\frac{eV}{T}\frac{1}{m^3}
+% \end{equation}
+% and taking into account that
+\begin{equation}
+  \text{Tesla}\rightarrow\si{\tesla} \sim
+  \si{\newton\per\ampere\per\m}\sim\si{\volt\s\per\m\squared} \sim
+  \si{\kilogram\per\coulomb\per\s}  \quad;\quad
+  \text{Volt}\rightarrow\si{\V}\sim\si{\eV\per\coulomb}  \quad;\quad
+  \text{Ampere}\rightarrow\si{\ampere}\sim\si{\coulomb\per\s}
+\end{equation}
+The units, then, for the hyperfine coupling $\mathcal{A}$ are:
+\begin{equation}
+  [\mathcal{A}] = \left[\mu_0\mu_e\mu_p\delta\right] =
+  \si{\newton\per\ampere\squared}\frac{\si{\eV}}{\si{\newton\per\ampere\per\m}}
+  \si{\eV\per\tesla}\si{\per\m\cubed} \sim
+  \si{\per\ampere}\si{\eV\squared\per\tesla}\si{\per\m\squared} \sim
+  \si{\s\per\coulomb}\si{\eV\squared\per\tesla}\si{\per\m\squared} \sim
+  \si{\V\s\per\m\squared}\si{\eV\per\tesla}\sim \si{\eV}
+\end{equation}
+
+
+It is common practice to express the hyperfine coupling in $\si{\MHz}$. To convert frequencies to energies we will use the well known value of the $21\si{\cm^{-1}}=\SI{1420}{\MHz}$ of Hydrogen~\cite{Hellwig1970} and the Planck-Einstein relation $E=h\nu$:
+\begin{equation}
+  % \frac{\mathcal{A}}{\hbar2\pi}
+  \nu_H = \SI{1420}{\MHz} \Rightarrow \mathcal{A} = \SI{1420}{\MHz}\hbar2\pi\simeq
+  \SI{5.8}{\micro\eV}
+\end{equation}
+
+
+\section{Electric Field Hamiltonian}
+The energy of an electron in a constant electric field can be written as~\cite{Castro2010a}
+\begin{equation}
+  H_e = q_e \vec{d} \vec{E} \qquad;\qquad E = \frac{Q}{4\pi\varepsilon} \qquad;\qquad
+  \varepsilon = \varepsilon_r\varepsilon_0
+\end{equation}
+where $q_e$ is the charge of the electron, $\vec{d}$ is the position in the electric field and $\vec{E}$ is the electric field. The constant $\varepsilon_0 = \SI{8.85e-4}{\coulomb\per\volt\per\metre}$ is the vacuum permittivity and $\varepsilon_r$ is a dimensionless constant related to the electronic screening of the material as discussed elsewhere in the standard literature\cite{Castro2010a,Yamashiro2012}
+
+% \varepsilon = 180meV/(q interdisntace 4V/nm)
